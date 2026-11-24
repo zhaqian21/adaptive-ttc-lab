@@ -22,7 +22,8 @@ class Prefix:
 class TraceBudget:
     """Record actual calls and where the original request-level cap stops."""
 
-    def __init__(self):
+    def __init__(self, limit=TOKEN_LIMIT):
+        self.limit = limit
         self.calls = []
         self.tokens = 0
         self.boundary = None
@@ -30,7 +31,7 @@ class TraceBudget:
         self.reservation = 0
 
     def check(self, input_tokens, max_output_tokens):
-        if self.boundary is None and self.tokens + input_tokens + max_output_tokens > TOKEN_LIMIT:
+        if self.boundary is None and self.tokens + input_tokens + max_output_tokens > self.limit:
             self.boundary = {
                 "calls": len(self.calls),
                 "input_tokens": input_tokens,
@@ -54,9 +55,9 @@ def agreed(predictions):
     return bool(first) and first == second == third
 
 
-def collect(sample, mode):
+def collect(sample, mode, *, stop_check=None, token_limit=TOKEN_LIMIT):
     """Sample each root once. In standalone mode, return at the adaptive stop."""
-    budget = TraceBudget()
+    budget = TraceBudget(token_limit)
     roots, attempts, fixed = [], [], {}
     full, early = None, None
 
@@ -79,6 +80,8 @@ def collect(sample, mode):
                     fixed[name] = Prefix(count, len(budget.calls), "fixed_count")
             if full is None and len(roots) == 3 and agreed([item.prediction for item in roots]):
                 early = Prefix(3, len(budget.calls), "agreement")
+            if mode == "adaptive" and full is None and early is None and stop_check is not None and stop_check(roots):
+                early = Prefix(len(roots), len(budget.calls), "prm_margin")
 
         # Preserve the original runner's handling of three empty initial attempts.
         if full is None and sequence == 2 and not roots:
@@ -86,6 +89,8 @@ def collect(sample, mode):
 
         if mode == "adaptive" and (early is not None or full is not None):
             return roots, attempts, budget, {"adaptive": early if early is not None else full}
+        if mode == "factorial" and full is not None:
+            return roots, attempts, budget, {"full": full, "adaptive": early or full}
         if mode == "paired" and full is not None and len(fixed) == len(FIXED_COUNTS):
             return roots, attempts, budget, {**fixed, "full": full, "adaptive": early or full}
 
