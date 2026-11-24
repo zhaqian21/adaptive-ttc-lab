@@ -1,0 +1,25 @@
+{
+  "case": "E3",
+  "classification": "published_code",
+  "samples": 500,
+  "correct": 349,
+  "accuracy": 0.698,
+  "paper_accuracy": 0.742,
+  "paper_description_accuracy": 0.672,
+  "answer_verdicts": {
+    "True": 349,
+    "False": 125,
+    "None": 26
+  },
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "candidate_oracle_correct": 349,
+  "workers_per_gpu": [
+    96,
+    96
+  ],
+  "generation_calls": 11096,
+  "prm_calls": 0,
+  "question_retries": 0,
+  "predictions_sha256": "5f023d8fc05ee1216d2d182b905997f4ca6f39c15b8656f542d917742317b276"
+}

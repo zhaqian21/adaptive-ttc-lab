@@ -1,0 +1,602 @@
+{
+  "criterion": "Highest completed questions per minute on identical question IDs per case",
+  "engine": {
+    "version": "0.33.0",
+    "prefix_cache": true,
+    "max_sequences": 112,
+    "batched_tokens": 8192,
+    "gpu_memory_utilization": 0.6,
+    "max_model_len": 32768,
+    "dtype": "bfloat16"
+  },
+  "backend_benchmark": {
+    "E1": {
+      "native": {
+        "case": "E1",
+        "classification": "published_code",
+        "backend": "transformers",
+        "workers": 1,
+        "samples": 8,
+        "requested": 8,
+        "correct": 6,
+        "accuracy": 0.75,
+        "failed": {},
+        "answer_verdicts": {
+          "True": 6,
+          "False": 1,
+          "None": 1
+        },
+        "seconds": 101.06856975401752,
+        "setup_seconds": 8.84161481494084,
+        "questions_per_minute": 4.749250940903117,
+        "output_tokens_per_second": 47.146209861256985,
+        "output_tokens": 4765,
+        "generation_calls": 16,
+        "prm_calls": 0,
+        "prm_compute_seconds": 0,
+        "prm_queue_seconds": 0.0,
+        "question_retries": 0,
+        "prm_all_zero_questions": 0,
+        "cuda_peak_reserved_bytes": 15726542848,
+        "native_files_verified_at_commit": true,
+        "pinned_dataset_checked": true
+      },
+      "vllm": {
+        "case": "E1",
+        "classification": "published_code",
+        "backend": "vllm",
+        "workers": 8,
+        "samples": 8,
+        "requested": 8,
+        "correct": 6,
+        "accuracy": 0.75,
+        "failed": {},
+        "answer_verdicts": {
+          "True": 6,
+          "False": 2
+        },
+        "seconds": 6.297184782102704,
+        "setup_seconds": 0.41025001695379615,
+        "questions_per_minute": 76.2245378862334,
+        "output_tokens_per_second": 695.3901070912834,
+        "output_tokens": 4379,
+        "generation_calls": 16,
+        "prm_calls": 0,
+        "prm_compute_seconds": 0,
+        "prm_queue_seconds": 0.0,
+        "question_retries": 0,
+        "prm_all_zero_questions": 0,
+        "cuda_peak_reserved_bytes": 0,
+        "native_files_verified_at_commit": true,
+        "pinned_dataset_checked": true
+      },
+      "measurement": {
+        "questions": 8,
+        "different_verdicts": 4,
+        "different_answers": 4
+      },
+      "speedup": 16.049802134005276
+    },
+    "E3": {
+      "native": {
+        "case": "E3",
+        "classification": "published_code",
+        "backend": "transformers",
+        "workers": 1,
+        "samples": 4,
+        "requested": 4,
+        "correct": 4,
+        "accuracy": 1.0,
+        "failed": {},
+        "answer_verdicts": {
+          "True": 4
+        },
+        "seconds": 105.85976748191752,
+        "setup_seconds": 9.112515032058582,
+        "questions_per_minute": 2.2671502659496747,
+        "output_tokens_per_second": 46.627723803031635,
+        "output_tokens": 4936,
+        "generation_calls": 87,
+        "prm_calls": 0,
+        "prm_compute_seconds": 0,
+        "prm_queue_seconds": 0.0,
+        "question_retries": 0,
+        "prm_all_zero_questions": 0,
+        "cuda_peak_reserved_bytes": 15908995072,
+        "native_files_verified_at_commit": true,
+        "pinned_dataset_checked": true
+      },
+      "vllm": {
+        "case": "E3",
+        "classification": "published_code",
+        "backend": "vllm",
+        "workers": 4,
+        "samples": 4,
+        "requested": 4,
+        "correct": 4,
+        "accuracy": 1.0,
+        "failed": {},
+        "answer_verdicts": {
+          "True": 4
+        },
+        "seconds": 14.161142361117527,
+        "setup_seconds": 0.42812475794926286,
+        "questions_per_minute": 16.947785276064437,
+        "output_tokens_per_second": 314.0989537830609,
+        "output_tokens": 4448,
+        "generation_calls": 76,
+        "prm_calls": 0,
+        "prm_compute_seconds": 0,
+        "prm_queue_seconds": 0.0,
+        "question_retries": 0,
+        "prm_all_zero_questions": 0,
+        "cuda_peak_reserved_bytes": 0,
+        "native_files_verified_at_commit": true,
+        "pinned_dataset_checked": true
+      },
+      "measurement": {
+        "questions": 4,
+        "different_verdicts": 0,
+        "different_answers": 0
+      },
+      "speedup": 7.475369202740194
+    }
+  },
+  "cases": {
+    "E1": {
+      "workers": 64,
+      "sample_size": 96,
+      "priority_question_ids": [],
+      "trials": [
+        {
+          "case": "E1",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 16,
+          "samples": 96,
+          "requested": 96,
+          "correct": 63,
+          "accuracy": 0.65625,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 63,
+            "None": 13,
+            "False": 20
+          },
+          "seconds": 31.26854974683374,
+          "setup_seconds": 0.5299875000491738,
+          "questions_per_minute": 184.21065404810656,
+          "output_tokens_per_second": 1924.7454866720911,
+          "output_tokens": 60184,
+          "generation_calls": 192,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E1",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 32,
+          "samples": 96,
+          "requested": 96,
+          "correct": 65,
+          "accuracy": 0.6770833333333334,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 65,
+            "False": 21,
+            "None": 10
+          },
+          "seconds": 17.121972586028278,
+          "setup_seconds": 0.3512093599420041,
+          "questions_per_minute": 336.40983660376986,
+          "output_tokens_per_second": 3478.5711576598146,
+          "output_tokens": 59560,
+          "generation_calls": 192,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E1",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 64,
+          "samples": 96,
+          "requested": 96,
+          "correct": 61,
+          "accuracy": 0.6354166666666666,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 61,
+            "False": 26,
+            "None": 9
+          },
+          "seconds": 12.962924825027585,
+          "setup_seconds": 0.4568802020512521,
+          "questions_per_minute": 444.34416443418223,
+          "output_tokens_per_second": 4561.624849187858,
+          "output_tokens": 59132,
+          "generation_calls": 192,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E1",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 96,
+          "samples": 96,
+          "requested": 96,
+          "correct": 65,
+          "accuracy": 0.6770833333333334,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 65,
+            "False": 24,
+            "None": 7
+          },
+          "seconds": 15.697502508061007,
+          "setup_seconds": 0.42654991103336215,
+          "questions_per_minute": 366.9373517884208,
+          "output_tokens_per_second": 3742.2513530310753,
+          "output_tokens": 58744,
+          "generation_calls": 192,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        }
+      ],
+      "paired_vs_selected": {
+        "16": {
+          "questions": 96,
+          "different_verdicts": 9,
+          "different_answers": 18
+        },
+        "32": {
+          "questions": 96,
+          "different_verdicts": 8,
+          "different_answers": 14
+        },
+        "64": {
+          "questions": 96,
+          "different_verdicts": 0,
+          "different_answers": 0
+        },
+        "96": {
+          "questions": 96,
+          "different_verdicts": 10,
+          "different_answers": 17
+        }
+      }
+    },
+    "E2": {
+      "workers": 48,
+      "sample_size": 48,
+      "priority_question_ids": [],
+      "trials": [
+        {
+          "case": "E2",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 24,
+          "samples": 48,
+          "requested": 48,
+          "correct": 39,
+          "accuracy": 0.8125,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 39,
+            "False": 6,
+            "None": 3
+          },
+          "seconds": 180.49861940997653,
+          "setup_seconds": 8.976043495116755,
+          "questions_per_minute": 15.955800711464148,
+          "output_tokens_per_second": 1649.3976572961242,
+          "output_tokens": 297714,
+          "generation_calls": 960,
+          "prm_calls": 480,
+          "prm_compute_seconds": 107.33273754408583,
+          "prm_queue_seconds": 111.23327910806984,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 16083058688,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E2",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 48,
+          "samples": 48,
+          "requested": 48,
+          "correct": 37,
+          "accuracy": 0.7708333333333334,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 37,
+            "None": 4,
+            "False": 7
+          },
+          "seconds": 132.35997786791995,
+          "setup_seconds": 7.497823507990688,
+          "questions_per_minute": 21.758843166881675,
+          "output_tokens_per_second": 2250.1212586873967,
+          "output_tokens": 297826,
+          "generation_calls": 960,
+          "prm_calls": 480,
+          "prm_compute_seconds": 100.06472537131049,
+          "prm_queue_seconds": 479.05817629303783,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 16972251136,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        }
+      ],
+      "paired_vs_selected": {
+        "24": {
+          "questions": 48,
+          "different_verdicts": 5,
+          "different_answers": 8
+        },
+        "48": {
+          "questions": 48,
+          "different_verdicts": 0,
+          "different_answers": 0
+        }
+      }
+    },
+    "E3": {
+      "workers": 96,
+      "sample_size": 96,
+      "priority_question_ids": [
+        428,
+        184,
+        78,
+        470,
+        103,
+        228,
+        100,
+        324,
+        297,
+        276,
+        109,
+        205,
+        445,
+        295,
+        19,
+        327
+      ],
+      "trials": [
+        {
+          "case": "E3",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 32,
+          "samples": 96,
+          "requested": 96,
+          "correct": 64,
+          "accuracy": 0.6666666666666666,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 64,
+            "False": 26,
+            "None": 6
+          },
+          "seconds": 208.08763684984297,
+          "setup_seconds": 0.4083757500629872,
+          "questions_per_minute": 27.680644978233108,
+          "output_tokens_per_second": 858.7679821120274,
+          "output_tokens": 178699,
+          "generation_calls": 2076,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E3",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 64,
+          "samples": 96,
+          "requested": 96,
+          "correct": 64,
+          "accuracy": 0.6666666666666666,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 64,
+            "None": 10,
+            "False": 22
+          },
+          "seconds": 180.09930531890132,
+          "setup_seconds": 0.38840354210697114,
+          "questions_per_minute": 31.98235545551264,
+          "output_tokens_per_second": 960.7977093170923,
+          "output_tokens": 173039,
+          "generation_calls": 2090,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E3",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 96,
+          "samples": 96,
+          "requested": 96,
+          "correct": 67,
+          "accuracy": 0.6979166666666666,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 67,
+            "False": 25,
+            "None": 4
+          },
+          "seconds": 170.93617349886335,
+          "setup_seconds": 0.7258725990541279,
+          "questions_per_minute": 33.69678800045387,
+          "output_tokens_per_second": 1011.67585807196,
+          "output_tokens": 172932,
+          "generation_calls": 2049,
+          "prm_calls": 0,
+          "prm_compute_seconds": 0,
+          "prm_queue_seconds": 0.0,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 0,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        }
+      ],
+      "paired_vs_selected": {
+        "32": {
+          "questions": 96,
+          "different_verdicts": 11,
+          "different_answers": 21
+        },
+        "64": {
+          "questions": 96,
+          "different_verdicts": 13,
+          "different_answers": 23
+        },
+        "96": {
+          "questions": 96,
+          "different_verdicts": 0,
+          "different_answers": 0
+        }
+      }
+    },
+    "E4": {
+      "workers": 24,
+      "sample_size": 48,
+      "priority_question_ids": [
+        428,
+        470,
+        295,
+        19,
+        78,
+        103,
+        109,
+        276,
+        228,
+        100,
+        419,
+        308,
+        114,
+        297,
+        267,
+        36
+      ],
+      "trials": [
+        {
+          "case": "E4",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 24,
+          "samples": 48,
+          "requested": 48,
+          "correct": 40,
+          "accuracy": 0.8333333333333334,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 40,
+            "False": 7,
+            "None": 1
+          },
+          "seconds": 1187.4435307020321,
+          "setup_seconds": 8.797935478854924,
+          "questions_per_minute": 2.4253784921437958,
+          "output_tokens_per_second": 935.3185825547226,
+          "output_tokens": 1110638,
+          "generation_calls": 11496,
+          "prm_calls": 480,
+          "prm_compute_seconds": 103.3315546803642,
+          "prm_queue_seconds": 7.527906028321013,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 16831741952,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        },
+        {
+          "case": "E4",
+          "classification": "published_code",
+          "backend": "vllm",
+          "workers": 48,
+          "samples": 48,
+          "requested": 48,
+          "correct": 39,
+          "accuracy": 0.8125,
+          "failed": {},
+          "answer_verdicts": {
+            "True": 39,
+            "False": 8,
+            "None": 1
+          },
+          "seconds": 1288.7329518259503,
+          "setup_seconds": 8.31378227705136,
+          "questions_per_minute": 2.2347531316860114,
+          "output_tokens_per_second": 873.3531632021208,
+          "output_tokens": 1125519,
+          "generation_calls": 11562,
+          "prm_calls": 480,
+          "prm_compute_seconds": 101.68199682910927,
+          "prm_queue_seconds": 23.18268970004283,
+          "question_retries": 0,
+          "prm_all_zero_questions": 0,
+          "cuda_peak_reserved_bytes": 17397972992,
+          "native_files_verified_at_commit": true,
+          "pinned_dataset_checked": true
+        }
+      ],
+      "paired_vs_selected": {
+        "24": {
+          "questions": 48,
+          "different_verdicts": 0,
+          "different_answers": 0
+        },
+        "48": {
+          "questions": 48,
+          "different_verdicts": 5,
+          "different_answers": 9
+        }
+      }
+    }
+  }
+}

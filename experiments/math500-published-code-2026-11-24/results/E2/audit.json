@@ -1,0 +1,25 @@
+{
+  "case": "E2",
+  "classification": "published_code",
+  "samples": 500,
+  "correct": 395,
+  "accuracy": 0.79,
+  "paper_accuracy": 0.72,
+  "paper_description_accuracy": 0.754,
+  "answer_verdicts": {
+    "True": 395,
+    "False": 78,
+    "None": 27
+  },
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "candidate_oracle_correct": 414,
+  "workers_per_gpu": [
+    48,
+    48
+  ],
+  "generation_calls": 10000,
+  "prm_calls": 5000,
+  "question_retries": 0,
+  "predictions_sha256": "d3ece8d47d7e9b4f96f3b7d2b3b00f0979c9e23bf5e68f1ce31857dc7fce1dac"
+}

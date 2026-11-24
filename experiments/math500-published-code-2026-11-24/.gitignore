@@ -1,0 +1,7 @@
+/upstream/
+/assets/
+/.venv/
+/runs/
+/reports/
+__pycache__/
+*.pyc
