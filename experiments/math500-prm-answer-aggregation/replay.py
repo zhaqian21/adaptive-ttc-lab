@@ -4,8 +4,9 @@ import argparse
 from collections import Counter
 import hashlib
 import json
-import math
 from pathlib import Path
+
+from answer_aggregation import answer_key, group_answers, winner
 
 
 SOURCE_COMMIT = "135d4acc8379ad5f3f1e2a4cab47aec7bdbd982f"
@@ -14,40 +15,6 @@ SOURCE_SUMMARY_SHA256 = "c9b2bee9ed4f9815c05f8877595e3fa91e26b09ad3174e1301280e1
 SOURCE_DIR = Path(__file__).resolve().parents[1] / "math500-adaptive-k" / "results" / "full"
 METHODS = ("adaptive", "sum_prm", "majority")
 COST_FIELDS = ("generation_input_tokens", "generation_output_tokens", "generation_calls", "prm_calls")
-
-
-def answer_key(answer):
-    if isinstance(answer, str):
-        return answer.strip() or None
-    return None
-
-
-def group_answers(predictions, rewards):
-    """Group by extracted answer and keep the strongest representative per group."""
-    members = {}
-    for index, prediction in enumerate(predictions):
-        answer = answer_key(prediction)
-        if answer is not None:
-            members.setdefault(answer, []).append(index)
-    groups = []
-    for answer, indices in members.items():
-        best_index = max(indices, key=rewards.__getitem__)
-        groups.append({
-            "answer": answer,
-            "members": indices,
-            "support": len(indices),
-            "sum_prm": math.fsum(rewards[index] for index in indices),
-            "best_reward": rewards[best_index],
-            "representative": best_index,
-        })
-    return groups
-
-
-def winner(groups, field, original):
-    if not groups or (field == "sum_prm" and not any(group[field] for group in groups)):
-        return original
-    group = max(groups, key=lambda g: (g[field], g["best_reward"], -g["representative"]))
-    return group["representative"]
 
 
 def replay_row(row):

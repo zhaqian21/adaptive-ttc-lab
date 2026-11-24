@@ -11,15 +11,17 @@ from types import SimpleNamespace
 
 from audit_math500 import load, shard_files
 from run_adaptive_k import baseline, runner
-from sampling import FIXED_COUNTS, MAX_ATTEMPTS, POLICIES, TOKEN_LIMIT, Prefix, agreed, costs, select
+from sampling import FIXED_COUNTS, MAX_ATTEMPTS, POLICIES, SELECTORS, TOKEN_LIMIT, Prefix, agreed, costs, select_adaptive
 
 
-def verify_row(row, question, evaluator, mode):
+def verify_row(row, question, evaluator, mode, selector="single_prm"):
     calls, candidates, attempts = row["calls"], row["candidates"], row["attempts"]
     if row["problem_id"] != question["problem_id"] or row["dataset_unique_id"] != question["dataset_unique_id"]:
         raise ValueError("Dataset row mismatch")
     if not 0 < len(attempts) <= MAX_ATTEMPTS:
         raise ValueError("Unexpected attempt count")
+    if "inference_seconds" in row and (not math.isfinite(row["inference_seconds"]) or row["inference_seconds"] < 0):
+        raise ValueError("Invalid inference time")
 
     ends, root_attempts = [], []
     previous = 0
@@ -102,7 +104,7 @@ def verify_row(row, question, evaluator, mode):
     for name, prefix in expected.items():
         arm = row["policies"][name]
         accounting = {**asdict(prefix), **costs(calls, prefix.calls)}
-        index = select(candidates, prefix)
+        index = select_adaptive(candidates, prefix, selector)
         prm_calls = 0 if prefix.reason == "agreement" else prefix.candidates
         selected = candidates[index] if index is not None else {"prediction": None, "correct": False}
         if (any(arm[k] != v for k, v in accounting.items()) or arm["selected_index"] != index
@@ -120,6 +122,9 @@ def audit(root, wall_seconds):
     for lane in (0, 1):
         shard = root / f"shard-{lane}"
         config, execution, files = shard_files(shard, lane)
+        selector = config.get("selector", "single_prm")
+        if selector not in SELECTORS or (config["mode"] != "adaptive" and selector != "single_prm"):
+            raise ValueError(f"Wrong selection rule on shard {lane}")
         if execution["failures"] or config["dataset_sha256"] != baseline.DATASET_SHA256:
             raise ValueError(f"Wrong data or unresolved failures on shard {lane}")
         args = SimpleNamespace(shard=lane, shards=2, sample=config["sample"], case="E4", priority_file=None)
@@ -129,7 +134,7 @@ def audit(root, wall_seconds):
         for index, path in sorted(files.items()):
             row = load(path)
             try:
-                physical_prm_calls += verify_row(row, expected[index], evaluator, config["mode"])
+                physical_prm_calls += verify_row(row, expected[index], evaluator, config["mode"], selector)
             except (TypeError, ValueError) as error:
                 raise ValueError(f"Row {index}: {error}") from error
             rows.append(row)

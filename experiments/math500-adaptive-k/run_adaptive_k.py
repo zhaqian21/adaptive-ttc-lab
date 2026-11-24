@@ -15,7 +15,7 @@ from unittest.mock import patch
 import revision_policy
 import run_math500 as revision
 import sampling
-from sampling import POLICIES, TOKEN_LIMIT, Prefix, collect, costs, select
+from sampling import POLICIES, SELECTORS, TOKEN_LIMIT, Prefix, collect, costs, select, select_adaptive
 
 
 baseline = revision.baseline
@@ -32,6 +32,7 @@ def solve(question, args, config, tokenizer, decode):
 
     problem = question["problem"]
     evaluator = runner.upstream.get_evaluator("MATH")
+    started = time.perf_counter()
     with baseline.requests.Session() as session:
         session.trust_env = False
         sample, _ = revision.make_sampler(problem, index, evaluator, args, config, tokenizer, decode, session)
@@ -48,15 +49,20 @@ def solve(question, args, config, tokenizer, decode):
                 raise ValueError("Unexpected upstream PRM selection or accounting")
 
     candidates = [
-        {"prediction": root.prediction,
-         "correct": bool(evaluator._check_answers_equiv(root.prediction, question["gold_answer_extracted"])),
-         "mean_reward": scores[i]["mean_reward"] if i < count else None,
+        {"prediction": root.prediction, "mean_reward": scores[i]["mean_reward"] if i < count else None,
          "prm_seconds": scorer.calls[i]["seconds"] if i < count else None}
         for i, root in enumerate(roots)
     ]
+    selected_indices = {name: select_adaptive(candidates, prefix, args.selector)
+                        for name, prefix in prefixes.items()}
+    inference_seconds = time.perf_counter() - started
+    for candidate in candidates:
+        candidate["correct"] = bool(evaluator._check_answers_equiv(
+            candidate["prediction"], question["gold_answer_extracted"],
+        ))
     arms = {}
     for name, prefix in prefixes.items():
-        selected = select(candidates, prefix)
+        selected = selected_indices[name]
         chosen = candidates[selected] if selected is not None else None
         calls = 0 if prefix.reason == "agreement" else prefix.candidates
         arms[name] = {
@@ -71,6 +77,7 @@ def solve(question, args, config, tokenizer, decode):
     baseline.write(path, {
         "problem_id": index, "dataset_unique_id": question["dataset_unique_id"], "attempts": attempts,
         "calls": budget.calls, "budget_boundary": budget.boundary, "candidates": candidates, "policies": arms,
+        "inference_seconds": inference_seconds,
     })
 
 
@@ -85,6 +92,9 @@ def run(args):
     if hashlib.sha256(dataset.read_bytes()).hexdigest() != baseline.DATASET_SHA256:
         raise ValueError("Unexpected MATH-500 data digest")
 
+    args.selector = getattr(args, "selector", "single_prm")
+    if args.selector not in SELECTORS or (args.mode != "adaptive" and args.selector != "single_prm"):
+        raise ValueError("Answer-level PRM selection requires the standalone adaptive sampler")
     args.case, args.priority_file, args.shards = "E4", None, 2
     config = baseline.configuration(args.case)
     raw_tokenizer = baseline.AutoTokenizer.from_pretrained(config["client"]["model_id"], local_files_only=True)
@@ -93,9 +103,10 @@ def run(args):
     questions = sorted(baseline.dataset_for_run(args), key=lambda row: row["problem_id"])
     if not questions:
         raise ValueError("Empty shard")
-    sources = (__file__, revision.__file__, revision_policy.__file__, sampling.__file__, baseline.__file__)
+    sources = (__file__, revision.__file__, revision_policy.__file__, sampling.__file__, baseline.__file__,
+               Path(__file__).resolve().parents[1] / "math500-prm-answer-aggregation" / "answer_aggregation.py")
     setup = {
-        "mode": args.mode, "upstream_commit": sha,
+        "mode": args.mode, "selector": args.selector, "upstream_commit": sha,
         "source_sha256": {Path(file).name: hashlib.sha256(Path(file).read_bytes()).hexdigest() for file in sources},
         "dataset_sha256": baseline.DATASET_SHA256, "assets": [list(asset) for asset in runner.ASSETS],
         "vllm_version": args.vllm_version, "model": args.model, "model_context": args.context,
@@ -139,6 +150,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--mode", choices=("paired", "adaptive"), default="paired")
+    parser.add_argument("--selector", choices=SELECTORS, default="single_prm")
     parser.add_argument("--port", type=int, required=True)
     parser.add_argument("--prm-port", type=int, default=18422)
     parser.add_argument("--shard", type=int, required=True, choices=(0, 1))
