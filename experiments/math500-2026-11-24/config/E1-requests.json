@@ -1,0 +1,27 @@
+{
+  "case": "E1",
+  "classification": "paper_description",
+  "backend": "vllm",
+  "model": "assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+  "dtype": "bfloat16",
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "max_tokens": 1024,
+    "top_k": 20,
+    "repetition_penalty": 1.05,
+    "stop_token_ids": [
+      151645
+    ],
+    "skip_special_tokens": true
+  },
+  "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+  "source_sha256": {
+    "run_smoke.py": "6c70609caaa6d0cb0df6e96b341a22e83bc59819b74e29c513c5a2825819cee7",
+    "paper_protocol.py": "1068076b0cacac4a77ee17fc511639903ffda49f365d6a466d36d647e2f1ab8c"
+  },
+  "gpu_uuid": "GPU 0",
+  "chunk_size": 64,
+  "max_num_seqs": 16,
+  "max_model_len": 2048
+}

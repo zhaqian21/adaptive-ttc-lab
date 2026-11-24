@@ -1,0 +1,15 @@
+{
+  "host": "127.0.0.1",
+  "port": 18411,
+  "model": "assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+  "dtype": "bfloat16",
+  "max_model_len": 32768,
+  "served_model_name": [
+    "adaptive-ttc-qwen25-7b"
+  ],
+  "generation_config": "vllm",
+  "gpu_memory_utilization": 0.4,
+  "enable_prefix_caching": false,
+  "max_num_batched_tokens": 4096,
+  "max_num_seqs": 32
+}

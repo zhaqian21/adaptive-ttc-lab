@@ -1,0 +1,20 @@
+{
+  "promote_gpu1": false,
+  "checks": {
+    "tokens_per_second_at_least_20_percent": false,
+    "paired_gain_at_least_20_percent": false,
+    "completion_rate_at_least_baseline": false,
+    "vllm_64_slot_utilization_confirmed": true,
+    "no_preemptions_or_resource_errors": true,
+    "at_least_three_64_slot_checkpoints_audited": true
+  },
+  "raw_throughput_ratio": 1.080470488907769,
+  "paired_throughput_ratio": 1.0457942942420944,
+  "gpu0_32_tokens_per_second": 764.5494052312167,
+  "gpu0_64_tokens_per_second": 826.0730696643167,
+  "gpu1_32_baseline_tokens_per_second": 711.6077797496272,
+  "gpu1_32_trial_tokens_per_second": 735.2030986685256,
+  "gpu0_32_questions_per_minute": 4.499996499300864,
+  "gpu0_64_questions_per_minute": 1.7999994254696154,
+  "gpu0_c64_verified_questions": 12
+}

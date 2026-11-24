@@ -1,0 +1,19 @@
+{
+  "gpu": 0,
+  "runtime": {
+    "torch": "2.6.0+cu124",
+    "cuda_runtime": "12.4",
+    "transformers": "4.48.3",
+    "cuda_visible_devices": "GPU 0",
+    "device_name": "NVIDIA H20",
+    "compute_capability": [
+      9,
+      0
+    ],
+    "bf16_supported": true
+  },
+  "endpoint": "http://127.0.0.1:18409",
+  "workers": 64,
+  "started_unix": 1795493198.0958178,
+  "parallel_runner_sha256": "d71485bae708b0a86f161a51d2a219e687bd8a4392c528fd505afb319d35802d"
+}

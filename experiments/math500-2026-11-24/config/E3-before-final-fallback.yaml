@@ -1,0 +1,85 @@
+agent:
+  mode: dynamic
+  use_planner: true
+  use_tool_selector: true
+  use_compute_selector: true
+  remember_cot: true
+  max_text_history: 16
+  max_image_history: 0
+  fixed_tool: null
+  fixed_compute: null
+  planning_frequency: null
+  domain: math
+eval:
+  num_workers: 1
+  output_dir: null
+  max_problems: 500
+  num_iterations: 1
+  use_prm_selection: false
+  prm_selection_metric: mean_reward
+  split: test
+  problem_types: null
+  difficulty_levels: null
+client:
+  client_name: transformer
+  base_url: null
+  model_id: assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28
+  generate_kwargs:
+    temperature: 0.7
+    top_p: 0.9
+    max_tokens: 1024
+  timeout: 60
+  max_retries: 5
+  delay: 2
+  alternate_roles: false
+  torch_dtype: bfloat16
+  device_map: cuda:0
+  trust_remote_code: false
+reproduction:
+  classification: paper_description
+  case: E3
+  seed: 0
+  question_seed_rule: base seed + MATH-500 test row index
+  upstream_commit: d9ca5f71f5c7d155153e8f7decd8b1c524968775
+  datasets_and_models:
+  - - dataset
+    - HuggingFaceH4/MATH-500
+    - 6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be
+  - - model
+    - Qwen/Qwen2.5-7B-Instruct
+    - a09a35458c702b33eeacc393d103063234e8bc28
+  - - model
+    - Qwen/Qwen2.5-Math-PRM-7B
+    - 0610740060112df12585d00a1c5f4624d2f59051
+  label: "\u6309\u8BBA\u6587\u63CF\u8FF0\u590D\u73B0"
+  source_sha256:
+    run_smoke.py: 6c70609caaa6d0cb0df6e96b341a22e83bc59819b74e29c513c5a2825819cee7
+    paper_protocol.py: 1068076b0cacac4a77ee17fc511639903ffda49f365d6a466d36d647e2f1ab8c
+  backend: vllm
+  runtime:
+    torch: 2.6.0+cu124
+    cuda_runtime: '12.4'
+    transformers: 4.48.3
+    cuda_visible_devices: GPU 0
+    device_name: NVIDIA H20
+    compute_capability:
+    - 9
+    - 0
+    bf16_supported: true
+  dataset_sha256: 35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132
+  decode:
+    temperature: 0.7
+    top_p: 0.9
+    max_tokens: 1024
+    top_k: 20
+    repetition_penalty: 1.05
+    stop_token_ids:
+    - 151645
+    skip_special_tokens: true
+  num_workers: 16
+  vllm_version: 0.33.0
+  endpoint: http://127.0.0.1:18409
+  served_model: adaptive-ttc-qwen25-7b
+  request_seed_rule: base seed + MATH-500 test row index + 500 * generation index
+  structured_retries: up to two new samples for invalid JSON objects
+  runner_sha256: 8df7bdb5997d099e84d2fcb881ee54f76e12dc944286dc1385488b6cc5678692

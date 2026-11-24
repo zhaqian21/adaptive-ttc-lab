@@ -1,0 +1,38 @@
+{
+  "phase": "baseline-32-32",
+  "started_at": "2026-11-24T12:02:42+08:00",
+  "elapsed_seconds": 120.00009335204959,
+  "before": {
+    "total": 73,
+    "leases": {
+      "0_working": 32,
+      "1_working": 32,
+      "0_committed": 16,
+      "1_committed": 16
+    }
+  },
+  "after": {
+    "total": 89,
+    "leases": {
+      "0_working": 32,
+      "1_working": 32,
+      "0_committed": 25,
+      "1_committed": 23
+    }
+  },
+  "completed_per_minute": 7.999993776534869,
+  "gpu": {
+    "0": {
+      "out_tokens_per_second": 764.5494052312167,
+      "running_median": 32.0,
+      "preemptions_delta": 0.0,
+      "peak_kv_usage": 0.08665923448532142
+    },
+    "1": {
+      "out_tokens_per_second": 711.6077797496272,
+      "running_median": 30.0,
+      "preemptions_delta": 0.0,
+      "peak_kv_usage": 0.06781865477517657
+    }
+  }
+}

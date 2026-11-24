@@ -1,0 +1,23 @@
+{
+  "case": "E2",
+  "classification": "paper_description",
+  "label": "按论文描述复现",
+  "backend": "vllm",
+  "samples": 500,
+  "correct": 377,
+  "accuracy": 0.754,
+  "wall_seconds_last_attempt": 1824.4708100010175,
+  "problem_wall_seconds": 28540.27715680469,
+  "mean_seconds_per_question": 57.080554313609376,
+  "gpu_peak_allocated_bytes": 15058967040,
+  "gpu_peak_reserved_bytes": 15919480832,
+  "gpu_peak_scope": "shared PRM process only; vLLM memory is recorded separately by nvidia-smi",
+  "llm_calls": 5000,
+  "llm_seconds": 26837.04458195041,
+  "input_tokens": 730790,
+  "output_tokens": 2931377,
+  "prm_calls": 5000,
+  "prm_seconds": 1669.839086981956,
+  "intra_iteration_scoring_calls": 0,
+  "intra_iteration_scoring_seconds": 0
+}

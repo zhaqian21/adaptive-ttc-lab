@@ -1,0 +1,17 @@
+{
+  "samples": 32,
+  "vllm_version": "0.33.0",
+  "max_num_seqs": 16,
+  "hf_serial_seconds": 361.5371273015626,
+  "hf_serial_output_tokens": 17817,
+  "hf_serial_tokens_per_second": 49.28124569939015,
+  "hf_correct": 22,
+  "vllm_seconds": 13.529384293127805,
+  "vllm_output_tokens": 17113,
+  "vllm_tokens_per_second": 1264.8764813852229,
+  "vllm_correct": 23,
+  "vllm_warm_start_seconds": 84.76430690591224,
+  "vllm_wall_speedup": 26.722363669217664,
+  "vllm_token_throughput_speedup": 25.666487594506478,
+  "answer_strings_matched": 22
+}
