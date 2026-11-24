@@ -1,0 +1,21 @@
+{
+  "environment": {
+    "vllm": "0.33.0",
+    "torch": "2.14.0",
+    "transformers": "5.20.2",
+    "gpu_uuid": "GPU 0"
+  },
+  "options": {
+    "model": "assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+    "dtype": "bfloat16",
+    "max_model_len": 2048,
+    "max_num_seqs": 16,
+    "max_num_batched_tokens": 4096,
+    "gpu_memory_utilization": 0.4,
+    "tensor_parallel_size": 1,
+    "generation_config": "vllm",
+    "enable_prefix_caching": false,
+    "trust_remote_code": false
+  },
+  "startup_seconds": 56.58203431498259
+}

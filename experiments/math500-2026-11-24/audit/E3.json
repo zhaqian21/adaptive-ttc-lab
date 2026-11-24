@@ -1,0 +1,44 @@
+{
+  "case": "E3",
+  "summary_verified": true,
+  "native_files_verified": true,
+  "pinned_dataset_checked": true,
+  "samples": 500,
+  "correct": 336,
+  "accuracy": 0.672,
+  "problem_wall_seconds": 22606.32719807676,
+  "mean_seconds_per_question": 45.21265439615352,
+  "gpu_peak_allocated_bytes": 15131695616,
+  "gpu_peak_reserved_bytes": 16206790656,
+  "llm_calls": 10991,
+  "llm_seconds": 22132.62591268029,
+  "input_tokens": 8411102,
+  "output_tokens": 1086939,
+  "prm_calls": 0,
+  "prm_seconds": 0,
+  "intra_iteration_scoring_calls": 3190,
+  "intra_iteration_scoring_seconds": 397.610131024383,
+  "strategy_measurements": {
+    "best_of_n": {
+      "calls": 213,
+      "seconds": 1026.4686943874694,
+      "llm_calls": 653,
+      "output_tokens": 43639
+    },
+    "lookahead": {
+      "calls": 268,
+      "seconds": 14295.711707504,
+      "llm_calls": 6904,
+      "output_tokens": 690046
+    },
+    "beam_search": {
+      "calls": 26,
+      "seconds": 1448.4631871092133,
+      "llm_calls": 508,
+      "output_tokens": 84520
+    }
+  },
+  "classification": "paper_description",
+  "label": "按论文描述复现",
+  "backend": "vllm"
+}

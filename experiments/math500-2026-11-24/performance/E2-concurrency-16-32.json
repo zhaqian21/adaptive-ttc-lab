@@ -1,0 +1,15 @@
+{
+  "case": "E2 controlled throughput test",
+  "samples_each": 48,
+  "c16_wall_seconds": 204.999510145979,
+  "c32_wall_seconds": 159.61667237104848,
+  "c16_correct": 40,
+  "c32_correct": 42,
+  "c16_generation_tokens": 272527,
+  "c32_generation_tokens": 270042,
+  "c16_tokens_per_wall_second": 1329.4031766511787,
+  "c32_tokens_per_wall_second": 1691.815748246238,
+  "question_throughput_ratio": 1.284323918678323,
+  "correctness_changes": 4,
+  "predicted_answer_changes": 5
+}

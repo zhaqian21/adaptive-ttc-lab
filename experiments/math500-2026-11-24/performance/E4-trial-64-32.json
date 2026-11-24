@@ -1,0 +1,38 @@
+{
+  "phase": "trial-64-32",
+  "started_at": "2026-11-24T12:13:17+08:00",
+  "elapsed_seconds": 300.00009575509466,
+  "before": {
+    "total": 117,
+    "leases": {
+      "0_working": 64,
+      "1_committed": 47,
+      "0_committed": 29,
+      "1_working": 32
+    }
+  },
+  "after": {
+    "total": 140,
+    "leases": {
+      "0_working": 64,
+      "1_committed": 61,
+      "0_committed": 38,
+      "1_working": 32
+    }
+  },
+  "completed_per_minute": 4.599998531755684,
+  "gpu": {
+    "0": {
+      "out_tokens_per_second": 826.0730696643167,
+      "running_median": 62.0,
+      "preemptions_delta": 0.0,
+      "peak_kv_usage": 0.14231636905899891
+    },
+    "1": {
+      "out_tokens_per_second": 735.2030986685256,
+      "running_median": 31.0,
+      "preemptions_delta": 0.0,
+      "peak_kv_usage": 0.07235228539576366
+    }
+  }
+}

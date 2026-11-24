@@ -1,0 +1,8 @@
+{
+  "base_parallel_runner_sha256": "e473b5300daa41611aa4d201cc90f2fdf15458972f65abbb6d34bb3f966585eb",
+  "tuned_parallel_runner_sha256": "d71485bae708b0a86f161a51d2a219e687bd8a4392c528fd505afb319d35802d",
+  "worker_counts": [
+    32,
+    64
+  ]
+}

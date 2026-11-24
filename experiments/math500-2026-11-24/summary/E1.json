@@ -1,0 +1,24 @@
+{
+  "case": "E1",
+  "classification": "paper_description",
+  "backend": "vllm",
+  "samples": 500,
+  "correct": 342,
+  "accuracy": 0.684,
+  "paper_accuracy": 0.712,
+  "delta_percentage_points": -2.8,
+  "generation_seconds": 148.24335639295168,
+  "startup_seconds_last_attempt": 56.58203431498259,
+  "output_tokens": 293485,
+  "tokens_per_second": 1979.751451539274,
+  "requests_sha256": "67165cbf90adaaa19d2b1b27bf5c1b2c4a38ac156de64f1b8a790f8133684461",
+  "environment": {
+    "vllm": "0.33.0",
+    "torch": "2.14.0",
+    "transformers": "5.20.2",
+    "gpu_uuid": "GPU 0"
+  },
+  "summary_verified": true,
+  "pinned_dataset_checked": true,
+  "chunk_outputs_verified": true
+}
