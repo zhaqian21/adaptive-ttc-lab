@@ -218,27 +218,32 @@ def solve(question, args, config, tokenizer, decode):
     return result
 
 
-def run(args):
+def run(args, *, load_benchmark=None):
     repo = runner.ROOT / "upstream"
     commit = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
     if commit != runner.UPSTREAM_COMMIT or subprocess.check_output(
         ["git", "-C", str(repo), "status", "--porcelain", "--untracked-files=no"],
     ):
         raise ValueError("Expected an unmodified checkout of the pinned upstream commit")
-    dataset = runner.asset_path(runner.ASSETS[0]) / "test.jsonl"
-    if hashlib.sha256(dataset.read_bytes()).hexdigest() != baseline.DATASET_SHA256:
-        raise ValueError("Unexpected MATH-500 data digest")
+    args.case, args.priority_file = "E4", None
+    if load_benchmark is None:
+        dataset = runner.asset_path(runner.ASSETS[0]) / "test.jsonl"
+        if hashlib.sha256(dataset.read_bytes()).hexdigest() != baseline.DATASET_SHA256:
+            raise ValueError("Unexpected MATH-500 data digest")
+        questions = baseline.dataset_for_run(args)
+        dataset_config = {"dataset_sha256": baseline.DATASET_SHA256}
+    else:
+        questions, dataset_config = load_benchmark(args)
     config = baseline.configuration("E4")
     raw_tokenizer = baseline.AutoTokenizer.from_pretrained(config["client"]["model_id"], local_files_only=True)
     decode = baseline.effective_decode(config, raw_tokenizer)
     tokenizer = baseline.LockedTokenizer(raw_tokenizer)
-    args.case, args.priority_file = "E4", None
-    questions = sorted(baseline.dataset_for_run(args), key=lambda q: q["problem_id"])
+    questions = sorted(questions, key=lambda q: q["problem_id"])
     if args.only_row is not None:
         selected = set(args.only_row)
         questions = [q for q in questions if q["problem_id"] in selected]
         if {q["problem_id"] for q in questions} != selected:
-            raise ValueError("Requested retry IDs do not match this MATH-500 shard")
+            raise ValueError("Requested retry IDs do not match this shard")
     if not questions:
         raise ValueError("No questions in this shard")
     setup = {
@@ -247,7 +252,8 @@ def run(args):
             Path(name).name: hashlib.sha256(Path(name).read_bytes()).hexdigest()
             for name in (__file__, baseline.__file__, Path(__file__).with_name("revision_policy.py"))
         },
-        "dataset_sha256": baseline.DATASET_SHA256, "assets": [list(asset) for asset in runner.ASSETS],
+        **dataset_config,
+        "assets": [list(asset) for asset in runner.ASSETS],
         "vllm_version": args.vllm_version, "selectors": list(POLICIES), "sample_decode": decode,
         "revision_prompt": REVISION_PROMPT, "revision_temperature": 0.0, "prm_metric": "mean_reward",
         "token_budget": args.token_budget, "initial_roots": args.initial_roots, "seed": args.seed,
