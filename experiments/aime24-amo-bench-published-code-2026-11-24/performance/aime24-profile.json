@@ -1,0 +1,186 @@
+{
+  "dataset": "aime24",
+  "backend": "vllm",
+  "version": "0.33.0",
+  "prm": "already loaded, using the released selector and scoring code",
+  "cases": {
+    "E1": {
+      "workers": 16,
+      "trials": [
+        {
+          "gpu": 0,
+          "workers": 8,
+          "samples": 16,
+          "seconds": 12.818173239938915,
+          "questions_per_minute": 74.89366714196281,
+          "correct": 2,
+          "path": "bench/aime24/E1/c8"
+        },
+        {
+          "gpu": 1,
+          "workers": 16,
+          "samples": 16,
+          "seconds": 7.241611089091748,
+          "questions_per_minute": 132.56718542177393,
+          "correct": 1,
+          "path": "bench/aime24/E1/c16"
+        }
+      ],
+      "sample_ids": [
+        21,
+        23,
+        3,
+        24,
+        7,
+        22,
+        8,
+        5,
+        9,
+        15,
+        14,
+        13,
+        2,
+        20,
+        27,
+        11
+      ],
+      "priority_question_ids": []
+    },
+    "E2": {
+      "workers": 16,
+      "trials": [
+        {
+          "gpu": 0,
+          "workers": 16,
+          "samples": 16,
+          "seconds": 88.29761335905641,
+          "questions_per_minute": 10.872321045600897,
+          "correct": 3,
+          "path": "bench/aime24/E2/c16"
+        },
+        {
+          "gpu": 1,
+          "workers": 8,
+          "samples": 16,
+          "seconds": 144.29166088812053,
+          "questions_per_minute": 6.653191141408757,
+          "correct": 3,
+          "path": "bench/aime24/E2/c8"
+        }
+      ],
+      "sample_ids": [
+        21,
+        23,
+        3,
+        24,
+        7,
+        22,
+        8,
+        5,
+        9,
+        15,
+        14,
+        13,
+        2,
+        20,
+        27,
+        11
+      ],
+      "priority_question_ids": []
+    },
+    "E3": {
+      "workers": 16,
+      "trials": [
+        {
+          "gpu": 0,
+          "workers": 8,
+          "samples": 16,
+          "seconds": 218.35275286994874,
+          "questions_per_minute": 4.396555515706173,
+          "correct": 2,
+          "path": "bench/aime24/E3/c8"
+        },
+        {
+          "gpu": 1,
+          "workers": 16,
+          "samples": 16,
+          "seconds": 207.45436365297064,
+          "questions_per_minute": 4.627523774847593,
+          "correct": 3,
+          "path": "bench/aime24/E3/c16"
+        }
+      ],
+      "sample_ids": [
+        21,
+        23,
+        3,
+        24,
+        7,
+        22,
+        8,
+        5,
+        9,
+        15,
+        14,
+        13,
+        2,
+        20,
+        27,
+        11
+      ],
+      "priority_question_ids": [
+        15,
+        7,
+        9,
+        27,
+        22,
+        5
+      ]
+    },
+    "E4": {
+      "workers": 12,
+      "trials": [
+        {
+          "gpu": 0,
+          "workers": 12,
+          "samples": 12,
+          "seconds": 1286.4071641389746,
+          "questions_per_minute": 0.5596983754998865,
+          "correct": 2,
+          "path": "bench/aime24/E4/c12"
+        },
+        {
+          "gpu": 1,
+          "workers": 6,
+          "samples": 12,
+          "seconds": 1386.4609642249998,
+          "questions_per_minute": 0.5193078049640321,
+          "correct": 1,
+          "path": "bench/aime24/E4/c6"
+        }
+      ],
+      "sample_ids": [
+        21,
+        23,
+        3,
+        24,
+        7,
+        22,
+        8,
+        5,
+        9,
+        15,
+        14,
+        13
+      ],
+      "priority_question_ids": [
+        15,
+        3,
+        7,
+        13,
+        5,
+        14
+      ]
+    }
+  }
+}

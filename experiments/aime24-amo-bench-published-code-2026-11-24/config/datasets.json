@@ -1,0 +1,18 @@
+{
+  "amo": {
+    "revision": "2f422616c25d862984408fbbfaed63a961e8e025",
+    "split": "test",
+    "source_file": "data/test-00000-of-00001.parquet",
+    "repo": "meituan-longcat/AMO-Bench",
+    "sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+    "samples": 50
+  },
+  "aime24": {
+    "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+    "split": "train",
+    "source_file": "aime_2024_problems.parquet",
+    "repo": "Maxwell-Jia/AIME_2024",
+    "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+    "samples": 30
+  }
+}

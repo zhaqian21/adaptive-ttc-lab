@@ -1,0 +1,6 @@
+{
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "formal_runner_sha256": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf",
+  "gpu_coordinator_sha256": "50b0cf7d7d7d1a7cae05192a1349e2f347dbb34a5ec2785f04c18c4691b23eab",
+  "prm_scorer_sha256": "0954c5568a8a2491a3435a90a5820dd6610b8b9d269fcc7a04ac97233be13d85"
+}

@@ -1,0 +1,31 @@
+{
+  "dataset": "aime24",
+  "case": "E4",
+  "samples": 30,
+  "correct": 4,
+  "accuracy": 0.13333333333333333,
+  "paper_correct_inferred": 4,
+  "candidate_oracle_correct": 6,
+  "predictions_sha256": "fe0851e67e7fafb1baae73e7c17681b312c8ba19f7b1e5b4cefa34413ca806e0",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "shards": [
+    {
+      "gpu": 0,
+      "correct": 4,
+      "samples": 15,
+      "workers": 12,
+      "elapsed_seconds": 710.9201250020415,
+      "question_retries": 0
+    },
+    {
+      "gpu": 1,
+      "correct": 0,
+      "samples": 15,
+      "workers": 12,
+      "elapsed_seconds": 1106.6437874340918,
+      "question_retries": 0
+    }
+  ]
+}

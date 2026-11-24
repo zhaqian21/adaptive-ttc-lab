@@ -1,0 +1,31 @@
+{
+  "dataset": "amo",
+  "case": "E3",
+  "samples": 50,
+  "correct": 1,
+  "accuracy": 0.02,
+  "paper_correct_inferred": 2,
+  "candidate_oracle_correct": 1,
+  "predictions_sha256": "f15f46a835afcc5b6f668f9fc63ea54dd58ae04897ebbc4ad66c2d75327087b7",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "shards": [
+    {
+      "gpu": 0,
+      "correct": 1,
+      "samples": 25,
+      "workers": 16,
+      "elapsed_seconds": 256.73908660490997,
+      "question_retries": 0
+    },
+    {
+      "gpu": 1,
+      "correct": 0,
+      "samples": 25,
+      "workers": 16,
+      "elapsed_seconds": 205.21064608707093,
+      "question_retries": 0
+    }
+  ]
+}

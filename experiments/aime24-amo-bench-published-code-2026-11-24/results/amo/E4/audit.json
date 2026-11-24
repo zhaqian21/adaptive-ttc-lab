@@ -1,0 +1,31 @@
+{
+  "dataset": "amo",
+  "case": "E4",
+  "samples": 50,
+  "correct": 3,
+  "accuracy": 0.06,
+  "paper_correct_inferred": 2,
+  "candidate_oracle_correct": 6,
+  "predictions_sha256": "eb6ca5772cbebe43789d8c50bcbad092c592a2f8ecec07ba69745cb0aa4aca33",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "shards": [
+    {
+      "gpu": 0,
+      "correct": 2,
+      "samples": 25,
+      "workers": 12,
+      "elapsed_seconds": 2039.999817141099,
+      "question_retries": 0
+    },
+    {
+      "gpu": 1,
+      "correct": 1,
+      "samples": 25,
+      "workers": 12,
+      "elapsed_seconds": 1553.99833747698,
+      "question_retries": 0
+    }
+  ]
+}
