@@ -14,47 +14,83 @@ def load(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def audit(root, baseline_path, destination):
+def shard_files(source, shard):
+    config = load(source / "config.json")
+    execution = load(source / "execution.json")
+    expected = config["question_ids"]
+    failures = {int(index) for index in execution["failures"]}
+    files = {int(path.stem): path for path in (source / "problems").glob("*.json")}
+    if (config["shard"] != shard or config["shards"] != 2 or len(set(expected)) != len(expected)
+            or execution["requested"] != len(expected) or execution["complete"] != len(files)
+            or set(files) & failures or set(files) | failures != set(expected)
+            or any(index % 2 != shard for index in expected)):
+        raise ValueError(f"Incomplete or inconsistent shard {shard}: {source}")
+    return config, execution, files
+
+
+def comparable_retry_config(config):
+    return {
+        **{key: value for key, value in config.items() if key not in ("question_ids", "source_sha256")},
+        "source_sha256": {key: value for key, value in config["source_sha256"].items()
+                           if key != "run_math500.py"},
+    }
+
+
+def audit(root, baseline_path, destination, repair_root=None):
     baseline_rows = [json.loads(line) for line in baseline_path.read_text(encoding="utf-8").splitlines()]
     baseline = {row["problem_id"]: row for row in baseline_rows}
     if len(baseline_rows) != 500 or set(baseline) != set(range(500)):
         raise ValueError("Expected the complete archived 500-row E4 regression reference")
 
-    configs, executions, rows = [], [], {}
+    configs, executions, repairs, rows = [], [], [], {}
     for shard in range(2):
         source = root / f"shard-{shard}"
-        config = load(source / "config.json")
-        execution = load(source / "execution.json")
-        expected = config["question_ids"]
-        if (config["shard"] != shard or config["shards"] != 2 or execution["failures"]
-                or execution["complete"] != len(expected) or execution["requested"] != len(expected)
-                or set(expected) != {int(path.stem) for path in (source / "problems").glob("*.json")}):
-            raise ValueError(f"Incomplete or inconsistent shard {shard}")
+        config, execution, files = shard_files(source, shard)
+        repaired_ids = {int(index) for index in execution["failures"]}
+        if repaired_ids:
+            if repair_root is None:
+                raise ValueError(f"Shard {shard} has unresolved rows {sorted(repaired_ids)}")
+            repaired_config, repaired_execution, repaired_files = shard_files(repair_root / f"shard-{shard}", shard)
+            if (repaired_execution["failures"] or set(repaired_files) != repaired_ids
+                    or comparable_retry_config(config) != comparable_retry_config(repaired_config)):
+                raise ValueError(f"Repair must cover exactly the failed IDs under the same configuration for shard {shard}")
+            files.update(repaired_files)
+            repairs.append({"shard": shard, "first_pass_failures": execution["failures"],
+                            "config": repaired_config, "execution": repaired_execution})
         configs.append(config)
         executions.append(execution)
-        for index in expected:
-            if index % 2 != shard or index in rows:
+        for index, path in sorted(files.items()):
+            if index in rows:
                 raise ValueError(f"Invalid shard assignment for row {index}")
-            row = load(source / "problems" / f"{index:03d}.json")
+            row = load(path)
             reference = baseline[index]
             if (row["problem_id"] != index or row["dataset_unique_id"] != reference["dataset_unique_id"]
-                    or set(row["policies"]) != set(POLICIES) or not row["initial_predictions"]
+                    or set(row["policies"]) != set(POLICIES) or not row["initial_actions"]
                     or len(row["initial_predictions"]) > config["initial_roots"]
                     or sum(event["generation_tokens"] for event in row["initial_actions"]) != row["initial_tokens"]):
                 raise ValueError(f"Invalid result for row {index}")
             for run in row["policies"].values():
                 cost = run["generation_input_tokens"] + run["generation_output_tokens"]
-                rewards = [candidate["mean_reward"] for candidate in run["candidates"]]
-                expected_selection = rewards.index(max(rewards)) if any(rewards) else len(rewards) - 1
-                selected = run["candidates"][run["selected_root"]]
                 if (cost > config["token_budget"] or cost != row["initial_tokens"] +
                         sum(event["generation_tokens"] for event in run["actions"])
-                        or run["prm_calls"] != len(run["candidates"]) or run["roots"] != len(run["candidates"])
-                        or run["selected_root"] != expected_selection
-                        or selected["correct"] != run["correct"] or selected["prediction"] != run["prediction"]):
-                    raise ValueError(f"Invalid budget or selection for row {index}")
+                        or run["prm_calls"] != len(run["candidates"]) or run["roots"] != len(run["candidates"])):
+                    raise ValueError(f"Invalid budget for row {index}")
+                if not row["initial_predictions"]:
+                    if (run["roots"] or run["correct"] or run["prediction"] is not None
+                            or run["selected_root"] is not None or run["actions"]):
+                        raise ValueError(f"Unanswered row {index} contains a selected candidate")
+                    continue
+                rewards = [candidate["mean_reward"] for candidate in run["candidates"]]
+                expected_selection = rewards.index(max(rewards)) if any(rewards) else len(rewards) - 1
+                if not rewards or run["selected_root"] != expected_selection:
+                    raise ValueError(f"Invalid PRM selection for row {index}")
+                selected = run["candidates"][expected_selection]
+                if selected["correct"] != run["correct"] or selected["prediction"] != run["prediction"]:
+                    raise ValueError(f"Invalid selected answer for row {index}")
             row["e4_reference_correct"] = reference["is_correct"] is True
             row["e4_reference_output_tokens"] = reference["output_tokens"]
+            if index in repaired_ids:
+                row["source"] = "repair"
             rows[index] = row
 
     ignored = {"shard", "question_ids"}
@@ -99,7 +135,8 @@ def audit(root, baseline_path, destination):
         "baseline_e4_correct_on_same_rows": sum(row["e4_reference_correct"] for row in sample),
         "baseline_e4_output_tokens_on_same_rows": sum(row["e4_reference_output_tokens"] for row in sample),
         "maximum_shard_execution_seconds": max(row["seconds"] for row in executions),
-        "shard_counts": [execution["complete"] for execution in executions],
+        "shard_counts": [len(config["question_ids"]) for config in configs],
+        "repair_attempts": repairs,
         "policies": summaries, "configs": configs,
         "baseline_e4_sha256": hashlib.sha256(baseline_path.read_bytes()).hexdigest(),
         "predictions_sha256": hashlib.sha256(predictions.read_bytes()).hexdigest(),
@@ -114,5 +151,6 @@ if __name__ == "__main__":
     parser.add_argument("run", type=Path)
     parser.add_argument("baseline", type=Path)
     parser.add_argument("destination", type=Path)
+    parser.add_argument("--repair-run", type=Path)
     args = parser.parse_args()
-    audit(args.run, args.baseline, args.destination)
+    audit(args.run, args.baseline, args.destination, args.repair_run)

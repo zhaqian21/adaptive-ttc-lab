@@ -47,3 +47,14 @@ python "$exp/audit_math500.py" "$exp/runs/full" "$baseline_predictions" "$exp/ru
 | 固定点调度 | 8/8 | 848,906 | 140,628 | 80 |
 
 [试跑逐题结果](results/pilot/predictions.jsonl) · [试跑配置和审计摘要](results/pilot/summary.json)
+
+## 预算内没有完整初始轨迹
+
+正式轮首次运行使用提交 `f93c638`。遇到预算耗尽且没有完整初始轨迹时，该版本会将题目标成失败。后续修复将这类记录作为三组共同的未答题，保留已消耗的生成 token，并按错误计入正确率。网络或服务错误仍标成运行失败。
+
+已有首次运行检查点时，只补跑首次失败的题，保留原始配置、已完成的逐题记录和失败原因。合并审计验证补跑题号与首次失败题号一致，并记录两次执行使用的源码哈希。输出中的 `source: repair` 标明补跑记录。
+
+~~~bash
+bash "$exp/run_repair.sh" "$SOURCE" "$baseline/scripts" "$baseline_predictions" \
+    "$exp/runs/full" "$exp/runs/repair" 0.33.0
+~~~

@@ -164,11 +164,25 @@ def solve(question, args, config, tokenizer, decode):
                                     "generation_tokens": shared_budget.used - before})
             if first:
                 initial.append(first)
-        if not initial:
-            raise RuntimeError(f"No complete initial candidate for MATH-500 row {index}")
         initial_seconds = time.perf_counter() - initial_start
+        result = {
+            "problem_id": index, "dataset_unique_id": question["dataset_unique_id"],
+            "initial_predictions": [root.prediction for root in initial], "initial_actions": initial_history,
+            "initial_seconds": initial_seconds, "initial_tokens": shared_budget.used, "policies": {},
+        }
 
-        runs = {}
+        if not initial:
+            unresolved = {
+                "prediction": None, "correct": False, "selected_root": None, "roots": 0, "candidates": [],
+                "generation_input_tokens": sum(call["input_tokens"] for call in shared_budget.calls),
+                "generation_output_tokens": sum(call["output_tokens"] for call in shared_budget.calls),
+                "generation_calls": len(shared_budget.calls), "prm_calls": 0, "prm_request_seconds": 0.0,
+                "additional_seconds": 0.0, "actions": [],
+            }
+            result["policies"] = {name: unresolved for name in POLICIES}
+            baseline.write(path, result)
+            return result
+
         # Gold is used by the grader after the policy and selector have finished.
         def correct(answer):
             return bool(evaluator._check_answers_equiv(answer, question["gold_answer_extracted"]))
@@ -188,7 +202,7 @@ def solve(question, args, config, tokenizer, decode):
                     event["before_correct"] = correct(event["before"])
                     event["after_correct"] = correct(event["after"])
             prediction = roots[selected].prediction
-            runs[name] = {
+            result["policies"][name] = {
                 "prediction": prediction, "correct": correct(prediction),
                 "selected_root": selected, "roots": len(roots),
                 "candidates": [{"prediction": root.prediction, "correct": correct(root.prediction),
@@ -200,11 +214,6 @@ def solve(question, args, config, tokenizer, decode):
                 "additional_seconds": time.perf_counter() - started,
                 "actions": history,
             }
-    result = {
-        "problem_id": index, "dataset_unique_id": question["dataset_unique_id"],
-        "initial_predictions": [root.prediction for root in initial], "initial_actions": initial_history,
-        "initial_seconds": initial_seconds, "initial_tokens": shared_budget.used, "policies": runs,
-    }
     baseline.write(path, result)
     return result
 
@@ -225,6 +234,11 @@ def run(args):
     tokenizer = baseline.LockedTokenizer(raw_tokenizer)
     args.case, args.priority_file = "E4", None
     questions = sorted(baseline.dataset_for_run(args), key=lambda q: q["problem_id"])
+    if args.only_row is not None:
+        selected = set(args.only_row)
+        questions = [q for q in questions if q["problem_id"] in selected]
+        if {q["problem_id"] for q in questions} != selected:
+            raise ValueError("Requested retry IDs do not match this MATH-500 shard")
     if not questions:
         raise ValueError("No questions in this shard")
     setup = {
@@ -286,6 +300,7 @@ def main():
     parser.add_argument("--shards", type=int, default=2)
     parser.add_argument("--shard", type=int, required=True)
     parser.add_argument("--sample", type=int)
+    parser.add_argument("--only-row", type=int, action="append", help="Run only these row IDs from the shard")
     args = parser.parse_args()
     if (min(args.workers, args.token_budget, args.initial_roots) <= 0
             or not 0 <= args.shard < args.shards
