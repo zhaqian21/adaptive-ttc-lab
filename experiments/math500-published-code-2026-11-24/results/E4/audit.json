@@ -1,0 +1,25 @@
+{
+  "case": "E4",
+  "classification": "published_code",
+  "samples": 500,
+  "correct": 397,
+  "accuracy": 0.794,
+  "paper_accuracy": 0.814,
+  "paper_description_accuracy": 0.764,
+  "answer_verdicts": {
+    "True": 397,
+    "False": 90,
+    "None": 13
+  },
+  "pinned_dataset_checked": true,
+  "native_files_verified": true,
+  "candidate_oracle_correct": 424,
+  "workers_per_gpu": [
+    24,
+    24
+  ],
+  "generation_calls": 108845,
+  "prm_calls": 5000,
+  "question_retries": 0,
+  "predictions_sha256": "df1f70b320c724b184df1a76af105a6b55c5e01e05b79ae6b8dd51ad9c6a8e82"
+}

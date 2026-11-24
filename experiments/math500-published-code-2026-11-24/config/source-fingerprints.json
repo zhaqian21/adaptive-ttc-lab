@@ -1,0 +1,15 @@
+{
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "formal_original_driver_sha256": "4fb43dd2000cf79cc603031f3413192711651c73340a44efff786ff92ba103a3",
+  "formal_original_coordinator_sha256": "119e177ce2293b1ea8058212beb87f6773aa166a9c413b37f204badf1a92bd70",
+  "published_scripts_sha256": {
+    "scripts/audit_published_code.py": "e73d88f3bc72e3d8de972f476578a8d752ab7bb7cd96292c35990f99f00f3df7",
+    "scripts/audit_results.py": "be9a70ea2149e2034d466b3c2a86811152a9f3f4ff3125f461c510236c9a9afe",
+    "scripts/fetch_assets.py": "afe7e0c82bbcd23e5165e616987a31ee258e9d2ad76a9a08b7630c16fb54d81e",
+    "scripts/paper_protocol.py": "1068076b0cacac4a77ee17fc511639903ffda49f365d6a466d36d647e2f1ab8c",
+    "scripts/run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575",
+    "scripts/run_smoke.py": "6c70609caaa6d0cb0df6e96b341a22e83bc59819b74e29c513c5a2825819cee7",
+    "scripts/select_published_profile.py": "dc1ec570d60fd4daae125cf2693c7aed68df94259b243175c843b6db42ceb7c1",
+    "scripts/validate_models.py": "5ba3f02ff6c792b317b9816ac40d73db4b8192ed866d3947069f6a6221e78550"
+  }
+}
