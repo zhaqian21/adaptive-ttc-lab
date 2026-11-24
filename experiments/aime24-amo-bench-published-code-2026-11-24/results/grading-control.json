@@ -1,0 +1,418 @@
+{
+  "aime24": {
+    "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+    "samples": 30,
+    "evaluator": "MATHEvaluator",
+    "gold_answer_boxed_passes": 30,
+    "records": [
+      {
+        "id": "2024-II-4",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-12",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-4",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-3",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-8",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-12",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-11",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-11",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-2",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-6",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-I-7",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-3",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-1",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-7",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-6",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-13",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-15",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-15",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-10",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-9",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-14",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-5",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-9",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-2",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-II-1",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2024-I-10",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-8",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-14",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-I-5",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "2024-II-13",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      }
+    ]
+  },
+  "amo": {
+    "revision": "2f422616c25d862984408fbbfaed63a961e8e025",
+    "samples": 50,
+    "evaluator": "MATHEvaluator",
+    "gold_answer_boxed_passes": 41,
+    "records": [
+      {
+        "id": "1",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "2",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "3",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "4",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "5",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "6",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "7",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "8",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "9",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "10",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "11",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "12",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "13",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "14",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "15",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "16",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "17",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "18",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "19",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "20",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "21",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "22",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "23",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "24",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "25",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "26",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "27",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "28",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "29",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "30",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "31",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "32",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "33",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "34",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "35",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "36",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "37",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "38",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "39",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "40",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "41",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "42",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "43",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": true
+      },
+      {
+        "id": "44",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "45",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "46",
+        "gold_answer_boxed_pass": false,
+        "official_solution_pass": false
+      },
+      {
+        "id": "47",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "48",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "49",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      },
+      {
+        "id": "50",
+        "gold_answer_boxed_pass": true,
+        "official_solution_pass": false
+      }
+    ]
+  }
+}

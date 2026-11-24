@@ -1,0 +1,254 @@
+{
+  "aime24": {
+    "E1": {
+      "dataset": "aime24",
+      "case": "E1",
+      "samples": 30,
+      "correct": 2,
+      "accuracy": 0.06666666666666667,
+      "paper_correct_inferred": 2,
+      "candidate_oracle_correct": 2,
+      "predictions_sha256": "0d1ecbf5a3ddb336595c8dca3bd57cec4a4a454414b48ad6c16e994d558e0a6d",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 2,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 7.144403620855883,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 7.460334907984361,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E2": {
+      "dataset": "aime24",
+      "case": "E2",
+      "samples": 30,
+      "correct": 3,
+      "accuracy": 0.1,
+      "paper_correct_inferred": 2,
+      "candidate_oracle_correct": 3,
+      "predictions_sha256": "7fa86ba597e091a27585d4ce644b64c850c7c890346ceb1258f7013232f5f494",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 3,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 86.30521025205962,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 87.16963460086845,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E3": {
+      "dataset": "aime24",
+      "case": "E3",
+      "samples": 30,
+      "correct": 3,
+      "accuracy": 0.1,
+      "paper_correct_inferred": 3,
+      "candidate_oracle_correct": 3,
+      "predictions_sha256": "11759958b2ef43fa298f7e115bca82ec886e9e941f7d309eb55e16172f831ae7",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 3,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 23.816380106145516,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 15,
+          "workers": 15,
+          "elapsed_seconds": 181.10924186906777,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E4": {
+      "dataset": "aime24",
+      "case": "E4",
+      "samples": 30,
+      "correct": 4,
+      "accuracy": 0.13333333333333333,
+      "paper_correct_inferred": 4,
+      "candidate_oracle_correct": 6,
+      "predictions_sha256": "fe0851e67e7fafb1baae73e7c17681b312c8ba19f7b1e5b4cefa34413ca806e0",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 4,
+          "samples": 15,
+          "workers": 12,
+          "elapsed_seconds": 710.9201250020415,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 15,
+          "workers": 12,
+          "elapsed_seconds": 1106.6437874340918,
+          "question_retries": 0
+        }
+      ]
+    }
+  },
+  "amo": {
+    "E1": {
+      "dataset": "amo",
+      "case": "E1",
+      "samples": 50,
+      "correct": 1,
+      "accuracy": 0.02,
+      "paper_correct_inferred": 1,
+      "candidate_oracle_correct": 1,
+      "predictions_sha256": "f9fa5a2b543b770a3ded92f853d9babed35054df61b34c11451683a420f3d45d",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 1,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 14.741604102076963,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 14.444480574922636,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E2": {
+      "dataset": "amo",
+      "case": "E2",
+      "samples": 50,
+      "correct": 3,
+      "accuracy": 0.06,
+      "paper_correct_inferred": 1,
+      "candidate_oracle_correct": 5,
+      "predictions_sha256": "ed87072bf6b9ea8a5a801cf26948a8e35ce79adb59299f2cb4bc0f2531dea16b",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 3,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 58.916556315962225,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 161.3976610179525,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E3": {
+      "dataset": "amo",
+      "case": "E3",
+      "samples": 50,
+      "correct": 1,
+      "accuracy": 0.02,
+      "paper_correct_inferred": 2,
+      "candidate_oracle_correct": 1,
+      "predictions_sha256": "f15f46a835afcc5b6f668f9fc63ea54dd58ae04897ebbc4ad66c2d75327087b7",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 1,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 256.73908660490997,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 0,
+          "samples": 25,
+          "workers": 16,
+          "elapsed_seconds": 205.21064608707093,
+          "question_retries": 0
+        }
+      ]
+    },
+    "E4": {
+      "dataset": "amo",
+      "case": "E4",
+      "samples": 50,
+      "correct": 3,
+      "accuracy": 0.06,
+      "paper_correct_inferred": 2,
+      "candidate_oracle_correct": 6,
+      "predictions_sha256": "eb6ca5772cbebe43789d8c50bcbad092c592a2f8ecec07ba69745cb0aa4aca33",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "pinned_dataset_checked": true,
+      "native_files_verified": true,
+      "shards": [
+        {
+          "gpu": 0,
+          "correct": 2,
+          "samples": 25,
+          "workers": 12,
+          "elapsed_seconds": 2039.999817141099,
+          "question_retries": 0
+        },
+        {
+          "gpu": 1,
+          "correct": 1,
+          "samples": 25,
+          "workers": 12,
+          "elapsed_seconds": 1553.99833747698,
+          "question_retries": 0
+        }
+      ]
+    }
+  }
+}

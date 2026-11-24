@@ -1,0 +1,46 @@
+{
+  "generation": {
+    "gpu-0": {
+      "model": "assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+      "host": "127.0.0.1",
+      "port": 18420,
+      "dtype": "bfloat16",
+      "max_model_len": 32768,
+      "served_model_name": [
+        "published-qwen25"
+      ],
+      "generation_config": "vllm",
+      "gpu_memory_utilization": 0.6,
+      "enable_prefix_caching": true,
+      "max_num_batched_tokens": 8192,
+      "max_num_seqs": 112
+    },
+    "gpu-1": {
+      "model": "assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+      "host": "127.0.0.1",
+      "port": 18421,
+      "dtype": "bfloat16",
+      "max_model_len": 32768,
+      "served_model_name": [
+        "published-qwen25"
+      ],
+      "generation_config": "vllm",
+      "gpu_memory_utilization": 0.6,
+      "enable_prefix_caching": true,
+      "max_num_batched_tokens": 8192,
+      "max_num_seqs": 112
+    }
+  },
+  "vllm_version": "0.33.0",
+  "prm": {
+    "model": "Qwen/Qwen2.5-Math-PRM-7B",
+    "ports": [
+      18422,
+      18423
+    ],
+    "host": "127.0.0.1",
+    "selector": "upstream PRMSelector using mean_reward",
+    "request_path": "/score",
+    "GPU 1 lifetime": "experiment"
+  }
+}
