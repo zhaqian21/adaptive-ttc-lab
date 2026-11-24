@@ -1,0 +1,263 @@
+{
+  "dataset": {
+    "repo": "math-ai/amc23",
+    "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+    "split": "test",
+    "file": "test-00000-of-00001.parquet",
+    "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+    "samples": 40
+  },
+  "samples": 40,
+  "formal": true,
+  "wall_seconds": 702.5062271228526,
+  "shard_counts": [
+    20,
+    20
+  ],
+  "policies": {
+    "resample": {
+      "correct": 22,
+      "accuracy": 0.55,
+      "mean_roots": 8.25,
+      "generation_input_tokens": 4331025,
+      "generation_output_tokens": 617139,
+      "generation_calls": 7160,
+      "prm_calls": 330,
+      "prm_request_seconds": 126.62166731921025,
+      "mean_question_seconds_in_mixed_run": 163.22134791220304,
+      "actions": {
+        "sampled": 218,
+        "budget": 40
+      },
+      "candidate_wrong_to_right": 0,
+      "candidate_right_to_wrong": 0,
+      "questions_wrong_to_right_vs_resample": 0,
+      "questions_right_to_wrong_vs_resample": 0,
+      "candidate_pool_correct": 26,
+      "prm_missed_correct": 4
+    },
+    "revise-once": {
+      "correct": 22,
+      "accuracy": 0.55,
+      "mean_roots": 7.75,
+      "generation_input_tokens": 4285951,
+      "generation_output_tokens": 658317,
+      "generation_calls": 6977,
+      "prm_calls": 310,
+      "prm_request_seconds": 90.77339684218168,
+      "mean_question_seconds_in_mixed_run": 172.11342049949454,
+      "actions": {
+        "revised": 227,
+        "sampled": 198,
+        "budget": 40,
+        "fixed_point": 23,
+        "invalid": 12
+      },
+      "candidate_wrong_to_right": 4,
+      "candidate_right_to_wrong": 0,
+      "questions_wrong_to_right_vs_resample": 3,
+      "questions_right_to_wrong_vs_resample": 3,
+      "candidate_pool_correct": 28,
+      "prm_missed_correct": 6
+    },
+    "fixed-point": {
+      "correct": 21,
+      "accuracy": 0.525,
+      "mean_roots": 6.525,
+      "generation_input_tokens": 4141814,
+      "generation_output_tokens": 806196,
+      "generation_calls": 7073,
+      "prm_calls": 261,
+      "prm_request_seconds": 84.1162065572571,
+      "mean_question_seconds_in_mixed_run": 205.26029241231154,
+      "actions": {
+        "revised": 886,
+        "fixed_point": 172,
+        "sampled": 149,
+        "budget": 40,
+        "invalid": 26
+      },
+      "candidate_wrong_to_right": 15,
+      "candidate_right_to_wrong": 7,
+      "questions_wrong_to_right_vs_resample": 2,
+      "questions_right_to_wrong_vs_resample": 3,
+      "candidate_pool_correct": 29,
+      "prm_missed_correct": 8
+    }
+  },
+  "configs": [
+    {
+      "baseline": "zhaqian21/adaptive-ttc-lab#2",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "source_sha256": {
+        "run_math500.py": "da22390f5402ba351e01146e35c7cbd6ab2d6e2115bb7f7b88122cbf7c4dcac9",
+        "run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575",
+        "revision_policy.py": "e96e434c83b9c3a0f42667d6dec5f82900b0e753b4313f2934d19caa14b2cf57"
+      },
+      "dataset": {
+        "repo": "math-ai/amc23",
+        "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+        "split": "test",
+        "file": "test-00000-of-00001.parquet",
+        "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+        "samples": 40
+      },
+      "dataset_sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+      "benchmark_source_sha256": "e4ad089549737ee6109e05179bd7eb3e2bf5cb67ed775c756eae7402ac0ec22b",
+      "sample_per_shard": null,
+      "assets": [
+        [
+          "dataset",
+          "HuggingFaceH4/MATH-500",
+          "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-7B-Instruct",
+          "a09a35458c702b33eeacc393d103063234e8bc28"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "vllm_version": "0.33.0",
+      "selectors": [
+        "resample",
+        "revise-once",
+        "fixed-point"
+      ],
+      "sample_decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.05,
+        "stop_token_ids": [
+          151645
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "revision_prompt": "Review this solution to the problem. Correct any errors and their consequences, keeping correct reasoning. If no correction is needed, reproduce the solution verbatim. Output the complete solution and put its final answer in \\boxed{}. Do not add commentary about the review.",
+      "revision_temperature": 0.0,
+      "prm_metric": "mean_reward",
+      "token_budget": 125000,
+      "initial_roots": 3,
+      "seed": 0,
+      "workers": 16,
+      "shard": 0,
+      "shards": 2,
+      "question_ids": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28,
+        30,
+        32,
+        34,
+        36,
+        38
+      ]
+    },
+    {
+      "baseline": "zhaqian21/adaptive-ttc-lab#2",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "source_sha256": {
+        "run_math500.py": "da22390f5402ba351e01146e35c7cbd6ab2d6e2115bb7f7b88122cbf7c4dcac9",
+        "run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575",
+        "revision_policy.py": "e96e434c83b9c3a0f42667d6dec5f82900b0e753b4313f2934d19caa14b2cf57"
+      },
+      "dataset": {
+        "repo": "math-ai/amc23",
+        "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+        "split": "test",
+        "file": "test-00000-of-00001.parquet",
+        "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+        "samples": 40
+      },
+      "dataset_sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+      "benchmark_source_sha256": "e4ad089549737ee6109e05179bd7eb3e2bf5cb67ed775c756eae7402ac0ec22b",
+      "sample_per_shard": null,
+      "assets": [
+        [
+          "dataset",
+          "HuggingFaceH4/MATH-500",
+          "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-7B-Instruct",
+          "a09a35458c702b33eeacc393d103063234e8bc28"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "vllm_version": "0.33.0",
+      "selectors": [
+        "resample",
+        "revise-once",
+        "fixed-point"
+      ],
+      "sample_decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.05,
+        "stop_token_ids": [
+          151645
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "revision_prompt": "Review this solution to the problem. Correct any errors and their consequences, keeping correct reasoning. If no correction is needed, reproduce the solution verbatim. Output the complete solution and put its final answer in \\boxed{}. Do not add commentary about the review.",
+      "revision_temperature": 0.0,
+      "prm_metric": "mean_reward",
+      "token_budget": 125000,
+      "initial_roots": 3,
+      "seed": 0,
+      "workers": 16,
+      "shard": 1,
+      "shards": 2,
+      "question_ids": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29,
+        31,
+        33,
+        35,
+        37,
+        39
+      ]
+    }
+  ],
+  "predictions_sha256": "de1d0b05a7fc29f8b437468a257f684300a034643baeca7ccd302bbd26f5a1e5"
+}
