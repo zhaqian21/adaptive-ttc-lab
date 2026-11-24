@@ -36,6 +36,8 @@ bash "$exp/run_dual.sh" "$SOURCE" "$baseline" "$exp/runs/full" paired
 
 ~~~bash
 PYTHONPATH="$exp:experiments/math500-adaptive-revision:$baseline:$SOURCE/scripts" \
+  HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONUNBUFFERED=1 PYTHONHASHSEED=0 \
+  TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 \
   "$SOURCE/.venv/bin/python" "$exp/assist.py" "$exp/runs/full"
 ~~~
 
@@ -53,3 +55,24 @@ PYTHONPATH="$exp:experiments/math500-adaptive-revision:$baseline:$SOURCE/scripts
 9 题触发早停。正式轮启动时，试跑只剩 GPU 0 的一道长题。该题继续执行直至通过审计。
 
 [配对试跑逐题结果](results/pilot-paired/predictions.jsonl) · [配置和审计摘要](results/pilot-paired/summary.json)
+
+## 独立早停验证
+
+用同一组 16 题独立运行自适应 K，答对 14 题。11 题在第三条候选处停止，随后没有发出生成或 PRM 请求。独立试跑与配对试跑使用相同种子，其中 3 题的最终提取答案有差异。正式对照在同一轮内共享候选，以逐题比较四种停止规则。
+
+[独立试跑逐题结果](results/pilot-adaptive/predictions.jsonl) · [配置和审计摘要](results/pilot-adaptive/summary.json)
+
+## 正式结果
+
+500 题完整通过合并审计，正式配对运行用时 1 小时 11 分 34 秒。GPU 1 的原分片完成后接手 7 道题，最终记录采用其中 6 道。另 1 道由两卡都生成了结果，正式文件保留了 GPU 0 的记录。500 条记录中，GPU 0 贡献 244 条，GPU 1 贡献 256 条。
+
+| 方法 | 答对 | 正确率 | 生成输入 token | 生成输出 token | 生成输入及输出 token | PRM 请求 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 固定 K=5 | 384/500 | 76.8% | 31,983,951 | 4,112,655 | 36,096,606 | 2,500 |
+| 固定 K=10 | 396/500 | 79.2% | 64,494,773 | 8,325,318 | 72,820,091 | 5,000 |
+| 完整重采样 | 387/500 | 77.4% | 55,680,904 | 6,164,982 | 61,845,886 | 5,419 |
+| 自适应 K | 383/500 | 76.6% | 30,253,034 | 3,653,621 | 33,906,655 | 1,505 |
+
+自适应 K 在 308 题提前停止。与完整重采样逐题配对，它改对 2 题、改错 6 题，净少答对 4 题。生成输入及输出 token 减少 45.2%，PRM 请求减少 72.2%。相对固定 K=5，它少答对 1 题，生成逻辑 token 少 6.1%。固定 K=10 在本轮答对最多，251 题的实际生成 token 超过 125,000，固定 K=5 有 42 题超过该值。墙钟时间对应四组共享候选和评分的整轮运行。
+
+[正式逐题结果](results/full/predictions.jsonl) · [正式配置和审计摘要](results/full/summary.json) · [GPU 分工记录](results/full/gpu-assistance.json)

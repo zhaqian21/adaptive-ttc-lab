@@ -1,0 +1,123 @@
+{
+  "source_sha256": "3b61f42bae5d3bcea8c8e615bb54ceea93ec3925641d156798754a77b439cc52",
+  "worker_port": 18421,
+  "dispatch": {
+    "started_at_utc": "2026-11-24T17:09:24.971089+00:00",
+    "donor_shard": 1,
+    "target_shard": 0,
+    "already_complete": 207,
+    "ids": [
+      486,
+      488,
+      490,
+      492,
+      494,
+      496,
+      498
+    ]
+  },
+  "progress": {
+    "linked_ids": [
+      486,
+      488,
+      490,
+      492,
+      494,
+      496,
+      498
+    ],
+    "already_present": [],
+    "finished": true
+  },
+  "config": {
+    "mode": "paired",
+    "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+    "source_sha256": {
+      "run_adaptive_k.py": "2c0007fff34bcd40f432817285fc90a8737fbd7a9a5d71776c62ab5a9843b9ad",
+      "run_math500.py": "80faf6ead53b83af34bd4896a6cee2377cbd699359563daef22ae31392fe9853",
+      "revision_policy.py": "e96e434c83b9c3a0f42667d6dec5f82900b0e753b4313f2934d19caa14b2cf57",
+      "sampling.py": "1fb5903901b998b5034efb7e762eba1952b7873ac5ee08f7c0bef3a68b8903b4",
+      "run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575"
+    },
+    "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+    "assets": [
+      [
+        "dataset",
+        "HuggingFaceH4/MATH-500",
+        "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+      ],
+      [
+        "model",
+        "Qwen/Qwen2.5-7B-Instruct",
+        "a09a35458c702b33eeacc393d103063234e8bc28"
+      ],
+      [
+        "model",
+        "Qwen/Qwen2.5-Math-PRM-7B",
+        "0610740060112df12585d00a1c5f4624d2f59051"
+      ]
+    ],
+    "vllm_version": "0.33.0",
+    "model": "published-qwen25",
+    "model_context": 32768,
+    "sample_decode": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 1024,
+      "repetition_penalty": 1.05,
+      "stop_token_ids": [
+        151645
+      ],
+      "ignore_eos": true,
+      "skip_special_tokens": true
+    },
+    "seed": 0,
+    "policies": [
+      "k5",
+      "k10",
+      "full",
+      "adaptive"
+    ],
+    "token_limit": 125000,
+    "fixed_counts": {
+      "k5": 5,
+      "k10": 10
+    },
+    "agreement_count": 3,
+    "max_attempts": 64,
+    "prm_metric": "mean_reward",
+    "workers": 24,
+    "shards": 2,
+    "shard": 0,
+    "sample": null,
+    "question_ids": [
+      486,
+      488,
+      490,
+      492,
+      494,
+      496,
+      498
+    ]
+  },
+  "execution": {
+    "seconds": 1151.2239576450083,
+    "complete": 7,
+    "requested": 7,
+    "failures": {}
+  },
+  "accepted_ids": [
+    486,
+    488,
+    490,
+    492,
+    496,
+    498
+  ],
+  "superseded_ids": [
+    494
+  ],
+  "gpu0_effective_questions": 244,
+  "gpu1_effective_questions": 256
+}
