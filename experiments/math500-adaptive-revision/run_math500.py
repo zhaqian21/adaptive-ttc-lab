@@ -72,6 +72,43 @@ class ResidentSelector(runner.PRMSelector):
         return scores
 
 
+def make_sampler(problem, index, evaluator, args, config, tokenizer, decode, session):
+    client = baseline.TransformerWrapper(runner.upstream.DictConfig(config["client"]))
+    client._initialized = True
+    client.tokenizer = tokenizer
+    baseline.THREAD.client = client
+    agent = runner.upstream.create_universal_agent(config)
+    core = runner.math_core.MATHCore(agent, runner.upstream.get_prompts())
+
+    def candidate(text, token_ids, entry):
+        prediction = evaluator._extract_answer_from_model_completion(entry["answer_unstructured"])
+        return Candidate(text, tuple(token_ids), entry, prediction)
+
+    def sample(sequence, budget):
+        seed = args.seed + index + 1_000_000_000 * sequence
+        client.model = BudgetedGeneration(args, decode, seed, session, budget)
+        core.reset()
+        try:
+            response = core.solve(problem)
+        except StopSampleAtBudget:
+            raise BudgetExhausted from None
+        text = response.answer_unstructured
+        if not text:
+            return None
+        entry = {
+            "answer_unstructured": text,
+            "plan": response.plan,
+            "reasoning_steps": response.reasoning_steps,
+            "tools_used": response.metadata.get("tools_used", []),
+            "compute_configs_used": response.metadata.get("compute_configs_used") or [{}],
+        }
+        with tokenizer.lock:
+            token_ids = tokenizer.encode(text, add_special_tokens=False)
+        return candidate(text, token_ids, entry)
+
+    return sample, candidate
+
+
 def solve(question, args, config, tokenizer, decode):
     path = args.output / "problems" / f'{question["problem_id"]:03d}.json'
     if path.exists():
@@ -85,38 +122,7 @@ def solve(question, args, config, tokenizer, decode):
     evaluator = runner.upstream.get_evaluator("MATH")
     with baseline.requests.Session() as session:
         session.trust_env = False
-        client = baseline.TransformerWrapper(runner.upstream.DictConfig(config["client"]))
-        client._initialized = True
-        client.tokenizer = tokenizer
-        baseline.THREAD.client = client
-        agent = runner.upstream.create_universal_agent(config)
-        core = runner.math_core.MATHCore(agent, runner.upstream.get_prompts())
-
-        def candidate(text, token_ids, entry):
-            prediction = evaluator._extract_answer_from_model_completion(entry["answer_unstructured"])
-            return Candidate(text, tuple(token_ids), entry, prediction)
-
-        def sample(sequence, budget):
-            # Keep independent root seeds aligned across ablations even when revisions interleave.
-            seed = args.seed + index + 1_000_000_000 * sequence
-            client.model = BudgetedGeneration(args, decode, seed, session, budget)
-            core.reset()
-            try:
-                response = core.solve(problem)
-            except StopSampleAtBudget:
-                raise BudgetExhausted from None
-            text = response.answer_unstructured
-            if not text:
-                return None
-            entry = {
-                "answer_unstructured": text, "plan": response.plan,
-                "reasoning_steps": response.reasoning_steps,
-                "tools_used": response.metadata.get("tools_used", []),
-                "compute_configs_used": response.metadata.get("compute_configs_used") or [{}],
-            }
-            with tokenizer.lock:
-                token_ids = tokenizer.encode(text, add_special_tokens=False)
-            return candidate(text, token_ids, entry)
+        sample, candidate = make_sampler(problem, index, evaluator, args, config, tokenizer, decode, session)
 
         def revise(original, budget):
             prompt = tokenizer.apply_chat_template([
