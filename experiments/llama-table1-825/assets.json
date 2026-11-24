@@ -1,0 +1,267 @@
+[
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/config.json",
+    "sha256": "29e4c210b0d6ac178b16b2a255a568bdb23b581e50ca1ef6a6d071dd85704e6e",
+    "size": 855,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/config.json"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/generation_config.json",
+    "sha256": "189fb0c0d7fd8a527db217c0a60a0e013f0394cd8800f9697a666a9e75e5f7fd",
+    "size": 184,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/generation_config.json"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00001-of-00004.safetensors",
+    "sha256": "2b1879f356aed350030bb40eb45ad362c89d9891096f79a3ab323d3ba5607668",
+    "size": 4976698672,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00001-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00002-of-00004.safetensors",
+    "sha256": "09d433f650646834a83c580877bd60c6d1f88f7755305c12576b5c7058f9af15",
+    "size": 4999802720,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00002-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00003-of-00004.safetensors",
+    "sha256": "fc1cdddd6bfa91128d6e94ee73d0ce62bfcdb7af29e978ddcab30c66ae9ea7fa",
+    "size": 4915916176,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00003-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00004-of-00004.safetensors",
+    "sha256": "92ecfe1a2414458b4821ac8c13cf8cb70aed66b5eea8dc5ad9eeb4ff309d6d7b",
+    "size": 1168138808,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/model-00004-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/model.safetensors.index.json",
+    "sha256": "146776fce3f6db1103aa6f249e65ee5544c5923ce6f971b092eee79aa6e5d37b",
+    "size": 23950,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/model.safetensors.index.json"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/special_tokens_map.json",
+    "sha256": "6f38c73729248f6c127296386e3cdde96e254636cc58b4169d3fd32328d9a8ec",
+    "size": 296,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/special_tokens_map.json"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/tokenizer.json",
+    "sha256": "79e3e522635f3171300913bb421464a87de6222182a0570b9b2ccba2a964b2b4",
+    "size": 9085657,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/tokenizer.json"
+    ]
+  },
+  {
+    "path": "assets/model/meta-llama--Llama-3.1-8B-Instruct--359efdbb8af05b788a4ad4185215c6b8caa9052c/tokenizer_config.json",
+    "sha256": "177c7b61e616fecb84c17ce0591acb92c6c4d60e9ac5ababfb940ff23bbcd424",
+    "size": 55351,
+    "urls": [
+      "https://modelscope.cn/models/LLM-Research/Meta-Llama-3.1-8B-Instruct/resolve/359efdbb8af05b788a4ad4185215c6b8caa9052c/tokenizer_config.json"
+    ]
+  },
+  {
+    "path": "assets/dataset/HuggingFaceH4--MATH-500--6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl",
+    "size": 446564,
+    "sha1": "2376b9a194b46c0790e197c91b7249e5f88ac09b",
+    "urls": [
+      "https://hf-mirror.com/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl",
+      "https://huggingface.co/datasets/HuggingFaceH4/MATH-500/resolve/6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be/test.jsonl"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/LICENSE",
+    "size": 6962,
+    "sha1": "5dda3230b4cb5a86e8b120cce004d6e34b195ee4",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/LICENSE",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/LICENSE",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/LICENSE"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/README.md",
+    "size": 6063,
+    "sha1": "1534b6468e414f227128e87d077a456d393031fb",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/README.md",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/README.md",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/README.md"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/config.json",
+    "size": 835,
+    "sha1": "7bf88eebc40da95a543d4e599e67d3d382b507b1",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/config.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/config.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/config.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/configuration.json",
+    "size": 48,
+    "sha1": "f9291c34499303a5103dea21c45e605bb20981bb",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/configuration.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/configuration.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/configuration.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/configuration_qwen2_rm.py",
+    "size": 6685,
+    "sha1": "b522dee5ab1fc1c64e726f7bbbe3ca9dbbae58d8",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/configuration_qwen2_rm.py",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/configuration_qwen2_rm.py",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/configuration_qwen2_rm.py"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/generation_config.json",
+    "size": 243,
+    "sha1": "0eb3c536657dcd12626e09eca4b6198c0cbcde1e",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/generation_config.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/generation_config.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/generation_config.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/merges.txt",
+    "size": 1671839,
+    "sha1": "20024bfe7c83998e9aeaf98a0cd6a2ce6306c2f0",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/merges.txt",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/merges.txt",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/merges.txt"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/model-00001-of-00004.safetensors",
+    "size": 3971153412,
+    "sha256": "6351eb3fdb31ff4d98b7c34080665e925dfa515d5f44fd5a972dbc2612839fcc",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/model-00001-of-00004.safetensors",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00001-of-00004.safetensors",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00001-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/model-00002-of-00004.safetensors",
+    "size": 3864726352,
+    "sha256": "9ce988e446c3666bfde723cf53fde432ebe2ec76a5f368fd1578cd46d8474242",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/model-00002-of-00004.safetensors",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00002-of-00004.safetensors",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00002-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/model-00003-of-00004.safetensors",
+    "size": 3864726424,
+    "sha256": "4d9eb85ee50decd0682b32e9d351c1e8b53c583903bdf225fc44c5fbe24b06d9",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/model-00003-of-00004.safetensors",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00003-of-00004.safetensors",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00003-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/model-00004-of-00004.safetensors",
+    "size": 3556377672,
+    "sha256": "97ba1ba0ea27ba56d4c3340601cba7d2a011bf0c957a0ac4a85eda46e0e3a183",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/model-00004-of-00004.safetensors",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00004-of-00004.safetensors",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model-00004-of-00004.safetensors"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/model.safetensors.index.json",
+    "size": 27980,
+    "sha1": "edbfe712f53b2ce1a3c15809cb4aa1fb0eac1d27",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/model.safetensors.index.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model.safetensors.index.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/model.safetensors.index.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/modeling_qwen2_rm.py",
+    "size": 74658,
+    "sha1": "941189bb9c96c147bfda4cb66ba0a1cceb42a5c5",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/modeling_qwen2_rm.py",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/modeling_qwen2_rm.py",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/modeling_qwen2_rm.py"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/tokenizer.json",
+    "size": 7029106,
+    "sha1": "9c97554b52fc9a3f41c8c46e4b1d692fc0a62eb6",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/tokenizer.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/tokenizer.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/tokenizer.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/tokenizer_config.json",
+    "size": 2439,
+    "sha1": "b817511a258a3cd11c34aa9abf179880f20bdcb6",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/tokenizer_config.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/tokenizer_config.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/tokenizer_config.json"
+    ]
+  },
+  {
+    "path": "assets/model/Qwen--Qwen2.5-Math-PRM-7B--0610740060112df12585d00a1c5f4624d2f59051/vocab.json",
+    "size": 2776833,
+    "sha1": "4783fe10ac3adce15ac8f358ef5462739852c569",
+    "urls": [
+      "https://modelscope.cn/models/Qwen/Qwen2.5-Math-PRM-7B/resolve/master/vocab.json",
+      "https://hf-mirror.com/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/vocab.json",
+      "https://huggingface.co/Qwen/Qwen2.5-Math-PRM-7B/resolve/0610740060112df12585d00a1c5f4624d2f59051/vocab.json"
+    ]
+  },
+  {
+    "path": "datasets/amo.parquet",
+    "sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+    "urls": [
+      "https://hf-mirror.com/datasets/meituan-longcat/AMO-Bench/resolve/2f422616c25d862984408fbbfaed63a961e8e025/data/test-00000-of-00001.parquet",
+      "https://huggingface.co/datasets/meituan-longcat/AMO-Bench/resolve/2f422616c25d862984408fbbfaed63a961e8e025/data/test-00000-of-00001.parquet"
+    ]
+  },
+  {
+    "path": "datasets/aime24.parquet",
+    "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+    "urls": [
+      "https://hf-mirror.com/datasets/Maxwell-Jia/AIME_2024/resolve/8d88b2876a82a080e2f172cc9b25d0d9d2cb4792/aime_2024_problems.parquet",
+      "https://huggingface.co/datasets/Maxwell-Jia/AIME_2024/resolve/8d88b2876a82a080e2f172cc9b25d0d9d2cb4792/aime_2024_problems.parquet"
+    ]
+  }
+]
