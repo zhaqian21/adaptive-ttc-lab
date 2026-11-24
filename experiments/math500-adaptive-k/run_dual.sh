@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if [[ $# -lt 4 || $# -gt 5 || ( $4 != paired && $4 != adaptive ) ]]; then
-    echo "usage: $0 SOURCE BASELINE_SCRIPTS OUTPUT {paired|adaptive} [SAMPLE]" >&2
+if [[ $# -lt 4 || $# -gt 5 || ( $4 != paired && $4 != adaptive && $4 != adaptive-answer-sum ) ]]; then
+    echo "usage: $0 SOURCE BASELINE_SCRIPTS OUTPUT {paired|adaptive|adaptive-answer-sum} [SAMPLE]" >&2
     exit 2
 fi
 
@@ -12,6 +12,11 @@ baseline_scripts="$(realpath -- "$2")"
 mkdir -p -- "$3"
 output="$(realpath -- "$3")"
 mode=$4
+selector=single_prm
+if [[ "$mode" == adaptive-answer-sum ]]; then
+    mode=adaptive
+    selector=answer_prm_sum
+fi
 python="$source_root/.venv/bin/python"
 workers=24
 sample=()
@@ -20,7 +25,7 @@ if [[ $# == 5 ]]; then
     sample=(--sample "$5")
 fi
 
-export PYTHONPATH="$entry/../math500-adaptive-revision:$baseline_scripts:$source_root/scripts"
+export PYTHONPATH="$entry/../math500-adaptive-revision:$entry/../math500-prm-answer-aggregation:$baseline_scripts:$source_root/scripts"
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 PYTHONUNBUFFERED=1 PYTHONHASHSEED=0
 export TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2 MKL_NUM_THREADS=2
 for port in 18420 18421 18422; do
@@ -36,7 +41,7 @@ pids=()
 for lane in 0 1; do
     (
         shard="$output/shard-$lane"
-        args=(--mode "$mode" --port "$((18420 + lane))" --shard "$lane" --workers "$workers"
+        args=(--mode "$mode" --selector "$selector" --port "$((18420 + lane))" --shard "$lane" --workers "$workers"
               --output "$shard" "${sample[@]}")
         if ! "$python" "$entry/run_adaptive_k.py" "${args[@]}"; then
             if [[ -f "$shard/execution.json" && ! -f "$shard/first-attempt.json" ]]; then

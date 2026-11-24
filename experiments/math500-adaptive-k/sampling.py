@@ -9,6 +9,7 @@ FIXED_COUNTS = {"k5": 5, "k10": 10}
 POLICIES = (*FIXED_COUNTS, "full", "adaptive")
 TOKEN_LIMIT = 125_000
 MAX_ATTEMPTS = 64
+SELECTORS = ("single_prm", "answer_prm_sum")
 
 
 @dataclass(frozen=True)
@@ -108,3 +109,14 @@ def select(candidates, prefix):
     rewards = [entry["mean_reward"] for entry in candidates[:prefix.candidates]]
     # Upstream selects the last candidate when every PRM score is zero.
     return max(range(len(rewards)), key=rewards.__getitem__) if any(rewards) else len(rewards) - 1
+
+
+def select_adaptive(candidates, prefix, selector):
+    original = select(candidates, prefix)
+    if selector == "answer_prm_sum" and prefix.reason != "agreement" and original is not None:
+        from answer_aggregation import group_answers, winner
+
+        pool = candidates[:prefix.candidates]
+        groups = group_answers([row["prediction"] for row in pool], [row["mean_reward"] for row in pool])
+        return winner(groups, "sum_prm", original)
+    return original

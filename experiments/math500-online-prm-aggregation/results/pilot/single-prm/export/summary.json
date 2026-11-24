@@ -1,0 +1,186 @@
+{
+  "mode": "adaptive",
+  "samples": 16,
+  "formal": false,
+  "wall_seconds": 179,
+  "physical_generation_calls": 1531,
+  "physical_prm_calls": 53,
+  "configs": [
+    {
+      "mode": "adaptive",
+      "selector": "single_prm",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "source_sha256": {
+        "run_adaptive_k.py": "d61b4ccbf60e8733c5e298efb48c149285777ea14cf2ec36365edabf14cc292f",
+        "run_math500.py": "80faf6ead53b83af34bd4896a6cee2377cbd699359563daef22ae31392fe9853",
+        "revision_policy.py": "e96e434c83b9c3a0f42667d6dec5f82900b0e753b4313f2934d19caa14b2cf57",
+        "sampling.py": "39cbdb078a6d02b27198083573e43df6da986b982db77b2f7b3951ddd6d12227",
+        "run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575",
+        "answer_aggregation.py": "7422a541571808a046ca4a9bca9d210d8b777add51db6ae8e3153822b1e9773a"
+      },
+      "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "assets": [
+        [
+          "dataset",
+          "HuggingFaceH4/MATH-500",
+          "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-7B-Instruct",
+          "a09a35458c702b33eeacc393d103063234e8bc28"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "vllm_version": "0.33.0",
+      "model": "published-qwen25",
+      "model_context": 32768,
+      "sample_decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.05,
+        "stop_token_ids": [
+          151645
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "seed": 0,
+      "policies": [
+        "adaptive"
+      ],
+      "token_limit": 125000,
+      "fixed_counts": {
+        "k5": 5,
+        "k10": 10
+      },
+      "agreement_count": 3,
+      "max_attempts": 64,
+      "prm_metric": "mean_reward",
+      "workers": 8,
+      "shards": 2,
+      "shard": 0,
+      "sample": 16,
+      "question_ids": [
+        274,
+        276,
+        318,
+        470
+      ]
+    },
+    {
+      "mode": "adaptive",
+      "selector": "single_prm",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "source_sha256": {
+        "run_adaptive_k.py": "d61b4ccbf60e8733c5e298efb48c149285777ea14cf2ec36365edabf14cc292f",
+        "run_math500.py": "80faf6ead53b83af34bd4896a6cee2377cbd699359563daef22ae31392fe9853",
+        "revision_policy.py": "e96e434c83b9c3a0f42667d6dec5f82900b0e753b4313f2934d19caa14b2cf57",
+        "sampling.py": "39cbdb078a6d02b27198083573e43df6da986b982db77b2f7b3951ddd6d12227",
+        "run_published_code.py": "dc91a83c13181fba48d15e70df93d793d98940274d215471253f51dc598f0575",
+        "answer_aggregation.py": "7422a541571808a046ca4a9bca9d210d8b777add51db6ae8e3153822b1e9773a"
+      },
+      "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "assets": [
+        [
+          "dataset",
+          "HuggingFaceH4/MATH-500",
+          "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-7B-Instruct",
+          "a09a35458c702b33eeacc393d103063234e8bc28"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "vllm_version": "0.33.0",
+      "model": "published-qwen25",
+      "model_context": 32768,
+      "sample_decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 20,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.05,
+        "stop_token_ids": [
+          151645
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "seed": 0,
+      "policies": [
+        "adaptive"
+      ],
+      "token_limit": 125000,
+      "fixed_counts": {
+        "k5": 5,
+        "k10": 10
+      },
+      "agreement_count": 3,
+      "max_attempts": 64,
+      "prm_metric": "mean_reward",
+      "workers": 8,
+      "shards": 2,
+      "shard": 1,
+      "sample": 16,
+      "question_ids": [
+        93,
+        111,
+        115,
+        169,
+        219,
+        223,
+        333,
+        411,
+        419,
+        441,
+        451,
+        455
+      ]
+    }
+  ],
+  "executions": [
+    {
+      "seconds": 168.37147458596155,
+      "complete": 4,
+      "requested": 4,
+      "failures": {}
+    },
+    {
+      "seconds": 110.38534742896445,
+      "complete": 12,
+      "requested": 12,
+      "failures": {}
+    }
+  ],
+  "retries": [],
+  "policies": {
+    "adaptive": {
+      "correct": 14,
+      "candidates": 83,
+      "generation_calls": 1531,
+      "generation_input_tokens": 909222,
+      "generation_output_tokens": 110671,
+      "prm_calls": 53,
+      "prm_request_seconds": 14.23108752281405,
+      "accuracy": 0.875,
+      "stop_reasons": {
+        "agreement": 10,
+        "token_budget": 6
+      }
+    }
+  },
+  "predictions_sha256": "fb3869562c7846bd9019e7ec9e6b882a70e8ce2c1269b6b41d642f81e898be28"
+}

@@ -1,0 +1,77 @@
+{
+  "samples": 500,
+  "formal": true,
+  "runs": {
+    "single_prm": {
+      "correct": 393,
+      "candidates": 2441,
+      "generation_calls": 52585,
+      "generation_input_tokens": 30502316,
+      "generation_output_tokens": 3691013,
+      "prm_calls": 1529,
+      "prm_request_seconds": 508.39209301327355,
+      "accuracy": 0.786,
+      "stop_reasons": {
+        "agreement": 304,
+        "token_budget": 196
+      },
+      "wall_seconds": 1487,
+      "shard_seconds": [
+        1474.630281134043,
+        1138.7739443639293
+      ],
+      "inference_p50_seconds": 72.20245572144631,
+      "inference_p95_seconds": 293.30664018308744,
+      "input_predictions_sha256": "2d56947c70e75ad43f69102b0ac2e42e19f7df32ccd431a4deb9024c126fc217",
+      "retries": []
+    },
+    "answer_prm_sum": {
+      "correct": 394,
+      "candidates": 2490,
+      "generation_calls": 53577,
+      "generation_input_tokens": 30886622,
+      "generation_output_tokens": 3687846,
+      "prm_calls": 1593,
+      "prm_request_seconds": 495.47616355423816,
+      "accuracy": 0.788,
+      "stop_reasons": {
+        "agreement": 299,
+        "token_budget": 201
+      },
+      "wall_seconds": 1505,
+      "shard_seconds": [
+        1492.5551581259351,
+        1134.2897817969788
+      ],
+      "inference_p50_seconds": 73.37499362393282,
+      "inference_p95_seconds": 281.1650093230419,
+      "input_predictions_sha256": "da5abe33374cab9c60f39bb87ec26ac1dd247162fa0344cf11fce3659e9eba86",
+      "retries": []
+    }
+  },
+  "online_paired_gain_loss": {
+    "gained": 21,
+    "lost": 20
+  },
+  "same_candidate_pool_replay": {
+    "single_prm": {
+      "single_prm": 393,
+      "answer_prm_sum": 388,
+      "gained": 1,
+      "lost": 6
+    },
+    "answer_prm_sum": {
+      "single_prm": 392,
+      "answer_prm_sum": 394,
+      "gained": 6,
+      "lost": 4
+    }
+  },
+  "matching_questions": {
+    "same_stop_reason": 429,
+    "same_candidate_answers": 272,
+    "same_candidate_answers_and_rewards": 266,
+    "same_trace": 1
+  },
+  "comparison_predictions_sha256": "cd60af5e489a20affde80027eab210c0b7e5fb3adaa3776e368a0380ade8e300"
+}
