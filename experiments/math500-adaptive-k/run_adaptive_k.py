@@ -98,7 +98,8 @@ def run(args):
         "mode": args.mode, "upstream_commit": sha,
         "source_sha256": {Path(file).name: hashlib.sha256(Path(file).read_bytes()).hexdigest() for file in sources},
         "dataset_sha256": baseline.DATASET_SHA256, "assets": [list(asset) for asset in runner.ASSETS],
-        "vllm_version": args.vllm_version, "model": args.model, "sample_decode": decode, "seed": args.seed,
+        "vllm_version": args.vllm_version, "model": args.model, "model_context": args.context,
+        "sample_decode": decode, "seed": args.seed,
         "policies": list(POLICIES) if args.mode == "paired" else ["adaptive"],
         "token_limit": TOKEN_LIMIT, "fixed_counts": sampling.FIXED_COUNTS, "agreement_count": 3,
         "max_attempts": sampling.MAX_ATTEMPTS, "prm_metric": "mean_reward",
@@ -144,11 +145,12 @@ def main():
     parser.add_argument("--workers", type=int, default=24)
     parser.add_argument("--sample", type=int, choices=range(2, 501))
     parser.add_argument("--model", default="published-qwen25")
+    parser.add_argument("--context", type=int, default=32768)
     parser.add_argument("--vllm-version", default="0.33.0")
     args = parser.parse_args()
     args.seed = 0
-    if args.workers < 1:
-        parser.error("Concurrency must be positive")
+    if min(args.workers, args.context) < 1:
+        parser.error("Concurrency and model context must be positive")
     return run(args)
 
 
