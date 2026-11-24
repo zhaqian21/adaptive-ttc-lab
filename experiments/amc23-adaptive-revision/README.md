@@ -32,3 +32,9 @@ bash "$exp/run_dual.sh" "$SOURCE" "$baseline/scripts" "$parquet" "$exp/runs/full
 运行前校验 Parquet 的 SHA-256。同一轮用相同参数重试时复用完整检查点。两条命令分别在输出目录下生成 `export/predictions.jsonl` 和 `export/summary.json`。合并审计核对两卡的版本、配置、题号、实际 token、评分和 PRM 选优，并按题号排序。摘要记录预测文件的 SHA-256。
 
 `candidate_pool_correct` 计最终提交给 PRM 的候选池中至少有一个正确解的题数。`correct` 计 PRM 最终选对的题数。`prm_missed_correct` 计候选池有正确解但 PRM 选错的题数。三项均以当轮全部题目为统计范围。
+
+## 双卡试跑
+
+4 题均通过合并审计。三个策略的候选池覆盖全部 4 题，PRM 在只重采样组漏选 1 题。两卡中耗时较长的分片用时 274 秒。
+
+[试跑逐题结果](results/pilot/predictions.jsonl) · [试跑配置和审计摘要](results/pilot/summary.json)
