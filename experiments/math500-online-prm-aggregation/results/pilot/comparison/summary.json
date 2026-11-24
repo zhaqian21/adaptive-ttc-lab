@@ -1,0 +1,77 @@
+{
+  "samples": 16,
+  "formal": false,
+  "runs": {
+    "single_prm": {
+      "correct": 14,
+      "candidates": 83,
+      "generation_calls": 1531,
+      "generation_input_tokens": 909222,
+      "generation_output_tokens": 110671,
+      "prm_calls": 53,
+      "prm_request_seconds": 14.23108752281405,
+      "accuracy": 0.875,
+      "stop_reasons": {
+        "agreement": 10,
+        "token_budget": 6
+      },
+      "wall_seconds": 179,
+      "shard_seconds": [
+        168.37147458596155,
+        110.38534742896445
+      ],
+      "inference_p50_seconds": 29.09550259448588,
+      "inference_p95_seconds": 168.34245159500279,
+      "input_predictions_sha256": "fb3869562c7846bd9019e7ec9e6b882a70e8ce2c1269b6b41d642f81e898be28",
+      "retries": []
+    },
+    "answer_prm_sum": {
+      "correct": 13,
+      "candidates": 83,
+      "generation_calls": 1549,
+      "generation_input_tokens": 913566,
+      "generation_output_tokens": 112336,
+      "prm_calls": 53,
+      "prm_request_seconds": 12.163454223424196,
+      "accuracy": 0.8125,
+      "stop_reasons": {
+        "agreement": 10,
+        "token_budget": 6
+      },
+      "wall_seconds": 182,
+      "shard_seconds": [
+        170.65063643292524,
+        106.49532916909084
+      ],
+      "inference_p50_seconds": 28.39330909657292,
+      "inference_p95_seconds": 170.62254791008309,
+      "input_predictions_sha256": "57e7433f9b6d8cd94df900663b67fc0788b194db9a317116bae9186e966a2eb1",
+      "retries": []
+    }
+  },
+  "online_paired_gain_loss": {
+    "gained": 1,
+    "lost": 2
+  },
+  "same_candidate_pool_replay": {
+    "single_prm": {
+      "single_prm": 14,
+      "answer_prm_sum": 14,
+      "gained": 0,
+      "lost": 0
+    },
+    "answer_prm_sum": {
+      "single_prm": 14,
+      "answer_prm_sum": 13,
+      "gained": 0,
+      "lost": 1
+    }
+  },
+  "matching_questions": {
+    "same_stop_reason": 16,
+    "same_candidate_answers": 11,
+    "same_candidate_answers_and_rewards": 10,
+    "same_trace": 0
+  },
+  "comparison_predictions_sha256": "dc08fcbc647c092b44bb9840f22e5579ecde744b1514715965910b675d24e748"
+}
