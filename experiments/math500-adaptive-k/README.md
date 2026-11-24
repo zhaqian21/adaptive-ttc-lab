@@ -32,6 +32,13 @@ bash "$exp/run_dual.sh" "$SOURCE" "$baseline" "$exp/runs/full" paired
 
 相同配置可复用逐题检查点。结果按零基行号奇偶分为两片，正式轮各 250 题、每卡并发 24。合并时复核数据身份、每组停止点、预算边界、PRM 选优、正确性和样本覆盖。每轮导出分片配置、逐题 JSONL、汇总和预测文件的 SHA-256。逐题记录中的 calls 按请求顺序保存输入 token、实际输出 token、输出上限。各策略记录其用到的前缀、选择、答案和正确性。
 
+正式轮中 GPU 1 先完成分片时，可在另一终端启动以下命令。它等 GPU 1 的原分片成功结束，从 GPU 0 队尾选仍无检查点的题，用同一套代码、模型、种子和预算继续生成。每条检查点写完就合入原分片，已有文件优先保留。
+
+~~~bash
+PYTHONPATH="$exp:experiments/math500-adaptive-revision:$baseline:$SOURCE/scripts" \
+  "$SOURCE/.venv/bin/python" "$exp/assist.py" "$exp/runs/full"
+~~~
+
 ## 配对试跑
 
 首次启动时，新入口遗漏了传给生成代理的上下文长度。该次试跑没有完成题目，修复后使用固定的复现服务配置重启。第二次的 16 题分成 4 和 12 题，全部通过合并审计。
