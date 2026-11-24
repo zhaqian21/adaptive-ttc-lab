@@ -26,6 +26,17 @@ for lane in 0 1; do
         "$first_pass/shard-$lane/execution.json")"
     [[ -n "$failed_rows" ]] || continue
     read -ra rows <<< "$failed_rows"
+    if [[ -f "$repair/shard-$lane/execution.json" ]] && "$python" -c '
+import json, sys
+from pathlib import Path
+directory = Path(sys.argv[1])
+execution = json.loads((directory / "execution.json").read_text())
+expected = {int(row) for row in sys.argv[2:]}
+actual = {int(path.stem) for path in (directory / "problems").glob("*.json")}
+sys.exit(bool(execution["failures"]) or execution["complete"] != len(expected) or actual != expected)
+' "$repair/shard-$lane" "${rows[@]}"; then
+        continue
+    fi
     subset=()
     for row in "${rows[@]}"; do subset+=(--only-row "$row"); done
     "$python" "$entry/run_math500.py" --port "$((18420 + lane))" --prm-port 18422 \
