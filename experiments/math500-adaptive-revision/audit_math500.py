@@ -44,13 +44,16 @@ def audit(root, baseline_path, destination):
                 raise ValueError(f"Invalid result for row {index}")
             for run in row["policies"].values():
                 cost = run["generation_input_tokens"] + run["generation_output_tokens"]
+                rewards = [candidate["mean_reward"] for candidate in run["candidates"]]
+                expected_selection = rewards.index(max(rewards)) if any(rewards) else len(rewards) - 1
                 selected = run["candidates"][run["selected_root"]]
                 if (cost > config["token_budget"] or cost != row["initial_tokens"] +
                         sum(event["generation_tokens"] for event in run["actions"])
                         or run["prm_calls"] != len(run["candidates"]) or run["roots"] != len(run["candidates"])
+                        or run["selected_root"] != expected_selection
                         or selected["correct"] != run["correct"] or selected["prediction"] != run["prediction"]):
                     raise ValueError(f"Invalid budget or selection for row {index}")
-            row["e4_reference_correct"] = reference["is_correct"]
+            row["e4_reference_correct"] = reference["is_correct"] is True
             row["e4_reference_output_tokens"] = reference["output_tokens"]
             rows[index] = row
 
@@ -98,6 +101,7 @@ def audit(root, baseline_path, destination):
         "maximum_shard_execution_seconds": max(row["seconds"] for row in executions),
         "shard_counts": [execution["complete"] for execution in executions],
         "policies": summaries, "configs": configs,
+        "baseline_e4_sha256": hashlib.sha256(baseline_path.read_bytes()).hexdigest(),
         "predictions_sha256": hashlib.sha256(predictions.read_bytes()).hexdigest(),
     }
     (destination / "summary.json").write_bytes((json.dumps(summary, ensure_ascii=False, indent=2,
