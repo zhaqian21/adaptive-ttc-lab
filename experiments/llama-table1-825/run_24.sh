@@ -88,6 +88,8 @@ export CUDA_DEVICE_ORDER=PCI_BUS_ID HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONHASHSEED=0
 export PYTHONPATH="$release/scripts:$source/scripts"
 printf '%s\n' evaluating > "$root/status"
+extra=()
+if [[ "${TTC_MATH_E4_SHARED_QUEUE:-0}" == 1 ]]; then extra+=(--shared-math-e4); fi
 env -u SLURM_GPUS_ON_NODE -u SLURM_JOB_ID "$source/.venv/bin/python" "$entry/llama_table1.py" \
-    --manifest "$source/datasets/manifest.json" --output "$root/results" --engine-python "$engine"
+    --manifest "$source/datasets/manifest.json" --output "$root/results" --engine-python "$engine" "${extra[@]}"
 printf '%s\n' verified > "$root/status"

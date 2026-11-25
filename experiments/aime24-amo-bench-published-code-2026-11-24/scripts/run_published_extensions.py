@@ -2,7 +2,7 @@
 
 import argparse
 from collections import Counter
-from concurrent.futures import ThreadPoolExecutor, as_completed
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 import contextlib
 import hashlib
 import json
@@ -279,7 +279,29 @@ def solve(question, case, args, config, tokenizer, decode, native_model):
     raise RuntimeError(f"Problem {index} failed on {len(failed)} seed(s): {failed[-1]['type']}")
 
 
-def run(args):
+def shared_completions(pool, prepare, questions, claim, workers):
+    by_id = {row["problem_id"]: row for row in questions}
+    active = {}
+
+    def submit_one():
+        question_id = claim()
+        if question_id is None:
+            return False
+        row = by_id[question_id]
+        active[pool.submit(prepare, row)] = row
+        return True
+
+    for _ in range(workers):
+        if not submit_one():
+            break
+    while active:
+        finished, _ = wait(active, return_when=FIRST_COMPLETED)
+        for future in finished:
+            yield future, active.pop(future)
+            submit_one()
+
+
+def run(args, *, claim_question=None):
     repo = runner.ROOT / "upstream"
     assert subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip() == runner.UPSTREAM_COMMIT
     assert not subprocess.check_output(["git", "-C", str(repo), "status", "--porcelain", "--untracked-files=no"])
@@ -321,6 +343,8 @@ def run(args):
         "agent": config["agent"], "client": config["client"], "eval": config["eval"],
         "datasets_and_models": [list(asset) for asset in runner.ASSETS[1:]],
     }
+    if claim_question is not None:
+        setup["assignment"] = "shared_head_tail"
     config_path = args.output / "config.json"
     if config_path.exists():
         if read(config_path) != json.loads(json.dumps(setup)):
@@ -328,7 +352,7 @@ def run(args):
     else:
         write(config_path, setup)
 
-    if (args.output / "summary.json").exists():
+    if claim_question is None and (args.output / "summary.json").exists():
         previous = read(args.output / "summary.json")
         if previous["samples"] == len(questions) and not previous["failed"]:
             print("METRICS " + json.dumps(previous), flush=True)
@@ -344,10 +368,15 @@ def run(args):
             stack.enter_context(patch.object(runner.upstream, "create_llm_client", lambda _config: THREAD.client))
             pool = stack.enter_context(ThreadPoolExecutor(max_workers=args.workers))
             initialized = time.perf_counter()
-            futures = {pool.submit(solve, row, args.case, args, config, tokenizer, decode, native_model): row
-                       for row in questions}
-            for future in as_completed(futures):
-                question = futures[future]
+            def evaluate(row):
+                return solve(row, args.case, args, config, tokenizer, decode, native_model)
+
+            if claim_question is None:
+                futures = {pool.submit(evaluate, row): row for row in questions}
+                completions = ((future, futures[future]) for future in as_completed(futures))
+            else:
+                completions = shared_completions(pool, evaluate, questions, claim_question, args.workers)
+            for future, question in completions:
                 index = question["problem_id"]
                 try:
                     row = future.result()
@@ -358,7 +387,8 @@ def run(args):
                     failures[index] = {"type": type(error).__name__, "message": str(error)}
                 done = len(settled) + len(failures)
                 if done == len(questions) or done % 8 == 0:
-                    print(f"{args.case} c{args.workers}: {len(settled)}/{len(questions)} complete, {len(failures)} failed",
+                    total = "shared" if claim_question is not None else len(questions)
+                    print(f"{args.case} c{args.workers}: {len(settled)}/{total} complete, {len(failures)} failed",
                           file=sys.__stdout__, flush=True)
             elapsed = time.perf_counter() - initialized
 
@@ -378,7 +408,8 @@ def run(args):
     summary = {
         "case": args.case, "classification": CLASSIFICATION, "backend": args.backend,
         "dataset": args.dataset, "prm_timing_includes_http": bool(args.prm_port and CASES[args.case][1] > 1),
-        "workers": args.workers, "samples": len(manifest), "requested": len(questions), "correct": correct,
+        "workers": args.workers, "samples": len(manifest),
+        "requested": len(questions) if claim_question is None else len(manifest) + len(failures), "correct": correct,
         "accuracy": correct / len(manifest) if manifest else None, "failed": failures,
         "answer_verdicts": dict(Counter(str(row["is_correct"]) for row in manifest)),
         "seconds": elapsed, "setup_seconds": initialized - started,
