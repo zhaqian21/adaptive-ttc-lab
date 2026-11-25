@@ -1,0 +1,36 @@
+{
+  "online": {
+    "llama_math500": {
+      "samples": 500,
+      "fixed_sha256": "796830f034e24fb33b7af3ef7a2865b4d02ddacde86721e1a6892c0b2e412c3f",
+      "early_sha256": "932456859687f24c5c75f1f48e2367994afbd57196e5e44cd7c19e4b59a91ca8"
+    },
+    "llama_amc23": {
+      "samples": 40,
+      "fixed_sha256": "336cff4005a075baefbb805a726443e43c7d000bf3ee6b15bc6da327a61c7298",
+      "early_sha256": "7fdd0760088247a776be861f4622d60b9392fecb886fc004b75d80e00e76ec61"
+    },
+    "qwen_math500": {
+      "samples": 500,
+      "fixed_sha256": "e90a9bfacc07c20965047b83a4b9ac99e849b4ee118d9ffed870cf277996544c",
+      "early_sha256": "7331aa6fbb1f1e060878258e391c0cdbc6aa2bf9c5ad4f9874305a0d19eb0f32"
+    },
+    "qwen_amc23": {
+      "samples": 40,
+      "fixed_sha256": "5e3536ba8042fc45ca50fcbebc878806a73b1e08a35eee431508296e57cf420c",
+      "early_sha256": "87c08c5dd2b7b926503273c2375780b0e724b0e453966cf61525b28bd5980f93"
+    }
+  },
+  "heldout": {
+    "llama_aime24": {
+      "input": "inputs/llama_aime24.jsonl",
+      "input_sha256": "cdb3fd3c25fa338d909fa0e945c7e7e684422351934e50f46402a6a3623b9b05",
+      "reference": "llama-table1-24-2026-11-25/results/aime24/E4/predictions.jsonl"
+    },
+    "qwen_aime24": {
+      "input": "inputs/qwen_aime24.jsonl",
+      "input_sha256": "f6d9bbe5a61a36d8a82291ef1d761e929827b56b8ba735b260bcefb3d4907b2e",
+      "reference": "aime24-amo-bench-published-code-2026-11-24/results/aime24/E4/predictions.jsonl"
+    }
+  }
+}
