@@ -1,0 +1,191 @@
+{
+  "source_sha256": {
+    "transformers": "9d91bedb62817ec5bc5b3aa9e9fee5adb315fdf7da0fcf727596659913eb18e8",
+    "vllm": "c6c05ba44a03b47ce6697541a4c8eec228cd2d0d3e62ca263adf6e381182784a",
+    "e4_pool": "73c3f95e4ad26e7703c6068de73547dc4fe9b1bca23332254dd7e357c408ec3d",
+    "e4_reference": "ea19fc37fd3a4539f37f2f7f0c5e5da0070e14224467f604e07728ef6540d572"
+  },
+  "cases": {
+    "e2_transformers": {
+      "samples": 100,
+      "correct": {
+        "original": 71,
+        "valid_max": 72,
+        "sum_prm": 72
+      },
+      "accuracy": {
+        "original": 0.71,
+        "valid_max": 0.72,
+        "sum_prm": 0.72
+      },
+      "candidate_pool_correct": 77,
+      "contrasts": {
+        "original_to_valid_max": {
+          "wrong_to_correct": 1,
+          "correct_to_wrong": 0,
+          "net": 1,
+          "gained_problem_ids": [
+            136
+          ],
+          "lost_problem_ids": []
+        },
+        "original_to_sum_prm": {
+          "wrong_to_correct": 1,
+          "correct_to_wrong": 0,
+          "net": 1,
+          "gained_problem_ids": [
+            136
+          ],
+          "lost_problem_ids": []
+        },
+        "valid_max_to_sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        }
+      },
+      "original_chosen_with_empty_answer": 11,
+      "paired_sha256": "d761dc3f8aae017161cb44f7932e61ef7a6278315527500b9b5839dcf115d20f"
+    },
+    "e2_vllm": {
+      "samples": 100,
+      "correct": {
+        "original": 62,
+        "valid_max": 63,
+        "sum_prm": 69
+      },
+      "accuracy": {
+        "original": 0.62,
+        "valid_max": 0.63,
+        "sum_prm": 0.69
+      },
+      "candidate_pool_correct": 79,
+      "contrasts": {
+        "original_to_valid_max": {
+          "wrong_to_correct": 1,
+          "correct_to_wrong": 0,
+          "net": 1,
+          "gained_problem_ids": [
+            136
+          ],
+          "lost_problem_ids": []
+        },
+        "original_to_sum_prm": {
+          "wrong_to_correct": 7,
+          "correct_to_wrong": 0,
+          "net": 7,
+          "gained_problem_ids": [
+            97,
+            100,
+            136,
+            290,
+            309,
+            334,
+            456
+          ],
+          "lost_problem_ids": []
+        },
+        "valid_max_to_sum_prm": {
+          "wrong_to_correct": 6,
+          "correct_to_wrong": 0,
+          "net": 6,
+          "gained_problem_ids": [
+            97,
+            100,
+            290,
+            309,
+            334,
+            456
+          ],
+          "lost_problem_ids": []
+        }
+      },
+      "original_chosen_with_empty_answer": 14,
+      "paired_sha256": "dc08536d76e8b45f42fa42f61883a2ff3f70012201f905a2c9048260304cb371"
+    },
+    "e4": {
+      "samples": 500,
+      "correct": {
+        "original": 321,
+        "valid_max": 328,
+        "sum_prm": 332
+      },
+      "accuracy": {
+        "original": 0.642,
+        "valid_max": 0.656,
+        "sum_prm": 0.664
+      },
+      "candidate_pool_correct": 374,
+      "contrasts": {
+        "original_to_valid_max": {
+          "wrong_to_correct": 7,
+          "correct_to_wrong": 0,
+          "net": 7,
+          "gained_problem_ids": [
+            69,
+            100,
+            171,
+            210,
+            211,
+            228,
+            281
+          ],
+          "lost_problem_ids": []
+        },
+        "original_to_sum_prm": {
+          "wrong_to_correct": 15,
+          "correct_to_wrong": 4,
+          "net": 11,
+          "gained_problem_ids": [
+            69,
+            100,
+            171,
+            210,
+            211,
+            228,
+            260,
+            271,
+            281,
+            331,
+            393,
+            400,
+            418,
+            435,
+            491
+          ],
+          "lost_problem_ids": [
+            7,
+            119,
+            209,
+            267
+          ]
+        },
+        "valid_max_to_sum_prm": {
+          "wrong_to_correct": 8,
+          "correct_to_wrong": 4,
+          "net": 4,
+          "gained_problem_ids": [
+            260,
+            271,
+            331,
+            393,
+            400,
+            418,
+            435,
+            491
+          ],
+          "lost_problem_ids": [
+            7,
+            119,
+            209,
+            267
+          ]
+        }
+      },
+      "original_chosen_with_empty_answer": 61,
+      "paired_sha256": "2c38f5a14624bee328864c6f755e20902688066c6619798597fc16af15ef5e20"
+    }
+  }
+}
