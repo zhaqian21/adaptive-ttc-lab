@@ -18,6 +18,7 @@ from urllib.request import build_opener, ProxyHandler
 
 import run_published_extensions as released
 from audit_results import check_problem
+from shared_question_queue import SharedQuestionQueue
 
 
 MODEL = ("model", "meta-llama/Llama-3.1-8B-Instruct", "359efdbb8af05b788a4ad4185215c6b8caa9052c")
@@ -60,7 +61,7 @@ def start_service(stack, command, env, log):
     return process
 
 
-def run_shard(args, dataset, case, lane, workers, devices, ports, version, sample):
+def run_shard(args, dataset, case, lane, workers, devices, ports, version, sample, queue=None):
     out = args.output / ("smoke" if sample else "formal") / dataset / f"gpu-{lane}" / case
     out.mkdir(parents=True, exist_ok=True)
     cmd = [
@@ -71,22 +72,31 @@ def run_shard(args, dataset, case, lane, workers, devices, ports, version, sampl
     ]
     if sample is not None:
         cmd.extend(("--sample", str(sample)))
+    if queue is not None:
+        cmd.extend(("--worker-queue", str(queue.path)))
     env = {**os.environ, "CUDA_VISIBLE_DEVICES": devices[lane]}
     with (out / "worker.log").open("a", encoding="utf-8") as log:
         result = subprocess.run(cmd, env=env, stdout=log, stderr=subprocess.STDOUT, check=False)
     return out, result.returncode
 
 
-def audit(args, dataset, case, questions, paths, version, paper):
+def audit(args, dataset, case, questions, paths, version, paper, claims=None):
     rows, configs, shards = [], [], []
     iterations = released.CASES[case][1]
     for lane, path in enumerate(paths):
         config = released.read(path / "config.json")
         summary = released.read(path / "summary.json")
-        expected = list(range(lane, len(questions), 2))
+        if claims is None:
+            expected = list(range(lane, len(questions), 2))
+            expected_config_ids = expected
+        else:
+            expected = sorted(row["problem_id"] for row in claims if row["lane"] == lane)
+            expected_config_ids = list(range(len(questions)))
+            assert config["assignment"] == "shared_head_tail" and config["strict_errors"]
+            assert summary["requested"] == len(expected)
         predictions = released.read(path / "predictions.json")
         assert len(predictions) == len(expected) and [r["problem_id"] for r in predictions] == expected
-        assert config["sample_ids"] == expected and config["dataset"] == dataset and config["seed"] == 0
+        assert config["sample_ids"] == expected_config_ids and config["dataset"] == dataset and config["seed"] == 0
         assert config["upstream_commit"] == released.runner.UPSTREAM_COMMIT
         assert config["eval"]["num_iterations"] == iterations
         assert list(MODEL) in config["datasets_and_models"]
@@ -122,6 +132,8 @@ def audit(args, dataset, case, questions, paths, version, paper):
               "upstream_commit": released.runner.UPSTREAM_COMMIT,
               "predictions_sha256": hashlib.sha256(payload).hexdigest(),
               "configs": configs, "shards": shards}
+    if claims is not None:
+        result["dispatch"] = {"strategy": "shared_head_tail", "claim_order": claims}
     released.write(target / "audit.json", result)
     return {key: result[key] for key in ("samples", "correct", "accuracy", "paper_correct", "predictions_sha256")}
 
@@ -167,14 +179,14 @@ def coordinate(args):
         for process, port in processes:
             wait_ready(process, port)
         with ThreadPoolExecutor(max_workers=2) as pool:
-            def run_pair(dataset, case, workers, sample=None):
+            def run_pair(dataset, case, workers, sample=None, queue=None):
                 released.write(status, {"phase": "smoke" if sample else "formal",
                                         "dataset": dataset, "case": case, "audited": results})
                 pending = pool.map(lambda lane: run_shard(args, dataset, case, lane, workers, devices, ports,
-                                                          version, sample), (0, 1))
+                                                          version, sample, queue), (0, 1))
                 paths = []
                 for lane, (path, code) in enumerate(pending):
-                    if code:
+                    if code and queue is None:
                         path, code = run_shard(args, dataset, case, lane, workers, devices, ports, version, sample)
                     if code:
                         raise RuntimeError(f"Incomplete {dataset} {case} lane {lane}, see {path / 'worker.log'}")
@@ -192,8 +204,25 @@ def coordinate(args):
                 results[dataset] = {}
                 for pos, case in enumerate(released.CASES):
                     workers = min(WORKERS[dataset][pos], len(questions) // 2)
-                    paths = run_pair(dataset, case, workers)
-                    results[dataset][case] = audit(args, dataset, case, questions, paths, version, PAPER_COUNTS[dataset][pos])
+                    claims = None
+                    if args.shared_math_e4 and (dataset, case) == ("math", "E4"):
+                        directory = args.output / "formal" / dataset
+                        queue = SharedQuestionQueue(directory / "e4-claims.sqlite3")
+                        paths = [directory / f"gpu-{lane}" / case for lane in (0, 1)]
+                        if queue.path.exists():
+                            # An interrupted claim is retained. A restart may only reuse a fully
+                            # committed shared run, so it cannot silently generate the same item again.
+                            claims = queue.audit_claims()
+                        else:
+                            if any(path.exists() for path in paths):
+                                raise RuntimeError("Shared E4 must be selected before either shard starts")
+                            queue.initialize([question["problem_id"] for question in questions])
+                            paths = run_pair(dataset, case, workers, queue=queue)
+                            claims = queue.audit_claims()
+                    else:
+                        paths = run_pair(dataset, case, workers)
+                    results[dataset][case] = audit(args, dataset, case, questions, paths, version,
+                                                   PAPER_COUNTS[dataset][pos], claims)
                     print(f"{dataset} {case} verified {results[dataset][case]['correct']}/{len(questions)}", flush=True)
     released.write(args.output / "export" / "summary.json", {
         "model": MODEL, "seconds": time.perf_counter() - started, "cases": results,
@@ -218,6 +247,8 @@ def main():
     parser.add_argument("--workers", type=int)
     parser.add_argument("--vllm-version")
     parser.add_argument("--sample", type=int)
+    parser.add_argument("--shared-math-e4", action="store_true")
+    parser.add_argument("--worker-queue", type=Path, help=argparse.SUPPRESS)
     args = parser.parse_args()
     if args.serve_prm:
         import serve_prm
@@ -229,18 +260,26 @@ def main():
         from answer_fields import install
 
         install()
+        queue = None
+        if args.worker_queue:
+            if (args.dataset, args.worker) != ("math", "E4") or args.sample is not None or args.lane is None:
+                parser.error("A shared queue is available only for formal MATH-500 E4")
+            queue = SharedQuestionQueue(args.worker_queue)
         worker_args = SimpleNamespace(
             case=args.worker, backend="vllm", dataset=args.dataset, dataset_manifest=args.manifest,
             prm_port=args.prm_port, workers=args.workers, sample=args.sample, seed=0, port=args.gen_port,
             context=CONTEXT, model=MODEL[1], vllm_version=args.vllm_version, output=args.output,
-            shards=2, shard=args.lane, priority_file=None, strict_errors=False,
+            shards=1 if queue else 2, shard=0 if queue else args.lane,
+            priority_file=None, strict_errors=queue is not None,
         )
         import fcntl
 
         args.output.mkdir(parents=True, exist_ok=True)
         with (args.output / ".worker.lock").open("a") as lock:
             fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
-            return 0 if released.run(worker_args) else 1
+            if queue is None:
+                return 0 if released.run(worker_args) else 1
+            return 0 if released.run(worker_args, claim_question=lambda: queue.claim(args.lane)) else 1
     if not args.output or not args.manifest or not args.engine_python:
         parser.error("Coordinator needs --output, --manifest and --engine-python")
     try:
