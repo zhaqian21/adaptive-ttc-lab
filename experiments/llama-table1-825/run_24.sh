@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
-if [[ $# != 2 ]]; then
-    echo "usage: $0 PREPARED_OUTPUT VLLM_PYTHON" >&2
+if [[ $# != 2 && $# != 3 ]]; then
+    echo "usage: $0 PREPARED_OUTPUT VLLM_PYTHON [EVALUATOR]" >&2
     exit 2
 fi
 entry="$(cd -- "$(dirname -- "$0")" && pwd)"
+evaluator="$(realpath -- "${3:-$entry/llama_table1.py}")"
+[[ -f "$evaluator" ]]
 root="$(realpath -- "$1")"
 # Preserve the virtualenv executable symlink so Python finds its packages.
 engine="$(realpath -s -- "$2")"
@@ -88,6 +90,6 @@ export CUDA_DEVICE_ORDER=PCI_BUS_ID HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONHASHSEED=0
 export PYTHONPATH="$release/scripts:$source/scripts"
 printf '%s\n' evaluating > "$root/status"
-env -u SLURM_GPUS_ON_NODE -u SLURM_JOB_ID "$source/.venv/bin/python" "$entry/llama_table1.py" \
+env -u SLURM_GPUS_ON_NODE -u SLURM_JOB_ID "$source/.venv/bin/python" "$evaluator" \
     --manifest "$source/datasets/manifest.json" --output "$root/results" --engine-python "$engine"
 printf '%s\n' verified > "$root/status"
