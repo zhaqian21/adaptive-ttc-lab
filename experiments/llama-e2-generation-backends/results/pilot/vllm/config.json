@@ -1,0 +1,17 @@
+{
+  "backend": "vllm",
+  "manifest_sha256": "0790c585e070d8db7945b9fc25d26f56c220973946e825d4394f3fe3e0dee4cb",
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "repetition_penalty": 1.0,
+    "max_tokens": 1024,
+    "eos_token_id": 128009
+  },
+  "model_revision": "359efdbb8af05b788a4ad4185215c6b8caa9052c",
+  "batch_or_concurrency": 64,
+  "source_sha256": "f7ec7c91043d67a446b9127f2608893b08c67cd723a15f1a3b9c1db40097728d",
+  "vllm": "0.33.0",
+  "sampling": "independent explicit seed on each raw-token request"
+}

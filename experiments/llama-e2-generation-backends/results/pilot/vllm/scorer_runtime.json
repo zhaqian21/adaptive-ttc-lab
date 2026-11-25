@@ -1,0 +1,12 @@
+{
+  "candidates": 1000,
+  "scored_sha256": "c6c05ba44a03b47ce6697541a4c8eec228cd2d0d3e62ca263adf6e381182784a",
+  "seconds": 0.004960532998666167,
+  "historical_prm_canary": {
+    "questions": 6,
+    "candidates": 60,
+    "same_selected_iterations": 6,
+    "exact_score_matches": 60,
+    "max_absolute_score_delta": 0.0
+  }
+}

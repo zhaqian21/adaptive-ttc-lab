@@ -1,0 +1,8 @@
+{
+  "manifest_sha256": "0790c585e070d8db7945b9fc25d26f56c220973946e825d4394f3fe3e0dee4cb",
+  "generation_sha256": "86860355cd7f2ae4d853dc110864bba667c381d0c8a63674e742113bdfb5b127",
+  "prm_model": "Qwen2.5-Math-PRM-7B",
+  "prm_revision": "0610740060112df12585d00a1c5f4624d2f59051",
+  "prm_prompt": "Please reason step by step, and put your final answer within \\boxed{}.",
+  "source_sha256": "7b0676966c1ed27d37aca15673984e621e9c58bf8dadedb526c2a7c1daaa9995"
+}

@@ -1,0 +1,21 @@
+{
+  "candidates": 1000,
+  "candidates_sha256": "16bbedcbc38d6ce39a9cc7f5a8d2c6fdf2f2f9c4fa0343ca8b83015736507eed",
+  "retained_candidates": 64,
+  "resume_workers": [
+    {
+      "candidates": 384,
+      "seconds": 725.982211911818,
+      "candidate_sha256": "5c004e8db5324e64ab3ad062783ad53ebdaf068a8911af5025b340bf74a98b41",
+      "peak_allocated_bytes": 22577147904,
+      "batch": 32
+    },
+    {
+      "candidates": 552,
+      "seconds": 1043.290096957935,
+      "candidate_sha256": "7c0143f77234b27c5f83260fbe0e202ef73893c4ad3897e4de24a1bb80bdd32a",
+      "peak_allocated_bytes": 29363324416,
+      "batch": 64
+    }
+  ]
+}

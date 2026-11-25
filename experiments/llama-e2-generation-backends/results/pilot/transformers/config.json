@@ -1,0 +1,23 @@
+{
+  "backend": "transformers",
+  "manifest_sha256": "0790c585e070d8db7945b9fc25d26f56c220973946e825d4394f3fe3e0dee4cb",
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "repetition_penalty": 1.0,
+    "max_tokens": 1024,
+    "eos_token_id": 128009
+  },
+  "model_revision": "359efdbb8af05b788a4ad4185215c6b8caa9052c",
+  "batch_or_concurrency": 16,
+  "source_sha256": "f7ec7c91043d67a446b9127f2608893b08c67cd723a15f1a3b9c1db40097728d",
+  "torch": "2.6.0+cu124",
+  "transformers": "4.48.3",
+  "attention": "sdpa",
+  "device": "NVIDIA H20",
+  "dtype": "torch.bfloat16",
+  "sampling": "native Transformers generate, independent torch multinomial RNG per row",
+  "native_resume_plan_sha256": "20333ae62308378cb4ca423f306ad51f39e42e5f5f029a036b98cff1fa2fec5c",
+  "native_resume_source_sha256": "1ed7b44d92362841300aadfb31564a192e495094956c7b635c38b4b5cfe49697"
+}
