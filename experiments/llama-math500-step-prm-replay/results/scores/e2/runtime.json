@@ -1,0 +1,14 @@
+{
+  "candidates": 5000,
+  "seconds": 405.483462047996,
+  "input_tokens": 3381183,
+  "peak_allocated_bytes": 15489068544,
+  "score_sha256": "32173e55204432d421368d377df6d231b030056b4167896accde984fe048f9ac",
+  "legacy_canary": {
+    "questions": 7,
+    "same_selected_iterations": 7,
+    "candidates": 70,
+    "exact_score_matches": 21,
+    "max_absolute_score_delta": 0.015625
+  }
+}

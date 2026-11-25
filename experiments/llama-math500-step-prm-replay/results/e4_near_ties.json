@@ -1,0 +1,774 @@
+{
+  "case": "E4",
+  "opposite_verdict_margin": 0.01,
+  "pool_sha256": "73c3f95e4ad26e7703c6068de73547dc4fe9b1bca23332254dd7e357c408ec3d",
+  "paired_sha256": "c1396c236563a59db62ea942c08324e55f5d6b603e411bdd18cd1178e8d2e261",
+  "checked_questions": 38,
+  "checked_candidates": 380,
+  "changed_to_correct": 0,
+  "changed_to_wrong": 1,
+  "batch_correct": 317,
+  "correct_after_replacing_checked_choices": 316,
+  "questions": [
+    {
+      "problem_id": 20,
+      "opposite_verdict_margin": 0.0006510416666667407,
+      "batch_selected_iteration": 7,
+      "batch_correct": true,
+      "singleton_selected_iteration": 7,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9908854166666666,
+        0.9895833333333334,
+        0.9826388888888888,
+        0.9830729166666666,
+        0.9505208333333334,
+        0.9518694196428571,
+        0.9915364583333334,
+        0.97119140625,
+        0.9821428571428571,
+        0.9860491071428571
+      ]
+    },
+    {
+      "problem_id": 27,
+      "opposite_verdict_margin": 0.00640190972222221,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9954427083333334,
+        0.9931640625,
+        0.9995659722222222,
+        0.98388671875,
+        0.9971590909090909,
+        0.9931640625,
+        0.99462890625,
+        0.9957386363636364,
+        0.9049516157670454,
+        0.9969618055555556
+      ]
+    },
+    {
+      "problem_id": 67,
+      "opposite_verdict_margin": 0.0031249999999999334,
+      "batch_selected_iteration": 4,
+      "batch_correct": true,
+      "singleton_selected_iteration": 4,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9126716382575758,
+        0.995703125,
+        0.9984375,
+        0.998828125,
+        0.9952256944444444,
+        0.9448939732142857,
+        0.99765625,
+        0.9977678571428571,
+        0.99765625,
+        0.9986979166666666
+      ]
+    },
+    {
+      "problem_id": 75,
+      "opposite_verdict_margin": 0.000987106779484992,
+      "batch_selected_iteration": 9,
+      "batch_correct": false,
+      "singleton_selected_iteration": 9,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.6350250244140625,
+        0.805859375,
+        0.7896943933823529,
+        0.8922147529069767,
+        0.8022722516741071,
+        0.8438498757102273,
+        0.846337890625,
+        0.6490885416666666,
+        0.8939732142857143,
+        0.5913783482142857
+      ]
+    },
+    {
+      "problem_id": 84,
+      "opposite_verdict_margin": 0.004618876689189144,
+      "batch_selected_iteration": 10,
+      "batch_correct": false,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.95,
+        0.90166015625,
+        0.6395099346454327,
+        0.8053635817307693,
+        0.7043550931490384,
+        0.7680462923916903,
+        0.780303955078125,
+        0.94564208984375,
+        0.770379638671875,
+        0.9542599239864865
+      ]
+    },
+    {
+      "problem_id": 85,
+      "opposite_verdict_margin": 0.006249999999999978,
+      "batch_selected_iteration": 10,
+      "batch_correct": true,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.93359375,
+        0.96484375,
+        0.9736752717391305,
+        0.9600694444444444,
+        0.9225643382352942,
+        0.9694602272727273,
+        0.9901041666666667,
+        0.9216579861111112,
+        0.9954427083333334,
+        0.9955729166666667
+      ]
+    },
+    {
+      "problem_id": 98,
+      "opposite_verdict_margin": 0.004427083333333415,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9943576388888888,
+        0.9521484375,
+        0.9978298611111112,
+        0.9971354166666667,
+        0.9916294642857143,
+        0.9874131944444444,
+        0.987109375,
+        0.99072265625,
+        0.98193359375,
+        0.99296875
+      ]
+    },
+    {
+      "problem_id": 108,
+      "opposite_verdict_margin": 0.003901725386100341,
+      "batch_selected_iteration": 10,
+      "batch_correct": null,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": null,
+      "singleton_mean_scores": [
+        0.8513289741847826,
+        0.8617513020833333,
+        0.90140625,
+        0.8340890066964286,
+        0.8601148200757576,
+        0.868017578125,
+        0.8159401633522727,
+        0.9322740709459459,
+        0.8696915064102564,
+        0.9368582589285714
+      ]
+    },
+    {
+      "problem_id": 116,
+      "opposite_verdict_margin": 0.0019960508241758657,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.99853515625,
+        0.9972956730769231,
+        0.9994419642857143,
+        0.9966517857142857,
+        0.9953497023809523,
+        0.9978448275862069,
+        0.998046875,
+        0.9982638888888888,
+        0.9781901041666666,
+        0.9972956730769231
+      ]
+    },
+    {
+      "problem_id": 141,
+      "opposite_verdict_margin": 0.004026831650152385,
+      "batch_selected_iteration": 8,
+      "batch_correct": true,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.875546875,
+        0.8419828869047619,
+        0.8076171875,
+        0.896555830792683,
+        0.8585994944852942,
+        0.7901141826923077,
+        0.850830078125,
+        0.90191650390625,
+        0.85357666015625,
+        0.9006569602272727
+      ]
+    },
+    {
+      "problem_id": 157,
+      "opposite_verdict_margin": 0.00542534722222221,
+      "batch_selected_iteration": 10,
+      "batch_correct": false,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.9927455357142857,
+        0.9938616071428571,
+        0.9927455357142857,
+        0.8514901620370371,
+        0.9913194444444444,
+        0.99296875,
+        0.9889914772727273,
+        0.9931640625,
+        0.8324623107910156,
+        0.9967447916666666
+      ]
+    },
+    {
+      "problem_id": 171,
+      "opposite_verdict_margin": 0.008231026785714302,
+      "batch_selected_iteration": 7,
+      "batch_correct": true,
+      "singleton_selected_iteration": 7,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9895833333333334,
+        0.99560546875,
+        0.963134765625,
+        0.9957386363636364,
+        0.9874131944444444,
+        0.9459635416666666,
+        0.9994419642857143,
+        0.9921875,
+        0.9912109375,
+        0.98828125
+      ]
+    },
+    {
+      "problem_id": 173,
+      "opposite_verdict_margin": 0.008894295528017238,
+      "batch_selected_iteration": 6,
+      "batch_correct": false,
+      "singleton_selected_iteration": 6,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.8705662969333022,
+        0.9155970982142857,
+        0.88873291015625,
+        0.9457347972972973,
+        0.8482188349184783,
+        0.9491177262931034,
+        0.9421750332446809,
+        0.8775649652248476,
+        0.8800758539244186,
+        0.93935546875
+      ]
+    },
+    {
+      "problem_id": 187,
+      "opposite_verdict_margin": 0.002539062500000022,
+      "batch_selected_iteration": 9,
+      "batch_correct": true,
+      "singleton_selected_iteration": 9,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.99609375,
+        0.997802734375,
+        0.9403782894736842,
+        0.9953835227272727,
+        0.9772518382352942,
+        0.9150390625,
+        0.8052884615384616,
+        0.9436848958333334,
+        0.9986328125,
+        0.9956825657894737
+      ]
+    },
+    {
+      "problem_id": 192,
+      "opposite_verdict_margin": 0.002701822916666652,
+      "batch_selected_iteration": 4,
+      "batch_correct": true,
+      "singleton_selected_iteration": 4,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9776278409090909,
+        0.7531280517578125,
+        0.9654947916666666,
+        0.98486328125,
+        0.9821614583333333,
+        0.8497386259191176,
+        0.7345819887907609,
+        0.9654017857142857,
+        0.9407634493670886,
+        0.868408203125
+      ]
+    },
+    {
+      "problem_id": 202,
+      "opposite_verdict_margin": 0.0006390408986175489,
+      "batch_selected_iteration": 7,
+      "batch_correct": true,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.85703125,
+        0.6550618489583333,
+        0.82867431640625,
+        0.72216796875,
+        0.90703125,
+        0.8848379629629629,
+        0.9295614919354839,
+        0.885693359375,
+        0.8425480769230769,
+        0.9309895833333334
+      ]
+    },
+    {
+      "problem_id": 211,
+      "opposite_verdict_margin": 0.0030133928571428603,
+      "batch_selected_iteration": 7,
+      "batch_correct": null,
+      "singleton_selected_iteration": 7,
+      "singleton_correct": null,
+      "singleton_mean_scores": [
+        0.9900568181818182,
+        0.9263822115384616,
+        0.9908854166666666,
+        0.9889322916666666,
+        0.9513494318181818,
+        0.6796417236328125,
+        0.994921875,
+        0.8924402307581019,
+        0.9533854166666667,
+        0.9919084821428571
+      ]
+    },
+    {
+      "problem_id": 223,
+      "opposite_verdict_margin": 0.005170355902777812,
+      "batch_selected_iteration": 2,
+      "batch_correct": false,
+      "singleton_selected_iteration": 2,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.7998770254629629,
+        0.9084147135416667,
+        0.7460693359375,
+        0.8747287326388888,
+        0.7462158203125,
+        0.90234375,
+        0.8758951822916666,
+        0.8227163461538461,
+        0.495849609375,
+        0.8624052159926471
+      ]
+    },
+    {
+      "problem_id": 252,
+      "opposite_verdict_margin": 0.009456380208333393,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.6305680708451704,
+        0.944846929505814,
+        0.9578125,
+        0.7318303034855769,
+        0.48728724888392855,
+        0.8191848028273809,
+        0.949169921875,
+        0.9305977199388586,
+        0.8683268229166666,
+        0.9272216796875
+      ]
+    },
+    {
+      "problem_id": 271,
+      "opposite_verdict_margin": 0.005591299019607754,
+      "batch_selected_iteration": 2,
+      "batch_correct": true,
+      "singleton_selected_iteration": 2,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9136571344339622,
+        0.9951171875,
+        0.86328125,
+        0.9915865384615384,
+        0.837109375,
+        0.9711538461538461,
+        0.9186197916666666,
+        0.8766927083333333,
+        0.8271484375,
+        0.9892003676470589
+      ]
+    },
+    {
+      "problem_id": 276,
+      "opposite_verdict_margin": 0.002697172619047672,
+      "batch_selected_iteration": 8,
+      "batch_correct": false,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.9088541666666666,
+        0.8593084161931818,
+        0.8274016203703703,
+        0.89849853515625,
+        0.759735107421875,
+        0.8230716765873016,
+        0.8407537286931818,
+        0.9113919005102041,
+        0.8481108566810345,
+        0.81561279296875
+      ]
+    },
+    {
+      "problem_id": 298,
+      "opposite_verdict_margin": 0.008149245689655138,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.888671875,
+        0.8594292534722222,
+        0.9759114583333334,
+        0.9657192887931034,
+        0.9624399038461539,
+        0.6767578125,
+        0.9455729166666667,
+        0.9534254807692307,
+        0.8323567708333334,
+        0.6140594482421875
+      ]
+    },
+    {
+      "problem_id": 302,
+      "opposite_verdict_margin": 0.0066575270432692735,
+      "batch_selected_iteration": 3,
+      "batch_correct": true,
+      "singleton_selected_iteration": 3,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.7474934895833333,
+        0.53570556640625,
+        0.8497408353365384,
+        0.76064453125,
+        0.6181666056315104,
+        0.7263009207589286,
+        0.7673797607421875,
+        0.74126953125,
+        0.8189871651785714,
+        0.8446742466517857
+      ]
+    },
+    {
+      "problem_id": 309,
+      "opposite_verdict_margin": 0.008292214912280715,
+      "batch_selected_iteration": 9,
+      "batch_correct": true,
+      "singleton_selected_iteration": 9,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9146205357142857,
+        0.86376953125,
+        0.8710123697916666,
+        0.8297991071428571,
+        0.8396945529513888,
+        0.9018110795454546,
+        0.9267578125,
+        0.8965006510416667,
+        0.9364720394736842,
+        0.8984578450520834
+      ]
+    },
+    {
+      "problem_id": 330,
+      "opposite_verdict_margin": 0.00821314102564108,
+      "batch_selected_iteration": 7,
+      "batch_correct": true,
+      "singleton_selected_iteration": 7,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9869791666666666,
+        0.6984969429347826,
+        0.9936079545454546,
+        0.7777287409855769,
+        0.9423828125,
+        0.993359375,
+        0.9953425480769231,
+        0.9176070601851852,
+        0.9904513888888888,
+        0.8419510690789473
+      ]
+    },
+    {
+      "problem_id": 341,
+      "opposite_verdict_margin": 0.007352167508417495,
+      "batch_selected_iteration": 10,
+      "batch_correct": true,
+      "singleton_selected_iteration": 10,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9840198863636364,
+        0.9558249080882353,
+        0.9886067708333334,
+        0.9901620370370371,
+        0.987548828125,
+        0.96953125,
+        0.8290793678977273,
+        0.9860983455882353,
+        0.97021484375,
+        0.9975142045454546
+      ]
+    },
+    {
+      "problem_id": 361,
+      "opposite_verdict_margin": 0.0041151780348557265,
+      "batch_selected_iteration": 4,
+      "batch_correct": true,
+      "singleton_selected_iteration": 4,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.8682023590686274,
+        0.9020244891826923,
+        0.8230048285590278,
+        0.9135335286458334,
+        0.8154296875,
+        0.8736853966346154,
+        0.9103064903846154,
+        0.6086497587316176,
+        0.8888346354166666,
+        0.6735026041666666
+      ]
+    },
+    {
+      "problem_id": 362,
+      "opposite_verdict_margin": 0.0008138020833333703,
+      "batch_selected_iteration": 5,
+      "batch_correct": false,
+      "singleton_selected_iteration": 5,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.9908854166666666,
+        0.966796875,
+        0.9326171875,
+        0.6244895241477273,
+        0.99169921875,
+        0.9716796875,
+        0.9620028409090909,
+        0.98779296875,
+        0.9435763888888888,
+        0.9893973214285714
+      ]
+    },
+    {
+      "problem_id": 363,
+      "opposite_verdict_margin": 0.007603034420289867,
+      "batch_selected_iteration": 8,
+      "batch_correct": true,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9862723214285715,
+        0.9124728116122159,
+        0.9848090277777778,
+        0.9954927884615384,
+        0.9846540178571429,
+        0.9889605978260869,
+        0.9409298780487805,
+        0.9963541666666667,
+        0.9917689732142857,
+        0.9814453125
+      ]
+    },
+    {
+      "problem_id": 369,
+      "opposite_verdict_margin": 0.004431152343749911,
+      "batch_selected_iteration": 8,
+      "batch_correct": true,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.849609375,
+        0.7224786931818182,
+        0.7836216517857143,
+        0.8908487955729166,
+        0.8480305989583333,
+        0.80615234375,
+        0.7117919921875,
+        0.895703125,
+        0.8760498046875,
+        0.6179865056818182
+      ]
+    },
+    {
+      "problem_id": 393,
+      "opposite_verdict_margin": 0.0018382352941176405,
+      "batch_selected_iteration": 8,
+      "batch_correct": false,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": false,
+      "singleton_mean_scores": [
+        0.998046875,
+        0.9898726851851852,
+        0.9965533088235294,
+        0.9951171875,
+        0.9666015625,
+        0.9915364583333334,
+        0.9470880681818182,
+        0.9983915441176471,
+        0.782275390625,
+        0.8733258928571429
+      ]
+    },
+    {
+      "problem_id": 411,
+      "opposite_verdict_margin": 0.0016741071428572063,
+      "batch_selected_iteration": 4,
+      "batch_correct": true,
+      "singleton_selected_iteration": 4,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9508928571428571,
+        0.9869791666666666,
+        0.9893973214285714,
+        0.9905133928571429,
+        0.4300333658854167,
+        0.9856770833333334,
+        0.9720052083333334,
+        0.9822048611111112,
+        0.9827008928571429,
+        0.5788302951388888
+      ]
+    },
+    {
+      "problem_id": 412,
+      "opposite_verdict_margin": 0.006691225441225468,
+      "batch_selected_iteration": 1,
+      "batch_correct": true,
+      "singleton_selected_iteration": 1,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.983005275974026,
+        0.9040996844951923,
+        0.9468443627450981,
+        0.9238884066358025,
+        0.9761618589743589,
+        0.9463541666666667,
+        0.9182183159722223,
+        0.9045632102272727,
+        0.8733072916666667,
+        0.9720744680851063
+      ]
+    },
+    {
+      "problem_id": 417,
+      "opposite_verdict_margin": 0.0009606402853260532,
+      "batch_selected_iteration": 4,
+      "batch_correct": true,
+      "singleton_selected_iteration": 4,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.896484375,
+        0.6921920776367188,
+        0.887841796875,
+        0.9530029296875,
+        0.90509033203125,
+        0.8939598931206597,
+        0.80234375,
+        0.9083984375,
+        0.918701171875,
+        0.9519361413043478
+      ]
+    },
+    {
+      "problem_id": 420,
+      "opposite_verdict_margin": 0.00336371527777779,
+      "batch_selected_iteration": 5,
+      "batch_correct": true,
+      "singleton_selected_iteration": 5,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.9954427083333334,
+        0.9912446120689655,
+        0.9782986111111112,
+        0.9234095982142857,
+        0.9973958333333334,
+        0.9937065972222222,
+        0.9900841346153846,
+        0.9924479166666667,
+        0.9875,
+        0.99365234375
+      ]
+    },
+    {
+      "problem_id": 462,
+      "opposite_verdict_margin": 0.0014496797360248337,
+      "batch_selected_iteration": 8,
+      "batch_correct": true,
+      "singleton_selected_iteration": 8,
+      "singleton_correct": true,
+      "singleton_mean_scores": [
+        0.90576171875,
+        0.7819010416666666,
+        0.9117838541666666,
+        0.6868177141462054,
+        0.80557861328125,
+        0.914453125,
+        0.8972944779829546,
+        0.9341517857142857,
+        0.725830078125,
+        0.9324898097826086
+      ]
+    },
+    {
+      "problem_id": 485,
+      "opposite_verdict_margin": 0.0054931640625,
+      "batch_selected_iteration": 9,
+      "batch_correct": null,
+      "singleton_selected_iteration": 9,
+      "singleton_correct": null,
+      "singleton_mean_scores": [
+        0.878046875,
+        0.9194972826086957,
+        0.97705078125,
+        0.9299395161290323,
+        0.9624495967741935,
+        0.9149305555555556,
+        0.96630859375,
+        0.92177734375,
+        0.981689453125,
+        0.7622612847222222
+      ]
+    },
+    {
+      "problem_id": 492,
+      "opposite_verdict_margin": 0.0012885199652777901,
+      "batch_selected_iteration": 1,
+      "batch_correct": null,
+      "singleton_selected_iteration": 1,
+      "singleton_correct": null,
+      "singleton_mean_scores": [
+        0.9969482421875,
+        0.9736328125,
+        0.9828125,
+        0.9921875,
+        0.9943181818181818,
+        0.9950520833333333,
+        0.9939453125,
+        0.9905427631578947,
+        0.9956597222222222,
+        0.9943576388888888
+      ]
+    }
+  ]
+}
