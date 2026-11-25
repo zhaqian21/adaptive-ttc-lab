@@ -1,0 +1,56 @@
+{
+  "phase": "smoke",
+  "lane": 0,
+  "submission_order": [
+    478,
+    464,
+    216,
+    376,
+    418,
+    188,
+    46,
+    288,
+    494,
+    94
+  ],
+  "workers": 24,
+  "dataset": {
+    "split": "test",
+    "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+  },
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 20,
+    "max_tokens": 1024,
+    "repetition_penalty": 1.05,
+    "stop_token_ids": [
+      151645
+    ],
+    "ignore_eos": true,
+    "skip_special_tokens": true
+  },
+  "vllm": "0.33.0",
+  "model": [
+    "model",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "a09a35458c702b33eeacc393d103063234e8bc28"
+  ],
+  "agent": {
+    "mode": "dynamic",
+    "use_planner": true,
+    "use_tool_selector": true,
+    "use_compute_selector": true,
+    "remember_cot": true,
+    "max_text_history": 16,
+    "max_image_history": 0,
+    "fixed_tool": null,
+    "fixed_compute": null,
+    "planning_frequency": null,
+    "domain": "math"
+  },
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "source_sha256": "4d182f8ccdde1c4800be1f66c07c094b1cb383d79a8b96cfb9fe54e26500b2ca",
+  "plan_sha256": "8efe10a20de6e66ccfed3c5754801eda1fe36e0a526254d168bd152649ffb3e2",
+  "study": "qwen-math500"
+}
