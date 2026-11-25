@@ -36,8 +36,8 @@ restore() {
             if ! session_exists "${services[lane]}"; then
                 tmux new-session -d -s "${services[lane]}" "${commands[lane]}" || restored=0
             fi
+            wait_port "${ports[lane]}" || restored=0
         done
-        for port in "${ports[@]}"; do wait_port "$port" || restored=0; done
         if (( restored )); then
             echo restored > "$root/service-restoration"
         else
