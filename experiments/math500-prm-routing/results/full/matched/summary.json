@@ -1,0 +1,161 @@
+{
+  "samples": 500,
+  "formal": true,
+  "source_predictions_sha256": "36893ff52e8adffb9f18330ed48bf4632948dab04874ee331b7ecbece7af368f",
+  "observed": {
+    "factorial": {
+      "wall_seconds": 2683,
+      "policies": {
+        "full_single": {
+          "correct": 394,
+          "generation_calls": 100498,
+          "generation_input_tokens": 55711724,
+          "generation_output_tokens": 6130975,
+          "prm_calls": 5435,
+          "accuracy": 0.788,
+          "stop_reasons": {
+            "token_budget": 500
+          }
+        },
+        "full_sum": {
+          "correct": 387,
+          "generation_calls": 100498,
+          "generation_input_tokens": 55711724,
+          "generation_output_tokens": 6130975,
+          "prm_calls": 5435,
+          "accuracy": 0.774,
+          "stop_reasons": {
+            "token_budget": 500
+          }
+        },
+        "adaptive_single": {
+          "correct": 395,
+          "generation_calls": 54181,
+          "generation_input_tokens": 31176423,
+          "generation_output_tokens": 3717857,
+          "prm_calls": 1675,
+          "accuracy": 0.79,
+          "stop_reasons": {
+            "agreement": 296,
+            "token_budget": 204
+          }
+        },
+        "adaptive_sum": {
+          "correct": 387,
+          "generation_calls": 54181,
+          "generation_input_tokens": 31176423,
+          "generation_output_tokens": 3717857,
+          "prm_calls": 1675,
+          "accuracy": 0.774,
+          "stop_reasons": {
+            "agreement": 296,
+            "token_budget": 204
+          }
+        }
+      }
+    },
+    "g": {
+      "wall_seconds": 1459,
+      "policies": {
+        "g": {
+          "correct": 379,
+          "generation_calls": 53123,
+          "generation_input_tokens": 30693626,
+          "generation_output_tokens": 3705978,
+          "prm_calls": 1197,
+          "accuracy": 0.758,
+          "stop_reasons": {
+            "agreement": 303,
+            "token_budget": 197
+          }
+        }
+      }
+    },
+    "f": {
+      "wall_seconds": 1384,
+      "policies": {
+        "f": {
+          "correct": 387,
+          "generation_calls": 49130,
+          "generation_input_tokens": 28570035,
+          "generation_output_tokens": 3490414,
+          "prm_calls": 1333,
+          "accuracy": 0.774,
+          "stop_reasons": {
+            "agreement": 301,
+            "token_budget": 152,
+            "prm_margin": 47
+          }
+        }
+      }
+    },
+    "fg": {
+      "wall_seconds": 1438,
+      "policies": {
+        "fg": {
+          "correct": 387,
+          "generation_calls": 50500,
+          "generation_input_tokens": 29264739,
+          "generation_output_tokens": 3541429,
+          "prm_calls": 1348,
+          "accuracy": 0.774,
+          "stop_reasons": {
+            "agreement": 296,
+            "token_budget": 161,
+            "prm_margin": 43
+          }
+        }
+      }
+    }
+  },
+  "paired_on_factorial_trace": {
+    "adaptive_sum": {
+      "correct": 387,
+      "generation_input_tokens": 31176423,
+      "generation_output_tokens": 3717857,
+      "generation_calls": 54181,
+      "prm_calls": 1675
+    },
+    "g": {
+      "correct": 387,
+      "generation_input_tokens": 31176423,
+      "generation_output_tokens": 3717857,
+      "generation_calls": 54181,
+      "prm_calls": 1268
+    },
+    "f": {
+      "correct": 386,
+      "generation_input_tokens": 29216619,
+      "generation_output_tokens": 3521074,
+      "generation_calls": 50525,
+      "prm_calls": 1472
+    },
+    "fg": {
+      "correct": 386,
+      "generation_input_tokens": 29216619,
+      "generation_output_tokens": 3521074,
+      "generation_calls": 50525,
+      "prm_calls": 1388
+    },
+    "same_prm_chronological": {
+      "correct": 383,
+      "generation_input_tokens": 31176423,
+      "generation_output_tokens": 3717857,
+      "generation_calls": 54181,
+      "prm_calls": 1268
+    },
+    "same_generation_static_cap": {
+      "correct": 389,
+      "generation_input_tokens": 29261477,
+      "generation_output_tokens": 3476590,
+      "generation_calls": 50988,
+      "prm_calls": 1533
+    }
+  },
+  "static_token_control": {
+    "per_question_limit": 114532,
+    "target_total_tokens": 32737693,
+    "observed_total_tokens": 32738067
+  },
+  "predictions_sha256": "e72196a2790c985f94ba8306a28295b5f5a1f75b091df78fe47f875998cad21d"
+}
