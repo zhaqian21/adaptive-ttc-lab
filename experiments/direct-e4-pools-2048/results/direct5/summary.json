@@ -1,0 +1,634 @@
+{
+  "phase": "direct5",
+  "datasets": {
+    "gsm8k": {
+      "qwen": {
+        "samples": 500,
+        "methods": {
+          "direct1_1024": {
+            "correct": 460,
+            "tokens": 223829,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_1024": {
+            "correct": 471,
+            "tokens": 670342,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_1024": {
+            "correct": 477,
+            "tokens": 1116772,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_2048": {
+            "correct": 460,
+            "tokens": 223829,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_2048": {
+            "correct": 471,
+            "tokens": 670342,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_2048": {
+            "correct": 477,
+            "tokens": 1116772,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_on_demand": {
+            "correct": 460,
+            "tokens": 223829,
+            "prm_requests": 0,
+            "candidates": 500
+          }
+        },
+        "pools_sha256": {
+          "qwen_gsm8k_000.jsonl.gz": "c5b4aa261e8afcd33d613022ba0815a987329ba707b8ce251055b7c2f8f81a67",
+          "qwen_gsm8k_001.jsonl.gz": "213a5bb6fb41b1d172a49fe9adb52d9316a6dcde9314913aae5471f546e59f1a",
+          "qwen_gsm8k_002.jsonl.gz": "34f45b15342b0931872b8dfaa7b4e400f73a9e8ce06b7bfadca67fffb4c3b2d3",
+          "qwen_gsm8k_003.jsonl.gz": "abebf005000ca7364a2a780a49435f2479de80a9a6a779ecd679962cbf9c6d99",
+          "qwen_gsm8k_004.jsonl.gz": "c3a501f4236fa539a806b3bf75a3b26f8900aa3bf851a1a733a6b9c3c2da5a02"
+        }
+      },
+      "llama": {
+        "samples": 500,
+        "methods": {
+          "direct1_1024": {
+            "correct": 433,
+            "tokens": 210948,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_1024": {
+            "correct": 450,
+            "tokens": 633822,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_1024": {
+            "correct": 467,
+            "tokens": 1055035,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_2048": {
+            "correct": 434,
+            "tokens": 214275,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_2048": {
+            "correct": 451,
+            "tokens": 646365,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_2048": {
+            "correct": 468,
+            "tokens": 1073959,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_on_demand": {
+            "correct": 434,
+            "tokens": 214275,
+            "prm_requests": 0,
+            "candidates": 500
+          }
+        },
+        "pools_sha256": {
+          "llama_gsm8k_000.jsonl.gz": "9f6632effa3eed4f3100c0e11caf68d1d861e85255bbe142e4fc7f94f6405a26",
+          "llama_gsm8k_001.jsonl.gz": "b561162193acab5167a6fd9e9c1661dbb6884261a286ce249093c0a47231ae0f",
+          "llama_gsm8k_002.jsonl.gz": "f2b8b761b63b658e817da66159fb09c070e175ac86db18c2b33983c6c5febee3",
+          "llama_gsm8k_003.jsonl.gz": "7f7b0617aaeab361f5e11eb588703327232526bb12a4ac648e7a126fc4147c7d",
+          "llama_gsm8k_004.jsonl.gz": "6050317586d1d6ed360a0276e30ae8bdde732f76d749516cde6cbcba5c149ce6"
+        }
+      }
+    },
+    "math": {
+      "qwen": {
+        "samples": 500,
+        "methods": {
+          "direct1_1024": {
+            "correct": 356,
+            "tokens": 366050,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_1024": {
+            "correct": 371,
+            "tokens": 1097940,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_1024": {
+            "correct": 377,
+            "tokens": 1831939,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_2048": {
+            "correct": 374,
+            "tokens": 375994,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_2048": {
+            "correct": 381,
+            "tokens": 1132806,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_2048": {
+            "correct": 388,
+            "tokens": 1892956,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_on_demand": {
+            "correct": 374,
+            "tokens": 375994,
+            "prm_requests": 0,
+            "candidates": 500
+          }
+        },
+        "pools_sha256": {
+          "qwen_math_000.jsonl.gz": "4e4827074d18d6b7369c0fa0256222c45551cd3867382fdaa06a9320db662090",
+          "qwen_math_001.jsonl.gz": "81d320bb1848c9373e7f810b33dfc2d1b51d060f1151ba342bf690410d4f8ec6",
+          "qwen_math_002.jsonl.gz": "9c6bd20ba01311e643e2aaa0da44613cfcee7d92bac04898d429b10298e1a111",
+          "qwen_math_003.jsonl.gz": "5988e03c8b707a5a3090f603675b6a18ad5849da0e3bb7bbaa463cc79ee99388",
+          "qwen_math_004.jsonl.gz": "815570b7f62678f70709c4f9a7b51b27550adee6ca7ccd92fbec4d4e61d0b47a"
+        }
+      },
+      "llama": {
+        "samples": 500,
+        "methods": {
+          "direct1_1024": {
+            "correct": 229,
+            "tokens": 352123,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_1024": {
+            "correct": 265,
+            "tokens": 1061479,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_1024": {
+            "correct": 282,
+            "tokens": 1768673,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_2048": {
+            "correct": 235,
+            "tokens": 423067,
+            "prm_requests": 0,
+            "candidates": 500
+          },
+          "vote3_2048": {
+            "correct": 268,
+            "tokens": 1297149,
+            "prm_requests": 0,
+            "candidates": 1500
+          },
+          "vote5_2048": {
+            "correct": 290,
+            "tokens": 2160294,
+            "prm_requests": 0,
+            "candidates": 2500
+          },
+          "direct1_on_demand": {
+            "correct": 235,
+            "tokens": 423067,
+            "prm_requests": 0,
+            "candidates": 500
+          }
+        },
+        "pools_sha256": {
+          "llama_math_000.jsonl.gz": "3dcd01d0902ef882841ac6f7e25f129a9e45575f41f3de6bbb87a450bfde83b4",
+          "llama_math_001.jsonl.gz": "bfe175af32a923083341c2f66c3493f50750c6286af00ae411e70fe885971df5",
+          "llama_math_002.jsonl.gz": "2bdbbc1d1006595161f418cc606852f1ec5c7b3bb325348793819015bf790c63",
+          "llama_math_003.jsonl.gz": "d1d018344501316579c6bcfcc36f59b2796bc06f88257c9103bc686ea3985445",
+          "llama_math_004.jsonl.gz": "2a217e4fa480ba49da3044f20851cfb34d985430925e3fce7f4590cf094e4331"
+        }
+      }
+    },
+    "amc23": {
+      "qwen": {
+        "samples": 40,
+        "methods": {
+          "direct1_1024": {
+            "correct": 16,
+            "tokens": 39186,
+            "prm_requests": 0,
+            "candidates": 40
+          },
+          "vote3_1024": {
+            "correct": 20,
+            "tokens": 115745,
+            "prm_requests": 0,
+            "candidates": 120
+          },
+          "vote5_1024": {
+            "correct": 23,
+            "tokens": 189785,
+            "prm_requests": 0,
+            "candidates": 200
+          },
+          "direct1_2048": {
+            "correct": 20,
+            "tokens": 44928,
+            "prm_requests": 0,
+            "candidates": 40
+          },
+          "vote3_2048": {
+            "correct": 22,
+            "tokens": 127130,
+            "prm_requests": 0,
+            "candidates": 120
+          },
+          "vote5_2048": {
+            "correct": 24,
+            "tokens": 205772,
+            "prm_requests": 0,
+            "candidates": 200
+          },
+          "direct1_on_demand": {
+            "correct": 20,
+            "tokens": 44928,
+            "prm_requests": 0,
+            "candidates": 40
+          }
+        },
+        "pools_sha256": {
+          "qwen_amc23_000.jsonl.gz": "8cbb9196880805cc2df713d759b98d0ffab550f662669c12251b2f26d8650367"
+        }
+      },
+      "llama": {
+        "samples": 40,
+        "methods": {
+          "direct1_1024": {
+            "correct": 9,
+            "tokens": 36580,
+            "prm_requests": 0,
+            "candidates": 40
+          },
+          "vote3_1024": {
+            "correct": 10,
+            "tokens": 109764,
+            "prm_requests": 0,
+            "candidates": 120
+          },
+          "vote5_1024": {
+            "correct": 12,
+            "tokens": 183646,
+            "prm_requests": 0,
+            "candidates": 200
+          },
+          "direct1_2048": {
+            "correct": 9,
+            "tokens": 49088,
+            "prm_requests": 0,
+            "candidates": 40
+          },
+          "vote3_2048": {
+            "correct": 10,
+            "tokens": 145898,
+            "prm_requests": 0,
+            "candidates": 120
+          },
+          "vote5_2048": {
+            "correct": 13,
+            "tokens": 239962,
+            "prm_requests": 0,
+            "candidates": 200
+          },
+          "direct1_on_demand": {
+            "correct": 9,
+            "tokens": 49064,
+            "prm_requests": 0,
+            "candidates": 40
+          }
+        },
+        "pools_sha256": {
+          "llama_amc23_000.jsonl.gz": "e54aaa960c4a440277e92328ac05f9dd81f3b933a944a6bde0bbab350e857313"
+        }
+      }
+    },
+    "aime24": {
+      "qwen": {
+        "samples": 30,
+        "methods": {
+          "direct1_1024": {
+            "correct": 3,
+            "tokens": 31483,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_1024": {
+            "correct": 2,
+            "tokens": 94436,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_1024": {
+            "correct": 2,
+            "tokens": 156216,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_2048": {
+            "correct": 3,
+            "tokens": 35113,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_2048": {
+            "correct": 2,
+            "tokens": 103526,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_2048": {
+            "correct": 3,
+            "tokens": 173330,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_on_demand": {
+            "correct": 3,
+            "tokens": 35113,
+            "prm_requests": 0,
+            "candidates": 30
+          }
+        },
+        "pools_sha256": {
+          "qwen_aime24_000.jsonl.gz": "6ca42ec12588d13262f4e054817c7f56d72885f9e2704bb5db07166e2ea76b4c"
+        }
+      },
+      "llama": {
+        "samples": 30,
+        "methods": {
+          "direct1_1024": {
+            "correct": 2,
+            "tokens": 31498,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_1024": {
+            "correct": 2,
+            "tokens": 94719,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_1024": {
+            "correct": 3,
+            "tokens": 159203,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_2048": {
+            "correct": 2,
+            "tokens": 42595,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_2048": {
+            "correct": 2,
+            "tokens": 127459,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_2048": {
+            "correct": 3,
+            "tokens": 217095,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_on_demand": {
+            "correct": 2,
+            "tokens": 42595,
+            "prm_requests": 0,
+            "candidates": 30
+          }
+        },
+        "pools_sha256": {
+          "llama_aime24_000.jsonl.gz": "1da53933e916bf2c56cbacfa67ca0013718d7acb3b4c985d426562ad9f94f73a"
+        }
+      }
+    },
+    "aime26": {
+      "qwen": {
+        "samples": 30,
+        "methods": {
+          "direct1_1024": {
+            "correct": 1,
+            "tokens": 34106,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_1024": {
+            "correct": 2,
+            "tokens": 99014,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_1024": {
+            "correct": 3,
+            "tokens": 165574,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_2048": {
+            "correct": 3,
+            "tokens": 40546,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_2048": {
+            "correct": 3,
+            "tokens": 113576,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_2048": {
+            "correct": 3,
+            "tokens": 188636,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_on_demand": {
+            "correct": 3,
+            "tokens": 40546,
+            "prm_requests": 0,
+            "candidates": 30
+          }
+        },
+        "pools_sha256": {
+          "qwen_aime26_000.jsonl.gz": "1daed2f5f627472c89c3faad71fa0a811971880aee4f10d13dbd9261b87c76f4"
+        }
+      },
+      "llama": {
+        "samples": 30,
+        "methods": {
+          "direct1_1024": {
+            "correct": 0,
+            "tokens": 33649,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_1024": {
+            "correct": 0,
+            "tokens": 103241,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_1024": {
+            "correct": 0,
+            "tokens": 170687,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_2048": {
+            "correct": 0,
+            "tokens": 49244,
+            "prm_requests": 0,
+            "candidates": 30
+          },
+          "vote3_2048": {
+            "correct": 0,
+            "tokens": 147503,
+            "prm_requests": 0,
+            "candidates": 90
+          },
+          "vote5_2048": {
+            "correct": 0,
+            "tokens": 245760,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "direct1_on_demand": {
+            "correct": 0,
+            "tokens": 49244,
+            "prm_requests": 0,
+            "candidates": 30
+          }
+        },
+        "pools_sha256": {
+          "llama_aime26_000.jsonl.gz": "e4fdcc8ee416ef84be7ebcf3c18e388e5272dd8265b571ae9c61baa6efb41b8f"
+        }
+      }
+    },
+    "amo": {
+      "qwen": {
+        "samples": 50,
+        "methods": {
+          "direct1_1024": {
+            "correct": 2,
+            "tokens": 61070,
+            "prm_requests": 0,
+            "candidates": 50
+          },
+          "vote3_1024": {
+            "correct": 2,
+            "tokens": 181428,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "vote5_1024": {
+            "correct": 2,
+            "tokens": 303185,
+            "prm_requests": 0,
+            "candidates": 250
+          },
+          "direct1_2048": {
+            "correct": 2,
+            "tokens": 68943,
+            "prm_requests": 0,
+            "candidates": 50
+          },
+          "vote3_2048": {
+            "correct": 2,
+            "tokens": 201219,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "vote5_2048": {
+            "correct": 2,
+            "tokens": 332520,
+            "prm_requests": 0,
+            "candidates": 250
+          },
+          "direct1_on_demand": {
+            "correct": 2,
+            "tokens": 68943,
+            "prm_requests": 0,
+            "candidates": 50
+          }
+        },
+        "pools_sha256": {
+          "qwen_amo_000.jsonl.gz": "6135fcea3d96514699f00cb8b12d5e120f4d8ab08761886e6b8a635ee512de0f"
+        }
+      },
+      "llama": {
+        "samples": 50,
+        "methods": {
+          "direct1_1024": {
+            "correct": 1,
+            "tokens": 66729,
+            "prm_requests": 0,
+            "candidates": 50
+          },
+          "vote3_1024": {
+            "correct": 1,
+            "tokens": 198872,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "vote5_1024": {
+            "correct": 1,
+            "tokens": 333028,
+            "prm_requests": 0,
+            "candidates": 250
+          },
+          "direct1_2048": {
+            "correct": 1,
+            "tokens": 92170,
+            "prm_requests": 0,
+            "candidates": 50
+          },
+          "vote3_2048": {
+            "correct": 1,
+            "tokens": 283163,
+            "prm_requests": 0,
+            "candidates": 150
+          },
+          "vote5_2048": {
+            "correct": 1,
+            "tokens": 477558,
+            "prm_requests": 0,
+            "candidates": 250
+          },
+          "direct1_on_demand": {
+            "correct": 1,
+            "tokens": 92170,
+            "prm_requests": 0,
+            "candidates": 50
+          }
+        },
+        "pools_sha256": {
+          "llama_amo_000.jsonl.gz": "bf644e596be48ca4e827edada2bceea92f95d36bc37dc019163c62ab9bdd7eda"
+        }
+      }
+    }
+  },
+  "paired_sha256": "b88f00afd23ce2685e7c5fa827370e67d28d8f15239d95ba0c836ddc65824449"
+}

@@ -20,7 +20,7 @@ PLAN = HERE / "question_plan.json"
 LANES = {"qwen": (0,), "llama": (1, 7)}
 DIRECT_METHODS = ("direct1", "vote3", "vote5")
 E4_METHODS = ("fixed3", "fixed5", "fixed10", "early5_to_10", "dynamic3_to_5")
-CHUNK = 25
+CHUNK = {"direct5": 100, "e4": 25}
 
 
 def read(path):
@@ -80,10 +80,11 @@ def archive_new(source, output, phase, plan):
         save(output / "generation.json", generation)
     archive = output / "pools"
     archive.mkdir(exist_ok=True)
+    size = CHUNK[phase]
     for dataset, planned in plan.items():
         for model in LANES:
-            for chunk, start in enumerate(range(0, len(planned), CHUNK)):
-                batch = planned[start:start + CHUNK]
+            for chunk, start in enumerate(range(0, len(planned), size)):
+                batch = planned[start:start + size]
                 data = b"".join(encode(row) for row in load_new_rows(source, batch, model))
                 name = f"{model}_{dataset}_{chunk:03d}.jsonl.gz"
                 (archive / name).write_bytes(gzip.compress(data, mtime=0))
