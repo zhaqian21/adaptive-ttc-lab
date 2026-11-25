@@ -1,0 +1,55 @@
+{
+  "phase": "smoke",
+  "lane": 0,
+  "submission_order": [
+    46,
+    4,
+    10,
+    6,
+    2,
+    30,
+    16,
+    40,
+    8,
+    0
+  ],
+  "workers": 24,
+  "dataset": {
+    "split": "test",
+    "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+  },
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "max_tokens": 1024,
+    "repetition_penalty": 1.0,
+    "stop_token_ids": [
+      128009
+    ],
+    "ignore_eos": true,
+    "skip_special_tokens": true
+  },
+  "vllm": "0.33.0",
+  "model": [
+    "model",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+  ],
+  "agent": {
+    "mode": "dynamic",
+    "use_planner": true,
+    "use_tool_selector": true,
+    "use_compute_selector": true,
+    "remember_cot": true,
+    "max_text_history": 16,
+    "max_image_history": 0,
+    "fixed_tool": null,
+    "fixed_compute": null,
+    "planning_frequency": null,
+    "domain": "math"
+  },
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "source_sha256": "c344ab99e83c9c80d1a0458e840c024c2368cfb24ab307cb5be0cdaa9e7db218",
+  "plan_sha256": "b56ae0ab00ff1d22d8ad1d3aa8b94c9cd80d386f43bd4f59ea914ffd58549f4c"
+}
