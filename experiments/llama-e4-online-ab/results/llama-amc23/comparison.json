@@ -1,0 +1,152 @@
+{
+  "arms": {
+    "smoke": {
+      "phase": "smoke",
+      "completed_before_start": [
+        0,
+        0
+      ],
+      "started_unix": 1795599713.4155426,
+      "samples": 8,
+      "correct": 2,
+      "early_stops": 0,
+      "wall_seconds": 290.17471335688606,
+      "finished_unix": 1795600003.591335,
+      "predictions_sha256": "12692d019c7821e257b9dd27b335b40c5b658e8c3c10d6b83a6c72e4d50e4108",
+      "generation_requests": 1378,
+      "input_tokens": 853104,
+      "output_tokens": 187051,
+      "prm_requests": 80,
+      "generation_without_usage": 0,
+      "accuracy": 0.25,
+      "generated_candidates": 80,
+      "attempt_retries": 0,
+      "output_plus_input_tokens": 1040155,
+      "p50_seconds": 151.90772462799214,
+      "p95_seconds": 282.1622037868947
+    },
+    "fixed": {
+      "phase": "fixed",
+      "completed_before_start": [
+        0,
+        0
+      ],
+      "started_unix": 1795600086.4830768,
+      "samples": 40,
+      "correct": 17,
+      "early_stops": 0,
+      "wall_seconds": 466.3493192559108,
+      "finished_unix": 1795600552.8354223,
+      "predictions_sha256": "336cff4005a075baefbb805a726443e43c7d000bf3ee6b15bc6da327a61c7298",
+      "generation_requests": 7353,
+      "input_tokens": 4680411,
+      "output_tokens": 935999,
+      "prm_requests": 400,
+      "generation_without_usage": 0,
+      "accuracy": 0.425,
+      "generated_candidates": 400,
+      "attempt_retries": 0,
+      "output_plus_input_tokens": 5616410,
+      "p50_seconds": 282.4614472279791,
+      "p95_seconds": 409.8663977610413
+    },
+    "early": {
+      "phase": "early",
+      "completed_before_start": [
+        0,
+        0
+      ],
+      "started_unix": 1795600627.5236747,
+      "samples": 40,
+      "correct": 17,
+      "early_stops": 4,
+      "wall_seconds": 476.90234826598316,
+      "finished_unix": 1795601104.4288652,
+      "predictions_sha256": "7fdd0760088247a776be861f4622d60b9392fecb886fc004b75d80e00e76ec61",
+      "generation_requests": 7100,
+      "input_tokens": 4541374,
+      "output_tokens": 928268,
+      "prm_requests": 360,
+      "generation_without_usage": 0,
+      "accuracy": 0.425,
+      "generated_candidates": 380,
+      "attempt_retries": 0,
+      "output_plus_input_tokens": 5469642,
+      "p50_seconds": 293.7275276759174,
+      "p95_seconds": 414.9509644471109
+    }
+  },
+  "paired_online": {
+    "wrong_to_correct": 4,
+    "correct_to_wrong": 4,
+    "net": 0,
+    "gained_problem_ids": [
+      8,
+      21,
+      23,
+      25
+    ],
+    "lost_problem_ids": [
+      6,
+      18,
+      22,
+      36
+    ]
+  },
+  "paired_fixed_pool": {
+    "wrong_to_correct": 0,
+    "correct_to_wrong": 0,
+    "net": 0,
+    "gained_problem_ids": [],
+    "lost_problem_ids": []
+  },
+  "paired_aggregation_on_fixed_pool": {
+    "wrong_to_correct": 0,
+    "correct_to_wrong": 0,
+    "net": 0,
+    "gained_problem_ids": [],
+    "lost_problem_ids": []
+  },
+  "paired_combined_vs_original": {
+    "wrong_to_correct": 4,
+    "correct_to_wrong": 4,
+    "net": 0,
+    "gained_problem_ids": [
+      8,
+      21,
+      23,
+      25
+    ],
+    "lost_problem_ids": [
+      6,
+      18,
+      22,
+      36
+    ]
+  },
+  "original_selector_on_fixed_pool_correct": 17,
+  "shadow_early_correct": 17,
+  "shadow_early_stops": 3,
+  "identical_first_five_completions": 0,
+  "identical_first_five_extracted_answers": 3,
+  "saved": {
+    "input_tokens": 139037,
+    "output_tokens": 7731,
+    "output_plus_input_tokens": 146768,
+    "prm_requests": 40,
+    "generation_requests": 253,
+    "wall_seconds": -10.55302901007235,
+    "p95_seconds": -5.084566686069593
+  },
+  "saved_fraction": {
+    "input_tokens": 0.02970615187426916,
+    "output_tokens": 0.008259624209000224,
+    "output_plus_input_tokens": 0.026131995349342373,
+    "prm_requests": 0.1,
+    "generation_requests": 0.0344077247382021,
+    "wall_seconds": -0.02262902201060433,
+    "p95_seconds": -0.012405424581875523
+  },
+  "timing_includes_resume": false,
+  "paired_sha256": "5922856792df1137cf508f7d3deab5feb10433970610baf5fc1e901a7a314c81"
+}

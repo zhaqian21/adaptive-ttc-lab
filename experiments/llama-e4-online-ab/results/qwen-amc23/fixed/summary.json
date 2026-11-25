@@ -1,0 +1,19 @@
+{
+  "phase": "fixed",
+  "completed_before_start": [
+    0,
+    0
+  ],
+  "started_unix": 1795609743.7206538,
+  "samples": 40,
+  "correct": 23,
+  "early_stops": 0,
+  "wall_seconds": 1118.0131988450885,
+  "finished_unix": 1795610861.7368064,
+  "predictions_sha256": "5e3536ba8042fc45ca50fcbebc878806a73b1e08a35eee431508296e57cf420c",
+  "generation_requests": 10280,
+  "input_tokens": 6970553,
+  "output_tokens": 1243962,
+  "prm_requests": 400,
+  "generation_without_usage": 0
+}

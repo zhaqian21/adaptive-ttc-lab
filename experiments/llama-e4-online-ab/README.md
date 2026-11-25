@@ -38,7 +38,62 @@ bash experiments/llama-table1-825/run_24.sh "$OUTPUT" "$VLLM_PYTHON" "$experimen
 每个阶段输出 `results/<phase>/predictions.jsonl`、`summary.json` 和两张卡各自的 `gpu-<lane>/config.json`。归档时两个 worker 的配置文件分别保存为 `gpu-0_config.json` 和 `gpu-1_config.json`。审计脚本逐题核对采样轮数、早停条件、候选得分、选优结果、种子、服务请求数和累加 token，并重建配对记录与汇总表。
 
 ~~~bash
-python experiments/llama-e4-online-ab/compare_online.py --output /tmp/llama-e4-online-ab
+original_runner="$(mktemp)"
+git show a5dcb0c38efe34e410eb8ff9c80b5bba5b7696cf:experiments/llama-e4-online-ab/online_ab.py > "$original_runner"
+python experiments/llama-e4-online-ab/compare_online.py --source "$original_runner" --output /tmp/llama-e4-online-ab
 ~~~
 
 生成 token 使用 vLLM 响应中的输入与输出用量。请求计数包含失败和重试。有请求缺少用量时单独计数。外层 PRM 请求按实际发出的 HTTP 调用统计。双卡墙钟从启动评测 worker 到两张卡都完成，模型服务加载时间另计。逐题 P95 从题目进入 worker 到写出候选和答案前，包含题内重试，线程池排队时间另计。
+
+## 数据集与模型迁移
+
+在 Llama 的 MATH-500 两轮结束后，24 服务器按以下顺序接续。三项沿用相同的 A、B 规则、外层 PRM 和双卡配置。
+
+| 顺序 | 生成模型 | 数据集 | 试跑 | 正式 |
+|---|---|---|---:|---:|
+| 1 | Llama-3.1-8B-Instruct | AMC23 | 8 题 | 每组 40 题 |
+| 2 | Qwen2.5-7B-Instruct | MATH-500 | 20 题 | 每组 500 题 |
+| 3 | Qwen2.5-7B-Instruct | AMC23 | 8 题 | 每组 40 题 |
+
+AMC23 沿用 [PR #6](https://github.com/zhaqian21/adaptive-ttc-lab/pull/6) 的 Parquet 版本、题号和 MATH 判分。Llama 和 Qwen 共用一份 AMC23 题序和试跑子集，正式题目按历史重采样的输出 token 降序提交。两种模型也共用 MATH-500 的分片和正式提交顺序。Qwen 的 MATH-500 试跑按 [PR #15](https://github.com/zhaqian21/adaptive-ttc-lab/pull/15) 的历史记录选择可早停、有分歧的题各十道。各项均保存冻结题序和数据指纹。
+
+准备一个新的队列目录，包含 `llama-amc23` 与 `qwen-math500`。两者的 `source` 可指向同一份准备好的资产目录。资产目录沿用上文 Llama 双卡环境，另在 `source/datasets/amc23.parquet` 放置固定 AMC23 Parquet，在 `source/assets/model` 链接固定 Qwen 快照。两项的 `assets.exit` 各记录资产预检的返回码。
+
+~~~bash
+bash experiments/llama-e4-online-ab/run_followups_24.sh "$PREVIOUS_RUN" "$QUEUE" "$VLLM_PYTHON"
+~~~
+
+入口等待上一轮通过双卡审计并恢复常驻服务。每个接续实验写入自己的评测日志和逐题结果，结束后生成 `results/comparison` 并检查常驻服务。队列进度见 `queue-status`。任一步骤出错时，`queue.exit` 记录失败返回码。
+
+Qwen AMC23 使用独立队列目录，准备 `qwen-amc23/source` 和 `qwen-amc23/assets.exit` 后，将前一队列目录作为首个参数。入口会在 Qwen MATH-500 完成、服务恢复和配对审计全部通过后启动。
+
+~~~bash
+bash experiments/llama-e4-online-ab/run_followups_24.sh "$QUEUE" "$QWEN_AMC23_QUEUE" "$VLLM_PYTHON" qwen-amc23
+~~~
+
+### Llama AMC23 正式结果
+
+| 方案 | 答对 | 早停题数 | 生成 token | 外层 PRM 请求 | 双卡墙钟 |
+|---|---:|---:|---:|---:|---:|
+| A 固定 K=10 + 聚合 | 17/40 | 0 | 5,616,410 | 400 | 466.3 秒 |
+| B 五条一致早停 + 聚合 | 17/40 | 4 | 5,469,642 | 360 | 476.9 秒 |
+
+在线配对中 B 改对 4 题、改错 4 题。生成 token 减少 2.6%，外层 PRM 请求减少 10.0%，双卡墙钟增加 10.6 秒。同一份 A 组候选的回放中，3 道题达到早停条件，答对题的集合一致。 [正式配置与逐题记录](results/llama-amc23) · [完整对照](results/llama-amc23/comparison.json)
+
+### Qwen MATH-500 正式结果
+
+| 方案 | 答对 | 早停题数 | 生成 token | 外层 PRM 请求 | 双卡墙钟 |
+|---|---:|---:|---:|---:|---:|
+| A 固定 K=10 + 聚合 | 396/500 | 0 | 72,865,037 | 5,000 | 54.0 分钟 |
+| B 五条一致早停 + 聚合 | 387/500 | 273 | 58,527,401 | 2,270 | 49.0 分钟 |
+
+在线配对中 B 改对 7 题、改错 16 题。生成 token 减少 19.7%，外层 PRM 请求减少 54.6%，双卡墙钟减少 9.4%。同一份 A 组候选回放有 273 题达到早停条件，答对题的集合一致。原始单条最高分选优在该候选池答对 401 题，答案级聚合答对 396 题。两轮前五条提取答案序列有 252 题相同，前五条完整文本序列有 2 题相同。 [正式配置与逐题记录](results/qwen-math500) · [完整对照](results/qwen-math500/comparison.json)
+
+### Qwen AMC23 正式结果
+
+| 方案 | 答对 | 早停题数 | 生成 token | 外层 PRM 请求 | 双卡墙钟 |
+|---|---:|---:|---:|---:|---:|
+| A 固定 K=10 + 聚合 | 23/40（57.5%） | 0 | 8,214,515 | 400 | 1,118.0 秒 |
+| B 五条一致早停 + 聚合 | 25/40（62.5%） | 10 | 7,295,085 | 300 | 1,192.1 秒 |
+
+在线配对中 B 改对 5 题、改错 3 题。生成 token 减少 11.2%，外层 PRM 请求减少 25.0%，双卡用时增加 74.1 秒，逐题 P95 从 670.3 秒增加到 791.6 秒。同一份 A 组候选回放有 11 题达到早停条件，少答对 1 题。在线两轮有 9 道题的前五条提取答案序列完全一致。 [正式配置与逐题记录](results/qwen-amc23) · [完整对照](results/qwen-amc23/comparison.json)

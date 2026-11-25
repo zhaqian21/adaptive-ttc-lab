@@ -1,0 +1,19 @@
+{
+  "phase": "smoke",
+  "completed_before_start": [
+    0,
+    0
+  ],
+  "started_unix": 1795599713.4155426,
+  "samples": 8,
+  "correct": 2,
+  "early_stops": 0,
+  "wall_seconds": 290.17471335688606,
+  "finished_unix": 1795600003.591335,
+  "predictions_sha256": "12692d019c7821e257b9dd27b335b40c5b658e8c3c10d6b83a6c72e4d50e4108",
+  "generation_requests": 1378,
+  "input_tokens": 853104,
+  "output_tokens": 187051,
+  "prm_requests": 80,
+  "generation_without_usage": 0
+}
