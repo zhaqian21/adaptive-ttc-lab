@@ -1,0 +1,60 @@
+{
+  "phase": "smoke",
+  "lane": 1,
+  "indices": [
+    1,
+    9,
+    7,
+    35,
+    27,
+    47,
+    5,
+    13,
+    3,
+    31
+  ],
+  "dataset": {
+    "split": "test",
+    "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+  },
+  "workers": 24,
+  "vllm": "0.33.0",
+  "model": [
+    "model",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+  ],
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "max_tokens": 1024,
+    "repetition_penalty": 1.0,
+    "stop_token_ids": [
+      128009
+    ],
+    "ignore_eos": true,
+    "skip_special_tokens": true
+  },
+  "agent": {
+    "mode": "dynamic",
+    "use_planner": true,
+    "use_tool_selector": true,
+    "use_compute_selector": true,
+    "remember_cot": true,
+    "max_text_history": 16,
+    "max_image_history": 0,
+    "fixed_tool": null,
+    "fixed_compute": null,
+    "planning_frequency": null,
+    "domain": "math"
+  },
+  "prior_planner_sha256": "01edbaeb72e11e4312f0fd8b7aaec62e32f4047288b94e26f79e461fa0752fb3",
+  "sources": {
+    "run.py": "2479883124d84a2ea31f9d48be3714763c307b45af22aa485fa44920ae773e97",
+    "protocol.py": "fb8a99f221b02aea8fd207d56bede91a1c888b28ee071cf2b70896df9db8e932",
+    "audit.py": "4b9c4bdbe16a419c70401a55f896046c9edd6059df868c5e1780e69e3d8013c8"
+  },
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "suffix_token_limit": 100000
+}

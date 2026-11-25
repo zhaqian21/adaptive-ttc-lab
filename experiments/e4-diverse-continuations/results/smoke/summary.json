@@ -1,0 +1,63 @@
+{
+  "phase": "smoke",
+  "completed_before_start": [
+    0,
+    0
+  ],
+  "started_unix": 1795615088.1818047,
+  "samples": 20,
+  "stops": 6,
+  "branches": {
+    "control": {
+      "correct": 15,
+      "late_first_correct": 1,
+      "late_first_correct_ids": [
+        10
+      ],
+      "oracle": 16,
+      "budget_limited": 2,
+      "suffix_candidates": 68,
+      "suffix_p50_seconds": 50.71739602414891,
+      "suffix_p95_seconds": 146.89724198705517,
+      "generation_requests": 1171,
+      "input_tokens": 712325,
+      "output_tokens": 130363,
+      "prm_requests": 68,
+      "generation_without_usage": 0
+    },
+    "diverse": {
+      "correct": 15,
+      "late_first_correct": 0,
+      "late_first_correct_ids": [],
+      "oracle": 15,
+      "budget_limited": 5,
+      "suffix_candidates": 61,
+      "suffix_p50_seconds": 72.094293378992,
+      "suffix_p95_seconds": 164.3399331229739,
+      "generation_requests": 1191,
+      "input_tokens": 794707,
+      "output_tokens": 163381,
+      "prm_requests": 61,
+      "generation_without_usage": 0
+    }
+  },
+  "first_five_oracle": 15,
+  "continued_without_correct_prefix": 3,
+  "shared_requests": {
+    "generation_requests": 1693,
+    "input_tokens": 1015776,
+    "output_tokens": 176322,
+    "prm_requests": 70,
+    "generation_without_usage": 0
+  },
+  "gate_passed": false,
+  "gained_ids": [
+    6
+  ],
+  "lost_ids": [
+    10
+  ],
+  "wall_seconds": 510.0327247499954,
+  "finished_unix": 1795615598.223372,
+  "predictions_sha256": "f025e1f4565683d8eb2f18b4b49b73306cc3a39132d047b23f50d281da91c6e8"
+}
