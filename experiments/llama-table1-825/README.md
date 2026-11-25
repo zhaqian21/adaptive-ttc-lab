@@ -31,3 +31,7 @@ exec bash "$LAUNCHER" "$RUN_DIRECTORY"
 ~~~
 
 运行目录保存 `preparation.status`、模型服务和每组的日志。`results/status.json` 给出当前评测组，`results/export/summary.json` 和各组的审计文件给出完整结果。汇总指标注明样本数和逐题输出的 SHA-256。
+
+## 24 号运行恢复
+
+MATH-500 E2 的两个 worker 在已发布的结构化答案回退上长时间消耗 CPU。运行时回溯定位到 universal_agent.get_field_from_completion。保留已完成题，重新启动两个 E2 worker。GPU 1 的分片单独启动，以便与 GPU 0 并行继续。分片目录通过文件锁串行化重复入口。后续 worker 使用等价的答案字段匹配，去掉无法改变成功捕获的嵌套重复。正常 JSON 路径、采样、提取答案规则、评分和 E1 的既有结果继续使用原口径。运行目录的 runtime-recovery.json 记录旧版和恢复版入口指纹与恢复前的逐题检查点。

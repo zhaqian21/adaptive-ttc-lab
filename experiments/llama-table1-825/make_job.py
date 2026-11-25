@@ -23,7 +23,7 @@ def main():
     args = parser.parse_args()
     here = Path(__file__).resolve().parent
     release = here.parent / "aime24-amo-bench-published-code-2026-11-24"
-    files = {name: here / name for name in ("assets.json", "bootstrap_825.sh", "prepare_assets.py", "llama_table1.py")}
+    files = {name: here / name for name in ("assets.json", "bootstrap_825.sh", "prepare_assets.py", "llama_table1.py", "answer_fields.py")}
     files.update({f"baseline/{Path(name).name}": args.baseline / name for name in BASELINE_FILES})
     files.update({f"released/{name}": release / "scripts" / name
                   for name in ("run_published_extensions.py", "serve_prm.py")})

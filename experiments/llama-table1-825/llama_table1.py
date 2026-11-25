@@ -225,13 +225,21 @@ def main():
         serve_prm.serve()
         return 0
     if args.worker:
+        from answer_fields import install
+
+        install()
         worker_args = SimpleNamespace(
             case=args.worker, backend="vllm", dataset=args.dataset, dataset_manifest=args.manifest,
             prm_port=args.prm_port, workers=args.workers, sample=args.sample, seed=0, port=args.gen_port,
             context=CONTEXT, model=MODEL[1], vllm_version=args.vllm_version, output=args.output,
             shards=2, shard=args.lane, priority_file=None, strict_errors=False,
         )
-        return 0 if released.run(worker_args) else 1
+        import fcntl
+
+        args.output.mkdir(parents=True, exist_ok=True)
+        with (args.output / ".worker.lock").open("a") as lock:
+            fcntl.flock(lock.fileno(), fcntl.LOCK_EX)
+            return 0 if released.run(worker_args) else 1
     if not args.output or not args.manifest or not args.engine_python:
         parser.error("Coordinator needs --output, --manifest and --engine-python")
     try:
