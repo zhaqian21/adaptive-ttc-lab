@@ -1,0 +1,8 @@
+{
+  "candidate_pairs": 5000,
+  "seconds": 776.6320570239332,
+  "whole_input_tokens": 3854735,
+  "step_input_tokens": 3993785,
+  "scores_sha256": "15698f6e6c99693c01a4c189071545499649bd988889eb643b1d49ed9bccbe1c",
+  "peak_allocated_bytes": 16120508416
+}

@@ -1,0 +1,522 @@
+{
+  "cases": {
+    "E2": {
+      "samples": 500,
+      "n_candidates": 5000,
+      "correct": {
+        "historical_whole": 322,
+        "same_text_whole": 327,
+        "step_last": 314,
+        "step_mean": 315
+      },
+      "accuracy": {
+        "historical_whole": 0.644,
+        "same_text_whole": 0.654,
+        "step_last": 0.628,
+        "step_mean": 0.63
+      },
+      "gap_vs_paper_pp": {
+        "historical_whole": 19.8,
+        "same_text_whole": 20.8,
+        "step_last": 18.2,
+        "step_mean": 18.4
+      },
+      "paired_sha256": "5ea463f657d5c9fac3d3526658bccfe6067d3c5d963347dd3b5dbf555dba2651",
+      "contrasts": {
+        "historical_whole_to_same_text_whole": {
+          "from": "historical_whole",
+          "to": "same_text_whole",
+          "changed_iteration": 183,
+          "wrong_to_correct": 8,
+          "correct_to_wrong": 3,
+          "wrong_to_correct_ids": [
+            97,
+            104,
+            138,
+            187,
+            214,
+            274,
+            334,
+            498
+          ],
+          "correct_to_wrong_ids": [
+            74,
+            85,
+            270
+          ],
+          "change_pp": 1.0
+        },
+        "same_text_whole_to_step_last": {
+          "from": "same_text_whole",
+          "to": "step_last",
+          "changed_iteration": 282,
+          "wrong_to_correct": 12,
+          "correct_to_wrong": 25,
+          "wrong_to_correct_ids": [
+            10,
+            74,
+            123,
+            130,
+            175,
+            270,
+            279,
+            290,
+            307,
+            333,
+            339,
+            466
+          ],
+          "correct_to_wrong_ids": [
+            4,
+            6,
+            92,
+            102,
+            139,
+            179,
+            192,
+            205,
+            214,
+            223,
+            231,
+            247,
+            267,
+            272,
+            274,
+            315,
+            346,
+            358,
+            359,
+            366,
+            388,
+            402,
+            436,
+            450,
+            462
+          ],
+          "change_pp": -2.6
+        },
+        "step_last_to_step_mean": {
+          "from": "step_last",
+          "to": "step_mean",
+          "changed_iteration": 383,
+          "wrong_to_correct": 23,
+          "correct_to_wrong": 22,
+          "wrong_to_correct_ids": [
+            4,
+            6,
+            92,
+            102,
+            179,
+            192,
+            205,
+            231,
+            241,
+            247,
+            267,
+            272,
+            301,
+            315,
+            328,
+            346,
+            358,
+            366,
+            369,
+            388,
+            402,
+            450,
+            462
+          ],
+          "correct_to_wrong_ids": [
+            10,
+            17,
+            74,
+            104,
+            120,
+            121,
+            123,
+            130,
+            138,
+            175,
+            197,
+            244,
+            279,
+            333,
+            339,
+            393,
+            415,
+            420,
+            428,
+            434,
+            489,
+            498
+          ],
+          "change_pp": 0.2
+        },
+        "same_text_whole_to_step_mean": {
+          "from": "same_text_whole",
+          "to": "step_mean",
+          "changed_iteration": 282,
+          "wrong_to_correct": 8,
+          "correct_to_wrong": 20,
+          "wrong_to_correct_ids": [
+            241,
+            270,
+            290,
+            301,
+            307,
+            328,
+            369,
+            466
+          ],
+          "correct_to_wrong_ids": [
+            17,
+            104,
+            120,
+            121,
+            138,
+            139,
+            197,
+            214,
+            223,
+            244,
+            274,
+            359,
+            393,
+            415,
+            420,
+            428,
+            434,
+            436,
+            489,
+            498
+          ],
+          "change_pp": -2.4
+        }
+      }
+    },
+    "E4": {
+      "samples": 500,
+      "n_candidates": 5000,
+      "correct": {
+        "historical_whole": 321,
+        "same_text_whole": 330,
+        "step_last": 308,
+        "step_mean": 314
+      },
+      "accuracy": {
+        "historical_whole": 0.642,
+        "same_text_whole": 0.66,
+        "step_last": 0.616,
+        "step_mean": 0.628
+      },
+      "gap_vs_paper_pp": {
+        "historical_whole": -1.2,
+        "same_text_whole": 0.6,
+        "step_last": -3.8,
+        "step_mean": -2.6
+      },
+      "paired_sha256": "b744c3a6a5ff8422d45fa7e78736d0cdc2191074a80ab58307f123d6d2a7a5c5",
+      "contrasts": {
+        "historical_whole_to_same_text_whole": {
+          "from": "historical_whole",
+          "to": "same_text_whole",
+          "changed_iteration": 187,
+          "wrong_to_correct": 16,
+          "correct_to_wrong": 7,
+          "wrong_to_correct_ids": [
+            17,
+            155,
+            171,
+            211,
+            221,
+            260,
+            271,
+            297,
+            298,
+            331,
+            369,
+            382,
+            418,
+            435,
+            458,
+            491
+          ],
+          "correct_to_wrong_ids": [
+            7,
+            12,
+            119,
+            176,
+            209,
+            361,
+            365
+          ],
+          "change_pp": 1.8
+        },
+        "same_text_whole_to_step_last": {
+          "from": "same_text_whole",
+          "to": "step_last",
+          "changed_iteration": 314,
+          "wrong_to_correct": 11,
+          "correct_to_wrong": 33,
+          "wrong_to_correct_ids": [
+            7,
+            120,
+            136,
+            176,
+            209,
+            300,
+            315,
+            361,
+            362,
+            400,
+            466
+          ],
+          "correct_to_wrong_ids": [
+            15,
+            17,
+            58,
+            67,
+            84,
+            92,
+            94,
+            115,
+            143,
+            155,
+            173,
+            177,
+            179,
+            183,
+            190,
+            214,
+            223,
+            267,
+            273,
+            276,
+            298,
+            301,
+            316,
+            331,
+            339,
+            341,
+            354,
+            369,
+            377,
+            417,
+            428,
+            468,
+            491
+          ],
+          "change_pp": -4.4
+        },
+        "step_last_to_step_mean": {
+          "from": "step_last",
+          "to": "step_mean",
+          "changed_iteration": 385,
+          "wrong_to_correct": 27,
+          "correct_to_wrong": 21,
+          "wrong_to_correct_ids": [
+            12,
+            15,
+            17,
+            58,
+            67,
+            85,
+            115,
+            143,
+            177,
+            179,
+            183,
+            190,
+            223,
+            252,
+            273,
+            281,
+            298,
+            301,
+            316,
+            339,
+            341,
+            354,
+            377,
+            417,
+            428,
+            468,
+            491
+          ],
+          "correct_to_wrong_ids": [
+            20,
+            48,
+            82,
+            108,
+            120,
+            129,
+            136,
+            139,
+            209,
+            211,
+            238,
+            239,
+            300,
+            315,
+            361,
+            362,
+            400,
+            462,
+            466,
+            485,
+            492
+          ],
+          "change_pp": 1.2
+        },
+        "same_text_whole_to_step_mean": {
+          "from": "same_text_whole",
+          "to": "step_mean",
+          "changed_iteration": 286,
+          "wrong_to_correct": 6,
+          "correct_to_wrong": 22,
+          "wrong_to_correct_ids": [
+            7,
+            12,
+            85,
+            176,
+            252,
+            281
+          ],
+          "correct_to_wrong_ids": [
+            20,
+            48,
+            82,
+            84,
+            92,
+            94,
+            108,
+            129,
+            139,
+            155,
+            173,
+            211,
+            214,
+            238,
+            239,
+            267,
+            276,
+            331,
+            369,
+            462,
+            485,
+            492
+          ],
+          "change_pp": -3.2
+        }
+      }
+    }
+  },
+  "paired_across_cases": {
+    "historical_whole": {
+      "both_correct": 285,
+      "only_e2_correct": 37,
+      "only_e4_correct": 36,
+      "neither_correct": 142,
+      "e2_minus_e4_pp": 0.2
+    },
+    "same_text_whole": {
+      "both_correct": 298,
+      "only_e2_correct": 29,
+      "only_e4_correct": 32,
+      "neither_correct": 141,
+      "e2_minus_e4_pp": -0.6
+    },
+    "step_last": {
+      "both_correct": 268,
+      "only_e2_correct": 46,
+      "only_e4_correct": 40,
+      "neither_correct": 146,
+      "e2_minus_e4_pp": 1.2
+    },
+    "step_mean": {
+      "both_correct": 281,
+      "only_e2_correct": 34,
+      "only_e4_correct": 33,
+      "neither_correct": 152,
+      "e2_minus_e4_pp": 0.2
+    }
+  },
+  "shards": [
+    {
+      "config": {
+        "lane": 0,
+        "input_sha256": {
+          "E2": "86162531efbe257cbedacaec7febddb8a6172f051afe4651d83bf8f4769c6ea1",
+          "E4": "73c3f95e4ad26e7703c6068de73547dc4fe9b1bca23332254dd7e357c408ec3d"
+        },
+        "prm_revision": "0610740060112df12585d00a1c5f4624d2f59051",
+        "system_prompt": "Please reason step by step, and put your final answer within \\boxed{}.",
+        "step_marker": "<extra_0>",
+        "paragraph_break": "\n\n",
+        "batch_size": 32,
+        "batch_tokens": 8192,
+        "dtype": "torch.bfloat16",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.48.3",
+        "device": "NVIDIA H20",
+        "attention": "sdpa",
+        "max_context": 4096,
+        "source_sha256": {
+          "score_control.py": "6dc72c4982c72ec751977937bb479b5e478d4e5e8199b020606af73658d44346",
+          "prepare_pool.py": "c1ef12e04cf744f80ab100f4bf7d2eedf6500c65fb3728f7a611e9925b21feed",
+          "score_steps.py": "62106fba1e21fe266bf65676cfba2d3e7b87ccd52eb1eb8a5ee943260331f03c"
+        }
+      },
+      "runtime": {
+        "candidate_pairs": 5000,
+        "seconds": 845.7590323050972,
+        "whole_input_tokens": 4080191,
+        "step_input_tokens": 4231031,
+        "scores_sha256": "1f9fc0cc197d9db12bb5edd748ad434ff359701e0b2d14925621820342a72999",
+        "peak_allocated_bytes": 15503227904
+      }
+    },
+    {
+      "config": {
+        "lane": 1,
+        "input_sha256": {
+          "E2": "86162531efbe257cbedacaec7febddb8a6172f051afe4651d83bf8f4769c6ea1",
+          "E4": "73c3f95e4ad26e7703c6068de73547dc4fe9b1bca23332254dd7e357c408ec3d"
+        },
+        "prm_revision": "0610740060112df12585d00a1c5f4624d2f59051",
+        "system_prompt": "Please reason step by step, and put your final answer within \\boxed{}.",
+        "step_marker": "<extra_0>",
+        "paragraph_break": "\n\n",
+        "batch_size": 32,
+        "batch_tokens": 12288,
+        "dtype": "torch.bfloat16",
+        "torch": "2.6.0+cu124",
+        "transformers": "4.48.3",
+        "device": "NVIDIA H20",
+        "attention": "sdpa",
+        "max_context": 4096,
+        "source_sha256": {
+          "score_control.py": "6dc72c4982c72ec751977937bb479b5e478d4e5e8199b020606af73658d44346",
+          "prepare_pool.py": "c1ef12e04cf744f80ab100f4bf7d2eedf6500c65fb3728f7a611e9925b21feed",
+          "score_steps.py": "62106fba1e21fe266bf65676cfba2d3e7b87ccd52eb1eb8a5ee943260331f03c"
+        }
+      },
+      "runtime": {
+        "candidate_pairs": 5000,
+        "seconds": 776.6320570239332,
+        "whole_input_tokens": 3854735,
+        "step_input_tokens": 3993785,
+        "scores_sha256": "15698f6e6c99693c01a4c189071545499649bd988889eb643b1d49ed9bccbe1c",
+        "peak_allocated_bytes": 16120508416
+      }
+    }
+  ],
+  "verified_resume": {
+    "time": "2026-11-25T13:42:26+08:00",
+    "saved_pairs_per_gpu": [
+      1821,
+      1896
+    ],
+    "sha256": "24cbaf219d0d7e4ff0e31450c36bea2574643eb108297366af13ce2fd1d3ace5"
+  }
+}
