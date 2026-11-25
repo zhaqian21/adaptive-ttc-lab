@@ -6,7 +6,8 @@ if [[ $# != 2 ]]; then
 fi
 entry="$(cd -- "$(dirname -- "$0")" && pwd)"
 root="$(realpath -- "$1")"
-engine="$(realpath -- "$2")"
+# Preserve the virtualenv executable symlink so Python finds its packages.
+engine="$(realpath -s -- "$2")"
 source="$root/source"
 release="$entry/../aime24-amo-bench-published-code-2026-11-24"
 services=(ttc-published-service-0 ttc-published-service-1 ttc-published-prm-gpu0)
@@ -54,6 +55,7 @@ trap 'exit 143' TERM INT
 printf '%s\n' waiting-for-model-assets > "$root/status"
 until [[ -s "$root/assets.exit" ]]; do sleep 15; done
 [[ "$(cat "$root/assets.exit")" == 0 ]]
+printf '%s\n' preflight > "$root/status"
 "$engine" -c 'from importlib.metadata import version; assert version("vllm") == "0.33.0"'
 for port in 22500 22501 22502 22503; do
     listeners="$(ss -ltnH "sport = :$port")"
