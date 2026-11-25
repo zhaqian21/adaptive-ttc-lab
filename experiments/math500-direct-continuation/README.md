@@ -43,3 +43,26 @@ for study in continuation voting; do
   python "$exp/report.py" --study "$study" --archive "$exp/results/$study" --output "/tmp/direct-$study-replay"
 done
 ~~~
+
+## 补齐四个竞赛数据集
+
+AMC23、AIME24、AIME 2026 和 AMO-Bench 复用 [PR #33](https://github.com/zhaqian21/adaptive-ttc-lab/pull/33) 锁定的 150 道题。同一模型每题生成 5 条，候选上限为 1,024 token，投票与原 GSM8K、MATH-500 组相同。每题首条沿用 PR #33 的原题号作为种子，其余四条使用相同的百万步长。
+
+[六个数据集的对照表](results/remaining/comparison.md) 逐题核对 Direct 与 E4 的样本 ID，按答对数和生成 token 对比 1、3、5 条与原始 E4 固定 10 条。另计 5 条中至少有一个正确答案的题数，以及 5 条都没有可提取答案的题数。Direct 各组不调用 PRM。
+
+服务器使用此前五套数据集的运行目录布局，`data` 需包含 AIME24、AMO-Bench 的固定 parquet 和 manifest，以及已锁定的 AIME 2026 与 GSM8K parquet。三卡分工沿用 PR #34。
+
+~~~bash
+exp=experiments/math500-direct-continuation
+TTC_DIRECT_STUDY=remaining bash experiments/gsm8k-500-e4-direct/run_24.sh "$RUN_DIRECTORY" "$VLLM_PYTHON" "$exp/run.py"
+python "$exp/report.py" --study remaining --run "$RUN_DIRECTORY/results" \
+  --archive "$RUN_DIRECTORY/export" --output "$RUN_DIRECTORY/export"
+~~~
+
+从发布的候选归档独立重建三种投票结果和六数据集对照。
+
+~~~bash
+exp=experiments/math500-direct-continuation
+python "$exp/report.py" --study remaining --archive "$exp/results/remaining" --output /tmp/direct-voting-remaining-replay
+python "$exp/comparison.py" --output /tmp/direct-voting-six-datasets.md
+~~~

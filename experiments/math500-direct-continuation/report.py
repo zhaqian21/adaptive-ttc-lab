@@ -12,6 +12,8 @@ HERE = Path(__file__).resolve().parent
 PRIOR = HERE.parent / "gsm8k-500-e4-direct"
 LANES = {"qwen": (0,), "llama": (1, 7)}
 MODELS = {"qwen": "Qwen", "llama": "Llama"}
+DATASET_LABELS = {"math": "MATH-500", "gsm8k": "GSM8K", "amc23": "AMC23",
+                  "aime24": "AIME24", "amo": "AMO-Bench", "aime26": "AIME 2026"}
 LABELS = {"fixed1024": "固定 1,024", "fixed2048": "固定 2,048", "on_demand": "按需续写",
           "direct1": "单次作答", "vote3": "3 条投票", "vote5": "5 条投票"}
 
@@ -37,10 +39,12 @@ def save(path, value):
 
 
 def plans(study):
-    qs = read(PRIOR / "followup_questions.json")["questions"][:500]
+    questions = read(PRIOR / "followup_questions.json")["questions"]
+    start = 500 if study == "remaining" else 0
+    qs = questions[500:] if study == "remaining" else questions[:500]
     if study == "voting":
         qs += [{**q, "problem_id": q["problem_id"] + 500} for q in read(PRIOR / "questions.json")["questions"]]
-    if [q["problem_id"] for q in qs] != list(range(len(qs))):
+    if [q["problem_id"] for q in qs] != list(range(start, start + len(qs))):
         raise ValueError("Unexpected question plan")
     return qs
 
@@ -81,7 +85,8 @@ def validate(row, question, study, model):
         raise ValueError("Wrong pool size")
     for draw, output in enumerate(row["outputs"]):
         n = output["output_tokens"]
-        if (output["seed"] != index % 500 + 1_000_000 * draw or not 0 < n <= cap
+        seed = index if study == "remaining" else index % 500
+        if (output["seed"] != seed + 1_000_000 * draw or not 0 < n <= cap
                 or output["finish_reason"] not in ("stop", "length")
                 or (output["finish_reason"] == "length" and n != cap) or output["input_tokens"] < 1
                 or output["prm_requests"] != 0 or output["generation_requests"] - output["generation_without_usage"] != 1):
@@ -117,6 +122,9 @@ def paired(row, study, legacy):
             pair[name].update(selected_draw=pick + 1, candidates=n, prm_requests=0,
                               tokens=sum(c["input_tokens"] + c["output_tokens"] for c in outputs[:n]))
         first = pair["direct1"]
+        if study == "remaining":
+            pair["any_correct_at_5"] = any(c["correct"] for c in outputs)
+            pair["all_unparsed_at_5"] = not any(key(c["answer"]) for c in outputs)
     pair["prior_direct"] = {"answer": legacy["predicted_answer"], "correct": legacy["is_correct"],
                             "same_completion": first["completion_sha256"] == legacy["completion_sha256"]}
     return pair
@@ -139,12 +147,15 @@ def summary(rows, names, study):
         report["at_1024_without_answer"] = sum(v["fixed1024"]["output_tokens"] == SHORT
                                                and not key(v["fixed1024"]["answer"]) for v in rows)
         report["extended"] = sum(r["extended"] for r in rows)
+    if study == "remaining":
+        for field in ("any_correct_at_5", "all_unparsed_at_5"):
+            report[field] = sum(r[field] for r in rows)
     return report
 
 
 def reduce(study, archive, output, qs, prior_math, prior_gsm):
     names = ("fixed1024", "fixed2048", "on_demand") if study == "continuation" else ("direct1", "vote3", "vote5")
-    datasets = ("math",) if study == "continuation" else ("math", "gsm8k")
+    datasets = tuple(dict.fromkeys(q["dataset"] for q in qs))
     reports = {}
     for model in LANES:
         records = jsonl(prior_math / f"{model}_direct.jsonl") + jsonl(prior_gsm / f"{model}_direct.jsonl")
@@ -177,7 +188,7 @@ def table(reports):
     for model, result in reports.items():
         for ds, dataset in result["datasets"].items():
             for mode, stats in dataset["methods"].items():
-                label = "MATH-500" if ds == "math" else "GSM8K"
+                label = DATASET_LABELS[ds]
                 rows.append(f"| {label} | {MODELS[model]} | {LABELS[mode]} | "
                             f"{stats['accuracy']:.1%} ({stats['correct']}/{dataset['samples']}) | {stats['tokens']:,} | "
                             f"{stats['prm_requests']:,} | {stats['wrong_to_right']} | {stats['right_to_wrong']} |")
