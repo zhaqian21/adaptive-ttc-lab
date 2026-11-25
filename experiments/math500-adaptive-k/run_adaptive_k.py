@@ -95,7 +95,10 @@ def run(args, *, solve_question=solve, extension=None, extension_sources=()):
     args.selector = getattr(args, "selector", "single_prm")
     if args.selector not in SELECTORS or (args.mode != "adaptive" and args.selector != "single_prm"):
         raise ValueError("Answer-level PRM selection requires the standalone adaptive sampler")
-    args.case, args.priority_file, args.shards = "E4", None, 2
+    args.case, args.priority_file = "E4", None
+    args.shards = getattr(args, "shards", 2)
+    if not 0 <= args.shard < args.shards:
+        raise ValueError("Invalid shard for this run")
     config = baseline.configuration(args.case)
     raw_tokenizer = baseline.AutoTokenizer.from_pretrained(config["client"]["model_id"], local_files_only=True)
     decode = baseline.effective_decode(config, raw_tokenizer)

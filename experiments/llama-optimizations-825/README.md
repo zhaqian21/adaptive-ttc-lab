@@ -1,0 +1,19 @@
+# 825 单卡 Llama 优化对照
+
+在一张 H20 同时运行固定的 Llama-3.1-8B-Instruct BF16 快照和 Qwen2.5-Math-PRM-7B。沿用 vLLM 0.33.0、32,768 上下文、E4 采样入口、种子 0 和各方法原有开销口径。正式轮并发 24，8 题试跑并发 8。两种固定 K 按候选数退出，其他生成预算仍为每题 125,000 个逻辑 token。
+
+| 顺序 | 对照 | 覆盖 |
+| --- | --- | --- |
+| 1 | 只重采样、固定修正一次、固定点调度 D | MATH-500 全部 500 题和 AMC23 全部 40 题 |
+| 2 | 固定 K=5、K=10、完整预算、自适应 K | 共享 MATH-500 候选序列 |
+| 3 | 单候选 PRM 和答案级聚合 | 两次独立运行各 500 题，并在各自候选池上重放 |
+| 4 | 完整预算与早停的四组消融、G、F、F+G | 每个在线阶段 500 题，再在消融候选池上跑等成本对照 |
+
+每一在线阶段分别保存逐题检查点、审计结果、配置以及用时。在 825 重新分配一张卡后，可以用同一份上传包和同一输出目录续跑。已经审计的阶段跳过，部分完成的阶段复用逐题检查点。因调度中断而无法完整测量的墙钟时间在摘要中标记。
+
+~~~bash
+python experiments/llama-optimizations-825/make_job.py local/llama-optimizations-825.sh
+bash "$UPLOADED_LAUNCHER" "$RUN_DIRECTORY"
+~~~
+
+申请 1 张 H20、16 核 CPU、96 GiB 内存、24 小时时限。运行目录中的 preparation.status 记录准备阶段，results/status.json 记录当前评测阶段。results 下的逐题 JSONL 与 summary.json 包含答案、候选覆盖、token、PRM 请求、准确率和文件 SHA-256。

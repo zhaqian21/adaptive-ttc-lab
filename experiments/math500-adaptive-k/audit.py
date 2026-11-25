@@ -115,19 +115,19 @@ def verify_row(row, question, evaluator, mode, selector="single_prm"):
     return max_scores
 
 
-def audit(root, wall_seconds):
+def audit(root, wall_seconds, *, shards=2):
     configs, executions, rows = [], [], []
     physical_prm_calls, retries = 0, []
     evaluator = runner.upstream.get_evaluator("MATH")
-    for lane in (0, 1):
+    for lane in range(shards):
         shard = root / f"shard-{lane}"
-        config, execution, files = shard_files(shard, lane)
+        config, execution, files = shard_files(shard, lane, shards)
         selector = config.get("selector", "single_prm")
         if selector not in SELECTORS or (config["mode"] != "adaptive" and selector != "single_prm"):
             raise ValueError(f"Wrong selection rule on shard {lane}")
         if execution["failures"] or config["dataset_sha256"] != baseline.DATASET_SHA256:
             raise ValueError(f"Wrong data or unresolved failures on shard {lane}")
-        args = SimpleNamespace(shard=lane, shards=2, sample=config["sample"], case="E4", priority_file=None)
+        args = SimpleNamespace(shard=lane, shards=shards, sample=config["sample"], case="E4", priority_file=None)
         expected = {q["problem_id"]: q for q in baseline.dataset_for_run(args)}
         if set(expected) != set(files):
             raise ValueError(f"Wrong sample on shard {lane}")
@@ -149,7 +149,7 @@ def audit(root, wall_seconds):
     def comparable(config):
         return {k: v for k, v in config.items() if k not in ("shard", "question_ids")}
 
-    if comparable(configs[0]) != comparable(configs[1]):
+    if any(comparable(config) != comparable(configs[0]) for config in configs[1:]):
         raise ValueError("Shard configurations differ")
     mode = configs[0]["mode"]
     sample = configs[0]["sample"]

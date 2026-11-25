@@ -56,6 +56,16 @@ def solve(question, args, config, tokenizer, decode):
     base.baseline.write(path, result)
 
 
+def run(args):
+    args.mode, args.selector = "adaptive", "answer_prm_sum"
+    extension = {
+        "method": args.method, "token_limit": TOKEN_LIMIT, "checkpoints": list(routing.CHECKPOINTS),
+        "minimum_lead_in_prm_sum": routing.MIN_MARGIN, "min_support_fraction": "2/3",
+    }
+    return base.run(args, solve_question=solve, extension=extension,
+                    extension_sources=(__file__, routing.__file__))
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
@@ -67,12 +77,6 @@ if __name__ == "__main__":
     args = parser.parse_args()
     if args.workers < 1:
         parser.error("Worker count must be positive")
-    args.mode, args.selector = "adaptive", "answer_prm_sum"
     args.prm_port, args.seed, args.context = 18422, 0, 32768
     args.model, args.vllm_version = "published-qwen25", "0.33.0"
-    extension = {
-        "method": args.method, "token_limit": TOKEN_LIMIT, "checkpoints": list(routing.CHECKPOINTS),
-        "minimum_lead_in_prm_sum": routing.MIN_MARGIN, "min_support_fraction": "2/3",
-    }
-    raise SystemExit(base.run(args, solve_question=solve, extension=extension,
-                              extension_sources=(__file__, routing.__file__)))
+    raise SystemExit(run(args))
