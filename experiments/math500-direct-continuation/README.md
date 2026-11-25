@@ -50,6 +50,8 @@ AMC23、AIME24、AIME 2026 和 AMO-Bench 复用 [PR #33](https://github.com/zhaq
 
 [六个数据集的对照表](results/remaining/comparison.md) 逐题核对 Direct 与 E4 的样本 ID，按答对数和生成 token 对比 1、3、5 条与原始 E4 固定 10 条。另计 5 条中至少有一个正确答案的题数，以及 5 条都没有可提取答案的题数。Direct 各组不调用 PRM。
 
+AMC23 上 Qwen 的 5 条投票和 E4 都答对 23/40，分别花费 190,764 和 8,214,515 生成 token。Llama 的 5 条投票为 6/40，5 条候选中含正确答案的题有 11/40。Llama 在 AIME 2026 和 AMO-Bench 的 5 条候选中均未出现正确答案，其中分别有 7 和 16 题的五条候选都提取不到答案。
+
 服务器使用此前五套数据集的运行目录布局，`data` 需包含 AIME24、AMO-Bench 的固定 parquet 和 manifest，以及已锁定的 AIME 2026 与 GSM8K parquet。三卡分工沿用 PR #34。
 
 ~~~bash
