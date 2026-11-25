@@ -25,7 +25,28 @@ bash experiments/llama-table1-825/run_24.sh "$OUTPUT" "$VLLM_PYTHON" "$experimen
 每个阶段输出 `results/<phase>/predictions.jsonl`、`summary.json` 和两张卡各自的 `gpu-<lane>/config.json`。归档时两个 worker 的配置文件分别保存为 `gpu-0_config.json` 和 `gpu-1_config.json`。审计脚本逐题核对采样轮数、早停条件、候选得分、选优结果、种子、服务请求数和累加 token，并重建配对记录与汇总表。
 
 ~~~bash
-python experiments/llama-e4-online-ab/compare_online.py --output /tmp/llama-e4-online-ab
+original_runner="$(mktemp)"
+git show a5dcb0c38efe34e410eb8ff9c80b5bba5b7696cf:experiments/llama-e4-online-ab/online_ab.py > "$original_runner"
+python experiments/llama-e4-online-ab/compare_online.py --source "$original_runner" --output /tmp/llama-e4-online-ab
 ~~~
 
 生成 token 使用 vLLM 响应中的输入与输出用量。请求计数包含失败和重试。有请求缺少用量时单独计数。外层 PRM 请求按实际发出的 HTTP 调用统计。双卡墙钟从启动评测 worker 到两张卡都完成，模型服务加载时间另计。逐题 P95 从题目进入 worker 到写出候选和答案前，包含题内重试，线程池排队时间另计。
+
+## 数据集与模型迁移
+
+在 Llama 的 MATH-500 两轮结束后，24 服务器按以下顺序接续。两项沿用相同的 A、B 规则、外层 PRM 和双卡配置。
+
+| 顺序 | 生成模型 | 数据集 | 试跑 | 正式 |
+|---|---|---|---:|---:|
+| 1 | Llama-3.1-8B-Instruct | AMC23 | 8 题 | 每组 40 题 |
+| 2 | Qwen2.5-7B-Instruct | MATH-500 | 20 题 | 每组 500 题 |
+
+AMC23 沿用 [PR #6](https://github.com/zhaqian21/adaptive-ttc-lab/pull/6) 的 Parquet 版本、题号和 MATH 判分。按该实验中重采样的输出 token 降序安排正式题目。Qwen 使用同样的 MATH-500 分片和正式提交顺序，试跑按 [PR #15](https://github.com/zhaqian21/adaptive-ttc-lab/pull/15) 的历史记录选择可早停、有分歧的题各十道。两项均保存冻结题序和数据指纹。
+
+准备一个新的队列目录，包含 `llama-amc23` 与 `qwen-math500`。两者的 `source` 可指向同一份准备好的资产目录。资产目录沿用上文 Llama 双卡环境，另在 `source/datasets/amc23.parquet` 放置固定 AMC23 Parquet，在 `source/assets/model` 链接固定 Qwen 快照。两项的 `assets.exit` 各记录资产预检的返回码。
+
+~~~bash
+bash experiments/llama-e4-online-ab/run_followups_24.sh "$PREVIOUS_RUN" "$QUEUE" "$VLLM_PYTHON"
+~~~
+
+入口等待上一轮通过双卡审计并恢复常驻服务。每个接续实验写入自己的评测日志和逐题结果，结束后生成 `results/comparison` 并检查常驻服务。队列进度见 `queue-status`。任一步骤出错时，`queue.exit` 记录失败返回码。

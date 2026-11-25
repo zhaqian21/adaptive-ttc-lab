@@ -29,6 +29,21 @@ WORKERS = 24
 PORTS = (22500, 22501, 22502, 22503)
 PHASES = {"smoke": True, "fixed": False, "early": True}
 COST = ("generation_requests", "input_tokens", "output_tokens", "prm_requests", "generation_without_usage")
+STUDY = os.environ.get("TTC_E4_STUDY", "llama-math500")
+PLAN_PATH = HERE / "question_plan.json"
+SAMPLES, SMOKE_SAMPLES = 500, 20
+HISTORY_SHA = E4_BASELINE_SHA
+
+if STUDY != "llama-math500":
+    from followup_benchmarks import FOLLOWUPS, load_followup_benchmark
+
+    study = FOLLOWUPS[STUDY]
+    MODEL = study["model"]
+    PLAN_PATH = HERE / study["plan"]
+    SAMPLES, SMOKE_SAMPLES = study["samples"], study["smoke_samples"]
+    HISTORY_SHA = study["history_sha256"]
+    datasets, _, prm = released.runner.ASSETS
+    released.runner.ASSETS = (datasets, MODEL, prm)
 
 
 def fingerprint(path):
@@ -149,13 +164,19 @@ def valid_stages(stages, stopped):
 
 
 def load_plan():
-    plan = released.read(HERE / "question_plan.json")
-    if (plan["historical"] != E4_BASELINE_SHA or sorted(plan["formal"]) != list(range(500))
-            or len(set(plan["smoke"])) != 20):
+    plan = released.read(PLAN_PATH)
+    if plan["historical"] != HISTORY_SHA or sorted(plan["formal"]) != list(range(SAMPLES)):
         raise ValueError("Expected the frozen historical question plan")
-    if len(plan["smoke"]) != 20 or not set(plan["smoke"]).issubset(plan["formal"]):
-        raise ValueError("Smoke plan must contain 20 of the 500 questions")
+    if (len(plan["smoke"]) != SMOKE_SAMPLES or len(set(plan["smoke"])) != SMOKE_SAMPLES
+            or not set(plan["smoke"]).issubset(plan["formal"])):
+        raise ValueError(f"Smoke plan must contain {SMOKE_SAMPLES} of the {SAMPLES} questions")
     return plan
+
+
+def load_questions():
+    if STUDY != "llama-math500":
+        return load_followup_benchmark(STUDY, released)
+    return released.load_benchmark(SimpleNamespace(dataset="math"))
 
 
 def worker(args):
@@ -169,7 +190,9 @@ def worker(args):
             or subprocess.check_output([*git, "status", "--porcelain", "--untracked-files=no"])):
         raise ValueError("Expected the pinned clean upstream checkout")
     install()
-    questions, spec = released.load_benchmark(SimpleNamespace(dataset="math"))
+    questions, spec = load_questions()
+    if len(questions) != SAMPLES or [row["problem_id"] for row in questions] != list(range(SAMPLES)):
+        raise ValueError("The dataset and frozen question plan do not match")
     plan = load_plan()
     indices = plan["smoke" if args.worker == "smoke" else "formal"]
     indices = [i for i in indices if i % 2 == args.lane]
@@ -188,7 +211,8 @@ def worker(args):
         "workers": WORKERS, "dataset": spec, "decode": decode, "vllm": args.vllm_version,
         "model": list(MODEL), "agent": config["agent"],
         "upstream_commit": runner.UPSTREAM_COMMIT,
-        "source_sha256": fingerprint(Path(__file__)), "plan_sha256": fingerprint(HERE / "question_plan.json"),
+        "source_sha256": fingerprint(Path(__file__)), "plan_sha256": fingerprint(PLAN_PATH),
+        "study": STUDY,
     }
     settings = args.output / "config.json"
     if settings.exists() and released.read(settings) != setup:

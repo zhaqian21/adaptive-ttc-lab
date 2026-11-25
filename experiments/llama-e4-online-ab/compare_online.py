@@ -73,7 +73,7 @@ def verify_row(row, name):
                 f"{label}: wrong PRM selector")
 
 
-def load_arm(root, name, plan, verify_source):
+def load_arm(root, name, plan, verify_source, plan_path=HERE / "question_plan.json"):
     path = root / name
     manifest = read(path / "summary.json")
     payload = (path / "predictions.jsonl").read_bytes()
@@ -89,24 +89,27 @@ def load_arm(root, name, plan, verify_source):
             and manifest["early_stops"] == sum(row["stopped_early"] for row in rows)
             and all(manifest[k] == sum(row[k] for row in rows) for k in COST),
             f"{name}: summary values")
-    configs = [read(path / f"gpu-{lane}_config.json") for lane in (0, 1)]
+    configs = []
+    for lane in (0, 1):
+        archived = path / f"gpu-{lane}_config.json"
+        configs.append(read(archived if archived.is_file() else path / f"gpu-{lane}" / "config.json"))
     for lane, cfg in enumerate(configs):
         require(cfg["phase"] == name and cfg["lane"] == lane
                 and cfg["submission_order"] == [i for i in indices if i % 2 == lane],
                 f"{name}: unexpected worker order/config")
         if verify_source:
             require(cfg["source_sha256"] == verify_source, f"{name}: online source fingerprint")
-        require(cfg["plan_sha256"] == hashlib.sha256((HERE / "question_plan.json").read_bytes()).hexdigest(),
+        require(cfg["plan_sha256"] == hashlib.sha256(plan_path.read_bytes()).hexdigest(),
                 f"{name}: question plan checksum")
     return rows, manifest, configs
 
 
-def summarize(root, output, source=None):
-    plan = read(HERE / "question_plan.json")
+def summarize(root, output, source=None, plan_path=HERE / "question_plan.json"):
+    plan = read(plan_path)
     summary = {"arms": {}}
     arms = {}
     for name in ("smoke", "fixed", "early"):
-        rows, manifest, configs = load_arm(root, name, plan, source)
+        rows, manifest, configs = load_arm(root, name, plan, source, plan_path)
         arms[name] = rows, configs
         seconds = [row["seconds"] for row in rows]
         summary["arms"][name] = {
@@ -145,6 +148,8 @@ def summarize(root, output, source=None):
     summary.update({
         "paired_online": contrast(pairs, "fixed", "early"),
         "paired_fixed_pool": contrast(pairs, "fixed", "early_on_fixed_pool"),
+        "paired_aggregation_on_fixed_pool": contrast(pairs, "original", "fixed"),
+        "paired_combined_vs_original": contrast(pairs, "original", "early"),
         "original_selector_on_fixed_pool_correct": sum(row["original"]["is_correct"] for row in pairs),
         "shadow_early_correct": sum(row["early_on_fixed_pool"]["is_correct"] for row in pairs),
         "shadow_early_stops": sum(row["shadow_stopped_early"] for row in pairs),
@@ -179,5 +184,7 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=HERE / "results")
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--plan", type=Path, default=HERE / "question_plan.json")
+    parser.add_argument("--source", type=Path, default=HERE / "online_ab.py")
     args = parser.parse_args()
-    print(table(summarize(args.root, args.output, hashlib.sha256((HERE / "online_ab.py").read_bytes()).hexdigest())))
+    print(table(summarize(args.root, args.output, hashlib.sha256(args.source.read_bytes()).hexdigest(), args.plan)))
