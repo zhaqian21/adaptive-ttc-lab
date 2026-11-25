@@ -17,7 +17,7 @@ COUNTS = (*METRICS, "tokens", "prm_requests")
 def load_verified(path, expected):
     raw = path.read_bytes()
     if hashlib.sha256(raw).hexdigest() != expected:
-        raise ValueError(f"Expected the exact PR #14 archive at {path}")
+        raise ValueError(f"Archived SHA-256 does not match for {path}")
     rows = [json.loads(line) for line in raw.splitlines()]
     if len(rows) != SAMPLES:
         raise ValueError(f"Expected {SAMPLES} rows at {path}")

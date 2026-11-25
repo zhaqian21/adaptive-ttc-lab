@@ -1,0 +1,643 @@
+{
+  "samples": 500,
+  "thresholds": {
+    "two": 2,
+    "three": 3,
+    "four": 4,
+    "five": 5,
+    "six": 6,
+    "seven": 7,
+    "eight": 8,
+    "nine": 9
+  },
+  "source_sha256": {
+    "e2_baseline_predictions": "d3ece8d47d7e9b4f96f3b7d2b3b00f0979c9e23bf5e68f1ce31857dc7fce1dac",
+    "e2_candidate_pool": "97bbc5e3be2fa1fb654e853e497efb4606c173df9e43732a18ee57c4df345600",
+    "e4_baseline_predictions": "df1f70b320c724b184df1a76af105a6b55c5e01e05b79ae6b8dd51ad9c6a8e82",
+    "e4_candidate_pool": "c1ece04f0e8d727a00bba995ab1320a849af25a7368608c0e3a64befca517373",
+    "e4_threshold_predictions": "866a1abccf124b8820f0b413b04217791c84db118667b251f923a8294658609e"
+  },
+  "e2_threshold_predictions_sha256": "5ef4405a8e2f50aca90b5e75bf4c2b35d6bfd45c6062f9ec57a86ca1bb14414a",
+  "E2": {
+    "metrics": {
+      "baseline": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 10000,
+        "input_tokens": 4321580,
+        "output_tokens": 2993520,
+        "tokens": 7315100,
+        "prm_requests": 5000
+      },
+      "two": {
+        "correct": 386,
+        "accuracy": 0.772,
+        "generation_calls": 4480,
+        "input_tokens": 2006508,
+        "output_tokens": 1589249,
+        "tokens": 3595757,
+        "prm_requests": 1550
+      },
+      "three": {
+        "correct": 392,
+        "accuracy": 0.784,
+        "generation_calls": 5744,
+        "input_tokens": 2555214,
+        "output_tokens": 1952106,
+        "tokens": 4507320,
+        "prm_requests": 1960
+      },
+      "four": {
+        "correct": 392,
+        "accuracy": 0.784,
+        "generation_calls": 6580,
+        "input_tokens": 2909492,
+        "output_tokens": 2175995,
+        "tokens": 5085487,
+        "prm_requests": 2150
+      },
+      "five": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 7330,
+        "input_tokens": 3225190,
+        "output_tokens": 2370468,
+        "tokens": 5595658,
+        "prm_requests": 2330
+      },
+      "six": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 7912,
+        "input_tokens": 3465140,
+        "output_tokens": 2511199,
+        "tokens": 5976339,
+        "prm_requests": 2390
+      },
+      "seven": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 8464,
+        "input_tokens": 3691904,
+        "output_tokens": 2639333,
+        "tokens": 6331237,
+        "prm_requests": 2440
+      },
+      "eight": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 8996,
+        "input_tokens": 3910524,
+        "output_tokens": 2761254,
+        "tokens": 6671778,
+        "prm_requests": 2490
+      },
+      "nine": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 9508,
+        "input_tokens": 4120440,
+        "output_tokens": 2879139,
+        "tokens": 6999579,
+        "prm_requests": 2540
+      }
+    },
+    "early_stops": {
+      "two": 345,
+      "three": 304,
+      "four": 285,
+      "five": 267,
+      "six": 261,
+      "seven": 256,
+      "eight": 251,
+      "nine": 246
+    },
+    "savings_vs_baseline": {
+      "two": {
+        "saved": {
+          "generation_calls": 5520,
+          "input_tokens": 2315072,
+          "output_tokens": 1404271,
+          "tokens": 3719343,
+          "prm_requests": 3450
+        },
+        "rate": {
+          "generation_calls": 0.552,
+          "input_tokens": 0.5357003688465792,
+          "output_tokens": 0.469103597103076,
+          "tokens": 0.508447321294309,
+          "prm_requests": 0.69
+        }
+      },
+      "three": {
+        "saved": {
+          "generation_calls": 4256,
+          "input_tokens": 1766366,
+          "output_tokens": 1041414,
+          "tokens": 2807780,
+          "prm_requests": 3040
+        },
+        "rate": {
+          "generation_calls": 0.4256,
+          "input_tokens": 0.4087315287464307,
+          "output_tokens": 0.3478894411929768,
+          "tokens": 0.383833440417766,
+          "prm_requests": 0.608
+        }
+      },
+      "four": {
+        "saved": {
+          "generation_calls": 3420,
+          "input_tokens": 1412088,
+          "output_tokens": 817525,
+          "tokens": 2229613,
+          "prm_requests": 2850
+        },
+        "rate": {
+          "generation_calls": 0.342,
+          "input_tokens": 0.3267527154420374,
+          "output_tokens": 0.27309822550041424,
+          "tokens": 0.3047959699799046,
+          "prm_requests": 0.57
+        }
+      },
+      "five": {
+        "saved": {
+          "generation_calls": 2670,
+          "input_tokens": 1096390,
+          "output_tokens": 623052,
+          "tokens": 1719442,
+          "prm_requests": 2670
+        },
+        "rate": {
+          "generation_calls": 0.267,
+          "input_tokens": 0.2537011926193661,
+          "output_tokens": 0.20813356850797723,
+          "tokens": 0.23505379283946903,
+          "prm_requests": 0.534
+        }
+      },
+      "six": {
+        "saved": {
+          "generation_calls": 2088,
+          "input_tokens": 856440,
+          "output_tokens": 482321,
+          "tokens": 1338761,
+          "prm_requests": 2610
+        },
+        "rate": {
+          "generation_calls": 0.2088,
+          "input_tokens": 0.19817751840761944,
+          "output_tokens": 0.16112168951602127,
+          "tokens": 0.1830133559349838,
+          "prm_requests": 0.522
+        }
+      },
+      "seven": {
+        "saved": {
+          "generation_calls": 1536,
+          "input_tokens": 629676,
+          "output_tokens": 354187,
+          "tokens": 983863,
+          "prm_requests": 2560
+        },
+        "rate": {
+          "generation_calls": 0.1536,
+          "input_tokens": 0.14570504306295382,
+          "output_tokens": 0.11831789999732756,
+          "tokens": 0.1344975461716176,
+          "prm_requests": 0.512
+        }
+      },
+      "eight": {
+        "saved": {
+          "generation_calls": 1004,
+          "input_tokens": 411056,
+          "output_tokens": 232266,
+          "tokens": 643322,
+          "prm_requests": 2510
+        },
+        "rate": {
+          "generation_calls": 0.1004,
+          "input_tokens": 0.09511706366652938,
+          "output_tokens": 0.07758959352200753,
+          "tokens": 0.08794438900356796,
+          "prm_requests": 0.502
+        }
+      },
+      "nine": {
+        "saved": {
+          "generation_calls": 492,
+          "input_tokens": 201140,
+          "output_tokens": 114381,
+          "tokens": 315521,
+          "prm_requests": 2460
+        },
+        "rate": {
+          "generation_calls": 0.0492,
+          "input_tokens": 0.04654316245447267,
+          "output_tokens": 0.03820953259039525,
+          "tokens": 0.04313283482112343,
+          "prm_requests": 0.492
+        }
+      }
+    },
+    "paired_vs_baseline": {
+      "two": {
+        "gained": 2,
+        "lost": 11,
+        "gained_problem_ids": [
+          128,
+          482
+        ],
+        "lost_problem_ids": [
+          40,
+          63,
+          71,
+          91,
+          123,
+          158,
+          180,
+          204,
+          213,
+          425,
+          473
+        ]
+      },
+      "three": {
+        "gained": 2,
+        "lost": 5,
+        "gained_problem_ids": [
+          128,
+          482
+        ],
+        "lost_problem_ids": [
+          63,
+          158,
+          180,
+          204,
+          473
+        ]
+      },
+      "four": {
+        "gained": 1,
+        "lost": 4,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          63,
+          158,
+          180,
+          473
+        ]
+      },
+      "five": {
+        "gained": 1,
+        "lost": 1,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          180
+        ]
+      },
+      "six": {
+        "gained": 1,
+        "lost": 1,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          180
+        ]
+      },
+      "seven": {
+        "gained": 1,
+        "lost": 1,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          180
+        ]
+      },
+      "eight": {
+        "gained": 1,
+        "lost": 1,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          180
+        ]
+      },
+      "nine": {
+        "gained": 1,
+        "lost": 1,
+        "gained_problem_ids": [
+          128
+        ],
+        "lost_problem_ids": [
+          180
+        ]
+      }
+    }
+  },
+  "E4": {
+    "metrics": {
+      "baseline": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 108845,
+        "input_tokens": 64495666,
+        "output_tokens": 8366154,
+        "tokens": 72861820,
+        "prm_requests": 5000
+      },
+      "two": {
+        "correct": 388,
+        "accuracy": 0.776,
+        "generation_calls": 55707,
+        "input_tokens": 34885421,
+        "output_tokens": 4870542,
+        "tokens": 39755963,
+        "prm_requests": 1590
+      },
+      "three": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 69687,
+        "input_tokens": 42971322,
+        "output_tokens": 5910251,
+        "tokens": 48881573,
+        "prm_requests": 2020
+      },
+      "four": {
+        "correct": 395,
+        "accuracy": 0.79,
+        "generation_calls": 78077,
+        "input_tokens": 48018840,
+        "output_tokens": 6592651,
+        "tokens": 54611491,
+        "prm_requests": 2190
+      },
+      "five": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 84869,
+        "input_tokens": 51873544,
+        "output_tokens": 7060410,
+        "tokens": 58933954,
+        "prm_requests": 2320
+      },
+      "six": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 90471,
+        "input_tokens": 54851201,
+        "output_tokens": 7382122,
+        "tokens": 62233323,
+        "prm_requests": 2410
+      },
+      "seven": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 95508,
+        "input_tokens": 57479373,
+        "output_tokens": 7645554,
+        "tokens": 65124927,
+        "prm_requests": 2500
+      },
+      "eight": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 100181,
+        "input_tokens": 59927352,
+        "output_tokens": 7894042,
+        "tokens": 67821394,
+        "prm_requests": 2570
+      },
+      "nine": {
+        "correct": 397,
+        "accuracy": 0.794,
+        "generation_calls": 104619,
+        "input_tokens": 62241130,
+        "output_tokens": 8130200,
+        "tokens": 70371330,
+        "prm_requests": 2640
+      }
+    },
+    "early_stops": {
+      "two": 341,
+      "three": 298,
+      "four": 281,
+      "five": 268,
+      "six": 259,
+      "seven": 250,
+      "eight": 243,
+      "nine": 236
+    },
+    "savings_vs_baseline": {
+      "two": {
+        "saved": {
+          "generation_calls": 53138,
+          "input_tokens": 29610245,
+          "output_tokens": 3495612,
+          "tokens": 33105857,
+          "prm_requests": 3410
+        },
+        "rate": {
+          "generation_calls": 0.48819881482842575,
+          "input_tokens": 0.45910441486099235,
+          "output_tokens": 0.4178278334345746,
+          "tokens": 0.45436494723848514,
+          "prm_requests": 0.682
+        }
+      },
+      "three": {
+        "saved": {
+          "generation_calls": 39158,
+          "input_tokens": 21524344,
+          "output_tokens": 2455903,
+          "tokens": 23980247,
+          "prm_requests": 2980
+        },
+        "rate": {
+          "generation_calls": 0.3597592907345308,
+          "input_tokens": 0.3337331844902571,
+          "output_tokens": 0.2935522104900292,
+          "tokens": 0.329119516915718,
+          "prm_requests": 0.596
+        }
+      },
+      "four": {
+        "saved": {
+          "generation_calls": 30768,
+          "input_tokens": 16476826,
+          "output_tokens": 1773503,
+          "tokens": 18250329,
+          "prm_requests": 2810
+        },
+        "rate": {
+          "generation_calls": 0.2826772015251045,
+          "input_tokens": 0.2554718327895087,
+          "output_tokens": 0.21198545950743913,
+          "tokens": 0.25047863201879944,
+          "prm_requests": 0.562
+        }
+      },
+      "five": {
+        "saved": {
+          "generation_calls": 23976,
+          "input_tokens": 12622122,
+          "output_tokens": 1305744,
+          "tokens": 13927866,
+          "prm_requests": 2680
+        },
+        "rate": {
+          "generation_calls": 0.2202765400339933,
+          "input_tokens": 0.1957049641134026,
+          "output_tokens": 0.15607458337486974,
+          "tokens": 0.19115451686493695,
+          "prm_requests": 0.536
+        }
+      },
+      "six": {
+        "saved": {
+          "generation_calls": 18374,
+          "input_tokens": 9644465,
+          "output_tokens": 984032,
+          "tokens": 10628497,
+          "prm_requests": 2590
+        },
+        "rate": {
+          "generation_calls": 0.16880885663098902,
+          "input_tokens": 0.14953663708193973,
+          "output_tokens": 0.11762059364434363,
+          "tokens": 0.14587196696431684,
+          "prm_requests": 0.518
+        }
+      },
+      "seven": {
+        "saved": {
+          "generation_calls": 13337,
+          "input_tokens": 7016293,
+          "output_tokens": 720600,
+          "tokens": 7736893,
+          "prm_requests": 2500
+        },
+        "rate": {
+          "generation_calls": 0.12253204097569939,
+          "input_tokens": 0.10878704624896811,
+          "output_tokens": 0.08613276781660964,
+          "tokens": 0.10618583230558885,
+          "prm_requests": 0.5
+        }
+      },
+      "eight": {
+        "saved": {
+          "generation_calls": 8664,
+          "input_tokens": 4568314,
+          "output_tokens": 472112,
+          "tokens": 5040426,
+          "prm_requests": 2430
+        },
+        "rate": {
+          "generation_calls": 0.07959943038265423,
+          "input_tokens": 0.07083133306972905,
+          "output_tokens": 0.05643118689902194,
+          "tokens": 0.06917787669866056,
+          "prm_requests": 0.486
+        }
+      },
+      "nine": {
+        "saved": {
+          "generation_calls": 4226,
+          "input_tokens": 2254536,
+          "output_tokens": 235954,
+          "tokens": 2490490,
+          "prm_requests": 2360
+        },
+        "rate": {
+          "generation_calls": 0.038825853277596585,
+          "input_tokens": 0.034956395364612564,
+          "output_tokens": 0.028203401467388717,
+          "tokens": 0.03418100179215946,
+          "prm_requests": 0.472
+        }
+      }
+    },
+    "paired_vs_baseline": {
+      "two": {
+        "gained": 2,
+        "lost": 11,
+        "gained_problem_ids": [
+          120,
+          369
+        ],
+        "lost_problem_ids": [
+          91,
+          119,
+          156,
+          177,
+          194,
+          197,
+          260,
+          317,
+          328,
+          358,
+          403
+        ]
+      },
+      "three": {
+        "gained": 0,
+        "lost": 2,
+        "gained_problem_ids": [],
+        "lost_problem_ids": [
+          91,
+          177
+        ]
+      },
+      "four": {
+        "gained": 0,
+        "lost": 2,
+        "gained_problem_ids": [],
+        "lost_problem_ids": [
+          91,
+          177
+        ]
+      },
+      "five": {
+        "gained": 0,
+        "lost": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "six": {
+        "gained": 0,
+        "lost": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "seven": {
+        "gained": 0,
+        "lost": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "eight": {
+        "gained": 0,
+        "lost": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "nine": {
+        "gained": 0,
+        "lost": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      }
+    }
+  }
+}

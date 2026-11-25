@@ -132,3 +132,41 @@ python "$exp/compare_thresholds.py" --output "$exp/runs/thresholds"
 ~~~
 
 [500 题逐题对照](results/threshold_predictions.jsonl) · [汇总与 SHA-256](results/threshold_summary.json)
+
+
+## E2 与 E4 的一致早停对照
+
+在同一份 Qwen MATH-500 数据上，分别使用公开代码复现中 E2（Direct + PRM）和 E4（Dynamic + PRM）各自的历史候选池。每题按原顺序检查前 K 条提取答案，去掉首尾空白后均非空且相同就采用首条，其余题按原规则从 10 条完整轨迹中使用 PRM 平均奖励选优。E4 的逐题回放与既有归档一致。 [公开代码复现](https://github.com/zhaqian21/adaptive-ttc-lab/pull/2) · [E4 回放](https://github.com/zhaqian21/adaptive-ttc-lab/pull/18)
+
+| 规则 | E2 正确率 | E2 生成 token | E2 PRM 请求 | E4 正确率 | E4 生成 token | E4 PRM 请求 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| K=10 基线 | 79.0% | 7,315,100 | 5,000 | 79.4% | 72,861,820 | 5,000 |
+| 前 2 条一致 | 77.2% | 3,595,757 | 1,550 | 77.6% | 39,755,963 | 1,590 |
+| 前 3 条一致 | 78.4% | 4,507,320 | 1,960 | 79.0% | 48,881,573 | 2,020 |
+| 前 4 条一致 | 78.4% | 5,085,487 | 2,150 | 79.0% | 54,611,491 | 2,190 |
+| 前 5 条一致 | 79.0% | 5,595,658 | 2,330 | 79.4% | 58,933,954 | 2,320 |
+| 前 6 条一致 | 79.0% | 5,976,339 | 2,390 | 79.4% | 62,233,323 | 2,410 |
+| 前 7 条一致 | 79.0% | 6,331,237 | 2,440 | 79.4% | 65,124,927 | 2,500 |
+| 前 8 条一致 | 79.0% | 6,671,778 | 2,490 | 79.4% | 67,821,394 | 2,570 |
+| 前 9 条一致 | 79.0% | 6,999,579 | 2,540 | 79.4% | 70,371,330 | 2,640 |
+
+五条一致是两组各自保持基线正确率的最小阈值。E2 早停 267 题，节省 23.5% 生成 token 和 53.4% 最终 PRM 请求，逐题配对中改对 1 题、改错 1 题。E4 早停 268 题，节省 19.1% 生成 token 和 53.6% 最终 PRM 请求，答对题集合与基线相同。
+
+生成 token 统计历史生成模型请求的输入和输出。E2 的每条完整轨迹有两次生成调用，E4 还计入动态规划、工具和搜索调用。两组的 PRM 请求只统计外层选优，每道早停题省去 10 次。成本按历史调用离线核算。
+
+### 复跑
+
+从仓库根目录运行。脚本核对历史归档的 SHA-256，逐题复算两组基线的 PRM 选择及生成成本，重跑全部阈值，并与已归档的 E4 逐题数据校验。
+
+~~~bash
+exp=experiments/math500-historical-e4-early-stop
+python "$exp/compare_e2_e4.py" --output "$exp/runs/e2-e4"
+~~~
+
+从原始历史记录重建 E2 候选池时，将 `HISTORY` 设为包含 `gpu-0/E2` 和 `gpu-1/E2` 的 `results/published_code/20261124-full-v1` 目录。脚本按原顺序读取每题的两次一组的生成调用，核对 10 次 PRM 请求及 PR #2 的逐题汇总。无需模型权重。
+
+~~~bash
+python "$exp/prepare_e2_pool.py" --history "$HISTORY" --output "$exp/runs/e2_candidate_pool.jsonl"
+~~~
+
+[E2 候选池](results/e2_candidate_pool.jsonl) · [E2 逐题结果](results/e2_threshold_predictions.jsonl) · [E4 逐题结果](results/threshold_predictions.jsonl) · [两组汇总和 SHA-256](results/e2_e4_comparison.json)
