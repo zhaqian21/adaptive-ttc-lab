@@ -1,0 +1,46 @@
+{
+  "samples": 500,
+  "baseline_commit": "9d51d691be6d58c0eb78fef0082d039a24182d97",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "dataset_sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+  "baseline_predictions_sha256": "df1f70b320c724b184df1a76af105a6b55c5e01e05b79ae6b8dd51ad9c6a8e82",
+  "candidate_pool_sha256": "c1ece04f0e8d727a00bba995ab1320a849af25a7368608c0e3a64befca517373",
+  "replay_predictions_sha256": "03e4e6057f2800a0f975cbf8d8d68ccc378180b9597e3d07636c837667425297",
+  "early_stops": 298,
+  "paired_correctness": {
+    "gained": 0,
+    "lost": 2
+  },
+  "baseline": {
+    "correct": 397,
+    "accuracy": 0.794,
+    "generation_calls": 108845,
+    "input_tokens": 64495666,
+    "output_tokens": 8366154,
+    "tokens": 72861820,
+    "prm_requests": 5000
+  },
+  "replay": {
+    "correct": 395,
+    "accuracy": 0.79,
+    "generation_calls": 69687,
+    "input_tokens": 42971322,
+    "output_tokens": 5910251,
+    "tokens": 48881573,
+    "prm_requests": 2020
+  },
+  "saved": {
+    "generation_calls": 39158,
+    "input_tokens": 21524344,
+    "output_tokens": 2455903,
+    "tokens": 23980247,
+    "prm_requests": 2980
+  },
+  "saving_rate": {
+    "generation_calls": 0.3597592907345308,
+    "input_tokens": 0.3337331844902571,
+    "output_tokens": 0.2935522104900292,
+    "tokens": 0.329119516915718,
+    "prm_requests": 0.596
+  }
+}
