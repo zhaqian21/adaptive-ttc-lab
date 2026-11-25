@@ -1,0 +1,7 @@
+{
+  "wall_seconds": 3123.2248850648757,
+  "worker_exit_codes": {
+    "llama": 0,
+    "qwen": 0
+  }
+}
