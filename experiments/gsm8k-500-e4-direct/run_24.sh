@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[[ $# == 2 ]] || { echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON" >&2; exit 2; }
+[[ $# == 2 || $# == 3 ]] || { echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON [EVALUATOR]" >&2; exit 2; }
 here="$(cd -- "$(dirname -- "$0")" && pwd)"
 root="$(realpath -- "$1")"
 engine="$(realpath -s -- "$2")"
+evaluator="$(realpath -- "${3:-$here/evaluate.py}")"
+[[ -f "$evaluator" ]]
 services=(ttc-published-service-0 ttc-published-service-1 ttc-published-prm-gpu0)
 ports=(18420 18421 18422)
 commands=()
@@ -81,6 +83,6 @@ done
 [[ -z "$occupied" ]]
 
 echo running > "$root/status"
-"$root/source/.venv/bin/python" -B "$here/evaluate.py" --data "$root/data" \
+"$root/source/.venv/bin/python" -B "$evaluator" --data "$root/data" \
     --output "$root/results" --engine-python "$engine"
 echo generation-complete > "$root/status"

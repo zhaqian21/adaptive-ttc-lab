@@ -1,0 +1,5246 @@
+{
+  "sources": {
+    "math": {
+      "split": "test",
+      "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+      "repo": "HuggingFaceH4/MATH-500",
+      "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+      "samples": 500
+    },
+    "amc23": {
+      "repo": "math-ai/amc23",
+      "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+      "split": "test",
+      "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+      "samples": 40,
+      "loader_sha256": "3e11852a2a7a060d596b2ac752e249b09eae03d3e917e5dbb531e140143a1a99"
+    },
+    "aime24": {
+      "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+      "split": "train",
+      "source_file": "aime_2024_problems.parquet",
+      "repo": "Maxwell-Jia/AIME_2024",
+      "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+      "samples": 30
+    },
+    "amo": {
+      "revision": "2f422616c25d862984408fbbfaed63a961e8e025",
+      "split": "test",
+      "source_file": "data/test-00000-of-00001.parquet",
+      "repo": "meituan-longcat/AMO-Bench",
+      "sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+      "samples": 50
+    },
+    "aime26": {
+      "repo": "MathArena/aime_2026",
+      "revision": "d61f486805306e6e6b5913504c07763a99e1b112",
+      "file": "data/train-00000-of-00001.parquet",
+      "split": "train",
+      "rows": 30,
+      "samples": 30,
+      "sha256": "ae72853349a46c5f08666feb42db2d09fb4ac4fd4768c726b29702df21c7768e"
+    }
+  },
+  "questions": [
+    {
+      "problem_id": 0,
+      "source_problem_id": 0,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/807.json",
+      "gold_answer_extracted": "\\left( 3, \\frac{\\pi}{2} \\right)",
+      "question_sha256": "13bb5d32a5afacb3e2ae2e66ca9ada85919b8252f6eda7ad060b7dfa1ca004e5"
+    },
+    {
+      "problem_id": 1,
+      "source_problem_id": 1,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1994.json",
+      "gold_answer_extracted": "p - q",
+      "question_sha256": "3c2b62f64e03366e020b32cae2732cd93bf6cd90b5382f4b66e60a2b35c10a2a"
+    },
+    {
+      "problem_id": 2,
+      "source_problem_id": 2,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2584.json",
+      "gold_answer_extracted": "\\frac{14}{3}",
+      "question_sha256": "dd48d65e326606be4a9cc720b0f88c453bcbb8ebe2375d08f2095e9e237d3559"
+    },
+    {
+      "problem_id": 3,
+      "source_problem_id": 3,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/572.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "32c3cda4fa5ff5d18cbac4e45b23dcf4833ddf37179609d1614e2403e68096ef"
+    },
+    {
+      "problem_id": 4,
+      "source_problem_id": 4,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1349.json",
+      "gold_answer_extracted": "\\text{Evelyn}",
+      "question_sha256": "1e59b8cae8b19bb52556b1c9d01148b1ba59b0db7e8792acbbc566489e305f3b"
+    },
+    {
+      "problem_id": 5,
+      "source_problem_id": 5,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1622.json",
+      "gold_answer_extracted": "42",
+      "question_sha256": "8e0aeeb8ecbef2cef641bdf7c1b7f14501661a016a31bcf4c20cfe3685ca5761"
+    },
+    {
+      "problem_id": 6,
+      "source_problem_id": 6,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/515.json",
+      "gold_answer_extracted": "27",
+      "question_sha256": "1866ff06f6f007c876ca5c8b3735eff705430cd776153f42492392b1a56aedd3"
+    },
+    {
+      "problem_id": 7,
+      "source_problem_id": 7,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/927.json",
+      "gold_answer_extracted": "90^\\circ",
+      "question_sha256": "659b49f54a96ac02cd3f3cd3e58db24dce33f501220b7526d4dcd736ea5efb2c"
+    },
+    {
+      "problem_id": 8,
+      "source_problem_id": 8,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2036.json",
+      "gold_answer_extracted": "3\\sqrt{13}",
+      "question_sha256": "c0364fc64487e4ecdb562a1fd4efb3265dd75c6c2ced96273c9d5df0312b1595"
+    },
+    {
+      "problem_id": 9,
+      "source_problem_id": 9,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1139.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "b5edb02bf63206cf2cbe42bcb443d0327afe3f37d551eef84bc48f3a449b684b"
+    },
+    {
+      "problem_id": 10,
+      "source_problem_id": 10,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1032.json",
+      "gold_answer_extracted": "2220",
+      "question_sha256": "92992c0e162b3d6d436556be1efed0301d3f0786e57e18a1ab22e3d8d89413c9"
+    },
+    {
+      "problem_id": 11,
+      "source_problem_id": 11,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1197.json",
+      "gold_answer_extracted": "\\frac{3}{56}",
+      "question_sha256": "245aadb1630fe0cf62b37c961b3851ae0864b32689a944dc777ffe773f751edf"
+    },
+    {
+      "problem_id": 12,
+      "source_problem_id": 12,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/737.json",
+      "gold_answer_extracted": "284",
+      "question_sha256": "a3f40663ba19390b7e8930b5eb10435bf1dcb1168e14bd129538559aa2248cb4"
+    },
+    {
+      "problem_id": 13,
+      "source_problem_id": 13,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/248.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "e8d37102b0a6adbee46bab5bc9459e73491fdc93185ccb2af72f605245d1adfa"
+    },
+    {
+      "problem_id": 14,
+      "source_problem_id": 14,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1303.json",
+      "gold_answer_extracted": "\\sqrt{51}",
+      "question_sha256": "749e32e330be86cd9012734dbfd98280aa37c89d9b44dd4922ff18d8c4f27245"
+    },
+    {
+      "problem_id": 15,
+      "source_problem_id": 15,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/990.json",
+      "gold_answer_extracted": "6 - 5i",
+      "question_sha256": "cdb0a3539dd58be017d49c01271bbfc1505b84dc0a3d4ed3ecd798d2a961a90b"
+    },
+    {
+      "problem_id": 16,
+      "source_problem_id": 16,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/134.json",
+      "gold_answer_extracted": "-50",
+      "question_sha256": "2751b7253592e67acb6b847e5a8cfa1819953aacbd732fa323606e4c9582fefc"
+    },
+    {
+      "problem_id": 17,
+      "source_problem_id": 17,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1199.json",
+      "gold_answer_extracted": "\\pi",
+      "question_sha256": "4c8fff516b55a327cbae0a67318f8f1566faaf4c46d592ce8d1197ecc3d5abec"
+    },
+    {
+      "problem_id": 18,
+      "source_problem_id": 18,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/434.json",
+      "gold_answer_extracted": "28",
+      "question_sha256": "756bd921400e3e92899a7ae77c8fedae8519f96ef58229d69b2b8ab6254edc6d"
+    },
+    {
+      "problem_id": 19,
+      "source_problem_id": 19,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1000.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "ea8fadd453f4ea8832e6e2d14658ba80e4c7fe75cbf2ac596bd484ce5cd2a614"
+    },
+    {
+      "problem_id": 20,
+      "source_problem_id": 20,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1098.json",
+      "gold_answer_extracted": "6+9i",
+      "question_sha256": "cce9209bc28f76c1c6a4290a3a5cf857f0e0ee9874ab3b3ed44345607d4cb410"
+    },
+    {
+      "problem_id": 21,
+      "source_problem_id": 21,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/607.json",
+      "gold_answer_extracted": "13535",
+      "question_sha256": "d3d6f4cae0a23167a04084fdf242acc12a77e0a3ea6a5f98ee502e5debd60991"
+    },
+    {
+      "problem_id": 22,
+      "source_problem_id": 22,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1837.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "8e69fc01349a975d21852aa5e5f9b6971e8d8ed8b1153c2a3dbb5ee704687db4"
+    },
+    {
+      "problem_id": 23,
+      "source_problem_id": 23,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2193.json",
+      "gold_answer_extracted": "x=5",
+      "question_sha256": "2aeafb5e569f94ddce74c9ee157b1f486959ca403793f72f55577c96692eebf2"
+    },
+    {
+      "problem_id": 24,
+      "source_problem_id": 24,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2427.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "d679be77bf18f5ae1dac115b2c9b2af636206fdf9a115f418e74ee1bc248bbf1"
+    },
+    {
+      "problem_id": 25,
+      "source_problem_id": 25,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1388.json",
+      "gold_answer_extracted": "1,-2",
+      "question_sha256": "2ea1f202b421671b727447ed61a726de3c0a20005cccbd5885b5c7378ab69ceb"
+    },
+    {
+      "problem_id": 26,
+      "source_problem_id": 26,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/525.json",
+      "gold_answer_extracted": "144",
+      "question_sha256": "74aae40cecc02fdb9b81983d7c59f3e49deb75ac612e06fbc60932a56d318834"
+    },
+    {
+      "problem_id": 27,
+      "source_problem_id": 27,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1840.json",
+      "gold_answer_extracted": "78",
+      "question_sha256": "ba83e92e963aa63c4c9ee18406b6d517b3c85c74e9f63a1b09b77f833515bb10"
+    },
+    {
+      "problem_id": 28,
+      "source_problem_id": 28,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/779.json",
+      "gold_answer_extracted": "-2 + 7i",
+      "question_sha256": "8b3cece09f2f72b262deb3d7fc12033d4adc3767d7a5fdf096d1d2674d29672a"
+    },
+    {
+      "problem_id": 29,
+      "source_problem_id": 29,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/666.json",
+      "gold_answer_extracted": "225",
+      "question_sha256": "707c6d6754da13d7309321574496d7d8aff61a2b7c392078ff495fa64464620b"
+    },
+    {
+      "problem_id": 30,
+      "source_problem_id": 30,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/864.json",
+      "gold_answer_extracted": "52_8",
+      "question_sha256": "28f0bde5896e1f46c2dafb4994cb83863c24fb56e56eb403d1661c2a23872f23"
+    },
+    {
+      "problem_id": 31,
+      "source_problem_id": 31,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1302.json",
+      "gold_answer_extracted": "11\\sqrt2",
+      "question_sha256": "b366ba898e3379262f1412ab42aea70a420798abee543c0c7ac5d5d69b585d14"
+    },
+    {
+      "problem_id": 32,
+      "source_problem_id": 32,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/134.json",
+      "gold_answer_extracted": "720",
+      "question_sha256": "577259c853328305c63117db75d3d303aa507b35772f7a26a68b8d192d6bea96"
+    },
+    {
+      "problem_id": 33,
+      "source_problem_id": 33,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1072.json",
+      "gold_answer_extracted": "\\frac{243}{625}",
+      "question_sha256": "4357e31df9a113c582bce1b16d470a084f1d75e3c008c28c4aedc40dce1afb66"
+    },
+    {
+      "problem_id": 34,
+      "source_problem_id": 34,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/119.json",
+      "gold_answer_extracted": "-125",
+      "question_sha256": "9b85603bc31a20300a1bae15663aad93309ecaa4d23de1d5291eee9dc713a0c7"
+    },
+    {
+      "problem_id": 35,
+      "source_problem_id": 35,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/627.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "9cf00bc32f46d4ab04e4c9fde7b5b98360366e65d4e0f48754a41e68d75fc86d"
+    },
+    {
+      "problem_id": 36,
+      "source_problem_id": 36,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/428.json",
+      "gold_answer_extracted": "3, 5, 7",
+      "question_sha256": "5b1d584cfe23d7dfff67df8a57030f07ab525f50d4dbe0cb7cb63ae686a80456"
+    },
+    {
+      "problem_id": 37,
+      "source_problem_id": 37,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/967.json",
+      "gold_answer_extracted": "72",
+      "question_sha256": "18d8d61436e049f1421ce801b6e8507b8f8b498a398faef7f5cdd8fa88ba00c7"
+    },
+    {
+      "problem_id": 38,
+      "source_problem_id": 38,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/24.json",
+      "gold_answer_extracted": "2000",
+      "question_sha256": "c667b151ed654a873320e97c14d0cde3592c566c59f054b06c16d4d4d8dd6554"
+    },
+    {
+      "problem_id": 39,
+      "source_problem_id": 39,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/45.json",
+      "gold_answer_extracted": "23",
+      "question_sha256": "e8bbc51e4f0cedba36262f97fad41f97059c8e6ad037d851dd35f3afe17cd5e3"
+    },
+    {
+      "problem_id": 40,
+      "source_problem_id": 40,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/930.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "e34bd9c4963190dc0c39fd380a2adfbfc56d965247007c902f15b14d171db9f0"
+    },
+    {
+      "problem_id": 41,
+      "source_problem_id": 41,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/627.json",
+      "gold_answer_extracted": "17",
+      "question_sha256": "2107ef2300b1d606532e730eb76a5a05f318301952feccce6fc850f8dfd0b1ad"
+    },
+    {
+      "problem_id": 42,
+      "source_problem_id": 42,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2214.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "d9f531b9527df401c846d979a358299336d33012e319ebcc9f83a4dcda7f3297"
+    },
+    {
+      "problem_id": 43,
+      "source_problem_id": 43,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1454.json",
+      "gold_answer_extracted": "70 \\sqrt{2}",
+      "question_sha256": "f2717349b34b8d30e06dbce36f7724d548f5bd9b1d9979c4b5693b101461f767"
+    },
+    {
+      "problem_id": 44,
+      "source_problem_id": 44,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1558.json",
+      "gold_answer_extracted": "1.25",
+      "question_sha256": "f4934771de625720407621bdc7b34e4fa10a1f1b0012ec2b8cf0ceff6d8591f5"
+    },
+    {
+      "problem_id": 45,
+      "source_problem_id": 45,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/178.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "cf7d35cbd6e1c9c2c27f365f068695388600fab7a4a8aa970df06c9dae274008"
+    },
+    {
+      "problem_id": 46,
+      "source_problem_id": 46,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/285.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "7f218e0dec56d367fe24c53e4636286b021dee4f2eeb3a39327b9a737055ccf9"
+    },
+    {
+      "problem_id": 47,
+      "source_problem_id": 47,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/305.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "5a679e9b7169f16e4519d0f1cebe3e19e6ec9f1048b7565cf64cc7b596fd147f"
+    },
+    {
+      "problem_id": 48,
+      "source_problem_id": 48,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1265.json",
+      "gold_answer_extracted": "\\frac{3}{2}",
+      "question_sha256": "427075eaa37b40cc75bf502ecfa2cdc66fb386eaa58cb6395268f2a8f76cb43c"
+    },
+    {
+      "problem_id": 49,
+      "source_problem_id": 49,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1388.json",
+      "gold_answer_extracted": "83",
+      "question_sha256": "3d1f09ed5cfd53dce0cdfa464313ae23908a90c6fb2ce32ec3d3e2ba3f403ac0"
+    },
+    {
+      "problem_id": 50,
+      "source_problem_id": 50,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1055.json",
+      "gold_answer_extracted": "203",
+      "question_sha256": "4639686b328fdf3073dec61a9a86aee58ce6224c2882566d961fde9a5166577c"
+    },
+    {
+      "problem_id": 51,
+      "source_problem_id": 51,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1217.json",
+      "gold_answer_extracted": "x^5 - x^4 + x^3 - x^2 + x - 1",
+      "question_sha256": "5d4e128b653312de816de46359acf93889526e6cdc26d998f3cc72a8a78bc52e"
+    },
+    {
+      "problem_id": 52,
+      "source_problem_id": 52,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/951.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "cb1c77331e55a5a0803a7004f66b5190c9b9400869a5c7cf87fac28aba3b89f7"
+    },
+    {
+      "problem_id": 53,
+      "source_problem_id": 53,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1105.json",
+      "gold_answer_extracted": "-\\frac{\\pi}{6}",
+      "question_sha256": "650570c0a1a8409fee85c38cfba9b25c9d2aff2c2f07af073c7adf503515f715"
+    },
+    {
+      "problem_id": 54,
+      "source_problem_id": 54,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/572.json",
+      "gold_answer_extracted": "0.15",
+      "question_sha256": "18a164d5c1185eefb6867f8376ec89146e57adc2b06f35c87e94f5c23f64ad67"
+    },
+    {
+      "problem_id": 55,
+      "source_problem_id": 55,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/187.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "c6f83b0877a24b7bc56d8527f929bf4cdeac67e82acae627356f0d55542d839b"
+    },
+    {
+      "problem_id": 56,
+      "source_problem_id": 56,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/769.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "8c8f96252d975acd723c37981160489eae8f4b95f4e6dd8609ba56f61bd80452"
+    },
+    {
+      "problem_id": 57,
+      "source_problem_id": 57,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1168.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "7fc009d3f808cafe82a80e1a5bf838cb6b652f1852bf15aa8b4942cc04dae6b7"
+    },
+    {
+      "problem_id": 58,
+      "source_problem_id": 58,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/722.json",
+      "gold_answer_extracted": "9901",
+      "question_sha256": "22b1b3e31b49a035340671686f78bca75036cf334287e0f3cb8c869f7b9b6738"
+    },
+    {
+      "problem_id": 59,
+      "source_problem_id": 59,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1247.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "f847551cef56a63f57b96892edf1e4c79434413c8ffd78b29c46f3c29a2b8e0e"
+    },
+    {
+      "problem_id": 60,
+      "source_problem_id": 60,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/956.json",
+      "gold_answer_extracted": "(6,31,-1)",
+      "question_sha256": "4c4c64d72903acef3c70b3a2205b0e2830399efd5ba694f1a16fe51503eed84e"
+    },
+    {
+      "problem_id": 61,
+      "source_problem_id": 61,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1247.json",
+      "gold_answer_extracted": "-256",
+      "question_sha256": "79f928524590a41c0d216a6a3066129065fca61405a4b9708da7a70d68df350f"
+    },
+    {
+      "problem_id": 62,
+      "source_problem_id": 62,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/675.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "a74e5ed137114c6b15052fac1e98a5ed0c73dc43f30845f84b670abd498737c4"
+    },
+    {
+      "problem_id": 63,
+      "source_problem_id": 63,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/279.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "79e9a61880d1e759a13430a9dce34838aa94acf19b8d2854c05572c12d9c7e7f"
+    },
+    {
+      "problem_id": 64,
+      "source_problem_id": 64,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1146.json",
+      "gold_answer_extracted": "\\frac{35}{64}",
+      "question_sha256": "4b45f05d1f26889026203b9f80fc088e7f9553cca26509acdc979830d027208a"
+    },
+    {
+      "problem_id": 65,
+      "source_problem_id": 65,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1747.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "0f8bfc43c716b9e152190ae738a1960fb7c90f8c7f157d32e05c8bfa8dd57978"
+    },
+    {
+      "problem_id": 66,
+      "source_problem_id": 66,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2046.json",
+      "gold_answer_extracted": "x^3+3x-6",
+      "question_sha256": "fecc51e449c73f93750ec2a234801b4622d8d31d4f8ef415d93ff53e4033c7f0"
+    },
+    {
+      "problem_id": 67,
+      "source_problem_id": 67,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1233.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "3c77f3abead87cb6dbf179ceb8ad0bfb90edca4d496497c26f5192da835514e4"
+    },
+    {
+      "problem_id": 68,
+      "source_problem_id": 68,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1313.json",
+      "gold_answer_extracted": "46",
+      "question_sha256": "7739b7c4638eec41cad92f765a5db0a489ea0832d5a87b4369a8470bb6274440"
+    },
+    {
+      "problem_id": 69,
+      "source_problem_id": 69,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/207.json",
+      "gold_answer_extracted": "-1",
+      "question_sha256": "121d26f6054f3820fb01a1d9a788427b15b67c30e1388b6a295376cdb4a51a99"
+    },
+    {
+      "problem_id": 70,
+      "source_problem_id": 70,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/46.json",
+      "gold_answer_extracted": "40_9",
+      "question_sha256": "5b29870e6b483cee610a070d37c2b05234e992efdc146c5e753331aa53eb9d46"
+    },
+    {
+      "problem_id": 71,
+      "source_problem_id": 71,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/516.json",
+      "gold_answer_extracted": "2516_8",
+      "question_sha256": "29b2b39dd7862f9d7f8b6ffdae797146c10db99f7444470cca6735f77f68bc4a"
+    },
+    {
+      "problem_id": 72,
+      "source_problem_id": 72,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/456.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "9762de06228ca9c932517a6223269bc3c671c803a703b25c15239692765f7b29"
+    },
+    {
+      "problem_id": 73,
+      "source_problem_id": 73,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2253.json",
+      "gold_answer_extracted": "\\frac{3\\sqrt{3}}{4}",
+      "question_sha256": "5031411c952b356bf7c970d8d08e7a7c40c7390e2d510d595f7359d6acbab772"
+    },
+    {
+      "problem_id": 74,
+      "source_problem_id": 74,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/24313.json",
+      "gold_answer_extracted": "\\cot x",
+      "question_sha256": "490c8dd47aecc496eea869fe1d18d0b4d5b23e66900c9f8508b7f9bd4b5a3fa7"
+    },
+    {
+      "problem_id": 75,
+      "source_problem_id": 75,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/1114.json",
+      "gold_answer_extracted": "\\frac{11}{36}",
+      "question_sha256": "abac1d7f64dc80bfa32d1ce0b4d6b1211a174e804844a0a337486b287fb057fd"
+    },
+    {
+      "problem_id": 76,
+      "source_problem_id": 76,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/623.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "af2fadb634c99ff95acd815906f568366fd4ea205a093d31128e8cce8ebd3d23"
+    },
+    {
+      "problem_id": 77,
+      "source_problem_id": 77,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1004.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "21e3aa0cdbfe761a0655d9980793aaf0afcba6c1028d19e9bb3d6052fe75ec15"
+    },
+    {
+      "problem_id": 78,
+      "source_problem_id": 78,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/47.json",
+      "gold_answer_extracted": "(-2,1)",
+      "question_sha256": "015c3ca8c1297fa216bcbcaefb5f6a8be7b85db9b19b33e1d093c0f0187bfe69"
+    },
+    {
+      "problem_id": 79,
+      "source_problem_id": 79,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/192.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "7f472ed5afd0fbc0f395729a07ffaf91921e6ca65abb1fca618e2724e9158e98"
+    },
+    {
+      "problem_id": 80,
+      "source_problem_id": 80,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1849.json",
+      "gold_answer_extracted": "501",
+      "question_sha256": "07e22408c9d86bf198748e6e0ffd321d2d6b8d605ebab6f9a119cca4c7ce5785"
+    },
+    {
+      "problem_id": 81,
+      "source_problem_id": 81,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1035.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "98ba12c744ebd5e7b722191548244577d50a17b43612052e793c518a95d1cb34"
+    },
+    {
+      "problem_id": 82,
+      "source_problem_id": 82,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2700.json",
+      "gold_answer_extracted": "\\frac{3}{2}",
+      "question_sha256": "5bf83c63cfb017440011687bcbe40e63e2e1eabe7ebd764482dc3fc34250749f"
+    },
+    {
+      "problem_id": 83,
+      "source_problem_id": 83,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2046.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "fb2f7de9a9991585ba53cfbd76f1921e89806bf34d2655bf335ab980765854ba"
+    },
+    {
+      "problem_id": 84,
+      "source_problem_id": 84,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/893.json",
+      "gold_answer_extracted": "-1",
+      "question_sha256": "e684634d63b6e43ea1c59eb8f640a8c71b26261272f27dc44fd9d1cdc2af1e6d"
+    },
+    {
+      "problem_id": 85,
+      "source_problem_id": 85,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/353.json",
+      "gold_answer_extracted": "\\sqrt{5}",
+      "question_sha256": "a89fbb80da4fb26595fece88fff11e8d0bf0bc093a23f81f5e3fde5874b4f25b"
+    },
+    {
+      "problem_id": 86,
+      "source_problem_id": 86,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/307.json",
+      "gold_answer_extracted": "240",
+      "question_sha256": "4f5c7595557fb7e122155baf08f5bc9bb95ef916f235385497e3e4eb4e33b1fd"
+    },
+    {
+      "problem_id": 87,
+      "source_problem_id": 87,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/567.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "214693f141327f81cd2292dec52082821b5a7b6840fa4600b1ebe1f098560c3d"
+    },
+    {
+      "problem_id": 88,
+      "source_problem_id": 88,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/892.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "99bbcad887c2476d93027a171acf3ea392aef9aa6a6eecbf04800e01c6b0ff30"
+    },
+    {
+      "problem_id": 89,
+      "source_problem_id": 89,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/357.json",
+      "gold_answer_extracted": "21",
+      "question_sha256": "86dafa426d0346e1f4abba7b8a579538abd8690f808e3035fe01fa0a727855a3"
+    },
+    {
+      "problem_id": 90,
+      "source_problem_id": 90,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1761.json",
+      "gold_answer_extracted": "\\frac{3}{2}",
+      "question_sha256": "71d79388b988d5a1756d881f05055d303aa7484c74f8774b00ba80965a39a3a1"
+    },
+    {
+      "problem_id": 91,
+      "source_problem_id": 91,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2023.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "eb3187c38ab270283aae03d23dab5395fdd4a83ed4d26eacceae489530dc3e90"
+    },
+    {
+      "problem_id": 92,
+      "source_problem_id": 92,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/377.json",
+      "gold_answer_extracted": "\\frac{448}{15625}",
+      "question_sha256": "9d135f320cbe07b91a24dbea9b4800942e7db04809ffd517e53fc909b5699202"
+    },
+    {
+      "problem_id": 93,
+      "source_problem_id": 93,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/873.json",
+      "gold_answer_extracted": "33",
+      "question_sha256": "ecf5fa925de2e2eca47dcd1ba3c46b47b24a05599ac0464d90fecafaa4fc740f"
+    },
+    {
+      "problem_id": 94,
+      "source_problem_id": 94,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1646.json",
+      "gold_answer_extracted": "80",
+      "question_sha256": "0ada1f6385a37fe58a9ad49690f71230609af9b614830648b31a1a2c04c581ca"
+    },
+    {
+      "problem_id": 95,
+      "source_problem_id": 95,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/34.json",
+      "gold_answer_extracted": "-4",
+      "question_sha256": "8b30a7be8ee0adc16f0a19edfda93f5dfca0e9d7d408326c2736e5098d06e1e9"
+    },
+    {
+      "problem_id": 96,
+      "source_problem_id": 96,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/662.json",
+      "gold_answer_extracted": "1 \\pm \\sqrt{19}",
+      "question_sha256": "5e61c14d349078f7f8ae26e051f591575687cbcdc20809b1152e1d2a1d787857"
+    },
+    {
+      "problem_id": 97,
+      "source_problem_id": 97,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/105.json",
+      "gold_answer_extracted": "\\text{east}",
+      "question_sha256": "ecdad8d7b2a1a13309f7bb82a6f1657912ba05844f278b6af22e19c5f442761e"
+    },
+    {
+      "problem_id": 98,
+      "source_problem_id": 98,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1924.json",
+      "gold_answer_extracted": "2k+2",
+      "question_sha256": "e87c54273a4f6dc89bfc4191c23d3b02ffeb9e83b41b2d4da53333d2a57680e6"
+    },
+    {
+      "problem_id": 99,
+      "source_problem_id": 99,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1300.json",
+      "gold_answer_extracted": "\\begin{pmatrix} -1/3 \\\\ 2/3 \\\\ 5/3 \\end{pmatrix}",
+      "question_sha256": "fdc8aba1c1ade2de891c8acfc7e126e96fde232077c7c1b25ac07b4cb18aee37"
+    },
+    {
+      "problem_id": 100,
+      "source_problem_id": 100,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/183.json",
+      "gold_answer_extracted": "145^\\circ",
+      "question_sha256": "5b1bb536f3d2c629656a910df3458fb68092e8ce44f0183a1c5dace2bb7483d9"
+    },
+    {
+      "problem_id": 101,
+      "source_problem_id": 101,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/582.json",
+      "gold_answer_extracted": "850",
+      "question_sha256": "1c7eec743d9b300858a44a3f8288ca72f183f761543a54b04834010ee55303e3"
+    },
+    {
+      "problem_id": 102,
+      "source_problem_id": 102,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/431.json",
+      "gold_answer_extracted": "(a+5)(b+2)",
+      "question_sha256": "8870acf1d4b163f5258e946e4d2c7ba10bdf9f05639fb6a3b48fb3ae0117df22"
+    },
+    {
+      "problem_id": 103,
+      "source_problem_id": 103,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/558.json",
+      "gold_answer_extracted": "(3,4]",
+      "question_sha256": "9f7f1563a23537aa924b3f964b825a26ac78cc744cf41cf764d48ea5740d7942"
+    },
+    {
+      "problem_id": 104,
+      "source_problem_id": 104,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/362.json",
+      "gold_answer_extracted": "40",
+      "question_sha256": "5a3d7305670852a5c66d010fc2c78d4d0853a549bae00c633d221c1650dd5f4b"
+    },
+    {
+      "problem_id": 105,
+      "source_problem_id": 105,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1804.json",
+      "gold_answer_extracted": "29",
+      "question_sha256": "df8e8235424505aa040c100c67c2a861b27d5abc7f6fcf66cc99df557ac677d9"
+    },
+    {
+      "problem_id": 106,
+      "source_problem_id": 106,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/515.json",
+      "gold_answer_extracted": "\\frac43",
+      "question_sha256": "1ebb7bb0cc81425aae3093e8ba0ecf0cc8c96cb8a64e1aea3e0ad42f770465c8"
+    },
+    {
+      "problem_id": 107,
+      "source_problem_id": 107,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/914.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "6195174aabf201f980ec3ad6dab33d49f8000c45f2b6af357b819784239790b1"
+    },
+    {
+      "problem_id": 108,
+      "source_problem_id": 108,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/894.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "a0041119ec9c197cc1c1b835edcf14d955d028d54d04976a7a26007c2e2f3c46"
+    },
+    {
+      "problem_id": 109,
+      "source_problem_id": 109,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/44.json",
+      "gold_answer_extracted": "120^\\circ",
+      "question_sha256": "5dd40b1a11f0cd5500d311161634fc7e3e1a016449705e1beb5d7ee5313ca757"
+    },
+    {
+      "problem_id": 110,
+      "source_problem_id": 110,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/345.json",
+      "gold_answer_extracted": "504",
+      "question_sha256": "ced521d94764b4a34fa453c5cbbbca6c49fcdc1de4ca77df22b8f56842d3f563"
+    },
+    {
+      "problem_id": 111,
+      "source_problem_id": 111,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/23957.json",
+      "gold_answer_extracted": "210",
+      "question_sha256": "73440cb70194642f945e141fd4acb29812720f55ada5f4a712149ce4189d9b2b"
+    },
+    {
+      "problem_id": 112,
+      "source_problem_id": 112,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2058.json",
+      "gold_answer_extracted": "13",
+      "question_sha256": "d7d47865fbb51ce6ea28fedee3cb83510ce12e96f388af7fdb303810ee2b743d"
+    },
+    {
+      "problem_id": 113,
+      "source_problem_id": 113,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2593.json",
+      "gold_answer_extracted": "8000",
+      "question_sha256": "de4a1c58ecef901b8b2f4651d06c14617b53f8d072763153ea05eb4f7b056e03"
+    },
+    {
+      "problem_id": 114,
+      "source_problem_id": 114,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1898.json",
+      "gold_answer_extracted": "-5",
+      "question_sha256": "16d26a5ba5dd38dd97c5ed1a77495cedae2596c0b1747c30108e33d28d82e087"
+    },
+    {
+      "problem_id": 115,
+      "source_problem_id": 115,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/1060.json",
+      "gold_answer_extracted": "1260",
+      "question_sha256": "9e0b1d33f87ca8ab9846e80dbeecae84ec9ed760dd827b77dec6ff1c0bc648e7"
+    },
+    {
+      "problem_id": 116,
+      "source_problem_id": 116,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2157.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "44174d8b3df5f07b9a7029a6a3a178f7322805e379a27efcb36651a65c89abf6"
+    },
+    {
+      "problem_id": 117,
+      "source_problem_id": 117,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2251.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "de0c58f09875d127f60e0f6e54b7d8233c7e491ca21748170203e75992bb69dd"
+    },
+    {
+      "problem_id": 118,
+      "source_problem_id": 118,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/232.json",
+      "gold_answer_extracted": "81",
+      "question_sha256": "96c5e6371e5bca20526fbf5be1174ec8c7b7e6d47932f61346eda9a4025c2e50"
+    },
+    {
+      "problem_id": 119,
+      "source_problem_id": 119,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1733.json",
+      "gold_answer_extracted": "-9",
+      "question_sha256": "43e87f6b4eea08cf0734a44be29b4bd530a1e95d57218a90b93aaf3a48cb4d3d"
+    },
+    {
+      "problem_id": 120,
+      "source_problem_id": 120,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/128.json",
+      "gold_answer_extracted": "\\text{even}",
+      "question_sha256": "2c3bc600c4564664bf88ab88fbc9085d45afec98f6b000141cd00769442972e0"
+    },
+    {
+      "problem_id": 121,
+      "source_problem_id": 121,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/505.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "a4a92af384d88e0b330c09d9a483219e971a0242983ce732018b96f980308e32"
+    },
+    {
+      "problem_id": 122,
+      "source_problem_id": 122,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1332.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "d41930bf262e749bae06de29430114d68c4acd07bce757b91a1a03fd0b4b16e5"
+    },
+    {
+      "problem_id": 123,
+      "source_problem_id": 123,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/283.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "daead83d8f230f7f1b9518962e1ca941ee6128c80cc51e574d48bafa6ea3ed10"
+    },
+    {
+      "problem_id": 124,
+      "source_problem_id": 124,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/972.json",
+      "gold_answer_extracted": "\\frac{11}{2}",
+      "question_sha256": "7cc8cf550e3ca3744c2621ffd8fea55f9b9f93b1078f1bd6fa10384155fe3071"
+    },
+    {
+      "problem_id": 125,
+      "source_problem_id": 125,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2232.json",
+      "gold_answer_extracted": "-3",
+      "question_sha256": "4bf09b4453a890caece06df77b86cfd555d777c782fb7a8785a43356858a9bb9"
+    },
+    {
+      "problem_id": 126,
+      "source_problem_id": 126,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1063.json",
+      "gold_answer_extracted": "1+274i",
+      "question_sha256": "234b319021dcf2a640fe9e5bd8c2650d15b10b08b088521c23cc99fb1ededaf5"
+    },
+    {
+      "problem_id": 127,
+      "source_problem_id": 127,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/847.json",
+      "gold_answer_extracted": "4210_{5}",
+      "question_sha256": "22d4c2de98f5c342269a40dee7ee961b412d88e6c2e4160a2975830d287ad777"
+    },
+    {
+      "problem_id": 128,
+      "source_problem_id": 128,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/661.json",
+      "gold_answer_extracted": "36",
+      "question_sha256": "1a7c478bb9ae0d789f05b85f3851b478c3b246284803ba33eaacfeaf69f9788a"
+    },
+    {
+      "problem_id": 129,
+      "source_problem_id": 129,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/1140.json",
+      "gold_answer_extracted": "\\frac{3840}{289}",
+      "question_sha256": "3837a5604fc9b778b017ca7316f663cb548f618038d6c307b8c57b226c352f0e"
+    },
+    {
+      "problem_id": 130,
+      "source_problem_id": 130,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/753.json",
+      "gold_answer_extracted": "13",
+      "question_sha256": "57d488b1dac9c9215bb4b73f4366bc6ecd4f8afa13d12fd92bb18f6fa2102192"
+    },
+    {
+      "problem_id": 131,
+      "source_problem_id": 131,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/246.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "7ab99f8cb54794c5313705d9a1e285c8c4afc5d04ec93bc05abef5f2acce66ed"
+    },
+    {
+      "problem_id": 132,
+      "source_problem_id": 132,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1686.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "cf868a55079c64b7ba1e8e04ffeb846d060675634d714df5734a5b3881029309"
+    },
+    {
+      "problem_id": 133,
+      "source_problem_id": 133,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1807.json",
+      "gold_answer_extracted": "120",
+      "question_sha256": "21082726712a2d5c809d733eaca80ff27f95176f8f95e1f34727b06b2bfbba5b"
+    },
+    {
+      "problem_id": 134,
+      "source_problem_id": 134,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1126.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "a4f8c9c3d22c9fca8f84a47e3bd1a0dcb1654a84f33cd37002637b40a2e8d4d8"
+    },
+    {
+      "problem_id": 135,
+      "source_problem_id": 135,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1297.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "5e2eb2d91eefc067679b366307eef8062be7da43ae0845d55bc011a9b74f2942"
+    },
+    {
+      "problem_id": 136,
+      "source_problem_id": 136,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2022.json",
+      "gold_answer_extracted": "64",
+      "question_sha256": "1cc4b122f21a3c45599233ac8e1c1a65ad5a5ae32ebdc82c5e00ad424bc06a02"
+    },
+    {
+      "problem_id": 137,
+      "source_problem_id": 137,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1257.json",
+      "gold_answer_extracted": "204_5",
+      "question_sha256": "28551dccd09ca15d905d4763731c20f08027ccb74f368dd485ccd40b08ec7641"
+    },
+    {
+      "problem_id": 138,
+      "source_problem_id": 138,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/430.json",
+      "gold_answer_extracted": "\\frac{1}{3}",
+      "question_sha256": "89371d825ae69bd6d64789a8d5e45fd11b9388a89b3725eef28b28019dce9dc6"
+    },
+    {
+      "problem_id": 139,
+      "source_problem_id": 139,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1151.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "0fe3ffbbc39468a6de4ff97e92442d7fc730b1e112bb25e6eae8bb4460faba63"
+    },
+    {
+      "problem_id": 140,
+      "source_problem_id": 140,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/156.json",
+      "gold_answer_extracted": "13",
+      "question_sha256": "d76085a7723b21d6f038e2c22ca422f196c701474a37e6799a67432d57a37e50"
+    },
+    {
+      "problem_id": 141,
+      "source_problem_id": 141,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/612.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "607ec7f40a3b19a94b143d3cc7e115c53e2f19306944dc222309fec73a669da7"
+    },
+    {
+      "problem_id": 142,
+      "source_problem_id": 142,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/159.json",
+      "gold_answer_extracted": "28800",
+      "question_sha256": "61b7e29cf3ce3ee98c5fb5e8a1d18b5ac193be125c4bfeb5fbe287ec847502e2"
+    },
+    {
+      "problem_id": 143,
+      "source_problem_id": 143,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/477.json",
+      "gold_answer_extracted": "3 \\sqrt{5}",
+      "question_sha256": "dc905ca8b71e6a9c5870648606b7b7cc3975b50667bd06848558afe222b157ee"
+    },
+    {
+      "problem_id": 144,
+      "source_problem_id": 144,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/43.json",
+      "gold_answer_extracted": "(15,-29)",
+      "question_sha256": "92652995a0f4195cfd249adc20d68951c0ce9364bf69ecd80cf3b5647face88e"
+    },
+    {
+      "problem_id": 145,
+      "source_problem_id": 145,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1408.json",
+      "gold_answer_extracted": "-2",
+      "question_sha256": "e69c96862ea91bd8a379f67a4df22c9e4fea1e7ecbc86c69904ecdc851068fb3"
+    },
+    {
+      "problem_id": 146,
+      "source_problem_id": 146,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1519.json",
+      "gold_answer_extracted": "\\frac{\\sqrt{3}}{3}",
+      "question_sha256": "afe7eeff1cb11ff977594529c02b98afce5e626337e80f71c6f1afb91e6dc8b0"
+    },
+    {
+      "problem_id": 147,
+      "source_problem_id": 147,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/966.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "34c7f09e9f9467bcec5ad858be93a3696200538dd31edae9639a3650c309a540"
+    },
+    {
+      "problem_id": 148,
+      "source_problem_id": 148,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/988.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "782deeefb596a9df969bf2b24f475a52fb634ad9ce73037a673a35d2017c95e2"
+    },
+    {
+      "problem_id": 149,
+      "source_problem_id": 149,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/931.json",
+      "gold_answer_extracted": "49",
+      "question_sha256": "dbb138122c014ce8fa6e74fdf8a127cb606a36500777942f84eb2398bf464044"
+    },
+    {
+      "problem_id": 150,
+      "source_problem_id": 150,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/964.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "ed48028c723f0855e35a7c124ace57fd4d719cf0fb7e45902faacfa40ddaccc6"
+    },
+    {
+      "problem_id": 151,
+      "source_problem_id": 151,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/986.json",
+      "gold_answer_extracted": "144",
+      "question_sha256": "318c0805da3c6d0534176b07d52fa86c4dba1e22b72c271cb25ed6d5e5ec93dc"
+    },
+    {
+      "problem_id": 152,
+      "source_problem_id": 152,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/172.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "6caa0df05454edcc251116ec1c47679f2ac470a4f0f2543a1a9caf9915953205"
+    },
+    {
+      "problem_id": 153,
+      "source_problem_id": 153,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/230.json",
+      "gold_answer_extracted": "\\frac{2}{21}",
+      "question_sha256": "32d24bfc1d7f259ce3bc48722331c7054344de647afd24da313f03e681012d00"
+    },
+    {
+      "problem_id": 154,
+      "source_problem_id": 154,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/880.json",
+      "gold_answer_extracted": "2\\sqrt{113}",
+      "question_sha256": "88bd1d429ff4da88607a105612c2de0c8e98bd61cfdfa852a96a537fea183c3b"
+    },
+    {
+      "problem_id": 155,
+      "source_problem_id": 155,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/803.json",
+      "gold_answer_extracted": "\\frac{1}{4}",
+      "question_sha256": "4c1c2d962a0e65a5ea2f0e8cbbb01afb30c151d1fd463da969ffacc758afc600"
+    },
+    {
+      "problem_id": 156,
+      "source_problem_id": 156,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/117.json",
+      "gold_answer_extracted": "30^\\circ",
+      "question_sha256": "50a60fb156488ac69ce8984b7693ec3587886b19836e2074e8a43d7f80ef064c"
+    },
+    {
+      "problem_id": 157,
+      "source_problem_id": 157,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1410.json",
+      "gold_answer_extracted": "\\frac65",
+      "question_sha256": "5d38b315c24ca70349e06caad7d134aae34a0673c5efd4a63bdbf344ad0522cd"
+    },
+    {
+      "problem_id": 158,
+      "source_problem_id": 158,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2570.json",
+      "gold_answer_extracted": "2107",
+      "question_sha256": "20299b976dc21ef187537d023989ebed6117486aaef3fcdc22be51b47bc9000d"
+    },
+    {
+      "problem_id": 159,
+      "source_problem_id": 159,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/621.json",
+      "gold_answer_extracted": "3.21",
+      "question_sha256": "adefdc2121debc5c85f7337fc8bf72fe28961aa70767333ea2a09396317073af"
+    },
+    {
+      "problem_id": 160,
+      "source_problem_id": 160,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/521.json",
+      "gold_answer_extracted": "18",
+      "question_sha256": "b8f8d2320ad189ea99d29b0d158a4bb9fa0493022b0e1875887c77dee794403d"
+    },
+    {
+      "problem_id": 161,
+      "source_problem_id": 161,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1255.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "4e199d07c47d41052ab004d9d8d8d914913d9322256079da9373aec1f4104199"
+    },
+    {
+      "problem_id": 162,
+      "source_problem_id": 162,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1655.json",
+      "gold_answer_extracted": "\\dfrac{17}{50}",
+      "question_sha256": "1e0d6c4c3aa3b6ac881541e4822b85c0f2ba7ae5e38bc9d061befde5dc530c56"
+    },
+    {
+      "problem_id": 163,
+      "source_problem_id": 163,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2517.json",
+      "gold_answer_extracted": "-\\frac{35}{9}",
+      "question_sha256": "7758d0ba38acef750717bc10b5aa2e3022f571cdb728cddd7e002481cffd29df"
+    },
+    {
+      "problem_id": 164,
+      "source_problem_id": 164,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/697.json",
+      "gold_answer_extracted": "-\\sqrt{3}",
+      "question_sha256": "3b4ca6dce0a0858be513be5a8ee4881acb12fb36ae71d85ab6fb020c98ef93a3"
+    },
+    {
+      "problem_id": 165,
+      "source_problem_id": 165,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1356.json",
+      "gold_answer_extracted": "\\frac{4}{9}",
+      "question_sha256": "5c91e3632a6bed3d9e79a9734fadd4b7c2229a1c22fed53f22490d3e59d2e822"
+    },
+    {
+      "problem_id": 166,
+      "source_problem_id": 166,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1003.json",
+      "gold_answer_extracted": "\\frac{270}7\\text{ degrees}",
+      "question_sha256": "03e264fab39979a59f3b1ed2acc17da01c865a176db61cd1c3d7a4eb0829329a"
+    },
+    {
+      "problem_id": 167,
+      "source_problem_id": 167,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/478.json",
+      "gold_answer_extracted": "65",
+      "question_sha256": "2bb95410df5e904e453d267d1a97f01d14cc19e2d401c789862b09d3c9188d75"
+    },
+    {
+      "problem_id": 168,
+      "source_problem_id": 168,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/181.json",
+      "gold_answer_extracted": "19",
+      "question_sha256": "9f2b22b372743a623970404ed9cc2992a5042186fbbb52aa7da8acd87ba89e2d"
+    },
+    {
+      "problem_id": 169,
+      "source_problem_id": 169,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/802.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "e6c6322685f03107675d3bf6bb38558c0a58de183aa425fab15c196211e2a569"
+    },
+    {
+      "problem_id": 170,
+      "source_problem_id": 170,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/297.json",
+      "gold_answer_extracted": "1736",
+      "question_sha256": "b0e97322dd5cc3a272cb010ff16f994a05d7d160a91cd54b40efc438d17b6bee"
+    },
+    {
+      "problem_id": 171,
+      "source_problem_id": 171,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1272.json",
+      "gold_answer_extracted": "\\frac{13}{15}",
+      "question_sha256": "308aa700b7b0eefb9a3719b094268c4719fcad125dd2823b67c314b446559fe0"
+    },
+    {
+      "problem_id": 172,
+      "source_problem_id": 172,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/841.json",
+      "gold_answer_extracted": "350",
+      "question_sha256": "08306232ef9ba7aa229594b9a52f8dcebd100aae1b7197cc844ad8f9725b7604"
+    },
+    {
+      "problem_id": 173,
+      "source_problem_id": 173,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/686.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "86429feba2dedf48c00f61e50ce8ca2b363200be9899a459f15d92a4777219ed"
+    },
+    {
+      "problem_id": 174,
+      "source_problem_id": 174,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/351.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "150eaf9aec741382be431196a2ae740c69e39d5cd2ea259048decd0658cf9acf"
+    },
+    {
+      "problem_id": 175,
+      "source_problem_id": 175,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/991.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "bdd65b73583a54845a9beeec149f43e5f2b9706bf42b7c75091921e96d12b029"
+    },
+    {
+      "problem_id": 176,
+      "source_problem_id": 176,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/598.json",
+      "gold_answer_extracted": ".0000672",
+      "question_sha256": "b223f2dd3f63d2f783769e71d0bfbaab930ecb71de62029c214d14ddc22c0482"
+    },
+    {
+      "problem_id": 177,
+      "source_problem_id": 177,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/65.json",
+      "gold_answer_extracted": "30^\\circ",
+      "question_sha256": "fee7f83b365251b3d97eafb5cb3c0b2dde779d9129d6d0f787148f7c616bcc7e"
+    },
+    {
+      "problem_id": 178,
+      "source_problem_id": 178,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1113.json",
+      "gold_answer_extracted": "60",
+      "question_sha256": "34876d45164544f1eda8f7427218694990e7c3f173219cd5bb52107dbb429526"
+    },
+    {
+      "problem_id": 179,
+      "source_problem_id": 179,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/659.json",
+      "gold_answer_extracted": "5x - 7y + 11z + 4 = 0",
+      "question_sha256": "0d9f1bfdb61f201f6469cf335b15d6506953f3d9e62935047a197394ea959013"
+    },
+    {
+      "problem_id": 180,
+      "source_problem_id": 180,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1908.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "4ecc75de961c1f8e9e1930094b9f3f89c988bbccd9ed3ab9e44d88dea5e05f65"
+    },
+    {
+      "problem_id": 181,
+      "source_problem_id": 181,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1275.json",
+      "gold_answer_extracted": "\\frac{\\sqrt{3}}{3}",
+      "question_sha256": "0d469d0ece1c8db42727fa34c3215748c1501be4108630edd9b0dfdaa3de4e4e"
+    },
+    {
+      "problem_id": 182,
+      "source_problem_id": 182,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1922.json",
+      "gold_answer_extracted": "1251",
+      "question_sha256": "210778075950cc2d47660836d13b39a298928d9da94fb9235240c6234f2c253e"
+    },
+    {
+      "problem_id": 183,
+      "source_problem_id": 183,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1082.json",
+      "gold_answer_extracted": "23",
+      "question_sha256": "9dadcec4ce9dd05f4eb2bad0c7751f17d1118bf644399b583c210ff367797713"
+    },
+    {
+      "problem_id": 184,
+      "source_problem_id": 184,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/183.json",
+      "gold_answer_extracted": "(2,\\infty)",
+      "question_sha256": "ff2cf3ad64c19d720b0c752331e0ef05cabcc1cde327a0751efe498fde07f938"
+    },
+    {
+      "problem_id": 185,
+      "source_problem_id": 185,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1214.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "58aab2274e9e34cabcaa2385b7151dec68c3e9d94d3e9899b796dc82642593a8"
+    },
+    {
+      "problem_id": 186,
+      "source_problem_id": 186,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/978.json",
+      "gold_answer_extracted": "7",
+      "question_sha256": "07f83eec628533b91471440460b27d11b751a5637d073f7b4e89cb5cdc04cbe2"
+    },
+    {
+      "problem_id": 187,
+      "source_problem_id": 187,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2199.json",
+      "gold_answer_extracted": "7",
+      "question_sha256": "b4bdce0b7c998bd0dc4e0514f4d39069b30f28660b11e73a91599abb2651180a"
+    },
+    {
+      "problem_id": 188,
+      "source_problem_id": 188,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/733.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "5a8c50102096a59a2269523fa98a58a819166ba5fe15b9c31ff0d673d502ffef"
+    },
+    {
+      "problem_id": 189,
+      "source_problem_id": 189,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/702.json",
+      "gold_answer_extracted": "160",
+      "question_sha256": "4187df69fed89515b059fc51d95be4de2beb6d2c38c51bc233c211e018136079"
+    },
+    {
+      "problem_id": 190,
+      "source_problem_id": 190,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/51.json",
+      "gold_answer_extracted": "\\frac{13}{18}",
+      "question_sha256": "db4c0ed2fbf94208aa7df686359ca47be990c9a58a2662bca18e222d94614f79"
+    },
+    {
+      "problem_id": 191,
+      "source_problem_id": 191,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/109.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "36fd071c1bb427b553af4b7c8dd35d50872c597b264451825e5c8c160b03f641"
+    },
+    {
+      "problem_id": 192,
+      "source_problem_id": 192,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/221.json",
+      "gold_answer_extracted": "30",
+      "question_sha256": "bb96e38a44a1a82d0574f5736da18c8119445aa70ab554e5e3e083cda7cd39fc"
+    },
+    {
+      "problem_id": 193,
+      "source_problem_id": 193,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1422.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "3c181d38789f0f5ef71826b2e9120871a599e7eb9a009ea9cdeedaa0c73e3f60"
+    },
+    {
+      "problem_id": 194,
+      "source_problem_id": 194,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2196.json",
+      "gold_answer_extracted": "\\frac{1}{4}",
+      "question_sha256": "ea1397aa97f673873beaf692580a59f388681c7f352d0874cc603ea9bd063e90"
+    },
+    {
+      "problem_id": 195,
+      "source_problem_id": 195,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/591.json",
+      "gold_answer_extracted": "24",
+      "question_sha256": "04f419fac8302d674668e968e6ba8da9e106f114b8fc442b3fb3ba58422f432b"
+    },
+    {
+      "problem_id": 196,
+      "source_problem_id": 196,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1937.json",
+      "gold_answer_extracted": "1600",
+      "question_sha256": "a54460c3eddba3c4b31d79c6e26a39b34541ed7717db8b1fb05e515679624331"
+    },
+    {
+      "problem_id": 197,
+      "source_problem_id": 197,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/838.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "dfcde87bc9d442e3d15bf33057fbd5a0f93abd762b9fc9eed482cab0df9dfdec"
+    },
+    {
+      "problem_id": 198,
+      "source_problem_id": 198,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/508.json",
+      "gold_answer_extracted": "10,\\!080",
+      "question_sha256": "3808c227b8b95556a87934db0d3956810196a7af033fa45845ba3c21d32cc310"
+    },
+    {
+      "problem_id": 199,
+      "source_problem_id": 199,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1907.json",
+      "gold_answer_extracted": "17",
+      "question_sha256": "d66a40c796e809630af65d58da36dc901a19297204ded18d0198d44afb3d50a1"
+    },
+    {
+      "problem_id": 200,
+      "source_problem_id": 200,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/2086.json",
+      "gold_answer_extracted": "40",
+      "question_sha256": "ee7c7225248fbed1c2a2467e526eb29fd9493884ec6bb85382dd1d53ee0f5ea7"
+    },
+    {
+      "problem_id": 201,
+      "source_problem_id": 201,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/149.json",
+      "gold_answer_extracted": "66",
+      "question_sha256": "5932169135a7e725633df2a33a2588e1c795c758ddda4e6851cd782eea2cc778"
+    },
+    {
+      "problem_id": 202,
+      "source_problem_id": 202,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/291.json",
+      "gold_answer_extracted": "\\frac{2}{3}",
+      "question_sha256": "e76531f9dd29367061e642cb2868e6d4e03a6ed3f6fe9490a8464ea7ac7f519c"
+    },
+    {
+      "problem_id": 203,
+      "source_problem_id": 203,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1555.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "a862cde66761d9868dd8b9772b8e8f8cfaa3b5e060ffd85c029747e85906bcd5"
+    },
+    {
+      "problem_id": 204,
+      "source_problem_id": 204,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1510.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "97b18f583df10975549cb056c5866a665f905c5e7e3022fcc1b9c007168c446d"
+    },
+    {
+      "problem_id": 205,
+      "source_problem_id": 205,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/263.json",
+      "gold_answer_extracted": "\\begin{pmatrix} -2 \\\\ -14 \\\\ -7 \\end{pmatrix}",
+      "question_sha256": "9ba7f12134e7187bfa7691a4fe0922dfad47bd1937adf1e1a2f232deb8d7c151"
+    },
+    {
+      "problem_id": 206,
+      "source_problem_id": 206,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/541.json",
+      "gold_answer_extracted": "\\left( \\frac{3}{2}, -13 \\right)",
+      "question_sha256": "f615384fe13fd34b11d849ddecee3aa7b5211f602bc017e6fd2cb8862d5d553a"
+    },
+    {
+      "problem_id": 207,
+      "source_problem_id": 207,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/389.json",
+      "gold_answer_extracted": "28",
+      "question_sha256": "897bfae78982048ca6ab5cbc67dc34d7c6a0bd17258cc7dc8d7273802e2dd226"
+    },
+    {
+      "problem_id": 208,
+      "source_problem_id": 208,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1201.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "5b79ff26844cbbaf20af06a5a3c0e981e9275b1280c406e998bfb0dd9d17dee4"
+    },
+    {
+      "problem_id": 209,
+      "source_problem_id": 209,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/234.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "f3a7efe83de361654e5b9d8fed2795dc4418571503130fef037682e2a26bb071"
+    },
+    {
+      "problem_id": 210,
+      "source_problem_id": 210,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/378.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "d5d8695befc9c53b305c30cf757ac29cade8e90dbec9cd25df4e68f6bd42b0d1"
+    },
+    {
+      "problem_id": 211,
+      "source_problem_id": 211,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1555.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "693ebe9d1ed711041614ce570f4084102261f2c0f7c01883ddfca6bacb944ca9"
+    },
+    {
+      "problem_id": 212,
+      "source_problem_id": 212,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2102.json",
+      "gold_answer_extracted": "56",
+      "question_sha256": "6f0e66a3f1cbf2455e070788e8dfb0a31023b42b73dbcef74d45fa56addb2cff"
+    },
+    {
+      "problem_id": 213,
+      "source_problem_id": 213,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/102.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "c5a01fea5f4b33a5cdf2059b547cb05af5b7274ffa577b656c72556bc4ed4561"
+    },
+    {
+      "problem_id": 214,
+      "source_problem_id": 214,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/765.json",
+      "gold_answer_extracted": "110",
+      "question_sha256": "5aa52de17eea38e81d537bbf5cae4d2121376e22cda66455289554e464c769a4"
+    },
+    {
+      "problem_id": 215,
+      "source_problem_id": 215,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/907.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "f5c172c898474116bd2b0e252e2a02362afa1e07986b2f51faa2c6f9f7a46160"
+    },
+    {
+      "problem_id": 216,
+      "source_problem_id": 216,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1436.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "d871815d374eb79f59b228b6c5a2fed52001fa172487a2a89c46039229b44548"
+    },
+    {
+      "problem_id": 217,
+      "source_problem_id": 217,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/417.json",
+      "gold_answer_extracted": "11,\\! 111,\\! 111,\\! 100",
+      "question_sha256": "f79eb3696da414f81aed80fa09876c8923ba7fc50d7772a3860a6b50cd1ec3b8"
+    },
+    {
+      "problem_id": 218,
+      "source_problem_id": 218,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/864.json",
+      "gold_answer_extracted": "(-1,6)",
+      "question_sha256": "a0be6631f332b996b0148cd0c5e9ec2079ddf8118861101b6a7a332ed2938c2b"
+    },
+    {
+      "problem_id": 219,
+      "source_problem_id": 219,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/282.json",
+      "gold_answer_extracted": "\\frac{1}{2}",
+      "question_sha256": "c9e4c904d13568a77a2d7223268ad7d50388a6bda9f532629b40a75e7add49fc"
+    },
+    {
+      "problem_id": 220,
+      "source_problem_id": 220,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1961.json",
+      "gold_answer_extracted": "\\frac{16}{27}",
+      "question_sha256": "6c70163ce817add42314f8a39903df8d283d17ac1338a110cc2b3af5b5708e08"
+    },
+    {
+      "problem_id": 221,
+      "source_problem_id": 221,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/89.json",
+      "gold_answer_extracted": "900",
+      "question_sha256": "b5dc33c4111f2507692619135c211b649f219138335e03292fd1430f7b744e21"
+    },
+    {
+      "problem_id": 222,
+      "source_problem_id": 222,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/547.json",
+      "gold_answer_extracted": "54",
+      "question_sha256": "ede1df682550017957de17dbbbdaf900dbdb85127e0f48fc6454eb804d63a7ca"
+    },
+    {
+      "problem_id": 223,
+      "source_problem_id": 223,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/183.json",
+      "gold_answer_extracted": "14",
+      "question_sha256": "4ad5306cd6ea3bade159a4f48a3168f9d311560e3d355b13afcf18be2163f5eb"
+    },
+    {
+      "problem_id": 224,
+      "source_problem_id": 224,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/190.json",
+      "gold_answer_extracted": "\\frac{9}{256}",
+      "question_sha256": "d3823d137562e66d61543fc61fdd8a3551a53cc33ba49981c7682c5a44917fca"
+    },
+    {
+      "problem_id": 225,
+      "source_problem_id": 225,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2159.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "c072ee1dbcc990bfe8327e506f5c2a2da2c631cd6253d08343b098313f1944c6"
+    },
+    {
+      "problem_id": 226,
+      "source_problem_id": 226,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/71.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "1274ec9221321d0415017e0a3f89e6052b438263be004c881bc5da05aa9cbd7c"
+    },
+    {
+      "problem_id": 227,
+      "source_problem_id": 227,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/819.json",
+      "gold_answer_extracted": "\\text{(C)}",
+      "question_sha256": "e5bac6a9050b2981ec9538eb50d1772f674315b2f84f3646069a67e2b9c34022"
+    },
+    {
+      "problem_id": 228,
+      "source_problem_id": 228,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1056.json",
+      "gold_answer_extracted": "288 \\pi",
+      "question_sha256": "e6551a130c024121c8d34711783301343450804b5846bcb0b938e6772829b561"
+    },
+    {
+      "problem_id": 229,
+      "source_problem_id": 229,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/2057.json",
+      "gold_answer_extracted": "90",
+      "question_sha256": "0f736b1769bf4b2d9e647a36ef829f058c8471ca3d714adfc79cf39626d10751"
+    },
+    {
+      "problem_id": 230,
+      "source_problem_id": 230,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/986.json",
+      "gold_answer_extracted": "\\frac{16}{5}",
+      "question_sha256": "eb18e22ed3c256781e048dfb836a00c159ed2bf6a4c4dec109541d09413a4242"
+    },
+    {
+      "problem_id": 231,
+      "source_problem_id": 231,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1578.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "b787f6e038899054d1924112f217430ac6ecf5c8d0104b4c98bfb105d0a84a8c"
+    },
+    {
+      "problem_id": 232,
+      "source_problem_id": 232,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1354.json",
+      "gold_answer_extracted": "\\frac{1997}{2}",
+      "question_sha256": "71a953a6d0fff588db091a38ca0423fe728d73d164394f1638627c5c7342e3d7"
+    },
+    {
+      "problem_id": 233,
+      "source_problem_id": 233,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/441.json",
+      "gold_answer_extracted": "30^\\circ",
+      "question_sha256": "0a44d33216778365bc679c332711e6b807edb57bc5bf7c3cefa22152ba1f1106"
+    },
+    {
+      "problem_id": 234,
+      "source_problem_id": 234,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1837.json",
+      "gold_answer_extracted": "34",
+      "question_sha256": "ce699925401ba6668902739f014ac20a2782f068f66a4e07f8bce91329350d23"
+    },
+    {
+      "problem_id": 235,
+      "source_problem_id": 235,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/153.json",
+      "gold_answer_extracted": "\\frac 59",
+      "question_sha256": "b85cd3a0d61d8d2a88e1862437ba131cc5e0f2e499361dd42851c1b0ff752e34"
+    },
+    {
+      "problem_id": 236,
+      "source_problem_id": 236,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/989.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "2ff342ecbc77117f87b1f4aff13a1cb99834d470e3368003b70bfd4f550442a0"
+    },
+    {
+      "problem_id": 237,
+      "source_problem_id": 237,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/337.json",
+      "gold_answer_extracted": "22",
+      "question_sha256": "55ddbdf1e3460bcfe854e507e33df10591410befce0cc9d1b8134e4bfaf30408"
+    },
+    {
+      "problem_id": 238,
+      "source_problem_id": 238,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/975.json",
+      "gold_answer_extracted": "-4",
+      "question_sha256": "ab800b6559a9b2f47d88caa42a8f816f8fdbfaa08c7322fc0782a02be4efe476"
+    },
+    {
+      "problem_id": 239,
+      "source_problem_id": 239,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/229.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "dbe25f76577aa2277c03f3a024f71493a2c14a6b7d9b9ee4d160021dc45bb70b"
+    },
+    {
+      "problem_id": 240,
+      "source_problem_id": 240,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/874.json",
+      "gold_answer_extracted": "116",
+      "question_sha256": "1d73c9bd0ae194ba564d571beecc2a3ceb196d6691a70b4236458978e4940f81"
+    },
+    {
+      "problem_id": 241,
+      "source_problem_id": 241,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1143.json",
+      "gold_answer_extracted": "17",
+      "question_sha256": "823e4d044d4c14eb5605d266a8d2db894d35509a089c2a6e824df6e0d95dc035"
+    },
+    {
+      "problem_id": 242,
+      "source_problem_id": 242,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2626.json",
+      "gold_answer_extracted": "\\$32,\\!348",
+      "question_sha256": "45fa3ef21257870a5143bacb754f4c5de0b64635f6be2158395ac37ba8328a21"
+    },
+    {
+      "problem_id": 243,
+      "source_problem_id": 243,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/254.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "5567e2ebab5e0f67d5f7d16e600093c48b2131a627b16ee974a3bf400b80a090"
+    },
+    {
+      "problem_id": 244,
+      "source_problem_id": 244,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1251.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "6756a2e74b25f765ebfd60f72381373865d3c8f04d4c4fc9bcb3954ea2fbef1e"
+    },
+    {
+      "problem_id": 245,
+      "source_problem_id": 245,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1210.json",
+      "gold_answer_extracted": "-13x+3",
+      "question_sha256": "4e66c645d2a3df8631036d0cd802eb1230bfef6605b665e71e11a7cd85e278d2"
+    },
+    {
+      "problem_id": 246,
+      "source_problem_id": 246,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1787.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "d8224979f71d4e159110c9fc5228b71662eda0114db5a59f66d9056cea7a2332"
+    },
+    {
+      "problem_id": 247,
+      "source_problem_id": 247,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1123.json",
+      "gold_answer_extracted": "\\frac{10}{11}",
+      "question_sha256": "0c31b4a5e4c8e6300627ddce15766cdf97d478b068e1a5ec39e357245c7a2e37"
+    },
+    {
+      "problem_id": 248,
+      "source_problem_id": 248,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/920.json",
+      "gold_answer_extracted": "\\begin{pmatrix} -1 & 0 \\\\ 0 & -1 \\end{pmatrix}",
+      "question_sha256": "243684df7ea332aa4853d34dc7d5ccbfe6cc1500e9591fc31a146f42616298d1"
+    },
+    {
+      "problem_id": 249,
+      "source_problem_id": 249,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1065.json",
+      "gold_answer_extracted": "17",
+      "question_sha256": "ee1b3a25b71946282d4300091a2809b35c450bfbe3491c5a6c35a331433d76eb"
+    },
+    {
+      "problem_id": 250,
+      "source_problem_id": 250,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1934.json",
+      "gold_answer_extracted": "13",
+      "question_sha256": "b4c65e92228af5bd4a0197132226311de8d922131f5663b01f670c72a5187a8c"
+    },
+    {
+      "problem_id": 251,
+      "source_problem_id": 251,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/894.json",
+      "gold_answer_extracted": "540",
+      "question_sha256": "0a1707d5b4f6518f4f93b0dc3769dc3df28c4d4dbdee20ba812bfe692b1399f0"
+    },
+    {
+      "problem_id": 252,
+      "source_problem_id": 252,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2064.json",
+      "gold_answer_extracted": "81",
+      "question_sha256": "f612b9efc2716ec8ca006023e62af7fe3bdf7834723547db4e0d827c94a7c549"
+    },
+    {
+      "problem_id": 253,
+      "source_problem_id": 253,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1458.json",
+      "gold_answer_extracted": "\\frac{1}{8}",
+      "question_sha256": "26add22e99a122eb23e81a8d260fbff2ba118b207bfa72fd4f02660635ebaf47"
+    },
+    {
+      "problem_id": 254,
+      "source_problem_id": 254,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/1009.json",
+      "gold_answer_extracted": "28",
+      "question_sha256": "6fe518888bc76580a2aeb6b8fd2b694d8798390d52b92aa85ae64dd43b64a4ed"
+    },
+    {
+      "problem_id": 255,
+      "source_problem_id": 255,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/452.json",
+      "gold_answer_extracted": "\\text{(E)}",
+      "question_sha256": "cfe570d8e7a4451dde04da1d3a975109bb98b7d70da7fc8db9df0c0023efd84a"
+    },
+    {
+      "problem_id": 256,
+      "source_problem_id": 256,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1995.json",
+      "gold_answer_extracted": "\\frac{8}{21}",
+      "question_sha256": "746a8f87097718e59867d0bf42db8a53283e76aec18b6741587f738f933924a4"
+    },
+    {
+      "problem_id": 257,
+      "source_problem_id": 257,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/473.json",
+      "gold_answer_extracted": "864 \\mbox{ inches}^2",
+      "question_sha256": "cf3312d83cf0bc46f670f0629bb528881ae7b4349ae3403477e8cf8410a04349"
+    },
+    {
+      "problem_id": 258,
+      "source_problem_id": 258,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/694.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "7c50e325b6a4d24aa82e7c16df654e1f739a947b2aa8e895002e45064591b382"
+    },
+    {
+      "problem_id": 259,
+      "source_problem_id": 259,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/149.json",
+      "gold_answer_extracted": "22",
+      "question_sha256": "79b7b095949bd64cba563c068359e6ebb6c9fedd0b97216d62df474291741bd2"
+    },
+    {
+      "problem_id": 260,
+      "source_problem_id": 260,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/580.json",
+      "gold_answer_extracted": "120^\\circ",
+      "question_sha256": "e623a86d1d301e51e0716df2b4d771be6a90653b00f1d336a2bbe42cfc63c481"
+    },
+    {
+      "problem_id": 261,
+      "source_problem_id": 261,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/347.json",
+      "gold_answer_extracted": "76^\\circ",
+      "question_sha256": "d2abc39647ebd5cc878c15827188cf2f0f8acb39cd7cb3b892d89756f851df79"
+    },
+    {
+      "problem_id": 262,
+      "source_problem_id": 262,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1317.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "ec1f8b8255f9bd4e4f13c773a75cc0ac8f875f4d4d76a2c1660eff291ce5ed05"
+    },
+    {
+      "problem_id": 263,
+      "source_problem_id": 263,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/483.json",
+      "gold_answer_extracted": "15",
+      "question_sha256": "9c713fb13ae435bf4724e8d10d645e070a203cd44b89cb13b8f6f14cc03ee5e7"
+    },
+    {
+      "problem_id": 264,
+      "source_problem_id": 264,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/826.json",
+      "gold_answer_extracted": "1\\frac{4}{5}",
+      "question_sha256": "6ab906f27e83d1bb36a4e82c969162aa3ce4c677e25fed09e0262dc90ed9f67b"
+    },
+    {
+      "problem_id": 265,
+      "source_problem_id": 265,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/524.json",
+      "gold_answer_extracted": "4005",
+      "question_sha256": "83864f8749594ce401668e94215e18631f899ca2e8f1da9c0ab889a10699b4d2"
+    },
+    {
+      "problem_id": 266,
+      "source_problem_id": 266,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1742.json",
+      "gold_answer_extracted": "\\dfrac{33}{100}",
+      "question_sha256": "667e1a134a6657d254f2a9be880f3f95fa33830af9acbca8cf14bcada5c58984"
+    },
+    {
+      "problem_id": 267,
+      "source_problem_id": 267,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/226.json",
+      "gold_answer_extracted": "180^\\circ",
+      "question_sha256": "ded415df31a5e1763ebdbca8ca52e165130c35a021e2a04c07631b0c79fcda9f"
+    },
+    {
+      "problem_id": 268,
+      "source_problem_id": 268,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/466.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "ded0ffd3643d01300751d58ce6b747aa56f9e8f460bbcf7d41a4fee1fc747961"
+    },
+    {
+      "problem_id": 269,
+      "source_problem_id": 269,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/913.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "3447eebbdcaa37f97290ede09df1f2b22667b04d315fe73422b8953b0b22791a"
+    },
+    {
+      "problem_id": 270,
+      "source_problem_id": 270,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2551.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "1e70b4456ea54b6e71d0e7a9028b39069525b4708c37712c61a44e8b7bc897dd"
+    },
+    {
+      "problem_id": 271,
+      "source_problem_id": 271,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/634.json",
+      "gold_answer_extracted": "333",
+      "question_sha256": "a5b3b535a7854a82f55a862af60787648fabd312599b1a524326a3ea5bc755c6"
+    },
+    {
+      "problem_id": 272,
+      "source_problem_id": 272,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/533.json",
+      "gold_answer_extracted": "1030",
+      "question_sha256": "71eae2be9ad19da74cc73b8bb6b7525b8c3f03ce365ee6116c091849f7e65f80"
+    },
+    {
+      "problem_id": 273,
+      "source_problem_id": 273,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/993.json",
+      "gold_answer_extracted": "1250",
+      "question_sha256": "20855ff8e775267f6a6f3932dce944ca3ca36a7fc6ca964df6c46df9816164b6"
+    },
+    {
+      "problem_id": 274,
+      "source_problem_id": 274,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/686.json",
+      "gold_answer_extracted": "18+2\\pi",
+      "question_sha256": "7a6e9ababd5838e20bd45aa3ba1b9a72491bf7824d744531d92046caebbd0417"
+    },
+    {
+      "problem_id": 275,
+      "source_problem_id": 275,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/346.json",
+      "gold_answer_extracted": "7",
+      "question_sha256": "1abaefe281529653aa738324cef55620674d86b4766d839517195e41e5f9f79b"
+    },
+    {
+      "problem_id": 276,
+      "source_problem_id": 276,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1282.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "a153bf646bb8dfb046d7c75433a9e56cd7c552526ee5ec4085c5b284d4b6813a"
+    },
+    {
+      "problem_id": 277,
+      "source_problem_id": 277,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1834.json",
+      "gold_answer_extracted": "\\sqrt{53}",
+      "question_sha256": "80883c8d718e794247523916423d2890137d335904bfc9824ab25ceb3d1c307b"
+    },
+    {
+      "problem_id": 278,
+      "source_problem_id": 278,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/691.json",
+      "gold_answer_extracted": "255",
+      "question_sha256": "5907389c86b8ef4a34a31496be366099bb2d651a41a1be4aac23582ffe77bdb6"
+    },
+    {
+      "problem_id": 279,
+      "source_problem_id": 279,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1512.json",
+      "gold_answer_extracted": "7\\pi",
+      "question_sha256": "0d61919f0c97a497a9f31fb8e35bd6949316b4d73bc4fa9d3c79247e6e8a7be0"
+    },
+    {
+      "problem_id": 280,
+      "source_problem_id": 280,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1287.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "7402b093e77ab835f3b04b716db0c7f7278821bfe49c39a3fd138d563e45f328"
+    },
+    {
+      "problem_id": 281,
+      "source_problem_id": 281,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/260.json",
+      "gold_answer_extracted": "36^\\circ",
+      "question_sha256": "c3a88f8bb3e6c396b2b5d6a2d742ec9d43cd29909a384f676855fefaaf48c0e6"
+    },
+    {
+      "problem_id": 282,
+      "source_problem_id": 282,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1184.json",
+      "gold_answer_extracted": "129",
+      "question_sha256": "50760fe764edbce09fcb217a65c54beff1dd46ba1d156a011a12751642aafcdc"
+    },
+    {
+      "problem_id": 283,
+      "source_problem_id": 283,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1787.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "24cffc732716cb8fa513f4d53152b8b0974478515dfbfdaee2834aefa1e84e07"
+    },
+    {
+      "problem_id": 284,
+      "source_problem_id": 284,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/768.json",
+      "gold_answer_extracted": "3 \\pm 2 \\sqrt{2}",
+      "question_sha256": "e3263989039dc1917a933ff46eeac25e62100143111b220007ecf0af73608bc9"
+    },
+    {
+      "problem_id": 285,
+      "source_problem_id": 285,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1411.json",
+      "gold_answer_extracted": "440",
+      "question_sha256": "d03a1b8fc03cf76a4f4ec3147a0a64c4adb66c431a993cb3ca0b4515d9fdec7b"
+    },
+    {
+      "problem_id": 286,
+      "source_problem_id": 286,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/960.json",
+      "gold_answer_extracted": "\\frac{17}{21}",
+      "question_sha256": "1adf17066c8618a719c1eab7bb1fc185e2378c2dfc3d8a61e288e891421efb7f"
+    },
+    {
+      "problem_id": 287,
+      "source_problem_id": 287,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/631.json",
+      "gold_answer_extracted": "36",
+      "question_sha256": "5bbb82b018af825b312e048e8b2dc6e297c03d226499c0b2a2b838694de97126"
+    },
+    {
+      "problem_id": 288,
+      "source_problem_id": 288,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1172.json",
+      "gold_answer_extracted": "7",
+      "question_sha256": "fbf10ed4ca6794a89ad0400b90cd8f6cd3c7470448b66dd7d7b123e811580f66"
+    },
+    {
+      "problem_id": 289,
+      "source_problem_id": 289,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1300.json",
+      "gold_answer_extracted": "16",
+      "question_sha256": "550b1a4c6ea77399326894f15265b5fe8dfa8c23d3697caf0dc7121081946a36"
+    },
+    {
+      "problem_id": 290,
+      "source_problem_id": 290,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/634.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "8e94732caeed5f9b9d98ac7fbaa126963bdd0858a74c2dd7f2b34ea1ceb6155a"
+    },
+    {
+      "problem_id": 291,
+      "source_problem_id": 291,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/25149.json",
+      "gold_answer_extracted": "63",
+      "question_sha256": "dedb35fff0a06a5e9f1ae0fba5a336cc28532fc396ff1525d75f5a9b16d0d8a6"
+    },
+    {
+      "problem_id": 292,
+      "source_problem_id": 292,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/90.json",
+      "gold_answer_extracted": "898",
+      "question_sha256": "db31d840f82d7f2e48b99f87a515138983fa0f1a327959d11b7f131d9509cde6"
+    },
+    {
+      "problem_id": 293,
+      "source_problem_id": 293,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2486.json",
+      "gold_answer_extracted": "\\left(\\frac{3}{5},\\frac{8}{3}\\right]",
+      "question_sha256": "5b28247e26c2d9090300441920ef75a720e23c8d0d67cefd5e85a809a4fb6a5a"
+    },
+    {
+      "problem_id": 294,
+      "source_problem_id": 294,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/488.json",
+      "gold_answer_extracted": "58",
+      "question_sha256": "cb95bc64c75cf167609883ccefcf227b838f7982d39863ff23e01225f62c69b1"
+    },
+    {
+      "problem_id": 295,
+      "source_problem_id": 295,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1201.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "dea1a5b0a09d98a8bd03820e0c6300612b7d933926270e08e807bd0580a7ef28"
+    },
+    {
+      "problem_id": 296,
+      "source_problem_id": 296,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/754.json",
+      "gold_answer_extracted": "\\text{(B)}",
+      "question_sha256": "709caf75515a20c4657a28b332740fda04ad1aadcbeb94c3e05aafb6d69553a9"
+    },
+    {
+      "problem_id": 297,
+      "source_problem_id": 297,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1172.json",
+      "gold_answer_extracted": "103",
+      "question_sha256": "13543e6805ec985da810e4fe8c9268e70b3bcea5ebaa79838f4aca6e6f9742b4"
+    },
+    {
+      "problem_id": 298,
+      "source_problem_id": 298,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/881.json",
+      "gold_answer_extracted": "\\begin{pmatrix} -18 \\\\ -49 \\\\ 96 \\end{pmatrix}",
+      "question_sha256": "8f7c4ee7b7b0fb0095cffb83067510e6e33becd887721d67a1081208af51cadc"
+    },
+    {
+      "problem_id": 299,
+      "source_problem_id": 299,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/1097.json",
+      "gold_answer_extracted": "63",
+      "question_sha256": "a6309a04df98dba13a191d05ed8c9d4fdaf3de7c78dbc9e033f049844e339b72"
+    },
+    {
+      "problem_id": 300,
+      "source_problem_id": 300,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/339.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "3cbf37a65f1d222ac94afd99bec656c1133650bd2fcb3c6dc4b2839a9c722d8d"
+    },
+    {
+      "problem_id": 301,
+      "source_problem_id": 301,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1044.json",
+      "gold_answer_extracted": "5.4 \\text{ cents}",
+      "question_sha256": "1df3a7ad99b1cfd90f54f9cad1666346e42d4baac3cf51632c4ce053493f710c"
+    },
+    {
+      "problem_id": 302,
+      "source_problem_id": 302,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/465.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "17fef4bd61055e5d208751032e8520df73665874b37f9cb1f61158a37f2e943a"
+    },
+    {
+      "problem_id": 303,
+      "source_problem_id": 303,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/965.json",
+      "gold_answer_extracted": "28",
+      "question_sha256": "0f8a7867d1de477aed3aadc72d34fa0a6247f830111831a3d05d0456d03f87a0"
+    },
+    {
+      "problem_id": 304,
+      "source_problem_id": 304,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/446.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "f59c58f79047ac70a5c7a95f0c9cff993f03200f3b236ba8a303a6018721d9e4"
+    },
+    {
+      "problem_id": 305,
+      "source_problem_id": 305,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2257.json",
+      "gold_answer_extracted": "\\frac9{19}",
+      "question_sha256": "d308b5bba1d4e73849d002ef0e34971abb949b8aff2e8418d943a625de7ddb33"
+    },
+    {
+      "problem_id": 306,
+      "source_problem_id": 306,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1544.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "ebebe01a18f218d63ea49b6b41f7a084a588d69128eb533d325b3bb1b010b4a1"
+    },
+    {
+      "problem_id": 307,
+      "source_problem_id": 307,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/695.json",
+      "gold_answer_extracted": "(-\\infty, 0]",
+      "question_sha256": "54691fce5a1342e9dd816784ad8735b27cbbf2edef611b7018345c80e29b25a2"
+    },
+    {
+      "problem_id": 308,
+      "source_problem_id": 308,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/711.json",
+      "gold_answer_extracted": "1+2\\sqrt{3}",
+      "question_sha256": "0b7036ebe3423f4237f6f15c1b9e2a4a4d995694c4e83e162968984e35baaaca"
+    },
+    {
+      "problem_id": 309,
+      "source_problem_id": 309,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/203.json",
+      "gold_answer_extracted": "14",
+      "question_sha256": "116237dfe3dbfe5ab5abe7232eb2173e4b8098866be7f88dccbd86841925d947"
+    },
+    {
+      "problem_id": 310,
+      "source_problem_id": 310,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1842.json",
+      "gold_answer_extracted": "49",
+      "question_sha256": "47ce32304552172918d9bdd8bfbb60688241230b47c19062ba5056d8371f49c8"
+    },
+    {
+      "problem_id": 311,
+      "source_problem_id": 311,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/911.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "5d688c1d01def1bc20b491e071f5abeed2f44f76de2495e004e568db8191c6d9"
+    },
+    {
+      "problem_id": 312,
+      "source_problem_id": 312,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1714.json",
+      "gold_answer_extracted": "(5,\\infty)",
+      "question_sha256": "484ccaf50a96ce740f4779d83ea0ef7997e01e275e6f8267ab4f5fd1e8e706f7"
+    },
+    {
+      "problem_id": 313,
+      "source_problem_id": 313,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1423.json",
+      "gold_answer_extracted": "12\\pi",
+      "question_sha256": "2453029bc9e469f11c8b69dc0a94c6bbd927afa03b2e7c3f318f575c550bb6a9"
+    },
+    {
+      "problem_id": 314,
+      "source_problem_id": 314,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/1108.json",
+      "gold_answer_extracted": "(2,4)",
+      "question_sha256": "f429b0398ba58c597aeca2e1eca05e8bab39be8d5400a5d216c8cb0f1c05a54c"
+    },
+    {
+      "problem_id": 315,
+      "source_problem_id": 315,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/791.json",
+      "gold_answer_extracted": "41",
+      "question_sha256": "3b95366916efe8e8ba6c605ccd8ee266758b391004f296e02c99209c3a13c633"
+    },
+    {
+      "problem_id": 316,
+      "source_problem_id": 316,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/276.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "eb20fcfbc7fe587d061ece4e51811ba589f1534d169e18c4d8db0422fae1f135"
+    },
+    {
+      "problem_id": 317,
+      "source_problem_id": 317,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2152.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "b1803075caf0da4e565d57c6158c93261e1dc4db5b882eb63405a825e27da9a9"
+    },
+    {
+      "problem_id": 318,
+      "source_problem_id": 318,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2735.json",
+      "gold_answer_extracted": "\\frac{11+9a}{20}",
+      "question_sha256": "ea43c5a8e79753bf8c40ac761fdb04467a7f134a801309fa3cf5c5ad7d21a4cd"
+    },
+    {
+      "problem_id": 319,
+      "source_problem_id": 319,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/425.json",
+      "gold_answer_extracted": "-128",
+      "question_sha256": "9546fca3a130ae853006a70506b78843900f13aa03c9cea0869c641b8494a821"
+    },
+    {
+      "problem_id": 320,
+      "source_problem_id": 320,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/947.json",
+      "gold_answer_extracted": "-\\frac{24}{25}",
+      "question_sha256": "9b21d63d4e715117744cefe8a91d6b6a855095d1d9d8dc882fd11ea8470b3b93"
+    },
+    {
+      "problem_id": 321,
+      "source_problem_id": 321,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/954.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "02480d2c0415a28153e0ac654e2afb21e83a856d14503689ba3332db1548ffdc"
+    },
+    {
+      "problem_id": 322,
+      "source_problem_id": 322,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1936.json",
+      "gold_answer_extracted": "-1",
+      "question_sha256": "8ee8640f7691afbe77a6f30a364f9a35096038a6dc7395655b55a289abd8a62c"
+    },
+    {
+      "problem_id": 323,
+      "source_problem_id": 323,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/870.json",
+      "gold_answer_extracted": "\\frac{1}{3}",
+      "question_sha256": "50d8fc4d7e16382c89e0c967824011ce3ddf9e079ab5d9eb3bf5c0f4e27c6779"
+    },
+    {
+      "problem_id": 324,
+      "source_problem_id": 324,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/465.json",
+      "gold_answer_extracted": "120",
+      "question_sha256": "3b3ed529a4b09aebcc4d3a6b61237641655c8bf70d6481e936475fd2ce4f6f80"
+    },
+    {
+      "problem_id": 325,
+      "source_problem_id": 325,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/73.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "ea88ff699f5e513c7405e0f14ed2efa9fcd24aca33b24f9104e473cf398eb950"
+    },
+    {
+      "problem_id": 326,
+      "source_problem_id": 326,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/742.json",
+      "gold_answer_extracted": "\\frac{9}{100}",
+      "question_sha256": "5ad83e648db6540bf9e599cf69f22c9ed964ae0bc0e101601dc07cf6416af1a8"
+    },
+    {
+      "problem_id": 327,
+      "source_problem_id": 327,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/117.json",
+      "gold_answer_extracted": "15",
+      "question_sha256": "4e199a59d17092c6caf615db545c29151c35a94adc95e5e83e0659de6f27bf70"
+    },
+    {
+      "problem_id": 328,
+      "source_problem_id": 328,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2176.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "0809a483e113340db8da3c4f16443001d12ab90d03150053e819ee5539dae187"
+    },
+    {
+      "problem_id": 329,
+      "source_problem_id": 329,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1973.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "3d356b3168ea8edc02638c7dd1226970e9e9af1be2a45b8a7331a63da7093605"
+    },
+    {
+      "problem_id": 330,
+      "source_problem_id": 330,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/216.json",
+      "gold_answer_extracted": "1940",
+      "question_sha256": "d2fc0c6045240c3c30d580a8a1a08e2af10ac42fd83ea0120044d05588f471e0"
+    },
+    {
+      "problem_id": 331,
+      "source_problem_id": 331,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/509.json",
+      "gold_answer_extracted": "\\frac{13}{6}",
+      "question_sha256": "118be303d7abffbef5a718d556a1a6bee2777e91a143c3327569b21dd859610f"
+    },
+    {
+      "problem_id": 332,
+      "source_problem_id": 332,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/190.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "bbdb5370300becb7c74f85fb42a202687eb38d3387cd825494107b04378b868f"
+    },
+    {
+      "problem_id": 333,
+      "source_problem_id": 333,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/776.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "d134ecb6ff4b394f63d6faa4c32b947709dc02a13ef22330c507583c3b75986b"
+    },
+    {
+      "problem_id": 334,
+      "source_problem_id": 334,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1457.json",
+      "gold_answer_extracted": "-120",
+      "question_sha256": "4dc2dc42c8067b961df704bc49cde92de7d7ee83d27726af976aaa6c47aca301"
+    },
+    {
+      "problem_id": 335,
+      "source_problem_id": 335,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/483.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "778f458d8f22769d89b7fd31c2521b8b747800763f09ba7be4bfe5cba5cd005d"
+    },
+    {
+      "problem_id": 336,
+      "source_problem_id": 336,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2592.json",
+      "gold_answer_extracted": "26000",
+      "question_sha256": "73f279c3087035a428ddfa8b678a3b33080f9d49026eedc4563c46d8c580c753"
+    },
+    {
+      "problem_id": 337,
+      "source_problem_id": 337,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1730.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "b18bba5824f91f211731ff2c9b89a88c01a3e92da6ca19a12afec4857f7d2c71"
+    },
+    {
+      "problem_id": 338,
+      "source_problem_id": 338,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/368.json",
+      "gold_answer_extracted": "4343_6",
+      "question_sha256": "ab7e10c4af73c9ed6ddf5ba3ffb0e07855591c25339c369f4ff920a3771210e4"
+    },
+    {
+      "problem_id": 339,
+      "source_problem_id": 339,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1566.json",
+      "gold_answer_extracted": "2k",
+      "question_sha256": "702491e7fd874d2ce3ef148bec2f5eb7458f27448c572d72bec7d5c75fdeaf90"
+    },
+    {
+      "problem_id": 340,
+      "source_problem_id": 340,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/801.json",
+      "gold_answer_extracted": "55^\\circ",
+      "question_sha256": "44d5098d801dece04fabc016814f752b8617f217b655688b64d13940a782b1f2"
+    },
+    {
+      "problem_id": 341,
+      "source_problem_id": 341,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/858.json",
+      "gold_answer_extracted": "-2",
+      "question_sha256": "0410748c1e76e3d42db6965c8dc90de8deefc6453e280bf7d1016659bbaa0c8c"
+    },
+    {
+      "problem_id": 342,
+      "source_problem_id": 342,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1238.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "bdd43ed050657861956848746ea2ae6a5aa644a76a77dd889f6e1ecb5a42f982"
+    },
+    {
+      "problem_id": 343,
+      "source_problem_id": 343,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/737.json",
+      "gold_answer_extracted": "58,500",
+      "question_sha256": "4ee4220e8bc8cdab69831bbbec1aeca0d313ddeb6671f0e50c37e6fc4c1f2ca7"
+    },
+    {
+      "problem_id": 344,
+      "source_problem_id": 344,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1572.json",
+      "gold_answer_extracted": "5",
+      "question_sha256": "b4c121134af946e87f1501b4dea9571bf9e5cff214d38f65340e7b8b70d6361c"
+    },
+    {
+      "problem_id": 345,
+      "source_problem_id": 345,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1529.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "7f3bd86e5e9247ded12c5890c2818e820cacf54063904956f584c1bcb4574445"
+    },
+    {
+      "problem_id": 346,
+      "source_problem_id": 346,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1338.json",
+      "gold_answer_extracted": "66",
+      "question_sha256": "2e9a888b0d01012503cd504e3fa1544075a6ab10c77f08ab8e13eb64991c7f4d"
+    },
+    {
+      "problem_id": 347,
+      "source_problem_id": 347,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1547.json",
+      "gold_answer_extracted": "6r^2-4r-24",
+      "question_sha256": "76bb173b20d420b66bfe27e1889971ef7996fda0e8e7d9e62babcbee756a8c7c"
+    },
+    {
+      "problem_id": 348,
+      "source_problem_id": 348,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/116.json",
+      "gold_answer_extracted": "4495",
+      "question_sha256": "24416ee05263b73165332aa78aa027b367e8f545063c7d3bd366bcc499bd4163"
+    },
+    {
+      "problem_id": 349,
+      "source_problem_id": 349,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/238.json",
+      "gold_answer_extracted": "10080",
+      "question_sha256": "3f4ffd530015aac909302bb374623a96f0f908021db12222d4571a14f85c6d10"
+    },
+    {
+      "problem_id": 350,
+      "source_problem_id": 350,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/686.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "a56e179f4a1af47a57141d2e322002c7bbcd1035dab940e3a605dc1042f9896f"
+    },
+    {
+      "problem_id": 351,
+      "source_problem_id": 351,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/826.json",
+      "gold_answer_extracted": "\\frac{1}{16}",
+      "question_sha256": "f3ddcce4187d85284b5fd64ee462d3d2023dc2dd514e6c5a569e065c01894056"
+    },
+    {
+      "problem_id": 352,
+      "source_problem_id": 352,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1281.json",
+      "gold_answer_extracted": "11 \\sqrt{5} + 11",
+      "question_sha256": "ef6d49845ec93c3b56af0a1acac7d9b614db7d14243f818d3e3f6d4ef56d25db"
+    },
+    {
+      "problem_id": 353,
+      "source_problem_id": 353,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/1014.json",
+      "gold_answer_extracted": "480",
+      "question_sha256": "f25c15fb353535a819b13a39ad4e6d6f3cdf8147d2c8ae5f621637cef9e11f11"
+    },
+    {
+      "problem_id": 354,
+      "source_problem_id": 354,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/529.json",
+      "gold_answer_extracted": "81",
+      "question_sha256": "59b3380466ff1adb06b515e0a6f473a51ea252f6b5b05595775f509383d0238e"
+    },
+    {
+      "problem_id": 355,
+      "source_problem_id": 355,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1166.json",
+      "gold_answer_extracted": "100",
+      "question_sha256": "199e104d517ec67e4f167c49f035776c7bdaf933e41971c80716e26979d3a9a8"
+    },
+    {
+      "problem_id": 356,
+      "source_problem_id": 356,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1078.json",
+      "gold_answer_extracted": "(-\\sqrt{3}, \\sqrt{3})",
+      "question_sha256": "05eb5a170e9f052e5fe71a386076276423eafd190de2cfb91fafcd66052e65ad"
+    },
+    {
+      "problem_id": 357,
+      "source_problem_id": 357,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1353.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "9ecc4ef949d9a0d8d06a6af59ef5bccb0518f0d49177c4eaa417584b4deccb92"
+    },
+    {
+      "problem_id": 358,
+      "source_problem_id": 358,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/860.json",
+      "gold_answer_extracted": "\\text{ellipse}",
+      "question_sha256": "9fda2e4d7321dd5cd8d9edc88c21b5a6a3febfd2e5efd5444d81b0b091a80981"
+    },
+    {
+      "problem_id": 359,
+      "source_problem_id": 359,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1407.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "93707a89c5304a1c56abe2779b49dc125f031b0d7fca62df2541cbbba733f459"
+    },
+    {
+      "problem_id": 360,
+      "source_problem_id": 360,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/96.json",
+      "gold_answer_extracted": "\\frac{7}{4}",
+      "question_sha256": "e2d3180448482a9ab32d993dbdfe445f296297d6941b32646248e8aaeda6041d"
+    },
+    {
+      "problem_id": 361,
+      "source_problem_id": 361,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1405.json",
+      "gold_answer_extracted": "16 \\sqrt{3}",
+      "question_sha256": "ccf0bb717c522e8d2e8555976c109e3a3eda3be53084c8938a52ade42e89129a"
+    },
+    {
+      "problem_id": 362,
+      "source_problem_id": 362,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/14.json",
+      "gold_answer_extracted": "\\frac14",
+      "question_sha256": "ee02cd5b28fb246421a02d67e994fe9a2ab8ac30a70dd349ce65f60e2e4d87e0"
+    },
+    {
+      "problem_id": 363,
+      "source_problem_id": 363,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/251.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "0113676309c9dc599829cfc763b3c1ff4bbe09efec8844660ba3af24654e62ce"
+    },
+    {
+      "problem_id": 364,
+      "source_problem_id": 364,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/690.json",
+      "gold_answer_extracted": "(1,-16,-4,43)",
+      "question_sha256": "ccd919cb3760c85656202b2f101151cdc34f136aa3247e00d6cf078a37a37fb0"
+    },
+    {
+      "problem_id": 365,
+      "source_problem_id": 365,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/820.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "eed9594538d18b5789e8649fce05cde658809bd2b72d453dc28c913208c4eaa0"
+    },
+    {
+      "problem_id": 366,
+      "source_problem_id": 366,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/109.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "498bac6c50d80f1b0191b208215adf1cd25ac1179fe18d4b3c5e398d63b30004"
+    },
+    {
+      "problem_id": 367,
+      "source_problem_id": 367,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1199.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "5dd160a5b13447cf903d9dcb1b92ab86dae33aaa050487139af951c8f7952703"
+    },
+    {
+      "problem_id": 368,
+      "source_problem_id": 368,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/106.json",
+      "gold_answer_extracted": "31",
+      "question_sha256": "9fb726184d4d2deeaefa437e3a9cad176011232077bb04bc03aebb3cefa992f7"
+    },
+    {
+      "problem_id": 369,
+      "source_problem_id": 369,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1187.json",
+      "gold_answer_extracted": "21",
+      "question_sha256": "4524aaecc261a7144ebffcc32f83f78291b5e46c8ff8d9abf1be8cb752b6db98"
+    },
+    {
+      "problem_id": 370,
+      "source_problem_id": 370,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1289.json",
+      "gold_answer_extracted": "-41",
+      "question_sha256": "a4363ea671d3da39e33e5cd154c34aec2532bf8a79064553c5b5647aa07da7c5"
+    },
+    {
+      "problem_id": 371,
+      "source_problem_id": 371,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/955.json",
+      "gold_answer_extracted": "17",
+      "question_sha256": "de4b22ca2630d9ee26a2fb8613f5b9fa84d4fcce5c7bfe674bd60aa6837b85f3"
+    },
+    {
+      "problem_id": 372,
+      "source_problem_id": 372,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/846.json",
+      "gold_answer_extracted": "90^\\circ",
+      "question_sha256": "3d98cbe03f36e34340e07b4b7dcd7c909cceb7a18c025056f646f8324f9951e5"
+    },
+    {
+      "problem_id": 373,
+      "source_problem_id": 373,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2264.json",
+      "gold_answer_extracted": "1+2i",
+      "question_sha256": "cd12e854a059eefc9afad021db0273281c48689ea0067f8d15a531d5d26a9ca7"
+    },
+    {
+      "problem_id": 374,
+      "source_problem_id": 374,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1303.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "5acc6365946cc933628aa49ffbba745bb1c8eb846c7bc1c0970b509ea9fcbbb7"
+    },
+    {
+      "problem_id": 375,
+      "source_problem_id": 375,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/427.json",
+      "gold_answer_extracted": "25",
+      "question_sha256": "9f3b9f8d7ae2958e0245eb06db8341a7ec0d7597903466a87448caabbacfeb92"
+    },
+    {
+      "problem_id": 376,
+      "source_problem_id": 376,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/538.json",
+      "gold_answer_extracted": "(8,-2)",
+      "question_sha256": "b805a26da4119ccc1c3e206caf02f66449cc33ce269aaa2fe1cd1b2aaf7564c4"
+    },
+    {
+      "problem_id": 377,
+      "source_problem_id": 377,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1185.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "a509f3e3d250cbc889fda01cf2c02a9358c47ae41cc88ead2493a1481bfcf519"
+    },
+    {
+      "problem_id": 378,
+      "source_problem_id": 378,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1743.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "ac286982c945a921e3dd876d65473a1ab78501a8f9516ab6b0bb80d15e82b848"
+    },
+    {
+      "problem_id": 379,
+      "source_problem_id": 379,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1865.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "84e6ea460d0c77b63491536fa0d42114e73db869e0fb9c5710e20c0e4aae218f"
+    },
+    {
+      "problem_id": 380,
+      "source_problem_id": 380,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1992.json",
+      "gold_answer_extracted": "(0,9) \\cup (9,36)",
+      "question_sha256": "9c03abed078c8e5901d1fcadda1a416f77af4a7fa4ec742d58aecac6989e6fcf"
+    },
+    {
+      "problem_id": 381,
+      "source_problem_id": 381,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/188.json",
+      "gold_answer_extracted": "\\frac{1}{2}",
+      "question_sha256": "5a258a23ab23f61045f0ec3a6518bb94df2e857bad86d58dcd74e6ad987e87ed"
+    },
+    {
+      "problem_id": 382,
+      "source_problem_id": 382,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1111.json",
+      "gold_answer_extracted": "\\frac{20000}{\\pi}",
+      "question_sha256": "b0845d2e6ba90ddf10affbfad7b350154ab782d55168e70c70bc63ac10fd78cd"
+    },
+    {
+      "problem_id": 383,
+      "source_problem_id": 383,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/101.json",
+      "gold_answer_extracted": "x \\in [-2,7]",
+      "question_sha256": "30257ce512a9dbe4ce54665865cbef81235971574bf2ddf89c2eecd7980ac380"
+    },
+    {
+      "problem_id": 384,
+      "source_problem_id": 384,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1298.json",
+      "gold_answer_extracted": "15x - 80",
+      "question_sha256": "93d733b48692eae6f8495b189e802021a189e8d9a7dd79e8c7d6d138c6e3424d"
+    },
+    {
+      "problem_id": 385,
+      "source_problem_id": 385,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/2066.json",
+      "gold_answer_extracted": "22",
+      "question_sha256": "e38a82f125692ef36b9673fc3567988c2ddb1b719fdf96c8ba909b0eee646154"
+    },
+    {
+      "problem_id": 386,
+      "source_problem_id": 386,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/170.json",
+      "gold_answer_extracted": "11",
+      "question_sha256": "25496c580bb5441133481c8ccfde1d4e384e9235493d2de16e6a469835e228b3"
+    },
+    {
+      "problem_id": 387,
+      "source_problem_id": 387,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/849.json",
+      "gold_answer_extracted": "18",
+      "question_sha256": "6c3d09ab3690acaadbf542084640305250029eec625c8625dbba8384b378d0e2"
+    },
+    {
+      "problem_id": 388,
+      "source_problem_id": 388,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1031.json",
+      "gold_answer_extracted": "\\frac{11}{2}",
+      "question_sha256": "8f00399e3534c9da2113886c525c158c02fd180f51bfd70fac0e3f56f25fc454"
+    },
+    {
+      "problem_id": 389,
+      "source_problem_id": 389,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/795.json",
+      "gold_answer_extracted": "\\frac{\\sqrt{21}}{5}",
+      "question_sha256": "fec65124fa2b9db510e40f6960caaaf3e94897aac7dc83b035d0b1967726a47a"
+    },
+    {
+      "problem_id": 390,
+      "source_problem_id": 390,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/853.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "70591ff5c06a05836ede5483cd139924e35f5ce23926d3efdb9ecc269fa8f32e"
+    },
+    {
+      "problem_id": 391,
+      "source_problem_id": 391,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2277.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "07fa4ddbd196024a4dc5b38b1d6483f5343200695c86d27f0dceb11874d44b53"
+    },
+    {
+      "problem_id": 392,
+      "source_problem_id": 392,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/902.json",
+      "gold_answer_extracted": "\\sqrt{66}",
+      "question_sha256": "516461d86ef77bbc48fad369f49eec5df362a14f2a37629734141e22148210d7"
+    },
+    {
+      "problem_id": 393,
+      "source_problem_id": 393,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/518.json",
+      "gold_answer_extracted": "\\frac 34",
+      "question_sha256": "ebe9c511fffc3e5da1a441b1318137bc679d5c13ca798921dfcbf48a35942f24"
+    },
+    {
+      "problem_id": 394,
+      "source_problem_id": 394,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1791.json",
+      "gold_answer_extracted": "-\\frac{3}{8}",
+      "question_sha256": "7d6cd3a2b3dcbaeaddfeb49d860bacf22dc1e33c79b74a23547d7fa1f21a2b36"
+    },
+    {
+      "problem_id": 395,
+      "source_problem_id": 395,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/114.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "9659416657d19153361d79415f7ff245c3e3a65ee701729266357f989ad18607"
+    },
+    {
+      "problem_id": 396,
+      "source_problem_id": 396,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/631.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "5138a0ae5f7d62944b8ca45e964a5db9809fff0512c83b84e99af5d2f78d93a8"
+    },
+    {
+      "problem_id": 397,
+      "source_problem_id": 397,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/977.json",
+      "gold_answer_extracted": "23",
+      "question_sha256": "fdd18857dfc203ee1b4d0dd165f59c0bda9142cbd7baed65c5be23abb3ac85fa"
+    },
+    {
+      "problem_id": 398,
+      "source_problem_id": 398,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1991.json",
+      "gold_answer_extracted": "\\text{Navin}",
+      "question_sha256": "2cd7714989b85d8377b0fe4c0a20c80c3e7eb592637f079d2a035fa9bdd7dd6b"
+    },
+    {
+      "problem_id": 399,
+      "source_problem_id": 399,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1784.json",
+      "gold_answer_extracted": "326.5",
+      "question_sha256": "c4f4fd84bb522f70e431e1c1381f243d6d3b9684cf5c973d9ff982006cc227a6"
+    },
+    {
+      "problem_id": 400,
+      "source_problem_id": 400,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/817.json",
+      "gold_answer_extracted": "\\frac{14}{3}",
+      "question_sha256": "370853d31f3eb7810e1ec7f622a324b75a45fb158b0d3c85e5c637c0db2c7aa0"
+    },
+    {
+      "problem_id": 401,
+      "source_problem_id": 401,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1806.json",
+      "gold_answer_extracted": "\\frac{13}{4}",
+      "question_sha256": "4d5b19fcef7ca372bfd584a8b548f3fe07b8deabaea321fa621ec2db340a7fd8"
+    },
+    {
+      "problem_id": 402,
+      "source_problem_id": 402,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1291.json",
+      "gold_answer_extracted": "1 - 12i",
+      "question_sha256": "964c0ef0cb3da4cae4be60805e0a45f4330af8d169d5ce88757ee8237434f581"
+    },
+    {
+      "problem_id": 403,
+      "source_problem_id": 403,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/928.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "3bc30c4cda03ad051c7b8f030b6da5a38e0ca0df24550e505c1df9b3d6c73024"
+    },
+    {
+      "problem_id": 404,
+      "source_problem_id": 404,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/761.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "0c9bf35e7280f37a8168eb29585fe0c13c108eb3b95e0522f7549f5d046c4a69"
+    },
+    {
+      "problem_id": 405,
+      "source_problem_id": 405,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1572.json",
+      "gold_answer_extracted": "60",
+      "question_sha256": "8d14c583b8a876ea701c4fe492a956705120229a851ca60e317d887c46693d3b"
+    },
+    {
+      "problem_id": 406,
+      "source_problem_id": 406,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/132.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "d1c9cde9325101276a8fbd69bf0fd08a989ce894d7c421258a480def75548ff1"
+    },
+    {
+      "problem_id": 407,
+      "source_problem_id": 407,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1960.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "4ad774d03e1d7ae9f60595652d6705f1ec3ea7c5c4ac2ef779d9048275d14120"
+    },
+    {
+      "problem_id": 408,
+      "source_problem_id": 408,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/398.json",
+      "gold_answer_extracted": "\\begin{pmatrix} 1/5 \\\\ -18/5 \\end{pmatrix}",
+      "question_sha256": "2aff3e3056e9e7c1682ba8a0393186fcca3607dc67ea7c331fba051aa5574f2c"
+    },
+    {
+      "problem_id": 409,
+      "source_problem_id": 409,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1797.json",
+      "gold_answer_extracted": "2 \\sqrt{5}",
+      "question_sha256": "94b20144a7e7806243bec4b4e8cf011014e3af0ce9c6625df82dfa083b51e1ff"
+    },
+    {
+      "problem_id": 410,
+      "source_problem_id": 410,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/65.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "d3e9908503944910cbf7adcc4535aa32d9ff6ba7218d4496e98dc1c27c366f8d"
+    },
+    {
+      "problem_id": 411,
+      "source_problem_id": 411,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1227.json",
+      "gold_answer_extracted": "60",
+      "question_sha256": "ca9cbef015dfaab22b1a6944f39b7e09b2a7619b3e7a5ec8464ad82ebde36dbf"
+    },
+    {
+      "problem_id": 412,
+      "source_problem_id": 412,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2146.json",
+      "gold_answer_extracted": "406",
+      "question_sha256": "2b8fd0ef03dada66be92d8bc85a3fd19557ceaa619ab7d0934da75063319b54b"
+    },
+    {
+      "problem_id": 413,
+      "source_problem_id": 413,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2680.json",
+      "gold_answer_extracted": "5r^5",
+      "question_sha256": "1c084e439770e1d9681fd53f6dd189268b1817b37a0b7b88b48a9e036fc956c6"
+    },
+    {
+      "problem_id": 414,
+      "source_problem_id": 414,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2391.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "2c3d89ca5aca2bca673678dd4c431bc926d7f20324bd7651652a26a8744da0b0"
+    },
+    {
+      "problem_id": 415,
+      "source_problem_id": 415,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/769.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "ef20b746da9beeb2925f5fc3c47b91e3990e4296e11bb8fcf59da818c86c0d43"
+    },
+    {
+      "problem_id": 416,
+      "source_problem_id": 416,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/681.json",
+      "gold_answer_extracted": "\\frac{1}{8}",
+      "question_sha256": "ec4a6e5635d208d70ba850484927bc18ac42279da40bfb39b4dee528d04617f1"
+    },
+    {
+      "problem_id": 417,
+      "source_problem_id": 417,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/776.json",
+      "gold_answer_extracted": "-2",
+      "question_sha256": "fc0a8c355d6080a0c826bb3b4a083ad9986329a6c2e6e7ad7359927596bd9352"
+    },
+    {
+      "problem_id": 418,
+      "source_problem_id": 418,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1796.json",
+      "gold_answer_extracted": "2\\sqrt{5}",
+      "question_sha256": "7ae13788fcc36e0882098c64c7f8c28a622691e36a91c8242a9e6bdf197320ae"
+    },
+    {
+      "problem_id": 419,
+      "source_problem_id": 419,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/145.json",
+      "gold_answer_extracted": "\\begin{pmatrix} -7 \\\\ 16 \\\\ 5 \\end{pmatrix}",
+      "question_sha256": "38ee35d1633b217956844c009c994fb7cd3992673979db5b7247cd767feaa08b"
+    },
+    {
+      "problem_id": 420,
+      "source_problem_id": 420,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/625.json",
+      "gold_answer_extracted": "\\begin{pmatrix} 16/49 \\\\ 48/49 \\\\ 24/49 \\end{pmatrix}",
+      "question_sha256": "4eb54cd64aed6e3c254e2a2383561efcff73f045f0e296420929039fd72a56f7"
+    },
+    {
+      "problem_id": 421,
+      "source_problem_id": 421,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1202.json",
+      "gold_answer_extracted": "27",
+      "question_sha256": "f0f650f9212b16c5c5202e3354bf818073cbc93603319b6e01db41807bf8abef"
+    },
+    {
+      "problem_id": 422,
+      "source_problem_id": 422,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/2015.json",
+      "gold_answer_extracted": "\\{1\\pm\\sqrt{5},-2\\}",
+      "question_sha256": "bf7ece2b0d80fa586ad778f73d9543e10ba6383f173aa96cbd424a9cabc453b5"
+    },
+    {
+      "problem_id": 423,
+      "source_problem_id": 423,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1002.json",
+      "gold_answer_extracted": "1440",
+      "question_sha256": "a224416f5ecf4319987341af7f12df6fcd64ac8ac4d4734119c50f6a78570bbf"
+    },
+    {
+      "problem_id": 424,
+      "source_problem_id": 424,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1339.json",
+      "gold_answer_extracted": "600",
+      "question_sha256": "cbe5b6b45a9ab948e501098998aa78238b6bba38c736fed72b1f4627e92be1ed"
+    },
+    {
+      "problem_id": 425,
+      "source_problem_id": 425,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1133.json",
+      "gold_answer_extracted": "3R^2",
+      "question_sha256": "03fc51f68ab3f62c6c7d573eeec55059e7349b654d20ad560f04f48b36384ba9"
+    },
+    {
+      "problem_id": 426,
+      "source_problem_id": 426,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/843.json",
+      "gold_answer_extracted": "6\\sqrt{2}",
+      "question_sha256": "d023edee30803bcdc4ceba1367a33d2c6b5cc7ff4ea05c32c989e0e554787b67"
+    },
+    {
+      "problem_id": 427,
+      "source_problem_id": 427,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2743.json",
+      "gold_answer_extracted": "29",
+      "question_sha256": "ad5b14b23ed9a9ea6232a345705013fe97fcefb1c39c4080305c21c38291cddd"
+    },
+    {
+      "problem_id": 428,
+      "source_problem_id": 428,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/121.json",
+      "gold_answer_extracted": "64",
+      "question_sha256": "897484abb4134a1904ed69cc2d7da2711c6530635505c3731608c03dd9a855e5"
+    },
+    {
+      "problem_id": 429,
+      "source_problem_id": 429,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1014.json",
+      "gold_answer_extracted": "50",
+      "question_sha256": "0790911e9e3b807b006609701678e7b2685037912c745657ccfc8cb45f5712ba"
+    },
+    {
+      "problem_id": 430,
+      "source_problem_id": 430,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/2019.json",
+      "gold_answer_extracted": "4.5",
+      "question_sha256": "2ca7e059eeb0b7ddaa9a268c68ce111e0895dfc485cd682f7e9d032902cadf61"
+    },
+    {
+      "problem_id": 431,
+      "source_problem_id": 431,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/499.json",
+      "gold_answer_extracted": "\\left[ \\frac{\\pi^2}{8}, \\frac{5 \\pi^2}{4} \\right]",
+      "question_sha256": "661675972d2406b88dff249e061d7c62e2206fb36a3eb7e44f7ff1f7e5a46d63"
+    },
+    {
+      "problem_id": 432,
+      "source_problem_id": 432,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1462.json",
+      "gold_answer_extracted": "331",
+      "question_sha256": "a9ffb7443372751f856ae9d6f26cb73ca124bfafac1a49d1c1e3a52878e571aa"
+    },
+    {
+      "problem_id": 433,
+      "source_problem_id": 433,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/410.json",
+      "gold_answer_extracted": ".35625",
+      "question_sha256": "d43b5b59260aea9d76381878a40b954e6adb57f23b3a01baa7f7f3ae3ecf31d0"
+    },
+    {
+      "problem_id": 434,
+      "source_problem_id": 434,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1640.json",
+      "gold_answer_extracted": "32",
+      "question_sha256": "de1eea26a5aa7c7215223373e7e33a62068b3810ebebf3c6f70a2e430d482d75"
+    },
+    {
+      "problem_id": 435,
+      "source_problem_id": 435,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2043.json",
+      "gold_answer_extracted": "(-\\infty, 2) \\cup (3, \\infty)",
+      "question_sha256": "59930f06199891a2969c068a73251ba37e67d84115c811e06056e2ce5fc18d30"
+    },
+    {
+      "problem_id": 436,
+      "source_problem_id": 436,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/10.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "2bf992caa662143d177dcb9aade5131039abfaf56ef05038d9e681f2ddae982c"
+    },
+    {
+      "problem_id": 437,
+      "source_problem_id": 437,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1553.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "3771036ee952c118eb154fdc18f365c0ad6aac886a614c325dcdabcda9f488ea"
+    },
+    {
+      "problem_id": 438,
+      "source_problem_id": 438,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/255.json",
+      "gold_answer_extracted": "4",
+      "question_sha256": "f23b30541989c47c8f6f258f3f3f6f4fc559ceaf9881fad28a505c3b9c398620"
+    },
+    {
+      "problem_id": 439,
+      "source_problem_id": 439,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/199.json",
+      "gold_answer_extracted": "x^8 + x^7 + x^6 + x^5 + x^4 + x^3 + x^2 + x + 1",
+      "question_sha256": "d32a3fa07b18122a86c8d037617dbade753b37f7034e0a975f68abb1436cb03f"
+    },
+    {
+      "problem_id": 440,
+      "source_problem_id": 440,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2080.json",
+      "gold_answer_extracted": "14",
+      "question_sha256": "edc76d80b3d26c0a11c0845db51d84f542c668d84755857fa1ccdffe61192433"
+    },
+    {
+      "problem_id": 441,
+      "source_problem_id": 441,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/2037.json",
+      "gold_answer_extracted": "550",
+      "question_sha256": "0c7d885aab7f7eb7d77ab47bd165af83b8a8ff150f4cbb3a7fc225284d19e0f1"
+    },
+    {
+      "problem_id": 442,
+      "source_problem_id": 442,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1343.json",
+      "gold_answer_extracted": "256",
+      "question_sha256": "9855ca472cb26c0b3f5c26687d1a12f0921b4c45f193777f600e4f02465cc224"
+    },
+    {
+      "problem_id": 443,
+      "source_problem_id": 443,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/668.json",
+      "gold_answer_extracted": "45",
+      "question_sha256": "310d3a0451c5bb4a783c4d7198e919206341a4cbb85c3bbcb6af12500136be6c"
+    },
+    {
+      "problem_id": 444,
+      "source_problem_id": 444,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/731.json",
+      "gold_answer_extracted": "\\frac{1}{2}",
+      "question_sha256": "00b6972ed54573b5eba6f57c78bbf587bc78e51c163fb90c331035f8128610e8"
+    },
+    {
+      "problem_id": 445,
+      "source_problem_id": 445,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1779.json",
+      "gold_answer_extracted": "15",
+      "question_sha256": "0cdb7de447092837fd0a0b3eed768b3fff1ffe9659d73b30137c473e332ed03c"
+    },
+    {
+      "problem_id": 446,
+      "source_problem_id": 446,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2430.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "e1530f57dea8f8c85bb932d7c2e9954d5e61e428f35aede4f19f7430f03b659e"
+    },
+    {
+      "problem_id": 447,
+      "source_problem_id": 447,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/996.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "ec7aef671dc095b42ee06a40cab246819d04d8cff3dd4ba09ab3b4440f240489"
+    },
+    {
+      "problem_id": 448,
+      "source_problem_id": 448,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1000.json",
+      "gold_answer_extracted": "44",
+      "question_sha256": "2f442d6676a84d218bc0461cc359fe1228d6e391044feab8ca7a9383a875461f"
+    },
+    {
+      "problem_id": 449,
+      "source_problem_id": 449,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2789.json",
+      "gold_answer_extracted": "47",
+      "question_sha256": "5df990bd825bcc701c842a549abf402c5fda7292103738e046447a2cf7562cbd"
+    },
+    {
+      "problem_id": 450,
+      "source_problem_id": 450,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/13.json",
+      "gold_answer_extracted": "64",
+      "question_sha256": "983cb8f8902a788775fdb22b66f3b9d8e8b2afa98a503753f452f4b8688acb9e"
+    },
+    {
+      "problem_id": 451,
+      "source_problem_id": 451,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/459.json",
+      "gold_answer_extracted": "\\frac{639}{40}",
+      "question_sha256": "0f74f3328993b34b009396e2a5f17df1b64539b3d64cba7893b334d3f9c41066"
+    },
+    {
+      "problem_id": 452,
+      "source_problem_id": 452,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1814.json",
+      "gold_answer_extracted": "143",
+      "question_sha256": "f7d45d9e11fcf4f6e0ff3061324084c96f710aca99a4d53e558dab4962bc8a02"
+    },
+    {
+      "problem_id": 453,
+      "source_problem_id": 453,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2476.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "dbd323191fa41977bd69a09e763a5c5e9749943b9f0e15a034dcda31efc785be"
+    },
+    {
+      "problem_id": 454,
+      "source_problem_id": 454,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/323.json",
+      "gold_answer_extracted": "y = 2x + 3",
+      "question_sha256": "0e973b85bbb702e1ad76a6781273ead010c95de0011e0808cc45585b3053fbc8"
+    },
+    {
+      "problem_id": 455,
+      "source_problem_id": 455,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/190.json",
+      "gold_answer_extracted": "6",
+      "question_sha256": "9ae18bc14bcf30c1e46ca2d4d5896d14f3f4abc83849e1a2a6d1c40bbd30f6be"
+    },
+    {
+      "problem_id": 456,
+      "source_problem_id": 456,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1102.json",
+      "gold_answer_extracted": "-2,1",
+      "question_sha256": "4e655a0dca0837bc7bea7bf866c77c1e4b92edfa420fd579faafd04a7e2ce79e"
+    },
+    {
+      "problem_id": 457,
+      "source_problem_id": 457,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/342.json",
+      "gold_answer_extracted": "0",
+      "question_sha256": "ae0a8ba5912720e7631028b0a5f388cc4eee86495a6f8ff85548d56075f54b2e"
+    },
+    {
+      "problem_id": 458,
+      "source_problem_id": 458,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/805.json",
+      "gold_answer_extracted": "41",
+      "question_sha256": "da1076490e365d45697793adde197b097b8946b00fa69c5bdc0cad394c251e77"
+    },
+    {
+      "problem_id": 459,
+      "source_problem_id": 459,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2780.json",
+      "gold_answer_extracted": "\\$18.90",
+      "question_sha256": "0f428a2fcac49937e7ea597c684b3ab36cd26465741f4b3c505c349fe0a2b370"
+    },
+    {
+      "problem_id": 460,
+      "source_problem_id": 460,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/914.json",
+      "gold_answer_extracted": "75^\\circ",
+      "question_sha256": "f53987fea901b7b49763b5c26647eef8ac0a6eeadef6ff5d014e99116e6dcb27"
+    },
+    {
+      "problem_id": 461,
+      "source_problem_id": 461,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/824.json",
+      "gold_answer_extracted": "12",
+      "question_sha256": "d7e4655dab9bfda193f1695bbd0e656c869e4a2d803bfb620bb42ee18e8a7815"
+    },
+    {
+      "problem_id": 462,
+      "source_problem_id": 462,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/679.json",
+      "gold_answer_extracted": "59",
+      "question_sha256": "0887851f3251fb23711dfa16087b3269972272a1a04c807191666ebc292a05a1"
+    },
+    {
+      "problem_id": 463,
+      "source_problem_id": 463,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/1425.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "24079eb223b816229049509795eb8ee6bfcdc8134b463d6a2b0c3d7506d6dd66"
+    },
+    {
+      "problem_id": 464,
+      "source_problem_id": 464,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/834.json",
+      "gold_answer_extracted": "9",
+      "question_sha256": "d3610a7a7451457588e70f4ab41af1c4a50615e72de3ebbd4fc4dccd4a209d27"
+    },
+    {
+      "problem_id": 465,
+      "source_problem_id": 465,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/72.json",
+      "gold_answer_extracted": "121",
+      "question_sha256": "e670b2f65bcd4b8c080cc99ba748e180708051bfde97139641b1a1bddb605811"
+    },
+    {
+      "problem_id": 466,
+      "source_problem_id": 466,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/703.json",
+      "gold_answer_extracted": "8 \\pi",
+      "question_sha256": "f684c15cdf8a73c7d9df393368782c7c2bd22db92f0723232fabe5dd5d859c49"
+    },
+    {
+      "problem_id": 467,
+      "source_problem_id": 467,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1114.json",
+      "gold_answer_extracted": "15\\mbox{ cm}^2",
+      "question_sha256": "588c1f21e592e902e316a09d1dc08f26f5278e76594f2dc54a5335e340f23253"
+    },
+    {
+      "problem_id": 468,
+      "source_problem_id": 468,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/224.json",
+      "gold_answer_extracted": "8",
+      "question_sha256": "a54ef7e372ba27132b233ca4004285af741eca3c8a77ee76e8b6b24179e7873a"
+    },
+    {
+      "problem_id": 469,
+      "source_problem_id": 469,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/435.json",
+      "gold_answer_extracted": "25",
+      "question_sha256": "6a73c9a2c1ed843f82c67c260485366d059413fff2fffde97416f393b8c1f5d3"
+    },
+    {
+      "problem_id": 470,
+      "source_problem_id": 470,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/158.json",
+      "gold_answer_extracted": "27648",
+      "question_sha256": "26d4ec1a73873bbc880dec6492bc1c51a92773ab015986eb84fe19606377bf1b"
+    },
+    {
+      "problem_id": 471,
+      "source_problem_id": 471,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/846.json",
+      "gold_answer_extracted": "84",
+      "question_sha256": "bec5ba8f32f1438286969919fd338c69e3dba74d7087a3e48f5e67a6e16c1399"
+    },
+    {
+      "problem_id": 472,
+      "source_problem_id": 472,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2470.json",
+      "gold_answer_extracted": "137 \\frac{1}{2}",
+      "question_sha256": "fc0b0712fe1587cc109003192450b630eb8c280d1272b6d6bbc88dc303ffe10f"
+    },
+    {
+      "problem_id": 473,
+      "source_problem_id": 473,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1930.json",
+      "gold_answer_extracted": "7",
+      "question_sha256": "d93ff30be172f1de29c5ad50b94deddc97673a0b7748a4296374714e2f1311b2"
+    },
+    {
+      "problem_id": 474,
+      "source_problem_id": 474,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/752.json",
+      "gold_answer_extracted": "3",
+      "question_sha256": "89f1d351159d3b1e680347365313832ce38266aa96015d70ae7d98a3cb330e53"
+    },
+    {
+      "problem_id": 475,
+      "source_problem_id": 475,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/1003.json",
+      "gold_answer_extracted": "29",
+      "question_sha256": "d4e914d360a34942f21e2a635cd2c97d3b6cec1a1f2ced16de22d6fd1b5712d0"
+    },
+    {
+      "problem_id": 476,
+      "source_problem_id": 476,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1252.json",
+      "gold_answer_extracted": "200",
+      "question_sha256": "70cf8bf9114223fc614d949e7c1eb8666b5c383f980cc66335499fa1b4299085"
+    },
+    {
+      "problem_id": 477,
+      "source_problem_id": 477,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/22.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "fbe8ea1d8aa2cbd759604fceec4984e5ab6e65c5088e5d337c1caaa6e5b63455"
+    },
+    {
+      "problem_id": 478,
+      "source_problem_id": 478,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1279.json",
+      "gold_answer_extracted": "\\frac{2}{1005}",
+      "question_sha256": "fcefdaeffd3707430918941cf6c03be0b66e81b40a43a024d50534d937beb168"
+    },
+    {
+      "problem_id": 479,
+      "source_problem_id": 479,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1128.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "1bddb019d1673cb800e4698926cf93a08ad6cc885c21dddc420cf7dd62141beb"
+    },
+    {
+      "problem_id": 480,
+      "source_problem_id": 480,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1252.json",
+      "gold_answer_extracted": "1",
+      "question_sha256": "5a3764c586ff34307b8d92c2c9a3b6a5c4e4e10f70193bda5b61ada164c15c79"
+    },
+    {
+      "problem_id": 481,
+      "source_problem_id": 481,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1467.json",
+      "gold_answer_extracted": "8n^2 + 4n + 1",
+      "question_sha256": "3fa1c228d11580f03f1a60bf4a9e52d270a813e44d2524f0730d75dc3be8bf00"
+    },
+    {
+      "problem_id": 482,
+      "source_problem_id": 482,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/1090.json",
+      "gold_answer_extracted": "202",
+      "question_sha256": "d1e39ceb48a9c9f1b5daa6084c7c3aa678dbca1469898bab2924bd5422b8c7c6"
+    },
+    {
+      "problem_id": 483,
+      "source_problem_id": 483,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/1082.json",
+      "gold_answer_extracted": "\\frac{8}{15}",
+      "question_sha256": "3da66fde3f4b05c5d4232e02d9844d7672151a9b24f40a2eae74a0f3af22ee13"
+    },
+    {
+      "problem_id": 484,
+      "source_problem_id": 484,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/101.json",
+      "gold_answer_extracted": "10",
+      "question_sha256": "fee18d5e23afe870cacd0d4b6f8955013b25109a7ab42a1b4dbc04ddf39350bc"
+    },
+    {
+      "problem_id": 485,
+      "source_problem_id": 485,
+      "dataset": "math",
+      "dataset_unique_id": "test/counting_and_probability/199.json",
+      "gold_answer_extracted": "13",
+      "question_sha256": "176154b491f4d70c82cdb260c9045e3ef61f8e6fc6443b9861b0e6fb2606655c"
+    },
+    {
+      "problem_id": 486,
+      "source_problem_id": 486,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/477.json",
+      "gold_answer_extracted": "216",
+      "question_sha256": "232c130542b07b7c2286cfa37f4cd4e8ff7665eb0f34e3b53c99bebe9cbd7e81"
+    },
+    {
+      "problem_id": 487,
+      "source_problem_id": 487,
+      "dataset": "math",
+      "dataset_unique_id": "test/number_theory/239.json",
+      "gold_answer_extracted": "2",
+      "question_sha256": "a9c68bbdafa67819ce289619f5c49fe7620e36923b0e985eb96a4ca40c61b099"
+    },
+    {
+      "problem_id": 488,
+      "source_problem_id": 488,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1203.json",
+      "gold_answer_extracted": "\\$36",
+      "question_sha256": "f6faf09783c45a37b543783d5683099f51e0cd2ccae38643642296da03d0549d"
+    },
+    {
+      "problem_id": 489,
+      "source_problem_id": 489,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1365.json",
+      "gold_answer_extracted": "15",
+      "question_sha256": "24b6ac402f7f606fdcce34353e99d3bebd58adfe580fa59ce3fb2b2a7211facb"
+    },
+    {
+      "problem_id": 490,
+      "source_problem_id": 490,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1350.json",
+      "gold_answer_extracted": "14",
+      "question_sha256": "cf73e68d95ba9141fa346aed9512949166a9b23e8c7816757e130370457275cf"
+    },
+    {
+      "problem_id": 491,
+      "source_problem_id": 491,
+      "dataset": "math",
+      "dataset_unique_id": "test/prealgebra/1128.json",
+      "gold_answer_extracted": "64",
+      "question_sha256": "98bb9a0e26af7393c8657c1804bfb69ae2421a40166f372442c5eba7541e398b"
+    },
+    {
+      "problem_id": 492,
+      "source_problem_id": 492,
+      "dataset": "math",
+      "dataset_unique_id": "test/precalculus/356.json",
+      "gold_answer_extracted": "y = -2x",
+      "question_sha256": "8235bc898b1c04cf0137005b5a9a1532507805d71b64f02992f64622cbfa5a42"
+    },
+    {
+      "problem_id": 493,
+      "source_problem_id": 493,
+      "dataset": "math",
+      "dataset_unique_id": "test/algebra/2779.json",
+      "gold_answer_extracted": "20",
+      "question_sha256": "10a1e572de118ebdbec38e8d23811119926bee417ac77a9f0fdb32a1723bfef6"
+    },
+    {
+      "problem_id": 494,
+      "source_problem_id": 494,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1930.json",
+      "gold_answer_extracted": "\\frac{1}{4}",
+      "question_sha256": "728365c3cb7fa74d6b87c6b28b21a8623f6ff21624dea483f0d1dbbf91d33eb5"
+    },
+    {
+      "problem_id": 495,
+      "source_problem_id": 495,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1981.json",
+      "gold_answer_extracted": "(2,12) \\cup (12,102)",
+      "question_sha256": "4ecfbe0b1cc77e4e10a7381d758ec7e6bae434798dedbf78160dcac07c2603a6"
+    },
+    {
+      "problem_id": 496,
+      "source_problem_id": 496,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1232.json",
+      "gold_answer_extracted": "\\frac{5}{13}",
+      "question_sha256": "594ea12e92fffd955b650b950a69a89d70d82ae9ec92218dc548633aeb0785c5"
+    },
+    {
+      "problem_id": 497,
+      "source_problem_id": 497,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/561.json",
+      "gold_answer_extracted": "\\frac{7}{2}",
+      "question_sha256": "289d8fe784375878da79526995cda91ef3c5ab390666785a565749a4e1886ff1"
+    },
+    {
+      "problem_id": 498,
+      "source_problem_id": 498,
+      "dataset": "math",
+      "dataset_unique_id": "test/intermediate_algebra/1508.json",
+      "gold_answer_extracted": "-1",
+      "question_sha256": "eaaaaeb17b1a828b095250b44efa43ff1104684be772cb9276b8192be748550c"
+    },
+    {
+      "problem_id": 499,
+      "source_problem_id": 499,
+      "dataset": "math",
+      "dataset_unique_id": "test/geometry/615.json",
+      "gold_answer_extracted": "106^\\circ",
+      "question_sha256": "ef342bf2f116069f1d873ff217453caa3e77d5005c7ba7747d305db26e8348c2"
+    },
+    {
+      "problem_id": 500,
+      "source_problem_id": 0,
+      "dataset": "amc23",
+      "dataset_unique_id": "0",
+      "gold_answer_extracted": "27.0",
+      "question_sha256": "6bc26377a24cf0a1b625373d8ea738bd6ec8432a2b11e88a33c19012d7fd0129"
+    },
+    {
+      "problem_id": 501,
+      "source_problem_id": 1,
+      "dataset": "amc23",
+      "dataset_unique_id": "1",
+      "gold_answer_extracted": "36.0",
+      "question_sha256": "b608b1e05d2a06e44f9a02fec9e6569170c9194dea9fff6439e5bcb8cfb5081c"
+    },
+    {
+      "problem_id": 502,
+      "source_problem_id": 2,
+      "dataset": "amc23",
+      "dataset_unique_id": "2",
+      "gold_answer_extracted": "45.0",
+      "question_sha256": "443411e68c6b5b184bf20bc71a959e26e0455074717e337b4a1bf14b43724531"
+    },
+    {
+      "problem_id": 503,
+      "source_problem_id": 3,
+      "dataset": "amc23",
+      "dataset_unique_id": "3",
+      "gold_answer_extracted": "3159.0",
+      "question_sha256": "98527fed63830fc5367463d7dbff992163d25fcd2dd451ac1173492eb5dbb604"
+    },
+    {
+      "problem_id": 504,
+      "source_problem_id": 4,
+      "dataset": "amc23",
+      "dataset_unique_id": "4",
+      "gold_answer_extracted": "36.0",
+      "question_sha256": "8e9939774afd19e619a71d65cb77a22bc73acdfc4cd6f9ff6ba4ea3757417675"
+    },
+    {
+      "problem_id": 505,
+      "source_problem_id": 5,
+      "dataset": "amc23",
+      "dataset_unique_id": "5",
+      "gold_answer_extracted": "7.0",
+      "question_sha256": "bbf5acf31a859bf54499461100c1302250813df93895e9bd3cc881f6978d3c66"
+    },
+    {
+      "problem_id": 506,
+      "source_problem_id": 6,
+      "dataset": "amc23",
+      "dataset_unique_id": "7",
+      "gold_answer_extracted": "21.0",
+      "question_sha256": "2fef41e34422fcff8a92f23a1e8cefe0c84eeb54096005d945069a62f6a73b7d"
+    },
+    {
+      "problem_id": 507,
+      "source_problem_id": 7,
+      "dataset": "amc23",
+      "dataset_unique_id": "8",
+      "gold_answer_extracted": "3.0",
+      "question_sha256": "f4e4443fc07303023e8a17332db5239a6a6f621983228462e2d6ec8a4a0c588c"
+    },
+    {
+      "problem_id": 508,
+      "source_problem_id": 8,
+      "dataset": "amc23",
+      "dataset_unique_id": "10",
+      "gold_answer_extracted": "1.0",
+      "question_sha256": "34055b747dd7589da7426630fa1d3913c41de6c93329b6a544119e24eaaad6a5"
+    },
+    {
+      "problem_id": 509,
+      "source_problem_id": 9,
+      "dataset": "amc23",
+      "dataset_unique_id": "11",
+      "gold_answer_extracted": "4.0",
+      "question_sha256": "a4b1b6d256739cb4069a3eb0f39780e2949541618d3b2f5dca0a98a103a4fe3f"
+    },
+    {
+      "problem_id": 510,
+      "source_problem_id": 10,
+      "dataset": "amc23",
+      "dataset_unique_id": "12",
+      "gold_answer_extracted": "5.0",
+      "question_sha256": "1ee532595152756fb4d07064c14dbbc18de7b8c4d7e0746a110805946ab754ff"
+    },
+    {
+      "problem_id": 511,
+      "source_problem_id": 11,
+      "dataset": "amc23",
+      "dataset_unique_id": "13",
+      "gold_answer_extracted": "29.0",
+      "question_sha256": "81371eaa87d2e9f9e9f02f961589b0db553f40722a9016043ea2c83d74a6afbd"
+    },
+    {
+      "problem_id": 512,
+      "source_problem_id": 12,
+      "dataset": "amc23",
+      "dataset_unique_id": "14",
+      "gold_answer_extracted": "96.0",
+      "question_sha256": "bd84457f39aebe7edf69e3e6e431e0f47874ef506408cdc941eb5c84f188fad6"
+    },
+    {
+      "problem_id": 513,
+      "source_problem_id": 13,
+      "dataset": "amc23",
+      "dataset_unique_id": "15",
+      "gold_answer_extracted": "1.0",
+      "question_sha256": "41eb3f5f38c5931eaf64054a5654ff42abafa6d50eb6dccf93159cabdf2435fe"
+    },
+    {
+      "problem_id": 514,
+      "source_problem_id": 14,
+      "dataset": "amc23",
+      "dataset_unique_id": "16",
+      "gold_answer_extracted": "5.0",
+      "question_sha256": "faba8d39ac19933345960f1aa493bc7235efea2deafa91c8567e92887a375579"
+    },
+    {
+      "problem_id": 515,
+      "source_problem_id": 15,
+      "dataset": "amc23",
+      "dataset_unique_id": "17",
+      "gold_answer_extracted": "-1.0",
+      "question_sha256": "0579384f111c0fe9ed53f68027eadcf7f068939806bc3aa0b1f4b10720f999da"
+    },
+    {
+      "problem_id": 516,
+      "source_problem_id": 16,
+      "dataset": "amc23",
+      "dataset_unique_id": "18",
+      "gold_answer_extracted": "8.0",
+      "question_sha256": "d4c5dac6893325408eeb74b0c5652ba7a612ce12fc7e93f2e6fe443de951bf4a"
+    },
+    {
+      "problem_id": 517,
+      "source_problem_id": 17,
+      "dataset": "amc23",
+      "dataset_unique_id": "19",
+      "gold_answer_extracted": "18.0",
+      "question_sha256": "b36e114dd9190791ae2859a481023e2a4b71ee2e5eee700c7e3cd1bf5ed6452c"
+    },
+    {
+      "problem_id": 518,
+      "source_problem_id": 18,
+      "dataset": "amc23",
+      "dataset_unique_id": "20",
+      "gold_answer_extracted": "265.0",
+      "question_sha256": "ad788c6148fcbff56c1020045accf4196e61cca7bb79b2ebba00ab5fcabcdace"
+    },
+    {
+      "problem_id": 519,
+      "source_problem_id": 19,
+      "dataset": "amc23",
+      "dataset_unique_id": "21",
+      "gold_answer_extracted": "9.0",
+      "question_sha256": "1dfd51df023fb8dfae8597934e33833b5452340070de57effb11919c9ed03bd9"
+    },
+    {
+      "problem_id": 520,
+      "source_problem_id": 20,
+      "dataset": "amc23",
+      "dataset_unique_id": "22",
+      "gold_answer_extracted": "9.0",
+      "question_sha256": "bc3ba284e49260cf117c0de67d0e8298b140d1b0c85998e84a01813dd192d43a"
+    },
+    {
+      "problem_id": 521,
+      "source_problem_id": 21,
+      "dataset": "amc23",
+      "dataset_unique_id": "23",
+      "gold_answer_extracted": "7.0",
+      "question_sha256": "392c49c5d4483b635745ee84c1567f2437265c94ac93ac23b672ecf4f279241c"
+    },
+    {
+      "problem_id": 522,
+      "source_problem_id": 22,
+      "dataset": "amc23",
+      "dataset_unique_id": "25",
+      "gold_answer_extracted": "7.0",
+      "question_sha256": "fcfec02c358494762790d6a6b4a56b509342ae4aa0f9ae9c61351a83cce7ff96"
+    },
+    {
+      "problem_id": 523,
+      "source_problem_id": 23,
+      "dataset": "amc23",
+      "dataset_unique_id": "26",
+      "gold_answer_extracted": "7.0",
+      "question_sha256": "9b70cbc652d501d6171d7cad566aa0b41c728653377933922b85fccf27539bc6"
+    },
+    {
+      "problem_id": 524,
+      "source_problem_id": 24,
+      "dataset": "amc23",
+      "dataset_unique_id": "27",
+      "gold_answer_extracted": "13.0",
+      "question_sha256": "698343f47eddf760b7d123e1c71022dd959481f5a399b7808c07b85478b4d429"
+    },
+    {
+      "problem_id": 525,
+      "source_problem_id": 25,
+      "dataset": "amc23",
+      "dataset_unique_id": "28",
+      "gold_answer_extracted": "50.0",
+      "question_sha256": "55aaba6d125868230247f185a0a52cc40751cce1c378e673ba56709d0444c2d7"
+    },
+    {
+      "problem_id": 526,
+      "source_problem_id": 26,
+      "dataset": "amc23",
+      "dataset_unique_id": "29",
+      "gold_answer_extracted": "13.0",
+      "question_sha256": "f4205ea4b7ccc91f035f07c9dab5a6bea9da1345980c68717b4c5752e2770da7"
+    },
+    {
+      "problem_id": 527,
+      "source_problem_id": 27,
+      "dataset": "amc23",
+      "dataset_unique_id": "30",
+      "gold_answer_extracted": "5.0",
+      "question_sha256": "2a63d16d2b0a8fd7612aa93f22439b54aa86f21a6301662771b31c5d1979eea0"
+    },
+    {
+      "problem_id": 528,
+      "source_problem_id": 28,
+      "dataset": "amc23",
+      "dataset_unique_id": "32",
+      "gold_answer_extracted": "11.0",
+      "question_sha256": "0101026970b08af1ad28625a431c9bdfcccaaa6c8d548842569bb7e8167ca455"
+    },
+    {
+      "problem_id": 529,
+      "source_problem_id": 29,
+      "dataset": "amc23",
+      "dataset_unique_id": "33",
+      "gold_answer_extracted": "18.0",
+      "question_sha256": "3f5c637d52d65b47918a6764052f21db4a5ec0af0360a345b7f9e332e8fbf472"
+    },
+    {
+      "problem_id": 530,
+      "source_problem_id": 30,
+      "dataset": "amc23",
+      "dataset_unique_id": "36",
+      "gold_answer_extracted": "50.0",
+      "question_sha256": "b6a094324a56e23d7741b1bc41f0561bc980d7328a2ecc0f59c9b27e119f9169"
+    },
+    {
+      "problem_id": 531,
+      "source_problem_id": 31,
+      "dataset": "amc23",
+      "dataset_unique_id": "40",
+      "gold_answer_extracted": "11.0",
+      "question_sha256": "7e499e5f0882293d9fda2549375fc120f08583c1bde929b8427c21998cbad5e2"
+    },
+    {
+      "problem_id": 532,
+      "source_problem_id": 32,
+      "dataset": "amc23",
+      "dataset_unique_id": "41",
+      "gold_answer_extracted": "3.0",
+      "question_sha256": "0f88e3d1bf2c5b017e71ba2ea628315d5ed94921867d1f66c68086f414547efa"
+    },
+    {
+      "problem_id": 533,
+      "source_problem_id": 33,
+      "dataset": "amc23",
+      "dataset_unique_id": "43",
+      "gold_answer_extracted": "194.0",
+      "question_sha256": "51714060dd55c7cb3035eb15eee5a78e4f4f90446a79ddf80480c7b890f5648b"
+    },
+    {
+      "problem_id": 534,
+      "source_problem_id": 34,
+      "dataset": "amc23",
+      "dataset_unique_id": "44",
+      "gold_answer_extracted": "1625.0",
+      "question_sha256": "bbac3f52c8639878c026e2f5bba5b6259aa35376ae7508468cdade8ffd559214"
+    },
+    {
+      "problem_id": 535,
+      "source_problem_id": 35,
+      "dataset": "amc23",
+      "dataset_unique_id": "45",
+      "gold_answer_extracted": "4.0",
+      "question_sha256": "1b0d9cd3c430e32006453ba2e3355555109007e679f9ef9ae8480e4573e0bcfd"
+    },
+    {
+      "problem_id": 536,
+      "source_problem_id": 36,
+      "dataset": "amc23",
+      "dataset_unique_id": "46",
+      "gold_answer_extracted": "6.0",
+      "question_sha256": "3892f9b402cc1d4397e455e7089d89f26d79e7b23c70641bfd48aad6b2bcfad1"
+    },
+    {
+      "problem_id": 537,
+      "source_problem_id": 37,
+      "dataset": "amc23",
+      "dataset_unique_id": "47",
+      "gold_answer_extracted": "901.0",
+      "question_sha256": "fc61934c458afc9cb297c62cbad9d3e1f14c4030c57317b38974c14c851701a6"
+    },
+    {
+      "problem_id": 538,
+      "source_problem_id": 38,
+      "dataset": "amc23",
+      "dataset_unique_id": "48",
+      "gold_answer_extracted": "144.0",
+      "question_sha256": "456f57ca351865da0e2a1b6f386971dca00d85817f7a1dc8e3b653054f92d23b"
+    },
+    {
+      "problem_id": 539,
+      "source_problem_id": 39,
+      "dataset": "amc23",
+      "dataset_unique_id": "49",
+      "gold_answer_extracted": "8.0",
+      "question_sha256": "81d580f5223b433e347e989677a0e1344a8503a15c1910968ada106d0db1c6fb"
+    },
+    {
+      "problem_id": 540,
+      "source_problem_id": 0,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-4",
+      "gold_answer_extracted": "033",
+      "question_sha256": "bf6932652b5bf66c62e8f9c0c950c1413a920f7a677c33831f329859a5768f7c"
+    },
+    {
+      "problem_id": 541,
+      "source_problem_id": 1,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-12",
+      "gold_answer_extracted": "23",
+      "question_sha256": "1bf70e3660d6972957d3558389303c1b004843378dffee91c1cf94ae77c849a7"
+    },
+    {
+      "problem_id": 542,
+      "source_problem_id": 2,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-4",
+      "gold_answer_extracted": "116",
+      "question_sha256": "84c96fbdf01d054c94a152f4fd61e85a4fa70b03eb73d8fd8149760b1cf077eb"
+    },
+    {
+      "problem_id": 543,
+      "source_problem_id": 3,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-3",
+      "gold_answer_extracted": "809",
+      "question_sha256": "d03cff1d2f5fa63a31ab545f733b29d3e01b55cb8d23ec42d137ca54371d6ac8"
+    },
+    {
+      "problem_id": 544,
+      "source_problem_id": 4,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-8",
+      "gold_answer_extracted": "197",
+      "question_sha256": "d7b202873c9ff78edfbcd97652c0093c68f53f7582c9b20614780fe7288a87a7"
+    },
+    {
+      "problem_id": 545,
+      "source_problem_id": 5,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-12",
+      "gold_answer_extracted": "385",
+      "question_sha256": "d965cc0c83096dce50f756ecdd29990c906370987a63d3a8d0fd03d875ac6b3b"
+    },
+    {
+      "problem_id": 546,
+      "source_problem_id": 6,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-11",
+      "gold_answer_extracted": "371",
+      "question_sha256": "015197614be4299c0d123c77d987526109a9b3b9a79f8568636d29c775323e24"
+    },
+    {
+      "problem_id": 547,
+      "source_problem_id": 7,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-11",
+      "gold_answer_extracted": "601",
+      "question_sha256": "b2b127787ccc82cf418c81e177480b088872e7b54129b0af49b4f0c9b054e50d"
+    },
+    {
+      "problem_id": 548,
+      "source_problem_id": 8,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-2",
+      "gold_answer_extracted": "25",
+      "question_sha256": "43afc8d2eb636c35477cc9ac8f1db3563134d10673beb9fb808c45dbc3021e51"
+    },
+    {
+      "problem_id": 549,
+      "source_problem_id": 9,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-6",
+      "gold_answer_extracted": "55",
+      "question_sha256": "7d2b9ecfeeda92b9e2676414566a0300c9239ff15fac1139ad56d6c35c9d84fc"
+    },
+    {
+      "problem_id": 550,
+      "source_problem_id": 10,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-7",
+      "gold_answer_extracted": "540",
+      "question_sha256": "f2fe46bf765d4ffdb703b0c6dffbc326387d86e6fd6262563af130871886377d"
+    },
+    {
+      "problem_id": 551,
+      "source_problem_id": 11,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-3",
+      "gold_answer_extracted": "045",
+      "question_sha256": "188a1b2e188d9910d79c6e57ed62f9084c06f63113bd371e7529a93a9a7a2ea0"
+    },
+    {
+      "problem_id": 552,
+      "source_problem_id": 12,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-1",
+      "gold_answer_extracted": "204",
+      "question_sha256": "460e3aec4ce52b4c456d71f75fe36dc4f0420f8539fce085d9f1aec62add5b34"
+    },
+    {
+      "problem_id": 553,
+      "source_problem_id": 13,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-7",
+      "gold_answer_extracted": "699",
+      "question_sha256": "10c80ba48d1803c48df550827e6e2c3b4b8ef3e0aba30c507798eabf30aeea2e"
+    },
+    {
+      "problem_id": 554,
+      "source_problem_id": 14,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-6",
+      "gold_answer_extracted": "294",
+      "question_sha256": "c0aff28b8c4a645b43550e5d0d3fabf80ff7528b406514fcd898152683edce36"
+    },
+    {
+      "problem_id": 555,
+      "source_problem_id": 15,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-13",
+      "gold_answer_extracted": "110",
+      "question_sha256": "4827451ee78b173fce0a2b248a10c01442ec7346d87aba46c59a0ad1218f71ed"
+    },
+    {
+      "problem_id": 556,
+      "source_problem_id": 16,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-15",
+      "gold_answer_extracted": "721",
+      "question_sha256": "465084d82a0b65b41e6ae9c233ffeb8e849c93b06e649076c282b3e7bcc8f4fe"
+    },
+    {
+      "problem_id": 557,
+      "source_problem_id": 17,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-15",
+      "gold_answer_extracted": "315",
+      "question_sha256": "14b236690314e4d188c4aad8c174d5d7509f7ab8a368a50b454b85c2157af2f9"
+    },
+    {
+      "problem_id": 558,
+      "source_problem_id": 18,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-10",
+      "gold_answer_extracted": "468",
+      "question_sha256": "357603fe2192e4dc2b2a52cc90ade2f1f6a3fd452ceec23c194e28a3748e579b"
+    },
+    {
+      "problem_id": 559,
+      "source_problem_id": 19,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-9",
+      "gold_answer_extracted": "902",
+      "question_sha256": "3b1b433106460898634777cce000e0fb6b86ebb4e9a038e31db5f60ab2eb103d"
+    },
+    {
+      "problem_id": 560,
+      "source_problem_id": 20,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-14",
+      "gold_answer_extracted": "\\textbf{(211)}",
+      "question_sha256": "a6581367f5e86398ec95375ef27384124e1e1bc880410694a1a0fcf7181348f2"
+    },
+    {
+      "problem_id": 561,
+      "source_problem_id": 21,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-5",
+      "gold_answer_extracted": "080",
+      "question_sha256": "01f4378fc0aa8d4ad347260572db3350ecd0f93dff0e7f2847c7610963cae0b5"
+    },
+    {
+      "problem_id": 562,
+      "source_problem_id": 22,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-9",
+      "gold_answer_extracted": "480",
+      "question_sha256": "7166d6915f461d9e3175c7b3057474bb193e51e7f148ed6b38584921362291ba"
+    },
+    {
+      "problem_id": 563,
+      "source_problem_id": 23,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-2",
+      "gold_answer_extracted": "236",
+      "question_sha256": "73ea05dfb74dbc56f16177830aeffd098f3a8165ce6ad2b91a5424e20e02ebc6"
+    },
+    {
+      "problem_id": 564,
+      "source_problem_id": 24,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-1",
+      "gold_answer_extracted": "73",
+      "question_sha256": "d7c47fba84b4bcd1b0fac5a069b1924a7827f3b015be620b42ae4c4e729d33b3"
+    },
+    {
+      "problem_id": 565,
+      "source_problem_id": 25,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-10",
+      "gold_answer_extracted": "113",
+      "question_sha256": "330e865bb5f7bb06c172dba3f3dbbc006c428a5ad5d50c09b9e7e7464b2efc24"
+    },
+    {
+      "problem_id": 566,
+      "source_problem_id": 26,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-8",
+      "gold_answer_extracted": "127",
+      "question_sha256": "cbe83980d6ca53b2f63fa2c99af77c85c4530613b18b9c9d92d4f3a13a1441c3"
+    },
+    {
+      "problem_id": 567,
+      "source_problem_id": 27,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-14",
+      "gold_answer_extracted": "104",
+      "question_sha256": "d8c514307d5e703048cb5b6165cf10c78d771e2166f107f48b586d9289d2e736"
+    },
+    {
+      "problem_id": 568,
+      "source_problem_id": 28,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-I-5",
+      "gold_answer_extracted": "104.",
+      "question_sha256": "5650d2a0767a53a577e51aab7a9b3cafb4f91562ad2544bb088c6cfc577cf364"
+    },
+    {
+      "problem_id": 569,
+      "source_problem_id": 29,
+      "dataset": "aime24",
+      "dataset_unique_id": "2024-II-13",
+      "gold_answer_extracted": "321",
+      "question_sha256": "293995c1b429f6f026244c3676d3c1e0d3472079d8a0f273a6cd8df835518559"
+    },
+    {
+      "problem_id": 570,
+      "source_problem_id": 0,
+      "dataset": "amo",
+      "dataset_unique_id": "1",
+      "gold_answer_extracted": "\\boxed{6}",
+      "question_sha256": "45ef7de71e2c62b91b07a4a4c24084fb310262288a78cba1f42435d733d316f9"
+    },
+    {
+      "problem_id": 571,
+      "source_problem_id": 1,
+      "dataset": "amo",
+      "dataset_unique_id": "2",
+      "gold_answer_extracted": "The solution set is the union of the following five sets:\n\\begin{enumerate}\n \\item $\\{(2, n, n) | n\\in\\mathbb{N}^{+}\\}$\n \\item $\\{(2, 2n+3, 2n) | n\\in\\mathbb{N}\\}$\n \\item $\\{(2, 2n, 2n+3) | n\\in\\mathbb{N}\\}$\n \\item $\\{(2^{q}-1, kq+1, kq) | q\\in\\mathbb{N}^{+} \\text{ such that } 2^{q}-1 \\text{ is a prime (i.e., a ``Mersenne prime''), and } k\\in\\mathbb{N}\\}$\n \\item $\\{(2^{q}-1, kq, kq+1) | q\\in\\mathbb{N}^{+} \\text{ such that } 2^{q}-1 \\text{ is a prime (i.e., a ``Mersenne prime''), and } k\\in\\mathbb{N}\\}$\n\\end{enumerate}\nHere, $\\mathbb{N}^{+}$ denotes the set of positive integers, and $\\mathbb{N}$ denotes the set of non-negative integers. Prime numbers of the form $2^{q}-1$ are also known as ``Mersenne primes''.\n(Note: For the cases where $p=2^{q}-1$, the sole requirement is that $2^{q}-1$ be a prime number; no further conditions are imposed on the exponent $q$.)",
+      "question_sha256": "deb65a60d340722deb6206fd85bfbe34a4ba8d65bf349ad143b84c9e0288c06e"
+    },
+    {
+      "problem_id": 572,
+      "source_problem_id": 2,
+      "dataset": "amo",
+      "dataset_unique_id": "3",
+      "gold_answer_extracted": "\\boxed{\\{1, 2, 3\\}}",
+      "question_sha256": "fcc27bf2a56f61f4a8bf3968f90c3e7ea3892db07224dd9f293ed63c60b8ff20"
+    },
+    {
+      "problem_id": 573,
+      "source_problem_id": 3,
+      "dataset": "amo",
+      "dataset_unique_id": "4",
+      "gold_answer_extracted": "\\boxed{512578}\n",
+      "question_sha256": "b5431e8543e438494227b4377150ed9bd41e47822e35f85b244cd18a377b463e"
+    },
+    {
+      "problem_id": 574,
+      "source_problem_id": 4,
+      "dataset": "amo",
+      "dataset_unique_id": "5",
+      "gold_answer_extracted": "$$\\boxed{\\dfrac{(2+\\sqrt{3})^{2^{2-n}}+(2-\\sqrt{3})^{2^{2-n}}}{2}}$$",
+      "question_sha256": "04c038d8581b934d858a8ab105d3c94785309653c50dcbb6d46499c8cf463a00"
+    },
+    {
+      "problem_id": 575,
+      "source_problem_id": 5,
+      "dataset": "amo",
+      "dataset_unique_id": "6",
+      "gold_answer_extracted": "\\boxed{1382935444}",
+      "question_sha256": "efd9e8e4417181ab6980cc5724cf28074329ded3500539b2393c25cec16659f5"
+    },
+    {
+      "problem_id": 576,
+      "source_problem_id": 6,
+      "dataset": "amo",
+      "dataset_unique_id": "7",
+      "gold_answer_extracted": "\\boxed{\\{0,2,4,6,8,10,12,14,16,18,20,22,24,26,28,30\\}}",
+      "question_sha256": "a496c2155d9c094b9386ac7cc9f14ccec91d1de2c78dc5597dedeb0947aa72b7"
+    },
+    {
+      "problem_id": 577,
+      "source_problem_id": 7,
+      "dataset": "amo",
+      "dataset_unique_id": "8",
+      "gold_answer_extracted": "\\boxed{\\frac{{15} + 5\\sqrt{5}}{6} \\cdot \\sqrt[3]{{14} - 6\\sqrt{5}}}",
+      "question_sha256": "47dff5b0cb7b6d5039556c3e4739403940162f9d1d417d62ac7b0bfc6a9f6e6a"
+    },
+    {
+      "problem_id": 578,
+      "source_problem_id": 8,
+      "dataset": "amo",
+      "dataset_unique_id": "9",
+      "gold_answer_extracted": "\\boxed{6}",
+      "question_sha256": "fa021360fa73458b2cd45a3d02970df9cbfd74f5afcee72e5400cb2076c3c612"
+    },
+    {
+      "problem_id": 579,
+      "source_problem_id": 9,
+      "dataset": "amo",
+      "dataset_unique_id": "10",
+      "gold_answer_extracted": "\\boxed{-9126}",
+      "question_sha256": "23166a772ff040cecce79b106caf71bef958c3b47f06d6e29e3217155fd5483f"
+    },
+    {
+      "problem_id": 580,
+      "source_problem_id": 10,
+      "dataset": "amo",
+      "dataset_unique_id": "11",
+      "gold_answer_extracted": "\\boxed{10}",
+      "question_sha256": "c2be1ee25b013bcd17a02e871a7e86ed1453cddaa5a114990f298660934f3d71"
+    },
+    {
+      "problem_id": 581,
+      "source_problem_id": 11,
+      "dataset": "amo",
+      "dataset_unique_id": "12",
+      "gold_answer_extracted": "\\boxed{\\frac{3}{5} \\cdot \\sqrt{{4678570} + {2280}\\sqrt{4210702}}}",
+      "question_sha256": "3d5f542f5c5d64fe1632c7f0f5f90cfe2119b039c945fed5eb0e93ff84df14be"
+    },
+    {
+      "problem_id": 582,
+      "source_problem_id": 12,
+      "dataset": "amo",
+      "dataset_unique_id": "13",
+      "gold_answer_extracted": "\\frac{33497570861567}{2}",
+      "question_sha256": "73cc806d5e8a97fae335be55251ec1b192b01229edff512fcc8558a93aaae311"
+    },
+    {
+      "problem_id": 583,
+      "source_problem_id": 13,
+      "dataset": "amo",
+      "dataset_unique_id": "14",
+      "gold_answer_extracted": "59",
+      "question_sha256": "be06265e75a1b2a9252f7f8bf87d85788bed256da4cbf39e62e6e08d6b2a6cea"
+    },
+    {
+      "problem_id": 584,
+      "source_problem_id": 14,
+      "dataset": "amo",
+      "dataset_unique_id": "15",
+      "gold_answer_extracted": "\\tfrac{9\\sqrt{3}}{2}",
+      "question_sha256": "aa27f0b4aa1ba30fb616f236460247038030fb71c8e675bbc1f54722760ed083"
+    },
+    {
+      "problem_id": 585,
+      "source_problem_id": 15,
+      "dataset": "amo",
+      "dataset_unique_id": "16",
+      "gold_answer_extracted": "68",
+      "question_sha256": "c0156ad0dfb8299fa2b0e8af26adf2b2716189d9ffa11518d6d636d06a7674e6"
+    },
+    {
+      "problem_id": 586,
+      "source_problem_id": 16,
+      "dataset": "amo",
+      "dataset_unique_id": "17",
+      "gold_answer_extracted": "2016",
+      "question_sha256": "e426911dfa63b76438639630717c4e976eec550c4ae635c90316f82386b52fd4"
+    },
+    {
+      "problem_id": 587,
+      "source_problem_id": 17,
+      "dataset": "amo",
+      "dataset_unique_id": "18",
+      "gold_answer_extracted": "\\frac{\\sqrt{3}}{45}",
+      "question_sha256": "37cb94219d7ef0cdc3ad3d7c1f5c6b35e92bf58f7c854e583c475239fb545585"
+    },
+    {
+      "problem_id": 588,
+      "source_problem_id": 18,
+      "dataset": "amo",
+      "dataset_unique_id": "19",
+      "gold_answer_extracted": "666",
+      "question_sha256": "c18064db12445de8fa35e37e2b0146c07b9987ce3def50e9659856ad94fe72eb"
+    },
+    {
+      "problem_id": 589,
+      "source_problem_id": 19,
+      "dataset": "amo",
+      "dataset_unique_id": "20",
+      "gold_answer_extracted": "120",
+      "question_sha256": "c706cbef8741c8493ab5620d9d4c43aa7a212a44ea79b46d04fc9930cec25241"
+    },
+    {
+      "problem_id": 590,
+      "source_problem_id": 20,
+      "dataset": "amo",
+      "dataset_unique_id": "21",
+      "gold_answer_extracted": "230",
+      "question_sha256": "3c526c44910fb2f1081bc5286cb62bc042f575df2299b667f97d59b397608ad6"
+    },
+    {
+      "problem_id": 591,
+      "source_problem_id": 21,
+      "dataset": "amo",
+      "dataset_unique_id": "22",
+      "gold_answer_extracted": "\\frac{208\\cdot \\sqrt[4]{3}}{21}",
+      "question_sha256": "8147a36439b88cd493de865b1f6489156caeb62dc0dffdd3a8bbfcc6f26f3593"
+    },
+    {
+      "problem_id": 592,
+      "source_problem_id": 22,
+      "dataset": "amo",
+      "dataset_unique_id": "23",
+      "gold_answer_extracted": "-1",
+      "question_sha256": "4363487d2351c6c2159f962483f974cac64a706331e301b6624b8be4ec5d5efc"
+    },
+    {
+      "problem_id": 593,
+      "source_problem_id": 23,
+      "dataset": "amo",
+      "dataset_unique_id": "24",
+      "gold_answer_extracted": "For \\(n=3\\), the minimum of \\(a_1^2 + a_2^2 + a_3^2\\) is \\(12\\).\nFor \\(n \\ge 4\\), the minimum of \\(a_1^2 + a_2^2 + \\cdots + a_n^2\\) is \\(\\dfrac{6n^2}{5}\\).\n",
+      "question_sha256": "c9ff6e28c88092cfb7eb2f16973cc5edf0321bb1857ca93de2896101834cb8a9"
+    },
+    {
+      "problem_id": 594,
+      "source_problem_id": 24,
+      "dataset": "amo",
+      "dataset_unique_id": "25",
+      "gold_answer_extracted": "The set S of all such positive integers n is given by:\n\\begin{equation*}\nS=\n\\begin{cases}\n    \\{n | n=2 \\text{ or } n-2 \\text{ has an odd factor greater than 1}\\}, & \\text{if } k=1,\\\\\n    \\{n | n=2 \\text{ or } n \\geq 5\\}, & \\text{if } k=2,\\\\\n    \\{n | n=2 \\text{ or } n \\geq 4\\}, & \\text{if } k=4,\\\\\n    \\mathbb{N}^{+}, & \\text{if } k=3 \\text{ or } k \\geq 5.\n\\end{cases}\n\\end{equation*}",
+      "question_sha256": "5916f785e77090604ca8d0f863d16b63252f7eb7d6aa40daf6bcc5a0200ec872"
+    },
+    {
+      "problem_id": 595,
+      "source_problem_id": 25,
+      "dataset": "amo",
+      "dataset_unique_id": "26",
+      "gold_answer_extracted": "Infinitely many. \n\\textit{(Note: any answer conveying ``infinite'' is accepted.)}",
+      "question_sha256": "4abf724c0f2a99c0b0aa7da3071463c321e039f6789b510db32ee39295b34b71"
+    },
+    {
+      "problem_id": 596,
+      "source_problem_id": 26,
+      "dataset": "amo",
+      "dataset_unique_id": "27",
+      "gold_answer_extracted": "Infinitely many. \n\\textit{(Note: any answer conveying ``infinite'' is accepted.)}",
+      "question_sha256": "7f60059538473b634b302c42334f86dfde7acbc0a37a47b7c0c6c2a65cf4a87f"
+    },
+    {
+      "problem_id": 597,
+      "source_problem_id": 27,
+      "dataset": "amo",
+      "dataset_unique_id": "28",
+      "gold_answer_extracted": "42",
+      "question_sha256": "e19e160ce4c19774691924f528d347d9d703bb7b0bc65dd2e2763b539dabd79b"
+    },
+    {
+      "problem_id": 598,
+      "source_problem_id": 28,
+      "dataset": "amo",
+      "dataset_unique_id": "29",
+      "gold_answer_extracted": "\\frac{21}{103}",
+      "question_sha256": "f837245a92f094623a44ae46785dc1124e7e4d71306edc861632e50feb1db70e"
+    },
+    {
+      "problem_id": 599,
+      "source_problem_id": 29,
+      "dataset": "amo",
+      "dataset_unique_id": "30",
+      "gold_answer_extracted": "3736",
+      "question_sha256": "6ccb045c4e7bd626b42bf89b10bdb84758f311449a7eba1b457efa7cc333a5a6"
+    },
+    {
+      "problem_id": 600,
+      "source_problem_id": 30,
+      "dataset": "amo",
+      "dataset_unique_id": "31",
+      "gold_answer_extracted": "2295",
+      "question_sha256": "df91b0449b86a38b9842a7a8fdc91d0dce79651e588f555f82d9c1ce102518f0"
+    },
+    {
+      "problem_id": 601,
+      "source_problem_id": 31,
+      "dataset": "amo",
+      "dataset_unique_id": "32",
+      "gold_answer_extracted": "\\boxed{225}",
+      "question_sha256": "f5e5bcb7e2ac22a51902429159cabd39b8c74fb2dccee5c77677d739487c1e07"
+    },
+    {
+      "problem_id": 602,
+      "source_problem_id": 32,
+      "dataset": "amo",
+      "dataset_unique_id": "33",
+      "gold_answer_extracted": "\\boxed{34}",
+      "question_sha256": "e25abf6c103de0ad00313d4af6a5a879a4ab64e735bdbd85590c47320fd71806"
+    },
+    {
+      "problem_id": 603,
+      "source_problem_id": 33,
+      "dataset": "amo",
+      "dataset_unique_id": "34",
+      "gold_answer_extracted": "\\boxed{\\frac{3(16+(\\sqrt[3]{7+4\\sqrt{3}}+\\sqrt[3]{7-4\\sqrt{3}}-1)^2)}{32(\\sqrt[3]{7+4\\sqrt{3}}+\\sqrt[3]{7-4\\sqrt{3}}-1)}}",
+      "question_sha256": "e7483cbaf12b88e9aac5c9edb16b96299f4cc1cab36e56c7d4d162f03fcbdca8"
+    },
+    {
+      "problem_id": 604,
+      "source_problem_id": 34,
+      "dataset": "amo",
+      "dataset_unique_id": "35",
+      "gold_answer_extracted": "\\boxed{7657}",
+      "question_sha256": "d181b16f98ee7404f0edcb8e4a9b05a4839998f96b15bf9d4c8bc224302bf950"
+    },
+    {
+      "problem_id": 605,
+      "source_problem_id": 35,
+      "dataset": "amo",
+      "dataset_unique_id": "36",
+      "gold_answer_extracted": "\\boxed{343}",
+      "question_sha256": "94dd03732fb9849979d8cfc8bf1d109f925bfc982c81ce8216d97f8375e5cccd"
+    },
+    {
+      "problem_id": 606,
+      "source_problem_id": 36,
+      "dataset": "amo",
+      "dataset_unique_id": "37",
+      "gold_answer_extracted": "\\boxed{\\frac{(a-b)(a-c)(b-c)}{8}\\cdot \\left( \\frac{(a+b-c)(a-b+c)(-a+b+c)}{2abc-(a+b-c)(a-b+c)(-a+b+c)} \\right)^3}",
+      "question_sha256": "fbc21234bb16ab37f90fdb3038db479697cf5580e97c169d0650ee3f9253af05"
+    },
+    {
+      "problem_id": 607,
+      "source_problem_id": 37,
+      "dataset": "amo",
+      "dataset_unique_id": "38",
+      "gold_answer_extracted": "$\\lfloor \\frac{3d}{2} \\rfloor + 1$, where $\\lfloor \\quad \\rfloor$ denotes the floor function (rounding down to the nearest integer).",
+      "question_sha256": "f10c5694a9907db6005bedaaeff305d5c431f5c014081d7f1875549efdfd6f17"
+    },
+    {
+      "problem_id": 608,
+      "source_problem_id": 38,
+      "dataset": "amo",
+      "dataset_unique_id": "39",
+      "gold_answer_extracted": "$\\boxed{0\\left(mod128\\right)}$",
+      "question_sha256": "4ae8fe1b50e8f63ddd6d6bc9ca4fac996f869544a9498ebbe3f0db6d37d24815"
+    },
+    {
+      "problem_id": 609,
+      "source_problem_id": 39,
+      "dataset": "amo",
+      "dataset_unique_id": "40",
+      "gold_answer_extracted": "The answer can be expressed in various forms. Based on the values of $t$, $n$, and $m$ listed below, verify whether the student's answer is correct:\n\\begin{enumerate}\n    \\item t = 500, n = 1000, then m = 2\n    \\item t = 2, n = 100, then m = 50\n    \\item t = 8, n = 10, then m = 3\n    \\item t = 500, n = 999, then m has no solution\n    \\item t = 2, n = 99, then m has no solution\n    \\item t = 8, n = 9, then m has no solution\n    \\item t = 499, n = 1000, then m = 4\n    \\item t = 3, n = 66, then m = 22\n    \\item t = 15, n = 20, then m = 4\n    \\item t = 97, n = 999, then m = 11\n    \\item t = 33, n = 297, then m = 9\n    \\item t = 3, n = 9, then m = 3\n\\end{enumerate}",
+      "question_sha256": "beeace70b7053347534289d7aa88c651772b48bee46f2b7007e2109161e51a0f"
+    },
+    {
+      "problem_id": 610,
+      "source_problem_id": 40,
+      "dataset": "amo",
+      "dataset_unique_id": "41",
+      "gold_answer_extracted": "Let $x=\\prod^{n}_{j=1}p_j$, where $p_1,p_2,...$ is a sequence of primes such that $p_1=2$, and for any positive integer $i \\geq 2$,\n$$p_i\\equiv 1 ( mod~m*\\prod^{i-1}_{j=1}p_j)$$\nand where $n$ satisfies\n$$n>1+log_{2}(20232024)$$",
+      "question_sha256": "3b4f3d023f9f4adaf6284ea66636d871cef5b048535479a833aa67dac5c96ca9"
+    },
+    {
+      "problem_id": 611,
+      "source_problem_id": 41,
+      "dataset": "amo",
+      "dataset_unique_id": "42",
+      "gold_answer_extracted": "$n$ is an odd integer with $n\\ge 3$, $m$ is an even integer with $m\\ge 4$, and $n-m-1\\le 0$.\n",
+      "question_sha256": "b1da09094e85f28bb6b626f8933cf32756bf83bb2e08b47c3f3f88921f506c17"
+    },
+    {
+      "problem_id": 612,
+      "source_problem_id": 42,
+      "dataset": "amo",
+      "dataset_unique_id": "43",
+      "gold_answer_extracted": "\\,40,\\ 64,\\ 75,\\ 100,\\ 150\\,",
+      "question_sha256": "828e7b5c3084c2c022c7468fe714c73e964d06d5b18dafa428259b439e0e1498"
+    },
+    {
+      "problem_id": 613,
+      "source_problem_id": 43,
+      "dataset": "amo",
+      "dataset_unique_id": "44",
+      "gold_answer_extracted": "\\boxed{8281323}\n",
+      "question_sha256": "7fe33ba3941aa595bc3c5f8bb64ada6cbe98f54e0680ec2b75b3d009fa0b4714"
+    },
+    {
+      "problem_id": 614,
+      "source_problem_id": 44,
+      "dataset": "amo",
+      "dataset_unique_id": "45",
+      "gold_answer_extracted": "\\boxed{{2}^{2026}-1}",
+      "question_sha256": "863d41af892661a7042f31de5b60e6463ba6445c7168718df425d6ee7a7fd05a"
+    },
+    {
+      "problem_id": 615,
+      "source_problem_id": 45,
+      "dataset": "amo",
+      "dataset_unique_id": "46",
+      "gold_answer_extracted": "When \\(n = 2\\), the number is 7;\nWhen \\(n \\geq  3\\), the number is \\({n}^{2} + 2\\)",
+      "question_sha256": "ef7bd32a8ab724b2489e98f119ba50f6025d30cb04cfadbd4fc2867cac395e5f"
+    },
+    {
+      "problem_id": 616,
+      "source_problem_id": 46,
+      "dataset": "amo",
+      "dataset_unique_id": "47",
+      "gold_answer_extracted": "\\boxed{72}",
+      "question_sha256": "998fff3d4e9b7efb2479b3e80ca4237dea4bc96324e21580b553094fcf5fd909"
+    },
+    {
+      "problem_id": 617,
+      "source_problem_id": 47,
+      "dataset": "amo",
+      "dataset_unique_id": "48",
+      "gold_answer_extracted": "\\boxed{30}",
+      "question_sha256": "911f53f2edfcc4083263321e1793cba75811afb8b656bf1b2d9e695d7499d031"
+    },
+    {
+      "problem_id": 618,
+      "source_problem_id": 48,
+      "dataset": "amo",
+      "dataset_unique_id": "49",
+      "gold_answer_extracted": "$$\n\\boxed{16}\n$$",
+      "question_sha256": "caea97369824898b1946c95284f0ce96d344cd00c627dd769ea800a3df2d90d1"
+    },
+    {
+      "problem_id": 619,
+      "source_problem_id": 49,
+      "dataset": "amo",
+      "dataset_unique_id": "50",
+      "gold_answer_extracted": "\\boxed{180}",
+      "question_sha256": "b6ef6546eba81bfce1c014946b849e0245c9b4646db039e1b904b6ca9e9c3d34"
+    },
+    {
+      "problem_id": 620,
+      "source_problem_id": 0,
+      "dataset": "aime26",
+      "dataset_unique_id": "1",
+      "gold_answer_extracted": "277",
+      "question_sha256": "4d866680f9238c0ae6b14d41fc7250d041d6c5073ed167b043ff1d059a7f7252"
+    },
+    {
+      "problem_id": 621,
+      "source_problem_id": 1,
+      "dataset": "aime26",
+      "dataset_unique_id": "2",
+      "gold_answer_extracted": "62",
+      "question_sha256": "2822569975bbb1eca16464b01ebb61ac8d516951613263501e4ea3c72d6fc24b"
+    },
+    {
+      "problem_id": 622,
+      "source_problem_id": 2,
+      "dataset": "aime26",
+      "dataset_unique_id": "3",
+      "gold_answer_extracted": "79",
+      "question_sha256": "0e674f51e84de55e0a402f23a5868dc118bd759b384f88327adabedd30359771"
+    },
+    {
+      "problem_id": 623,
+      "source_problem_id": 3,
+      "dataset": "aime26",
+      "dataset_unique_id": "4",
+      "gold_answer_extracted": "70",
+      "question_sha256": "cba4eb5fe5dc6660eb2b921df9b91f8ca2bf981690eb13cf24b8ca0328026544"
+    },
+    {
+      "problem_id": 624,
+      "source_problem_id": 4,
+      "dataset": "aime26",
+      "dataset_unique_id": "5",
+      "gold_answer_extracted": "65",
+      "question_sha256": "f3d797442d90f75da78d4de8adc1dde8b1c6c5d2f062cbea2ab1724b799ea1c5"
+    },
+    {
+      "problem_id": 625,
+      "source_problem_id": 5,
+      "dataset": "aime26",
+      "dataset_unique_id": "6",
+      "gold_answer_extracted": "441",
+      "question_sha256": "7968ea2f49d404309e79bbbd485d0c4c5f2dc1413bec889119a4cc6251f7d04b"
+    },
+    {
+      "problem_id": 626,
+      "source_problem_id": 6,
+      "dataset": "aime26",
+      "dataset_unique_id": "7",
+      "gold_answer_extracted": "396",
+      "question_sha256": "b80bbab3f94de75f4cbc76a84dc900950d3eb6a073a6f5919be8e4a4f2493ec4"
+    },
+    {
+      "problem_id": 627,
+      "source_problem_id": 7,
+      "dataset": "aime26",
+      "dataset_unique_id": "8",
+      "gold_answer_extracted": "244",
+      "question_sha256": "e6ea64827cab6b0e5ea58a6cfd651f5cd9f67898ef4deba8dc00694112ddfdc0"
+    },
+    {
+      "problem_id": 628,
+      "source_problem_id": 8,
+      "dataset": "aime26",
+      "dataset_unique_id": "9",
+      "gold_answer_extracted": "29",
+      "question_sha256": "5e99c1f8e33f1b510b11d7fc16b0bae4b7e0490025846f054c47a56b4d807196"
+    },
+    {
+      "problem_id": 629,
+      "source_problem_id": 9,
+      "dataset": "aime26",
+      "dataset_unique_id": "10",
+      "gold_answer_extracted": "156",
+      "question_sha256": "6a666186a52a223a807dca774d8600ddd754317a65c040fca538f139b291e6df"
+    },
+    {
+      "problem_id": 630,
+      "source_problem_id": 10,
+      "dataset": "aime26",
+      "dataset_unique_id": "11",
+      "gold_answer_extracted": "896",
+      "question_sha256": "f2f2d976fb29b00497dea783e22226e3e022a414cf90835c48a6288c4b69b8dc"
+    },
+    {
+      "problem_id": 631,
+      "source_problem_id": 11,
+      "dataset": "aime26",
+      "dataset_unique_id": "12",
+      "gold_answer_extracted": "161",
+      "question_sha256": "1eaadd490abe9a9c07dc10eb4fac5e05b97c24d65c2e02a14ccc3e4f0b50c457"
+    },
+    {
+      "problem_id": 632,
+      "source_problem_id": 12,
+      "dataset": "aime26",
+      "dataset_unique_id": "13",
+      "gold_answer_extracted": "39",
+      "question_sha256": "f98aacf1abda30569f77e7dcc1e8d936c8e784a36a5620f23b853634b3cb41b4"
+    },
+    {
+      "problem_id": 633,
+      "source_problem_id": 13,
+      "dataset": "aime26",
+      "dataset_unique_id": "14",
+      "gold_answer_extracted": "681",
+      "question_sha256": "c6d3cf210a1369fe78a590f41f1a9af4c031eb6fbd7d35f207fc2a1d75c96174"
+    },
+    {
+      "problem_id": 634,
+      "source_problem_id": 14,
+      "dataset": "aime26",
+      "dataset_unique_id": "15",
+      "gold_answer_extracted": "83",
+      "question_sha256": "5cc894a0e8a6612ba07b7e6fe563daf51272ff819a870986e670e24988996a76"
+    },
+    {
+      "problem_id": 635,
+      "source_problem_id": 15,
+      "dataset": "aime26",
+      "dataset_unique_id": "16",
+      "gold_answer_extracted": "178",
+      "question_sha256": "77bffe9f7e54fd6d480fe3f354595843f5001e7299e4678702be06d0fad2dd9e"
+    },
+    {
+      "problem_id": 636,
+      "source_problem_id": 16,
+      "dataset": "aime26",
+      "dataset_unique_id": "17",
+      "gold_answer_extracted": "243",
+      "question_sha256": "8742f9e6848458bd91c32c5f61373f3015eb0d57c008ce4cfa82ef3f14de3f50"
+    },
+    {
+      "problem_id": 637,
+      "source_problem_id": 17,
+      "dataset": "aime26",
+      "dataset_unique_id": "18",
+      "gold_answer_extracted": "503",
+      "question_sha256": "bce9ef2f43a9f59bfbeb6d3e67e282575e4ebd7161a4af81c2f9ad00c47621fd"
+    },
+    {
+      "problem_id": 638,
+      "source_problem_id": 18,
+      "dataset": "aime26",
+      "dataset_unique_id": "19",
+      "gold_answer_extracted": "279",
+      "question_sha256": "7a1a552fa3c096a71865d62acc6577acf5af49fe3cc1be5eccbd345de4af233d"
+    },
+    {
+      "problem_id": 639,
+      "source_problem_id": 19,
+      "dataset": "aime26",
+      "dataset_unique_id": "20",
+      "gold_answer_extracted": "190",
+      "question_sha256": "652b177c71e8a583a04222f1e1f23f913224e1baea41ffb0a6a6d6b539cfe77d"
+    },
+    {
+      "problem_id": 640,
+      "source_problem_id": 20,
+      "dataset": "aime26",
+      "dataset_unique_id": "21",
+      "gold_answer_extracted": "50",
+      "question_sha256": "f3d7b78d243a1a500bf8f0ef91a3ecfff3ebc894a9f7c2c0ff45a6151704de96"
+    },
+    {
+      "problem_id": 641,
+      "source_problem_id": 21,
+      "dataset": "aime26",
+      "dataset_unique_id": "22",
+      "gold_answer_extracted": "754",
+      "question_sha256": "ac19f76765b0b6b88561c352a15c7ce8fda91067b243a418b37ac6852d051ae8"
+    },
+    {
+      "problem_id": 642,
+      "source_problem_id": 22,
+      "dataset": "aime26",
+      "dataset_unique_id": "23",
+      "gold_answer_extracted": "245",
+      "question_sha256": "d47975ec2ba3a7dd24ecf47f98f9937eb10943b94448b27957fe2cb60fdc7a7f"
+    },
+    {
+      "problem_id": 643,
+      "source_problem_id": 23,
+      "dataset": "aime26",
+      "dataset_unique_id": "24",
+      "gold_answer_extracted": "669",
+      "question_sha256": "7443669f7e9038ecbaa20040585b634dda36623e0129c5fb18d9e5cf895db73e"
+    },
+    {
+      "problem_id": 644,
+      "source_problem_id": 24,
+      "dataset": "aime26",
+      "dataset_unique_id": "25",
+      "gold_answer_extracted": "850",
+      "question_sha256": "f7b4a98af9dd00a521396033749a2180021a97407016472fc87eb707029e05ec"
+    },
+    {
+      "problem_id": 645,
+      "source_problem_id": 25,
+      "dataset": "aime26",
+      "dataset_unique_id": "26",
+      "gold_answer_extracted": "132",
+      "question_sha256": "d5d04c315dcc2b451b820c59ee09cbbf2f8f0e03b89d9bae9c47b8acff903823"
+    },
+    {
+      "problem_id": 646,
+      "source_problem_id": 26,
+      "dataset": "aime26",
+      "dataset_unique_id": "27",
+      "gold_answer_extracted": "223",
+      "question_sha256": "51697b0daa5c5889c487c06dadb3f5279afe64889481e0a7f1380610894980fc"
+    },
+    {
+      "problem_id": 647,
+      "source_problem_id": 27,
+      "dataset": "aime26",
+      "dataset_unique_id": "28",
+      "gold_answer_extracted": "107",
+      "question_sha256": "f969f616feb3991ffa601424596bb0b7924fa9d62c3f58c6ba9d8552361294ea"
+    },
+    {
+      "problem_id": 648,
+      "source_problem_id": 28,
+      "dataset": "aime26",
+      "dataset_unique_id": "29",
+      "gold_answer_extracted": "157",
+      "question_sha256": "cda72262349e722276e8339a5c7cbef06aae7d30da94a83221cb7b84e6a223cf"
+    },
+    {
+      "problem_id": 649,
+      "source_problem_id": 29,
+      "dataset": "aime26",
+      "dataset_unique_id": "30",
+      "gold_answer_extracted": "393",
+      "question_sha256": "8ff9e9f62f235d5f18f547a5165fc6ace0d2c516ade3d3c9b39b919dfb71128e"
+    }
+  ]
+}

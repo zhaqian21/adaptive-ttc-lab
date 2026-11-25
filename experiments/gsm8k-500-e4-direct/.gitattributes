@@ -2,4 +2,6 @@
 *.sh text eol=lf
 *.md text eol=lf
 questions.json -text
+followup_questions.json -text
 results/** -text
+followup-results/** -text

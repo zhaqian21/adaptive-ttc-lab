@@ -26,3 +26,25 @@ python "$exp/report.py" --run "$RUN_DIRECTORY/results" --pools "$RUN_DIRECTORY/e
 exp=experiments/gsm8k-500-e4-direct
 python "$exp/report.py" --pools "$exp/results" --output /tmp/gsm8k-500-e4-direct-replay
 ~~~
+
+## 后续五个数据集
+
+同一直接作答口径接续 MATH-500、AMC23、AIME24、AMO-Bench 和 AIME 2026。每个模型共 650 题，题目 ID 已和 [PR #31](https://github.com/zhaqian21/adaptive-ttc-lab/pull/31)、[PR #32](https://github.com/zhaqian21/adaptive-ttc-lab/pull/32) 的两种模型结果核对一致。数据资产与题目顺序见 [后续清单](followup_questions.json)。三卡分工沿用 GSM8K，直接作答流程无需加载临时 PRM。GPU 7 复用现有生成服务。
+
+后续运行目录同样包含 `source` 和 `data`。MATH-500 及 AMC23 从已准备的 source 加载。data 包含固定 AIME24/AMO-Bench manifest 及其两个 parquet，并复用 PR #32 的 AIME 2026、GSM8K parquet。队列等待 GSM8K E4 正常结束且常驻服务恢复，然后自动接续。
+
+~~~bash
+exp=experiments/gsm8k-500-e4-direct
+bash "$exp/queue_24.sh" "$RUN_DIRECTORY" "$FOLLOWUP_DIRECTORY" "$VLLM_PYTHON"
+python "$exp/followup_report.py" --run "$FOLLOWUP_DIRECTORY/results" \
+  --gsm8k-summary "$RUN_DIRECTORY/export/summary.json" --archive "$FOLLOWUP_DIRECTORY/export" \
+  --output "$FOLLOWUP_DIRECTORY/export"
+~~~
+
+离线汇总时使用归档结果和 GSM8K 汇总。
+
+~~~bash
+exp=experiments/gsm8k-500-e4-direct
+python "$exp/followup_report.py" --gsm8k-summary "$exp/results/summary.json" \
+  --archive "$exp/followup-results" --output /tmp/direct-previous-benchmarks-replay
+~~~
