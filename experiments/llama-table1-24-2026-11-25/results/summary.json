@@ -1,0 +1,102 @@
+{
+  "model": [
+    "model",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+  ],
+  "seconds": 8084.135387429036,
+  "cases": {
+    "math": {
+      "E1": {
+        "samples": 500,
+        "correct": 234,
+        "accuracy": 0.468,
+        "paper_correct": 219,
+        "predictions_sha256": "68fec505bd89355afbd54a93e482536cfa7cc3707a3c0c598bf0a29bef29fb2c"
+      },
+      "E2": {
+        "samples": 500,
+        "correct": 322,
+        "accuracy": 0.644,
+        "paper_correct": 223,
+        "predictions_sha256": "01633ff98afc9e3ee01c0dbd637d477b05ba65efa8b6f6916d51e64f68f15cbc"
+      },
+      "E3": {
+        "samples": 500,
+        "correct": 238,
+        "accuracy": 0.476,
+        "paper_correct": 236,
+        "predictions_sha256": "c763fee8d058b52d49a18e2d1ebd58b57f992bcb200efa9182bcf0fca253b04c"
+      },
+      "E4": {
+        "samples": 500,
+        "correct": 321,
+        "accuracy": 0.642,
+        "paper_correct": 327,
+        "predictions_sha256": "ea19fc37fd3a4539f37f2f7f0c5e5da0070e14224467f604e07728ef6540d572"
+      }
+    },
+    "aime24": {
+      "E1": {
+        "samples": 30,
+        "correct": 1,
+        "accuracy": 0.03333333333333333,
+        "paper_correct": 1,
+        "predictions_sha256": "1b6f8bd4dbeb3f73f9268f81a09c1d74d9a34a491b8037ac8d1552534e58d914"
+      },
+      "E2": {
+        "samples": 30,
+        "correct": 3,
+        "accuracy": 0.1,
+        "paper_correct": 2,
+        "predictions_sha256": "cd4947b8c6c4b17318cf434b303bc7e6e631e2be3fabd8739083f2d6268a2735"
+      },
+      "E3": {
+        "samples": 30,
+        "correct": 2,
+        "accuracy": 0.06666666666666667,
+        "paper_correct": 2,
+        "predictions_sha256": "b54d690a050c101d3ce62f9bebfbfa1fb918e5311a766de3162278cfe8fb1421"
+      },
+      "E4": {
+        "samples": 30,
+        "correct": 4,
+        "accuracy": 0.13333333333333333,
+        "paper_correct": 3,
+        "predictions_sha256": "6d031242d56049e2c9b3b73cf58e25b58406b071220dcb41e1428b7921c605ec"
+      }
+    },
+    "amo": {
+      "E1": {
+        "samples": 50,
+        "correct": 1,
+        "accuracy": 0.02,
+        "paper_correct": 1,
+        "predictions_sha256": "1f6fa8f0028d078ee74c695452178434d46c67c19ed1ad418f3938223859032c"
+      },
+      "E2": {
+        "samples": 50,
+        "correct": 2,
+        "accuracy": 0.04,
+        "paper_correct": 1,
+        "predictions_sha256": "711f521d9f0cef26593608f6bc5fdf2ee7e9cc5801fb02a19c4add3276af9417"
+      },
+      "E3": {
+        "samples": 50,
+        "correct": 0,
+        "accuracy": 0.0,
+        "paper_correct": 2,
+        "predictions_sha256": "b1cd2ea292fb8c9a0dffce2d164890b6ff6b9db731cb72d85e1d81ccb66948b8"
+      },
+      "E4": {
+        "samples": 50,
+        "correct": 1,
+        "accuracy": 0.02,
+        "paper_correct": 2,
+        "predictions_sha256": "1ab363043b3729d572945b14db3d89210f876e74beb063a705d6d8f1218689e5"
+      }
+    }
+  },
+  "pipeline_sha256": "c820e4556b7f17d915a68b75387760216263a55bb0d9804c87dce957d2967cc9",
+  "total_predictions": 2320
+}

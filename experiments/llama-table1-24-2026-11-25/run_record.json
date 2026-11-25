@@ -1,0 +1,247 @@
+{
+  "run": "24 / llama-table1-24 / v1",
+  "date": "2026-11-25",
+  "timezone": "Asia/Shanghai",
+  "execution_commit": "3813100e0776f05f7e2869320e6b1226d57e7f1c",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "paper": "https://arxiv.org/html/2602.01070v5#S4.T1",
+  "dispatch": "even_odd_problem_id",
+  "source_sha256": {
+    "experiments/llama-table1-825/llama_table1.py": "c820e4556b7f17d915a68b75387760216263a55bb0d9804c87dce957d2967cc9",
+    "experiments/llama-table1-825/run_24.sh": "3a35f4568b5e158b65025f3457fa7202efca49c6e7e0bcc8b7029be3e22e8279",
+    "experiments/llama-table1-825/prepare_24.sh": "51e808566acb67fc9e8e167ea338915a30c777cbf343c19f1da86239bdbe8004",
+    "experiments/llama-table1-825/answer_fields.py": "7f85b659a448921623804d58e564eb9b3665b94f53bc46a4c6406c00b06e356c",
+    "experiments/aime24-amo-bench-published-code-2026-11-24/scripts/run_published_extensions.py": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf"
+  },
+  "datasets": {
+    "math": {
+      "samples": 500,
+      "split": "test",
+      "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132"
+    },
+    "amo": {
+      "repo": "meituan-longcat/AMO-Bench",
+      "revision": "2f422616c25d862984408fbbfaed63a961e8e025",
+      "split": "test",
+      "sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+      "samples": 50
+    },
+    "aime24": {
+      "repo": "Maxwell-Jia/AIME_2024",
+      "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+      "split": "train",
+      "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+      "samples": 30
+    }
+  },
+  "coordinator_finished_at": "2026-11-25T12:39:13+08:00",
+  "coordinator_elapsed_seconds": 8084.135387429036,
+  "timeline": [
+    {
+      "dataset": "math",
+      "case": "E1",
+      "shard_config_written_at": [
+        "2026-11-25T09:55:47+08:00",
+        "2026-11-25T09:55:47+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T09:56:32+08:00",
+        "2026-11-25T09:56:31+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T10:27:20+08:00"
+    },
+    {
+      "dataset": "math",
+      "case": "E2",
+      "shard_config_written_at": [
+        "2026-11-25T09:56:47+08:00",
+        "2026-11-25T09:56:46+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T10:28:51+08:00",
+        "2026-11-25T10:30:05+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T10:30:09+08:00"
+    },
+    {
+      "dataset": "math",
+      "case": "E3",
+      "shard_config_written_at": [
+        "2026-11-25T10:30:19+08:00",
+        "2026-11-25T10:30:18+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T10:34:48+08:00",
+        "2026-11-25T10:34:33+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T10:34:52+08:00"
+    },
+    {
+      "dataset": "math",
+      "case": "E4",
+      "shard_config_written_at": [
+        "2026-11-25T10:35:03+08:00",
+        "2026-11-25T10:35:03+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:36:27+08:00",
+        "2026-11-25T11:34:31+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:36:33+08:00"
+    },
+    {
+      "dataset": "aime24",
+      "case": "E1",
+      "shard_config_written_at": [
+        "2026-11-25T11:36:42+08:00",
+        "2026-11-25T11:36:42+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:36:51+08:00",
+        "2026-11-25T11:36:57+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:36:59+08:00"
+    },
+    {
+      "dataset": "aime24",
+      "case": "E2",
+      "shard_config_written_at": [
+        "2026-11-25T11:37:10+08:00",
+        "2026-11-25T11:37:13+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:38:48+08:00",
+        "2026-11-25T11:39:06+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:39:09+08:00"
+    },
+    {
+      "dataset": "aime24",
+      "case": "E3",
+      "shard_config_written_at": [
+        "2026-11-25T11:39:18+08:00",
+        "2026-11-25T11:39:18+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:40:08+08:00",
+        "2026-11-25T11:42:25+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:42:28+08:00"
+    },
+    {
+      "dataset": "aime24",
+      "case": "E4",
+      "shard_config_written_at": [
+        "2026-11-25T11:42:39+08:00",
+        "2026-11-25T11:42:38+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:51:05+08:00",
+        "2026-11-25T11:51:03+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:51:08+08:00"
+    },
+    {
+      "dataset": "amo",
+      "case": "E1",
+      "shard_config_written_at": [
+        "2026-11-25T11:51:17+08:00",
+        "2026-11-25T11:51:17+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:51:40+08:00",
+        "2026-11-25T11:51:34+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:51:43+08:00"
+    },
+    {
+      "dataset": "amo",
+      "case": "E2",
+      "shard_config_written_at": [
+        "2026-11-25T11:51:51+08:00",
+        "2026-11-25T11:51:51+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T11:55:25+08:00",
+        "2026-11-25T11:55:35+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T11:55:38+08:00"
+    },
+    {
+      "dataset": "amo",
+      "case": "E3",
+      "shard_config_written_at": [
+        "2026-11-25T11:55:46+08:00",
+        "2026-11-25T11:55:47+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T12:01:35+08:00",
+        "2026-11-25T11:59:41+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T12:01:38+08:00"
+    },
+    {
+      "dataset": "amo",
+      "case": "E4",
+      "shard_config_written_at": [
+        "2026-11-25T12:01:46+08:00",
+        "2026-11-25T12:01:47+08:00"
+      ],
+      "shard_summary_written_at": [
+        "2026-11-25T12:39:00+08:00",
+        "2026-11-25T12:32:16+08:00"
+      ],
+      "merged_audit_written_at": "2026-11-25T12:39:04+08:00"
+    }
+  ],
+  "runtime_recovery": {
+    "time": "2026-11-25T10:09:57.477579+08:00",
+    "dataset": "math",
+    "case": "E2",
+    "reason": "Released JSON answer fallback stalled both workers in a regex search",
+    "fingerprints": {
+      "llama_table1.py": "98b51edacaabf9cc632deaa863a18a028c16b41e7aba226a337a1bbd8d46ba58",
+      "llama_table1.py.recovery": "0f149a7b0dcbf3f86a3a903bb0c2a1eae44d43bfac8b334e521bc3d942dfeba0",
+      "answer_fields.py.recovery": "7f85b659a448921623804d58e564eb9b3665b94f53bc46a4c6406c00b06e356c"
+    },
+    "saved_rows_before_restart": {
+      "0": {
+        "000": "454b5e7925d1907bf608a6e1c6e89ad9545bf811261eb68cb57f945cf98ccf80",
+        "004": "d9459ebc2dad77d85afacb6907aac590980a5d82a0e5bd58ea75ff5edbfa9937",
+        "008": "48382026dcf253180f515ac43ba71e0c923667ec4716b7bcbe19acd2e1e10ef3",
+        "014": "b625eb8eaeffea6c3c77c22554cdd06ed1ec701e0f18ab56d4b9960ecb7c0234",
+        "016": "e4dc3459a70782e88d375d6da0054100e6dd6df5213183d72304b516aacc0f23",
+        "020": "e5683370e456eed97dd027ed4a8392e8190bcf3072d2201838fb24686149fdeb",
+        "028": "86a5a8072466ef3de297045018abf22ccc3998776848a33ebc2170768651134d",
+        "030": "57c01b7dca468dd21f103a0f919ae46fc2ab0c4625445e927bfb07aa75ba855f",
+        "032": "cd996a18abff177c860cc54f0307ba0f780d570a9150f967354c6c40f415ee8e",
+        "038": "6e0d09053942623eb48237df485d4433ab46f01e5f66f94d8dd1f83fa917033a",
+        "040": "a280dcac8d3d15a8fa8cd8be49a824c8ee710419df5d2b91d28277ecc636579c",
+        "042": "a54d071633c842c2e366761d0dece0baf1abbeabcc929894e484827f7a27ed58",
+        "044": "e7f746f9727ececa66c16b2f99631fd37994e67635c4e4174aa388e4562fb935",
+        "048": "104feee0ddeeab25307754441ef42b079669657c3c90d5c0cbefba2e8181113b",
+        "052": "48d7fe178da3d1d63b3b3465f071ffc5a68847934ec85b5c3ec6deff9f7a9b5c",
+        "054": "7343394f4a4e7e4547ebfb32b022d442cd38f3dea7fc1a534d6767d022ac2681",
+        "056": "e4c25b4730af47bfab81a27079330cb66d3a09400769ba840c0523bf9902dc05",
+        "058": "c2ae09c6830bd89a19fad5b2519906a90d502b0036544d2f24361f04ac5634be",
+        "066": "1902406b9b4c0fcdeda9db034bfc2522d4401860795e17c12de341900badc062",
+        "070": "637a8ab56b76fe3fe81b77bcbf195377bf88a8be1b89e4ef902b784688678604",
+        "072": "14a72c290d6ed86e86bee27026f3f36d1952d65cb914a62a552c02674acb8a29",
+        "084": "33d94ed411ecf74dfb79d64aaa47b9b6280b5551a0b47c46a94dced6af58911b",
+        "086": "458a215fa4b70b113cd49b48ee217248791d5259f917940d9dd842294ede5d97",
+        "090": "e6a0d590e7773f8263574d894e34f22b3df1badeab57b5accc64abb8aebc717a",
+        "098": "6655cde272d33a495ff1d2cbbb85b639fc9df83b173da4a5b1d6848725f50ad5",
+        "102": "4af4e7c84d13ef39e74f4459023fe70bb34371bcb418b93b5823ae3a42a58492"
+      },
+      "1": {}
+    },
+    "lane1_manual_retry": {
+      "time": "2026-11-25T10:11:21.612870+08:00",
+      "worker_sha256": "fbdcb682733147379a3cd4ad2615f789575fd1af966bc5cfe3dccba20acf128d",
+      "reason": "The coordinator waits for lane 0 before starting the second retry",
+      "serialization": "worker output-directory advisory lock"
+    }
+  },
+  "math_e2_checkpoint_shas_verified": true,
+  "prm_listener_restart": "Recovered PRM listener backlog at 2026-11-25T10:24:18+08:00"
+}

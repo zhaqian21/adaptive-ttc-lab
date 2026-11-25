@@ -1,0 +1,344 @@
+{
+  "dataset": "aime24",
+  "case": "E1",
+  "samples": 30,
+  "correct": 1,
+  "accuracy": 0.03333333333333333,
+  "paper_correct": 1,
+  "vllm": "0.33.0",
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "predictions_sha256": "1b6f8bd4dbeb3f73f9268f81a09c1d74d9a34a491b8037ac8d1552534e58d914",
+  "configs": [
+    {
+      "case": "E1",
+      "backend": "vllm",
+      "concurrency": 15,
+      "runtime": {
+        "torch": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "transformers": "4.48.3",
+        "cuda_visible_devices": "0",
+        "device_name": "NVIDIA H20",
+        "compute_capability": [
+          9,
+          0
+        ],
+        "bf16_supported": true
+      },
+      "package_version": "0.33.0",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "dataset_sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+      "dataset": "aime24",
+      "dataset_spec": {
+        "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+        "split": "train",
+        "source_file": "aime_2024_problems.parquet",
+        "repo": "Maxwell-Jia/AIME_2024",
+        "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+        "samples": 30
+      },
+      "prm_score_port": 22502,
+      "source_sha256": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf",
+      "decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 50,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.0,
+        "stop_token_ids": [
+          128009
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "seed": 0,
+      "strict_errors": false,
+      "sample_ids": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "submission_order": [
+        0,
+        2,
+        4,
+        6,
+        8,
+        10,
+        12,
+        14,
+        16,
+        18,
+        20,
+        22,
+        24,
+        26,
+        28
+      ],
+      "endpoint_port": 22500,
+      "agent": {
+        "mode": "direct",
+        "use_planner": false,
+        "use_tool_selector": false,
+        "use_compute_selector": false,
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "fixed_tool": null,
+        "fixed_compute": null,
+        "planning_frequency": null,
+        "domain": "math"
+      },
+      "client": {
+        "client_name": "transformer",
+        "base_url": null,
+        "model_id": "meta-llama/Llama-3.1-8B-Instruct/359efdbb8af05b788a4ad4185215c6b8caa9052c",
+        "generate_kwargs": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "max_tokens": 1024
+        },
+        "timeout": 60,
+        "max_retries": 5,
+        "delay": 2,
+        "alternate_roles": false,
+        "device_map": "cuda:0",
+        "torch_dtype": "bfloat16",
+        "trust_remote_code": false
+      },
+      "eval": {
+        "num_workers": 16,
+        "output_dir": null,
+        "max_problems": 30,
+        "num_iterations": 1,
+        "use_prm_selection": false,
+        "prm_selection_metric": "mean_reward",
+        "split": "train",
+        "problem_types": null,
+        "difficulty_levels": null
+      },
+      "datasets_and_models": [
+        [
+          "model",
+          "meta-llama/Llama-3.1-8B-Instruct",
+          "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "dataset_manifest": "datasets/manifest.json"
+    },
+    {
+      "case": "E1",
+      "backend": "vllm",
+      "concurrency": 15,
+      "runtime": {
+        "torch": "2.6.0+cu124",
+        "cuda_runtime": "12.4",
+        "transformers": "4.48.3",
+        "cuda_visible_devices": "1",
+        "device_name": "NVIDIA H20",
+        "compute_capability": [
+          9,
+          0
+        ],
+        "bf16_supported": true
+      },
+      "package_version": "0.33.0",
+      "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+      "dataset_sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+      "dataset": "aime24",
+      "dataset_spec": {
+        "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+        "split": "train",
+        "source_file": "aime_2024_problems.parquet",
+        "repo": "Maxwell-Jia/AIME_2024",
+        "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+        "samples": 30
+      },
+      "prm_score_port": 22503,
+      "source_sha256": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf",
+      "decode": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "top_k": 50,
+        "max_tokens": 1024,
+        "repetition_penalty": 1.0,
+        "stop_token_ids": [
+          128009
+        ],
+        "ignore_eos": true,
+        "skip_special_tokens": true
+      },
+      "seed": 0,
+      "strict_errors": false,
+      "sample_ids": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29
+      ],
+      "submission_order": [
+        1,
+        3,
+        5,
+        7,
+        9,
+        11,
+        13,
+        15,
+        17,
+        19,
+        21,
+        23,
+        25,
+        27,
+        29
+      ],
+      "endpoint_port": 22501,
+      "agent": {
+        "mode": "direct",
+        "use_planner": false,
+        "use_tool_selector": false,
+        "use_compute_selector": false,
+        "remember_cot": true,
+        "max_text_history": 16,
+        "max_image_history": 0,
+        "fixed_tool": null,
+        "fixed_compute": null,
+        "planning_frequency": null,
+        "domain": "math"
+      },
+      "client": {
+        "client_name": "transformer",
+        "base_url": null,
+        "model_id": "meta-llama/Llama-3.1-8B-Instruct/359efdbb8af05b788a4ad4185215c6b8caa9052c",
+        "generate_kwargs": {
+          "temperature": 0.7,
+          "top_p": 0.9,
+          "max_tokens": 1024
+        },
+        "timeout": 60,
+        "max_retries": 5,
+        "delay": 2,
+        "alternate_roles": false,
+        "device_map": "cuda:0",
+        "torch_dtype": "bfloat16",
+        "trust_remote_code": false
+      },
+      "eval": {
+        "num_workers": 16,
+        "output_dir": null,
+        "max_problems": 30,
+        "num_iterations": 1,
+        "use_prm_selection": false,
+        "prm_selection_metric": "mean_reward",
+        "split": "train",
+        "problem_types": null,
+        "difficulty_levels": null
+      },
+      "datasets_and_models": [
+        [
+          "model",
+          "meta-llama/Llama-3.1-8B-Instruct",
+          "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+        ],
+        [
+          "model",
+          "Qwen/Qwen2.5-Math-PRM-7B",
+          "0610740060112df12585d00a1c5f4624d2f59051"
+        ]
+      ],
+      "dataset_manifest": "datasets/manifest.json"
+    }
+  ],
+  "shards": [
+    {
+      "case": "E1",
+      "classification": "published_code",
+      "backend": "vllm",
+      "dataset": "aime24",
+      "prm_timing_includes_http": false,
+      "workers": 15,
+      "samples": 15,
+      "requested": 15,
+      "correct": 1,
+      "accuracy": 0.06666666666666667,
+      "answer_verdicts": {
+        "None": 12,
+        "True": 1,
+        "False": 2
+      },
+      "seconds": 8.404505867976695,
+      "setup_seconds": 0.6311001540161669,
+      "questions_per_minute": 107.08541514965547,
+      "output_tokens_per_second": 1720.6246538657422,
+      "output_tokens": 14461,
+      "generation_calls": 30,
+      "prm_calls": 0,
+      "prm_compute_seconds": 0,
+      "prm_queue_seconds": 0.0,
+      "question_retries": 0,
+      "prm_all_zero_questions": 0,
+      "cuda_peak_reserved_bytes": 0,
+      "native_files_verified_at_commit": true,
+      "pinned_dataset_checked": true
+    },
+    {
+      "case": "E1",
+      "classification": "published_code",
+      "backend": "vllm",
+      "dataset": "aime24",
+      "prm_timing_includes_http": false,
+      "workers": 15,
+      "samples": 15,
+      "requested": 15,
+      "correct": 0,
+      "accuracy": 0.0,
+      "answer_verdicts": {
+        "None": 10,
+        "False": 5
+      },
+      "seconds": 14.409256801009178,
+      "setup_seconds": 0.5936093488708138,
+      "questions_per_minute": 62.459848722868685,
+      "output_tokens_per_second": 1099.9179360097176,
+      "output_tokens": 15849,
+      "generation_calls": 30,
+      "prm_calls": 0,
+      "prm_compute_seconds": 0,
+      "prm_queue_seconds": 0.0,
+      "question_retries": 0,
+      "prm_all_zero_questions": 0,
+      "cuda_peak_reserved_bytes": 0,
+      "native_files_verified_at_commit": true,
+      "pinned_dataset_checked": true
+    }
+  ]
+}
