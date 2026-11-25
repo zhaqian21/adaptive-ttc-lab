@@ -1,0 +1,70 @@
+{
+  "phase": "early",
+  "lane": 1,
+  "submission_order": [
+    7,
+    35,
+    5,
+    11,
+    23,
+    37,
+    13,
+    3,
+    29,
+    39,
+    31,
+    17,
+    21,
+    19,
+    9,
+    27,
+    33,
+    1,
+    25,
+    15
+  ],
+  "workers": 24,
+  "dataset": {
+    "repo": "math-ai/amc23",
+    "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+    "split": "test",
+    "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+    "samples": 40,
+    "loader_sha256": "3e11852a2a7a060d596b2ac752e249b09eae03d3e917e5dbb531e140143a1a99"
+  },
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 20,
+    "max_tokens": 1024,
+    "repetition_penalty": 1.05,
+    "stop_token_ids": [
+      151645
+    ],
+    "ignore_eos": true,
+    "skip_special_tokens": true
+  },
+  "vllm": "0.33.0",
+  "model": [
+    "model",
+    "Qwen/Qwen2.5-7B-Instruct",
+    "a09a35458c702b33eeacc393d103063234e8bc28"
+  ],
+  "agent": {
+    "mode": "dynamic",
+    "use_planner": true,
+    "use_tool_selector": true,
+    "use_compute_selector": true,
+    "remember_cot": true,
+    "max_text_history": 16,
+    "max_image_history": 0,
+    "fixed_tool": null,
+    "fixed_compute": null,
+    "planning_frequency": null,
+    "domain": "math"
+  },
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "source_sha256": "4d182f8ccdde1c4800be1f66c07c094b1cb383d79a8b96cfb9fe54e26500b2ca",
+  "plan_sha256": "f7ef365108f3b48d6672b1e6d81114bc6f137a98508c1da072b4d52ea16b0a4e",
+  "study": "qwen-amc23"
+}
