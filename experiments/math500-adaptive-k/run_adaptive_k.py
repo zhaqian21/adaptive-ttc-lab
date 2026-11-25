@@ -81,7 +81,7 @@ def solve(question, args, config, tokenizer, decode):
     })
 
 
-def run(args):
+def run(args, *, solve_question=solve, extension=None, extension_sources=()):
     repo = runner.ROOT / "upstream"
     sha = subprocess.check_output(["git", "-C", str(repo), "rev-parse", "HEAD"], text=True).strip()
     if sha != runner.UPSTREAM_COMMIT or subprocess.check_output(
@@ -104,7 +104,8 @@ def run(args):
     if not questions:
         raise ValueError("Empty shard")
     sources = (__file__, revision.__file__, revision_policy.__file__, sampling.__file__, baseline.__file__,
-               Path(__file__).resolve().parents[1] / "math500-prm-answer-aggregation" / "answer_aggregation.py")
+               Path(__file__).resolve().parents[1] / "math500-prm-answer-aggregation" / "answer_aggregation.py",
+               *extension_sources)
     setup = {
         "mode": args.mode, "selector": args.selector, "upstream_commit": sha,
         "source_sha256": {Path(file).name: hashlib.sha256(Path(file).read_bytes()).hexdigest() for file in sources},
@@ -117,6 +118,8 @@ def run(args):
         "workers": args.workers, "shards": args.shards, "shard": args.shard, "sample": args.sample,
         "question_ids": [row["problem_id"] for row in questions],
     }
+    if extension is not None:
+        setup["extension"] = extension
     (args.output / "problems").mkdir(parents=True, exist_ok=True)
     config_path = args.output / "config.json"
     if config_path.exists() and baseline.read(config_path) != setup:
@@ -128,7 +131,7 @@ def run(args):
     with (args.output / "details.log").open("a", encoding="utf-8") as log:
         with redirect_stdout(log), patch.object(runner.upstream, "create_llm_client", lambda _: baseline.THREAD.client):
             with ThreadPoolExecutor(max_workers=args.workers) as pool:
-                futures = {pool.submit(solve, q, args, config, tokenizer, decode): q["problem_id"] for q in questions}
+                futures = {pool.submit(solve_question, q, args, config, tokenizer, decode): q["problem_id"] for q in questions}
                 for future in as_completed(futures):
                     try:
                         future.result()
