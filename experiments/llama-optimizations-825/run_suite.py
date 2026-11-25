@@ -10,6 +10,7 @@ from pathlib import Path
 import signal
 import subprocess
 import sys
+from tempfile import TemporaryDirectory
 import time
 from types import SimpleNamespace
 
@@ -166,13 +167,17 @@ def start_models(stack, args, ports):
     prm = services.start_service(
         stack, [sys.executable, services.__file__, "--serve-prm", "--prm-port", str(ports[1])],
         os.environ.copy(), args.output / "prm.log")
+    # ZeroMQ uses the temporary base directory for its Unix socket name.
+    ipc_dir = stack.enter_context(TemporaryDirectory(prefix="ttc-vllm-", dir="/tmp"))
+    engine_env = {key: value for key, value in os.environ.items() if key != "PYTHONPATH"}
+    engine_env["VLLM_RPC_BASE_PATH"] = ipc_dir
     engine = services.start_service(
         stack, [args.engine_python, "-m", "vllm.entrypoints.cli.main", "serve", str(model),
                 "--host", "127.0.0.1", "--port", str(ports[0]), "--served-model-name", services.MODEL[1],
                 "--dtype", "bfloat16", "--tensor-parallel-size", "1", "--generation-config", "vllm",
                 "--gpu-memory-utilization", "0.60", "--max-model-len", "32768",
                 "--enable-prefix-caching", "--max-num-seqs", "112", "--max-num-batched-tokens", "8192"],
-        {key: val for key, val in os.environ.items() if key != "PYTHONPATH"}, args.output / "engine.log")
+        engine_env, args.output / "engine.log")
     services.wait_ready(prm, ports[1])
     services.wait_ready(engine, ports[0])
 
