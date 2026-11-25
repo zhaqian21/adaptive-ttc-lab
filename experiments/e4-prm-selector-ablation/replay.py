@@ -86,7 +86,7 @@ def from_online(a_rows, b_rows):
         yield {"problem_id": a["problem_id"], "dataset_unique_id": a["dataset_unique_id"], **modes}
 
 
-def from_aime(a_rows, refs):
+def from_archive(a_rows, refs):
     for row, ref in zip(a_rows, refs):
         modes = fixed_modes(row)
         baseline = modes["fixed_pool"]["choices"]["original"]
@@ -96,7 +96,7 @@ def from_aime(a_rows, refs):
                 or baseline["predicted_answer"] != ref["predicted_answer"]
                 or baseline["is_correct"] != (ref["is_correct"] is True)
                 or modes["fixed_pool"]["candidate_oracle_correct"] != ref["candidate_oracle_correct"]):
-            raise ValueError("AIME24 candidates do not reproduce the published E4 baseline")
+            raise ValueError("Archived candidates do not reproduce the published E4 baseline")
         yield {"problem_id": row["problem_id"], "dataset_unique_id": row["dataset_unique_id"], **modes}
 
 
@@ -185,7 +185,7 @@ def run(archives, llama_root, output):
         if aime_ids is not None and ids != aime_ids:
             raise ValueError("The two AIME24 models must use the same questions")
         aime_ids = ids
-        studies[study] = save_case(output, study, list(from_aime(a_rows, refs)))
+        studies[study] = save_case(output, study, list(from_archive(a_rows, refs)))
 
     (output / "summary.json").write_bytes(
         (json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n").encode("utf-8")

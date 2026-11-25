@@ -1,0 +1,91 @@
+{
+  "dataset_sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+  "models": {
+    "llama": {
+      "samples": 50,
+      "failed_attempts_without_usage": 0,
+      "fixed_pool": {
+        "correct": {
+          "original": 1,
+          "sum_prm": 1,
+          "top2_sum": 1
+        },
+        "early_stops": 0,
+        "candidate_pool_contains_correct": 2,
+        "prm_requests": 500,
+        "total_tokens": 17787856,
+        "generation_calls": 12787,
+        "input_tokens": 13842316,
+        "output_tokens": 3945540
+      },
+      "five_on_fixed_pool": {
+        "correct": {
+          "original": 1,
+          "sum_prm": 1,
+          "top2_sum": 1
+        },
+        "early_stops": 0,
+        "candidate_pool_contains_correct": 2,
+        "prm_requests": 500,
+        "total_tokens": 17787856,
+        "generation_calls": 12787,
+        "input_tokens": 13842316,
+        "output_tokens": 3945540
+      },
+      "paired_combined_vs_e4": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "candidate_input_sha256": "b95205dbdb8f64042af5aed5cba26a074c0cd259c3aa29e42129fa85d1686c9c",
+      "baseline_reference_sha256": "1ab363043b3729d572945b14db3d89210f876e74beb063a705d6d8f1218689e5",
+      "predictions_sha256": "56effa0e67b76d2e18caab412fa4cfa962083899971e2a5256638c8c66d2ee0a"
+    },
+    "qwen": {
+      "samples": 50,
+      "failed_attempts_without_usage": 0,
+      "fixed_pool": {
+        "correct": {
+          "original": 3,
+          "sum_prm": 2,
+          "top2_sum": 2
+        },
+        "early_stops": 0,
+        "candidate_pool_contains_correct": 6,
+        "prm_requests": 500,
+        "total_tokens": 24032870,
+        "generation_calls": 17349,
+        "input_tokens": 20039779,
+        "output_tokens": 3993091
+      },
+      "five_on_fixed_pool": {
+        "correct": {
+          "original": 3,
+          "sum_prm": 2,
+          "top2_sum": 2
+        },
+        "early_stops": 1,
+        "candidate_pool_contains_correct": 6,
+        "prm_requests": 490,
+        "total_tokens": 23675471,
+        "generation_calls": 17106,
+        "input_tokens": 19767658,
+        "output_tokens": 3907813
+      },
+      "paired_combined_vs_e4": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 1,
+        "net": -1,
+        "gained_problem_ids": [],
+        "lost_problem_ids": [
+          19
+        ]
+      },
+      "candidate_input_sha256": "e55945841246f12cedefec7db8e4998c27e7b07854edc694a812d4cb52d00610",
+      "baseline_reference_sha256": "eb6ca5772cbebe43789d8c50bcbad092c592a2f8ecec07ba69745cb0aa4aca33",
+      "predictions_sha256": "2b00f767220eeee305e6b1cd54504079ca5bad41e72e0a1523e2f764d83b8084"
+    }
+  }
+}

@@ -56,7 +56,7 @@ def partition(calls, signatures, elapsed):
     return paths[0]
 
 
-def capture_signature(source, client_config):
+def capture_signature(source, client_config, *, model_folder=MODEL):
     upstream = source / "upstream"
     git = ["git", "-C", str(upstream)]
     if (subprocess.check_output([*git, "rev-parse", "HEAD"], text=True).strip() != UPSTREAM
@@ -69,7 +69,7 @@ def capture_signature(source, client_config):
     from main import DictConfig, get_prompts
     from src.universal_agent import UniversalAgent
 
-    model = source / "assets" / "model" / MODEL
+    model = source / "assets" / "model" / model_folder
     client = TransformerWrapper(DictConfig({**client_config, "model_id": str(model)}))
     client._initialized = True
     client.tokenizer = AutoTokenizer.from_pretrained(str(model), local_files_only=True)
