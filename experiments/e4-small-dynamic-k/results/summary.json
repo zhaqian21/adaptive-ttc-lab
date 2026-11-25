@@ -1,0 +1,617 @@
+{
+  "method": "three_unanimous_else_five_using_original_prm",
+  "datasets": {
+    "llama_math": {
+      "samples": 500,
+      "methods": {
+        "fixed3": {
+          "correct": 282,
+          "tokens": 18381729,
+          "prm_requests": 1500,
+          "candidates": 1500,
+          "k3": 500,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 305,
+          "tokens": 30555399,
+          "prm_requests": 2500,
+          "candidates": 2500,
+          "k3": 0,
+          "k5": 500,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 321,
+          "tokens": 61250837,
+          "prm_requests": 5000,
+          "candidates": 5000,
+          "k3": 0,
+          "k5": 0,
+          "k10": 500
+        },
+        "early5_to_10": {
+          "correct": 323,
+          "tokens": 56938125,
+          "prm_requests": 4070,
+          "candidates": 4535,
+          "k3": 0,
+          "k5": 93,
+          "k10": 407
+        },
+        "dynamic3_to_5": {
+          "correct": 303,
+          "tokens": 28034810,
+          "prm_requests": 1840,
+          "candidates": 2236,
+          "k3": 132,
+          "k5": 368,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 2,
+        "net": -2,
+        "gained_problem_ids": [],
+        "lost_problem_ids": [
+          5,
+          37
+        ]
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 10,
+        "correct_to_wrong": 28,
+        "net": -18,
+        "gained_problem_ids": [
+          17,
+          75,
+          120,
+          171,
+          211,
+          260,
+          271,
+          418,
+          458,
+          466
+        ],
+        "lost_problem_ids": [
+          1,
+          5,
+          7,
+          15,
+          33,
+          34,
+          37,
+          41,
+          51,
+          84,
+          94,
+          108,
+          119,
+          139,
+          141,
+          201,
+          203,
+          214,
+          223,
+          238,
+          239,
+          244,
+          267,
+          279,
+          304,
+          320,
+          353,
+          468
+        ]
+      },
+      "predictions_sha256": "f1b3a25455395fd9bd0d57dd37a35fd9504062bb5ce91593a595b78e5e386cbb"
+    },
+    "qwen_math": {
+      "samples": 500,
+      "methods": {
+        "fixed3": {
+          "correct": 383,
+          "tokens": 22302215,
+          "prm_requests": 1500,
+          "candidates": 1500,
+          "k3": 500,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 384,
+          "tokens": 36919872,
+          "prm_requests": 2500,
+          "candidates": 2500,
+          "k3": 0,
+          "k5": 500,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 397,
+          "tokens": 72861820,
+          "prm_requests": 5000,
+          "candidates": 5000,
+          "k3": 0,
+          "k5": 0,
+          "k10": 500
+        },
+        "early5_to_10": {
+          "correct": 397,
+          "tokens": 58933954,
+          "prm_requests": 2320,
+          "candidates": 3660,
+          "k3": 0,
+          "k5": 268,
+          "k10": 232
+        },
+        "dynamic3_to_5": {
+          "correct": 384,
+          "tokens": 30115089,
+          "prm_requests": 1010,
+          "candidates": 1904,
+          "k3": 298,
+          "k5": 202,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 2,
+        "correct_to_wrong": 2,
+        "net": 0,
+        "gained_problem_ids": [
+          123,
+          379
+        ],
+        "lost_problem_ids": [
+          91,
+          177
+        ]
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 4,
+        "correct_to_wrong": 17,
+        "net": -13,
+        "gained_problem_ids": [
+          43,
+          63,
+          365,
+          369
+        ],
+        "lost_problem_ids": [
+          4,
+          9,
+          18,
+          33,
+          82,
+          91,
+          129,
+          156,
+          164,
+          177,
+          214,
+          219,
+          274,
+          302,
+          358,
+          470,
+          494
+        ]
+      },
+      "predictions_sha256": "d41100f36be4c21d80e04c5da0edde912029060578752c6230d1802b7d7f2d8d"
+    },
+    "llama_amc23": {
+      "samples": 40,
+      "methods": {
+        "fixed3": {
+          "correct": 15,
+          "tokens": 1687309,
+          "prm_requests": 120,
+          "candidates": 120,
+          "k3": 40,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 16,
+          "tokens": 2843842,
+          "prm_requests": 200,
+          "candidates": 200,
+          "k3": 0,
+          "k5": 40,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 17,
+          "tokens": 5616410,
+          "prm_requests": 400,
+          "candidates": 400,
+          "k3": 0,
+          "k5": 0,
+          "k10": 40
+        },
+        "early5_to_10": {
+          "correct": 17,
+          "tokens": 5440563,
+          "prm_requests": 370,
+          "candidates": 385,
+          "k3": 0,
+          "k5": 3,
+          "k10": 37
+        },
+        "dynamic3_to_5": {
+          "correct": 16,
+          "tokens": 2696036,
+          "prm_requests": 170,
+          "candidates": 188,
+          "k3": 6,
+          "k5": 34,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 2,
+        "net": -1,
+        "gained_problem_ids": [
+          25
+        ],
+        "lost_problem_ids": [
+          5,
+          36
+        ]
+      },
+      "predictions_sha256": "327ea685b0097b9585ff04e1ef49c5def74b443bd58b855f317f124752ec99ed"
+    },
+    "qwen_amc23": {
+      "samples": 40,
+      "methods": {
+        "fixed3": {
+          "correct": 22,
+          "tokens": 2613144,
+          "prm_requests": 120,
+          "candidates": 120,
+          "k3": 40,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 24,
+          "tokens": 4019718,
+          "prm_requests": 200,
+          "candidates": 200,
+          "k3": 0,
+          "k5": 40,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 23,
+          "tokens": 8214515,
+          "prm_requests": 400,
+          "candidates": 400,
+          "k3": 0,
+          "k5": 0,
+          "k10": 40
+        },
+        "early5_to_10": {
+          "correct": 22,
+          "tokens": 7562925,
+          "prm_requests": 290,
+          "candidates": 345,
+          "k3": 0,
+          "k5": 11,
+          "k10": 29
+        },
+        "dynamic3_to_5": {
+          "correct": 24,
+          "tokens": 3572652,
+          "prm_requests": 120,
+          "candidates": 168,
+          "k3": 16,
+          "k5": 24,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 3,
+        "correct_to_wrong": 2,
+        "net": 1,
+        "gained_problem_ids": [
+          6,
+          18,
+          28
+        ],
+        "lost_problem_ids": [
+          25,
+          35
+        ]
+      },
+      "predictions_sha256": "fee9f8f42ac1265b4ed004fb677eda32c25090d28fb56f390d7d250d5b00fd94"
+    },
+    "llama_aime24": {
+      "samples": 30,
+      "methods": {
+        "fixed3": {
+          "correct": 3,
+          "tokens": 1619687,
+          "prm_requests": 90,
+          "candidates": 90,
+          "k3": 30,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 5,
+          "tokens": 2666682,
+          "prm_requests": 150,
+          "candidates": 150,
+          "k3": 0,
+          "k5": 30,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 4,
+          "tokens": 5348362,
+          "prm_requests": 300,
+          "candidates": 300,
+          "k3": 0,
+          "k5": 0,
+          "k10": 30
+        },
+        "early5_to_10": {
+          "correct": 4,
+          "tokens": 5348362,
+          "prm_requests": 300,
+          "candidates": 300,
+          "k3": 0,
+          "k5": 0,
+          "k10": 30
+        },
+        "dynamic3_to_5": {
+          "correct": 5,
+          "tokens": 2666682,
+          "prm_requests": 150,
+          "candidates": 150,
+          "k3": 0,
+          "k5": 30,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 0,
+        "net": 1,
+        "gained_problem_ids": [
+          2
+        ],
+        "lost_problem_ids": []
+      },
+      "predictions_sha256": "095e319b9f8002ecdb36201d7e7f582fd47abe1d03514dcbd7fa9b62ee83dc5e"
+    },
+    "qwen_aime24": {
+      "samples": 30,
+      "methods": {
+        "fixed3": {
+          "correct": 3,
+          "tokens": 2434593,
+          "prm_requests": 90,
+          "candidates": 90,
+          "k3": 30,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 3,
+          "tokens": 3853416,
+          "prm_requests": 150,
+          "candidates": 150,
+          "k3": 0,
+          "k5": 30,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 4,
+          "tokens": 7390904,
+          "prm_requests": 300,
+          "candidates": 300,
+          "k3": 0,
+          "k5": 0,
+          "k10": 30
+        },
+        "early5_to_10": {
+          "correct": 4,
+          "tokens": 7318954,
+          "prm_requests": 290,
+          "candidates": 295,
+          "k3": 0,
+          "k5": 1,
+          "k10": 29
+        },
+        "dynamic3_to_5": {
+          "correct": 3,
+          "tokens": 3839259,
+          "prm_requests": 145,
+          "candidates": 148,
+          "k3": 1,
+          "k5": 29,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 1,
+        "net": -1,
+        "gained_problem_ids": [],
+        "lost_problem_ids": [
+          12
+        ]
+      },
+      "predictions_sha256": "7ebd6dd103bf0add3b1520e42e4ff6f75f204539929485093f08edc299ea002e"
+    },
+    "llama_amo": {
+      "samples": 50,
+      "methods": {
+        "fixed3": {
+          "correct": 0,
+          "tokens": 5246476,
+          "prm_requests": 150,
+          "candidates": 150,
+          "k3": 50,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 1,
+          "tokens": 8706038,
+          "prm_requests": 250,
+          "candidates": 250,
+          "k3": 0,
+          "k5": 50,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 1,
+          "tokens": 17787856,
+          "prm_requests": 500,
+          "candidates": 500,
+          "k3": 0,
+          "k5": 0,
+          "k10": 50
+        },
+        "early5_to_10": {
+          "correct": 1,
+          "tokens": 17787856,
+          "prm_requests": 500,
+          "candidates": 500,
+          "k3": 0,
+          "k5": 0,
+          "k10": 50
+        },
+        "dynamic3_to_5": {
+          "correct": 1,
+          "tokens": 8706038,
+          "prm_requests": 250,
+          "candidates": 250,
+          "k3": 0,
+          "k5": 50,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "predictions_sha256": "150746f397109d484dd811ad550b7eec32b89098ea1bacf70bd00666f520b347"
+    },
+    "qwen_amo": {
+      "samples": 50,
+      "methods": {
+        "fixed3": {
+          "correct": 2,
+          "tokens": 7194873,
+          "prm_requests": 150,
+          "candidates": 150,
+          "k3": 50,
+          "k5": 0,
+          "k10": 0
+        },
+        "fixed5": {
+          "correct": 3,
+          "tokens": 11986391,
+          "prm_requests": 250,
+          "candidates": 250,
+          "k3": 0,
+          "k5": 50,
+          "k10": 0
+        },
+        "fixed10": {
+          "correct": 3,
+          "tokens": 24032870,
+          "prm_requests": 500,
+          "candidates": 500,
+          "k3": 0,
+          "k5": 0,
+          "k10": 50
+        },
+        "early5_to_10": {
+          "correct": 3,
+          "tokens": 23675471,
+          "prm_requests": 490,
+          "candidates": 495,
+          "k3": 0,
+          "k5": 1,
+          "k10": 49
+        },
+        "dynamic3_to_5": {
+          "correct": 3,
+          "tokens": 11347217,
+          "prm_requests": 225,
+          "candidates": 240,
+          "k3": 5,
+          "k5": 45,
+          "k10": 0
+        }
+      },
+      "dynamic_vs_fixed5": {
+        "wrong_to_correct": 0,
+        "correct_to_wrong": 0,
+        "net": 0,
+        "gained_problem_ids": [],
+        "lost_problem_ids": []
+      },
+      "dynamic_vs_fixed10": {
+        "wrong_to_correct": 1,
+        "correct_to_wrong": 1,
+        "net": 0,
+        "gained_problem_ids": [
+          30
+        ],
+        "lost_problem_ids": [
+          19
+        ]
+      },
+      "predictions_sha256": "04eaf144afd12683678d166b7c691ca2f3c1ba3fb9aca16e0ede3b7f3384c95e"
+    }
+  }
+}
