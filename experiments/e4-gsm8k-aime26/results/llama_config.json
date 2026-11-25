@@ -1,0 +1,56 @@
+{
+  "model": [
+    "model",
+    "meta-llama/Llama-3.1-8B-Instruct",
+    "359efdbb8af05b788a4ad4185215c6b8caa9052c"
+  ],
+  "prm": [
+    "model",
+    "Qwen/Qwen2.5-Math-PRM-7B",
+    "0610740060112df12585d00a1c5f4624d2f59051"
+  ],
+  "lane": 0,
+  "workers": 24,
+  "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+  "decode": {
+    "temperature": 0.7,
+    "top_p": 0.9,
+    "top_k": 50,
+    "max_tokens": 1024,
+    "repetition_penalty": 1.0,
+    "stop_token_ids": [
+      128009
+    ],
+    "ignore_eos": true,
+    "skip_special_tokens": true
+  },
+  "agent": {
+    "mode": "dynamic",
+    "use_planner": true,
+    "use_tool_selector": true,
+    "use_compute_selector": true,
+    "remember_cot": true,
+    "max_text_history": 16,
+    "max_image_history": 0,
+    "fixed_tool": null,
+    "fixed_compute": null,
+    "planning_frequency": null,
+    "domain": "math"
+  },
+  "engine": {
+    "dtype": "bfloat16",
+    "tensor-parallel-size": 1,
+    "generation-config": "vllm",
+    "gpu-memory-utilization": 0.6,
+    "max-model-len": 32768,
+    "max-num-seqs": 112,
+    "max-num-batched-tokens": 8192,
+    "enable-prefix-caching": true,
+    "vllm": "0.33.0"
+  },
+  "num_iterations": 10,
+  "seed_rule": "problem_id + 1000000 * retry + 500 * prior_calls",
+  "manifest_sha256": "da871cdb6f44236badf70ad2582a3f3379e2422fdb61d9af6fe4eaed502829e0",
+  "source_sha256": "7f94901a33484c928e91722673559c726bb2dabedf82ca960bac82d389917f03",
+  "online_ab_sha256": "664b271acaa35cf35f0f7adf1c915b0ed9435b01fcb7731bdedf31b41c5d47c3"
+}
