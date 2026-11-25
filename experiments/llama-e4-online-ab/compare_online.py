@@ -32,13 +32,14 @@ def percentile(values, p):
     return sorted(values)[max(0, math.ceil(p * len(values)) - 1)]
 
 
-def verify_row(row, name):
+def verify_row(row, name, *, expected_lane=None):
     index = row["problem_id"]
     label = f"{name}/{index}"
     stopped = row["stopped_early"]
     candidates = row["candidates"]
     attempts = row["attempts"]
-    require(row["policy"] == name and row["lane"] == index % 2, f"{label}: wrong arm or lane")
+    lane = index % 2 if expected_lane is None else expected_lane
+    require(row["policy"] == name and row["lane"] == lane, f"{label}: wrong arm or lane")
     require(stopped == (name != "fixed" and prefix_agrees(candidates)), f"{label}: wrong early-stop decision")
     require([c["iteration"] for c in candidates] == list(range(1, 6 if stopped else 11)),
             f"{label}: wrong completed candidate count")

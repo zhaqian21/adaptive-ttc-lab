@@ -79,8 +79,9 @@ class MeasuredSession(requests.Session):
         return response
 
 
-def solve(question, args, config, tokenizer, decode, evaluator, prompts):
+def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, model=None):
     runner = released.runner
+    model = MODEL if model is None else model
     start = time.monotonic()
     index = question["problem_id"]
     outcomes = []
@@ -95,7 +96,7 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts):
             client._initialized = True
             client.tokenizer = tokenizer
             client.model = released.GenerationProxy(
-                SimpleNamespace(port=args.gen_port, context=CONTEXT, model=MODEL[1]), decode, seed, calls, session)
+                SimpleNamespace(port=args.gen_port, context=CONTEXT, model=model[1]), decode, seed, calls, session)
             released.THREAD.client = released.instrument_client(client, calls)
             agent = runner.upstream.create_universal_agent(config)
             core = runner.math_core.MATHCore(agent, prompts)

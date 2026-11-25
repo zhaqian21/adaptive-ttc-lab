@@ -1,0 +1,1635 @@
+{
+  "datasets": {
+    "gsm8k": {
+      "repo": "openai/gsm8k",
+      "revision": "740312add88f781978c0658806c59bc2815b9866",
+      "file": "main/test-00000-of-00001.parquet",
+      "split": "test",
+      "rows": 1319,
+      "samples": 200,
+      "sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59"
+    },
+    "aime26": {
+      "repo": "MathArena/aime_2026",
+      "revision": "d61f486805306e6e6b5913504c07763a99e1b112",
+      "file": "data/train-00000-of-00001.parquet",
+      "split": "train",
+      "rows": 30,
+      "samples": 30,
+      "sha256": "ae72853349a46c5f08666feb42db2d09fb4ac4fd4768c726b29702df21c7768e"
+    }
+  },
+  "gsm8k_sample_seed": 42,
+  "questions": [
+    {
+      "problem_id": 0,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1",
+      "gold_answer_extracted": "3",
+      "question_sha256": "de563650cee0d9af13492eae156046720df4ca9c1f177f29d4ea25b2c9d82c83"
+    },
+    {
+      "problem_id": 1,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:6",
+      "gold_answer_extracted": "260",
+      "question_sha256": "6e9d9c1d48eaa2d8bf8146d69832151bf2840b741813d8e5a8a34c3b68844533"
+    },
+    {
+      "problem_id": 2,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:13",
+      "gold_answer_extracted": "18",
+      "question_sha256": "0f494281748adc026d7361db6898808fd97dfe58ffa65f7b91193bfa437474e9"
+    },
+    {
+      "problem_id": 3,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:14",
+      "gold_answer_extracted": "60",
+      "question_sha256": "8aba72e5533aaf2c7e62b0a22bcef10ca8b597ce2b045683dd4489528d1d0d3d"
+    },
+    {
+      "problem_id": 4,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:23",
+      "gold_answer_extracted": "8",
+      "question_sha256": "fe06ee435f2baa145d56dca77766523e9dc0b63062b40b042a498f3e7e4b10c4"
+    },
+    {
+      "problem_id": 5,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:39",
+      "gold_answer_extracted": "18",
+      "question_sha256": "abc4bc90358d1be1f98e123d11516dfd785dcdae0a91b01c83f9da924181666c"
+    },
+    {
+      "problem_id": 6,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:43",
+      "gold_answer_extracted": "48",
+      "question_sha256": "179c56c92d0315a49eeb3ce8dfebef10bb4d6ac6b2135c9fb6117c757de74ca3"
+    },
+    {
+      "problem_id": 7,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:51",
+      "gold_answer_extracted": "5",
+      "question_sha256": "971dabc5c71b6706fbcb9e063b691f12effce5e1ff53254b4123d7904ab52420"
+    },
+    {
+      "problem_id": 8,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:54",
+      "gold_answer_extracted": "40",
+      "question_sha256": "13e140ab86daaa95907a1336e9956e8b9ba84bb7d22a4e830e4b5b91c577b6c1"
+    },
+    {
+      "problem_id": 9,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:61",
+      "gold_answer_extracted": "1430",
+      "question_sha256": "53d5c3c6c081dc8b1074463a29c313de0684581c634cd19bdfa17474f0899a62"
+    },
+    {
+      "problem_id": 10,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:64",
+      "gold_answer_extracted": "300",
+      "question_sha256": "b5dd77cc4ccd0cca4520096ab6de91066bd8cf94a356a9389f4c7dd76750d8ee"
+    },
+    {
+      "problem_id": 11,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:65",
+      "gold_answer_extracted": "36",
+      "question_sha256": "78eb7e05b9b667acd8b52f673e2506b36ef073f7b26e85eb1a9ad2dae04df331"
+    },
+    {
+      "problem_id": 12,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:88",
+      "gold_answer_extracted": "8000",
+      "question_sha256": "4240e2d1bb84639f412d72b13419a6ceef1e2e2023fe76db612beb7cc89112d1"
+    },
+    {
+      "problem_id": 13,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:93",
+      "gold_answer_extracted": "36",
+      "question_sha256": "d362889745c00cc131020ce61c3cc48a6b09d9d48f6750d903ef1409d29d9950"
+    },
+    {
+      "problem_id": 14,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:96",
+      "gold_answer_extracted": "3",
+      "question_sha256": "e622abbc7c795ad663b1f96d0b45cba829d6f767820300814ee6535269344e6c"
+    },
+    {
+      "problem_id": 15,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:114",
+      "gold_answer_extracted": "6",
+      "question_sha256": "c149b54f8d8fa351b0a7021347b0972cbe70254fdb4a605b8fc3249f9626aced"
+    },
+    {
+      "problem_id": 16,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:118",
+      "gold_answer_extracted": "4",
+      "question_sha256": "b9cb8545f95a686bbc7a994c143a3f2ecc5a5da8c83c2acd78aec0372d190d90"
+    },
+    {
+      "problem_id": 17,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:120",
+      "gold_answer_extracted": "240",
+      "question_sha256": "4a23b3ce1966b62687b3e9a5b690f988c07610a3f59554c19e6226e335786b0f"
+    },
+    {
+      "problem_id": 18,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:130",
+      "gold_answer_extracted": "30",
+      "question_sha256": "1c64800ffb2c7c83b5645657552e2a22c4cce32e533e2fa4f8248eb55492e0f9"
+    },
+    {
+      "problem_id": 19,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:131",
+      "gold_answer_extracted": "940",
+      "question_sha256": "a6720346b356d04d2a6c04422f30e2800b27ed5b53869828023ceeefbb5cae5f"
+    },
+    {
+      "problem_id": 20,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:135",
+      "gold_answer_extracted": "40",
+      "question_sha256": "c9fe583ec68ea08cb94acabcae6b7496131388bfaa128e15a9e250b162cd8147"
+    },
+    {
+      "problem_id": 21,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:138",
+      "gold_answer_extracted": "105",
+      "question_sha256": "b1d6f8eda92424dbad56ea3ac1a4b426d51213dc8b3c603478c6de0e7bb18f1d"
+    },
+    {
+      "problem_id": 22,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:141",
+      "gold_answer_extracted": "400",
+      "question_sha256": "cdf3f31e007929771fb5edba6a762f04b0e92ca5416c600cf6e12a9eb428ffac"
+    },
+    {
+      "problem_id": 23,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:142",
+      "gold_answer_extracted": "140",
+      "question_sha256": "e522e401478c016a78b37a5ccb26307ccd8760480518f38d1592fa053a752f11"
+    },
+    {
+      "problem_id": 24,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:145",
+      "gold_answer_extracted": "4000",
+      "question_sha256": "804b6b67ebebc7e3ba16a757d89887fa4dde70770d585a846d498e0906396878"
+    },
+    {
+      "problem_id": 25,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:146",
+      "gold_answer_extracted": "2125",
+      "question_sha256": "aa8117eb2f6758984419d06e19a0107dab523e49ea64df822b539a045e63ed0e"
+    },
+    {
+      "problem_id": 26,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:161",
+      "gold_answer_extracted": "32",
+      "question_sha256": "b8c462eaeb0b0329edfd68eb6c3cf6b2cb0e3a187873cc33762360965072b073"
+    },
+    {
+      "problem_id": 27,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:163",
+      "gold_answer_extracted": "50",
+      "question_sha256": "6b1d4f92fafae286167c52c703c6848fb9a6870037974ef7c1b5d77350388e94"
+    },
+    {
+      "problem_id": 28,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:175",
+      "gold_answer_extracted": "15",
+      "question_sha256": "7588f7e816026ce9039cae073bf681eca9681de0a7a9bc14039b8c757ba40bbf"
+    },
+    {
+      "problem_id": 29,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:178",
+      "gold_answer_extracted": "122",
+      "question_sha256": "e2c3edfe6881860228f62cbb2dba4a9e84a6beebb1159c7206bb132725343a28"
+    },
+    {
+      "problem_id": 30,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:186",
+      "gold_answer_extracted": "5",
+      "question_sha256": "585a3e2e7252aa6407d6ae2e576e80ddba88352149eb287c0964a255d6eb756e"
+    },
+    {
+      "problem_id": 31,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:189",
+      "gold_answer_extracted": "34",
+      "question_sha256": "e8c1a0f1c5af91d644f38807003021b9485ee8916a84a4a4aca345bae682b71b"
+    },
+    {
+      "problem_id": 32,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:191",
+      "gold_answer_extracted": "5",
+      "question_sha256": "dfe05fecd5842c0cae1ac39e179b099919e6c99c5a51e812657b8b308c37773e"
+    },
+    {
+      "problem_id": 33,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:198",
+      "gold_answer_extracted": "320",
+      "question_sha256": "bd4992524c6e0423e384132ac3bc4f10ae5c68a0dab570ae97cb6350ef3ea70b"
+    },
+    {
+      "problem_id": 34,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:206",
+      "gold_answer_extracted": "860",
+      "question_sha256": "533a1de2251946281ae679d11b79aa11ec139bcaf9f50827dde6afc325e24b11"
+    },
+    {
+      "problem_id": 35,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:209",
+      "gold_answer_extracted": "145",
+      "question_sha256": "5d6ed708fe4546615db9a393deb23d4c485926e7eff5d7bdc4e4ccdd0c03f25d"
+    },
+    {
+      "problem_id": 36,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:217",
+      "gold_answer_extracted": "15",
+      "question_sha256": "1cadaca3f746edc6758410e1e3ed8f379adccbfae94a017ae67f8b1f68b9ca4a"
+    },
+    {
+      "problem_id": 37,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:224",
+      "gold_answer_extracted": "180",
+      "question_sha256": "1ad5488061f15e9a3dbd95b05876990fe99bdad5efedb33ed1179340e2ed5dba"
+    },
+    {
+      "problem_id": 38,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:228",
+      "gold_answer_extracted": "1",
+      "question_sha256": "b26cfbf53406dd4d3c827c592bd0925a246f647a04245d6dbe5fa7e9271777e4"
+    },
+    {
+      "problem_id": 39,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:229",
+      "gold_answer_extracted": "21",
+      "question_sha256": "080675833c6d9ea281fa95c98ad19b53520b9f325e7fb22166adc5a022fe30d3"
+    },
+    {
+      "problem_id": 40,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:234",
+      "gold_answer_extracted": "21",
+      "question_sha256": "393b992899f7f10740dc00b2070878ca72a2bf285b90467f8c73d3aca5ab4a52"
+    },
+    {
+      "problem_id": 41,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:247",
+      "gold_answer_extracted": "32",
+      "question_sha256": "58ec0a5922910f99687099ea3c69127578a6d153d419fb33ccc0b97dab9b347a"
+    },
+    {
+      "problem_id": 42,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:255",
+      "gold_answer_extracted": "192",
+      "question_sha256": "019f631aaaf41e843938b5bd62cffe7382aac7981b31f88da0c0c55563f43efe"
+    },
+    {
+      "problem_id": 43,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:257",
+      "gold_answer_extracted": "5600",
+      "question_sha256": "f1dee5a761b47dd87e394d7612b15a29182787a6dd6377bc3268a0f148bd7be1"
+    },
+    {
+      "problem_id": 44,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:262",
+      "gold_answer_extracted": "270",
+      "question_sha256": "7065494bcecb24a69764ddadd5483d69213d32d0ea4c922f169fec5849e3aade"
+    },
+    {
+      "problem_id": 45,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:270",
+      "gold_answer_extracted": "762",
+      "question_sha256": "d2b09f67afbc63f9294ed83bd960bf11ed62cddf3d9f580bd92db806bdf8a357"
+    },
+    {
+      "problem_id": 46,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:283",
+      "gold_answer_extracted": "68",
+      "question_sha256": "400a07fcaae641de7335e9e35e75986238566dbfa74c7c1441ac3ce511b78c25"
+    },
+    {
+      "problem_id": 47,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:285",
+      "gold_answer_extracted": "21",
+      "question_sha256": "46ce7073561764ace4b5738771fa594bc93ee562c5ac3f922ce4538d4715ca8f"
+    },
+    {
+      "problem_id": 48,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:292",
+      "gold_answer_extracted": "75",
+      "question_sha256": "419f9f70057748dce4bb36dcc53dcd7757fd0794656f8ce30ca591e0f842f88e"
+    },
+    {
+      "problem_id": 49,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:313",
+      "gold_answer_extracted": "120000",
+      "question_sha256": "fc44241cabca651beb23910950683c8fae91a25b8cfd4501798424136f513a0f"
+    },
+    {
+      "problem_id": 50,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:318",
+      "gold_answer_extracted": "123",
+      "question_sha256": "07e68ddc7da04c025b9a9a78a3de743b6425b2b082b8c564b147847de6111d3d"
+    },
+    {
+      "problem_id": 51,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:323",
+      "gold_answer_extracted": "75",
+      "question_sha256": "015e90d26492872ae4a296922309fb99c0d35793d44a2080e87a1b85fe591217"
+    },
+    {
+      "problem_id": 52,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:326",
+      "gold_answer_extracted": "14",
+      "question_sha256": "2c58e20bbc6ee0ee810b5c9cf53ec5a7b2cb6792781602a578d84864bf0b5c76"
+    },
+    {
+      "problem_id": 53,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:327",
+      "gold_answer_extracted": "31",
+      "question_sha256": "91706fc7d1585bdcfe0642f61c739c9e2ff60cda867b967c467eb89e06ab1a4c"
+    },
+    {
+      "problem_id": 54,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:330",
+      "gold_answer_extracted": "31",
+      "question_sha256": "c801a0da93a4310b3ecb1b4e52603aafa09d295e1f3113cb8f59d2a7163cec68"
+    },
+    {
+      "problem_id": 55,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:333",
+      "gold_answer_extracted": "100",
+      "question_sha256": "d8ce2b79464d7141a484a9b96a7fb5b02ce6e1170bf4cd7d4a87abe8a04424d0"
+    },
+    {
+      "problem_id": 56,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:334",
+      "gold_answer_extracted": "6",
+      "question_sha256": "38f9608d0911f92ab4070c62da1a8d9b697b64f6c7ce6a7dbad470dc4b3f6912"
+    },
+    {
+      "problem_id": 57,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:338",
+      "gold_answer_extracted": "60",
+      "question_sha256": "068ad465dc69dcf134b06dcdb0d2bd0fef3dab11f30db7a6af63c56014284d0f"
+    },
+    {
+      "problem_id": 58,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:350",
+      "gold_answer_extracted": "8",
+      "question_sha256": "693fc3e110811705c9a0098a55547d34cba2b66bbc8e5385ccd4c73767c4b054"
+    },
+    {
+      "problem_id": 59,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:365",
+      "gold_answer_extracted": "18",
+      "question_sha256": "0daf43cfc24208b108709a8f708bbc875ea8cc549e4a73773f4eb8d2fb8fdb0c"
+    },
+    {
+      "problem_id": 60,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:393",
+      "gold_answer_extracted": "20",
+      "question_sha256": "821ba4d3cdae58d0b884efdb4ca167a3c5b24251c56454a100fc9ac986206381"
+    },
+    {
+      "problem_id": 61,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:407",
+      "gold_answer_extracted": "2000",
+      "question_sha256": "1cb038acd83346246745c392806c3659928178a8ef3f6a41c00d4d148332645c"
+    },
+    {
+      "problem_id": 62,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:411",
+      "gold_answer_extracted": "1110",
+      "question_sha256": "853e23e6bffb2d8f3c95a1a67dde54ddc1374b45331bad3b69a85cd450d4bebe"
+    },
+    {
+      "problem_id": 63,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:429",
+      "gold_answer_extracted": "13",
+      "question_sha256": "e0191327ea7a8219d262f7af1befe50403ed9a4346bff2e72c3bd72784bdf259"
+    },
+    {
+      "problem_id": 64,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:432",
+      "gold_answer_extracted": "30",
+      "question_sha256": "bc652da635fb3682c95225db1158716ad84593b18bb263fefef69a50fabc3583"
+    },
+    {
+      "problem_id": 65,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:433",
+      "gold_answer_extracted": "6",
+      "question_sha256": "acd9ee67b008efe45f5a28bd93206c9e81a93a62fbbe81f4581f4929b102a4c7"
+    },
+    {
+      "problem_id": 66,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:435",
+      "gold_answer_extracted": "5",
+      "question_sha256": "6859eab0476776dd23c3878f91e412c5ea062a7b6c380d62ffe9da49c1a35923"
+    },
+    {
+      "problem_id": 67,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:438",
+      "gold_answer_extracted": "2",
+      "question_sha256": "0246c431c39aa3351713edd9f897904b632abc5414727b7e0bb7ffb51e0804a1"
+    },
+    {
+      "problem_id": 68,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:440",
+      "gold_answer_extracted": "98",
+      "question_sha256": "07cde4e475a98b4bfa2c6756218ad05c143f352779dfcd4b197bc0f2691bd79f"
+    },
+    {
+      "problem_id": 69,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:447",
+      "gold_answer_extracted": "5",
+      "question_sha256": "edb62873d5a6b883d4d0393935af98e1e9e331b38af4090812341ea509b651c2"
+    },
+    {
+      "problem_id": 70,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:449",
+      "gold_answer_extracted": "112",
+      "question_sha256": "c834ee42dc1a967e23fe58566b6ece52c9dcf0ed7a7e664b94553419f9c22c10"
+    },
+    {
+      "problem_id": 71,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:451",
+      "gold_answer_extracted": "11050",
+      "question_sha256": "4e6419841f3b7e3a383e144f2499800717bf7566dfbf154b1400269664711edf"
+    },
+    {
+      "problem_id": 72,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:457",
+      "gold_answer_extracted": "45",
+      "question_sha256": "7a9da644d3e1e8b3680a5c6cd25acb11cb2573f5cd755841272f8113dde35453"
+    },
+    {
+      "problem_id": 73,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:460",
+      "gold_answer_extracted": "84",
+      "question_sha256": "03ea74dbe0e889127611a6a748dd8c83f34ba9125b971f03426c1686b21d39aa"
+    },
+    {
+      "problem_id": 74,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:466",
+      "gold_answer_extracted": "1",
+      "question_sha256": "a864c1e8618c4219ea3e5e3ec05f1359a6e63c2b61b0bb89b6475418e350155b"
+    },
+    {
+      "problem_id": 75,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:468",
+      "gold_answer_extracted": "120",
+      "question_sha256": "1822f445d665f9857b7c0a84a55c01f84ec6c8afe970798acf915b9e7483af4f"
+    },
+    {
+      "problem_id": 76,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:469",
+      "gold_answer_extracted": "4",
+      "question_sha256": "912e4d5a0315ec9daf450ab7c785f4c511cc4f75b920897cef58cc47c3bf6162"
+    },
+    {
+      "problem_id": 77,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:471",
+      "gold_answer_extracted": "80",
+      "question_sha256": "0264a7faeb62e07f12a024bea6129f85d6dbd974c7bce73ac94d14ec229c4eda"
+    },
+    {
+      "problem_id": 78,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:476",
+      "gold_answer_extracted": "5",
+      "question_sha256": "3f3a4cd95f6a07da40b187b96049023038728da003d199eeda741a22dff552ad"
+    },
+    {
+      "problem_id": 79,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:487",
+      "gold_answer_extracted": "4",
+      "question_sha256": "bbca4aa57d22e7ec5e7a1d6ee5cab83107dace0c707d4f518ccd27adb742ce1e"
+    },
+    {
+      "problem_id": 80,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:490",
+      "gold_answer_extracted": "4",
+      "question_sha256": "d6eca75c3b129592aa2255a3ed5fb76ff48556113006f07a0289603e2e6c447f"
+    },
+    {
+      "problem_id": 81,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:493",
+      "gold_answer_extracted": "25",
+      "question_sha256": "86b33dcdbce00a385cf733b7b9ae5ffc4ce75fa4822292e32097c9cbe6337da4"
+    },
+    {
+      "problem_id": 82,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:501",
+      "gold_answer_extracted": "273",
+      "question_sha256": "73dc5c4f78d5497304638113242612d9e7beef23ab500086a3bd47a2746fed5a"
+    },
+    {
+      "problem_id": 83,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:505",
+      "gold_answer_extracted": "1600",
+      "question_sha256": "f43995a25985fac6a8a1abb3c7ba32101d207d2e4e3f46d235a0002f8b0c0a18"
+    },
+    {
+      "problem_id": 84,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:507",
+      "gold_answer_extracted": "2",
+      "question_sha256": "1084abb10503718ac570166b60049bc3a369725c05331856def313eabccf311f"
+    },
+    {
+      "problem_id": 85,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:514",
+      "gold_answer_extracted": "90000",
+      "question_sha256": "b03a404f690052ca9b148570d6aa398bafd6d8a583892c679908cecd78b24f83"
+    },
+    {
+      "problem_id": 86,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:538",
+      "gold_answer_extracted": "18",
+      "question_sha256": "3c4fc91451b6eb589ae952a9b02ef5c1bd289c4754890d43ba6b315989e650c0"
+    },
+    {
+      "problem_id": 87,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:539",
+      "gold_answer_extracted": "35",
+      "question_sha256": "cc439002a3f47bde46f1646916d892ddaf5260ea5025bd38e7a253dc0bacd73b"
+    },
+    {
+      "problem_id": 88,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:541",
+      "gold_answer_extracted": "50",
+      "question_sha256": "bd0547cc504bdba2840d36b414a3c325b9c6c0046c70910f3d8734055c71d8e6"
+    },
+    {
+      "problem_id": 89,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:542",
+      "gold_answer_extracted": "7",
+      "question_sha256": "1b0dde3fddc48a906eb5a8f576e13753ffeff9d20b449bc5b95b2373973422fc"
+    },
+    {
+      "problem_id": 90,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:546",
+      "gold_answer_extracted": "130",
+      "question_sha256": "8619c48853d9610e152a7525a70d157c33e2f3ec1f9bcc8b41f927324527d5f2"
+    },
+    {
+      "problem_id": 91,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:548",
+      "gold_answer_extracted": "100",
+      "question_sha256": "1b207b3c1f50f6e118d714cdfc688a7ae0f8518eed342821e6cba8973c66c518"
+    },
+    {
+      "problem_id": 92,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:552",
+      "gold_answer_extracted": "450",
+      "question_sha256": "141e8e1139f640b542ca30d771adcd1363b34bf4e0ea0d69f70778b851e3cd22"
+    },
+    {
+      "problem_id": 93,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:563",
+      "gold_answer_extracted": "12",
+      "question_sha256": "0dd0b319394d04552520865cfe1e3b296a3764828873df6f98d810841ff3e038"
+    },
+    {
+      "problem_id": 94,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:569",
+      "gold_answer_extracted": "21",
+      "question_sha256": "c131504c06e44841b423734dce28ce1d10230ce3744d7f93d62678607f45ea05"
+    },
+    {
+      "problem_id": 95,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:570",
+      "gold_answer_extracted": "23",
+      "question_sha256": "c0cd2a6956c0c6c4160338cdaf126ac825a94f5d85f26879f8c6d57e1cfb3d90"
+    },
+    {
+      "problem_id": 96,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:592",
+      "gold_answer_extracted": "1",
+      "question_sha256": "0ddccee16a7a50c5d4c8af9836029befc5c6e385c256a3089399b7bdeeb04a2a"
+    },
+    {
+      "problem_id": 97,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:600",
+      "gold_answer_extracted": "10",
+      "question_sha256": "1cf5d810216ad34c1dd35d2ae3ce346cc700c3e0e51ad3a66cd13973d330d2bd"
+    },
+    {
+      "problem_id": 98,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:601",
+      "gold_answer_extracted": "104",
+      "question_sha256": "ae7b78223d943ffb83542bf8362ffeb2ef02fb40f0ffa2c17d829cc6089a306c"
+    },
+    {
+      "problem_id": 99,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:611",
+      "gold_answer_extracted": "1450000",
+      "question_sha256": "029b1d46a1f588c79db9b4e4ecc037416c5e6fdda69aeaeadb96b2a318d00a0b"
+    },
+    {
+      "problem_id": 100,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:629",
+      "gold_answer_extracted": "17500",
+      "question_sha256": "3026d59a9d8084fefa304fb22f5a1ceecfa51503df601d44c976cadfcf2caa19"
+    },
+    {
+      "problem_id": 101,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:638",
+      "gold_answer_extracted": "12",
+      "question_sha256": "fbdcb795288067d6153469789a6f3f4c0a3465fc72e9e0229ec0d18065a88d78"
+    },
+    {
+      "problem_id": 102,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:644",
+      "gold_answer_extracted": "29",
+      "question_sha256": "4783e30761c87bde4f49b6e28196113c5566c9708aef88a3df37c50d0d0147b6"
+    },
+    {
+      "problem_id": 103,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:646",
+      "gold_answer_extracted": "79",
+      "question_sha256": "316eac029fc34d0d5a90a00547c38e110cdb2120010adbe02e493829714c1c02"
+    },
+    {
+      "problem_id": 104,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:663",
+      "gold_answer_extracted": "193",
+      "question_sha256": "399e41530fe6ee96744ae95fccec2c311d45b5b1013403692321f04707830faf"
+    },
+    {
+      "problem_id": 105,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:664",
+      "gold_answer_extracted": "32",
+      "question_sha256": "ade48b3f6f7c32065e030dba789f3deb7b2407e4de3bced263385e7f83c00adf"
+    },
+    {
+      "problem_id": 106,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:676",
+      "gold_answer_extracted": "240",
+      "question_sha256": "ce589ecfd3ab0f3d1d03835a292fb5029f9d91cf434342da860f0fd0502e8323"
+    },
+    {
+      "problem_id": 107,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:689",
+      "gold_answer_extracted": "7",
+      "question_sha256": "270649c36e2edec1ceb7deb2a07a6ea1964f52708feec3b1853f110cff0839db"
+    },
+    {
+      "problem_id": 108,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:692",
+      "gold_answer_extracted": "32",
+      "question_sha256": "34f6c6b00d301ae5472546c4150b3dabdf2a1771300a2bab649ae2fe45417ab3"
+    },
+    {
+      "problem_id": 109,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:696",
+      "gold_answer_extracted": "145",
+      "question_sha256": "c4eea198d70bacbf81d9ad1cd2163b546a141ca962fa5e8fff808564dda4f53c"
+    },
+    {
+      "problem_id": 110,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:704",
+      "gold_answer_extracted": "50",
+      "question_sha256": "5ee9f27035c723a422eb0b68abb6b61612bedd1a4be89b4d699d509a14f71a7c"
+    },
+    {
+      "problem_id": 111,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:727",
+      "gold_answer_extracted": "112",
+      "question_sha256": "0cc772e1e09676f472e3e8d982464776165b9b304d8ef1933a58abf2a4ebe3f7"
+    },
+    {
+      "problem_id": 112,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:735",
+      "gold_answer_extracted": "50",
+      "question_sha256": "b5662de2f5f171815ea01656282831b5979fee00c2191641b0ec28f7104dfcea"
+    },
+    {
+      "problem_id": 113,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:740",
+      "gold_answer_extracted": "25",
+      "question_sha256": "617ce0318c9177c58829db39633f106327390caea8deedddb52ceee54ffc6a26"
+    },
+    {
+      "problem_id": 114,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:741",
+      "gold_answer_extracted": "28",
+      "question_sha256": "742a117b0b86f179de140f73473e7ecd2880735400e6bc42bbc00791bf5cf33e"
+    },
+    {
+      "problem_id": 115,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:743",
+      "gold_answer_extracted": "8",
+      "question_sha256": "fb18ba5120df46c407af92b4d3882452fb1373b3b6002fbd421bc73ceee3a5c2"
+    },
+    {
+      "problem_id": 116,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:747",
+      "gold_answer_extracted": "350",
+      "question_sha256": "8e86f442e4b8ab1214f3a3a8b09a3db66fd7cad0d0cdef5fffda5c2eb35b39a3"
+    },
+    {
+      "problem_id": 117,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:758",
+      "gold_answer_extracted": "133",
+      "question_sha256": "86462eb34c537dc3437730f5d0a13c914e8e726fecc4f3b35c8db6aa89c0768e"
+    },
+    {
+      "problem_id": 118,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:764",
+      "gold_answer_extracted": "14",
+      "question_sha256": "084577c45ab813d1fa5aa0a04257f7dd500557be9e06410a674e3935022f0067"
+    },
+    {
+      "problem_id": 119,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:765",
+      "gold_answer_extracted": "490",
+      "question_sha256": "81c84c1bcb2cee5950cade37c560e3da7e8cea3b984ecf2bce0e7ba55846e202"
+    },
+    {
+      "problem_id": 120,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:775",
+      "gold_answer_extracted": "276",
+      "question_sha256": "7e596029e91d1cac50ba8d008e81746e1bde64ba390af000d23a7985db5aaba9"
+    },
+    {
+      "problem_id": 121,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:777",
+      "gold_answer_extracted": "4400",
+      "question_sha256": "03c263632e80397e8466508048e2f8309a5d6a2a0ff4c84df6359123bf2e9714"
+    },
+    {
+      "problem_id": 122,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:778",
+      "gold_answer_extracted": "38",
+      "question_sha256": "c7d44bb98eabc5a36d02d2d1f52feba30fcf11b389edceea9b21400801a78458"
+    },
+    {
+      "problem_id": 123,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:781",
+      "gold_answer_extracted": "17",
+      "question_sha256": "611e204d0b80fae8ca1a0aabf7ca6525fdebc0ef97501061f41e675bb78023de"
+    },
+    {
+      "problem_id": 124,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:788",
+      "gold_answer_extracted": "100",
+      "question_sha256": "b37876494d30701e9d12387cfa37ac553652a79718cbe78fb8d54efda18159fd"
+    },
+    {
+      "problem_id": 125,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:810",
+      "gold_answer_extracted": "310",
+      "question_sha256": "26b92d9e2e3a41b4b49eb3b173345e2336b9a2d1f9a0eaea2d23c4789f711c96"
+    },
+    {
+      "problem_id": 126,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:817",
+      "gold_answer_extracted": "15",
+      "question_sha256": "bb19e29ae60ee38c58aab16632e1d068e41732eebf103edf03535e8837158307"
+    },
+    {
+      "problem_id": 127,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:821",
+      "gold_answer_extracted": "35",
+      "question_sha256": "0fc31d873d033932f2769af281e2c59dc7780055d2597030f02f7f93c66171bf"
+    },
+    {
+      "problem_id": 128,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:859",
+      "gold_answer_extracted": "1520",
+      "question_sha256": "76aaa5245fe3ea8624bb11a5bb0cc5693a39a3962d2a9a2b4c1364de5b599202"
+    },
+    {
+      "problem_id": 129,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:864",
+      "gold_answer_extracted": "80",
+      "question_sha256": "80c6c993731f0b11c9cbb188419d0fec8de3c77caaad1e15da7cea4851f3c727"
+    },
+    {
+      "problem_id": 130,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:865",
+      "gold_answer_extracted": "23",
+      "question_sha256": "9fa70f2dd7a054f455917badddd9f69389ec5d530e05f6df3fd45626018d5bd5"
+    },
+    {
+      "problem_id": 131,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:866",
+      "gold_answer_extracted": "28",
+      "question_sha256": "f8c95a63f4f96613ec709f0a8fd7cea554abb9a064a819c92784b5da3d9c9c94"
+    },
+    {
+      "problem_id": 132,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:877",
+      "gold_answer_extracted": "7000",
+      "question_sha256": "2d377ad5ca04caa9d2006b41205c21c71a08e50da9717e7863388e00009c7048"
+    },
+    {
+      "problem_id": 133,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:890",
+      "gold_answer_extracted": "25",
+      "question_sha256": "fc290e5920b76571c108f483a4bfa04da3382e909e26c6a2092b836f990cbd93"
+    },
+    {
+      "problem_id": 134,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:897",
+      "gold_answer_extracted": "1",
+      "question_sha256": "6384adf877b3be73a0fce7278dd61c33d9b833a88e494daf37f0e7ec3c4e1fbf"
+    },
+    {
+      "problem_id": 135,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:919",
+      "gold_answer_extracted": "90",
+      "question_sha256": "7538398121de0c8b64583a6662ba1682fe0e5d84d067a3691588a3eec3f426fa"
+    },
+    {
+      "problem_id": 136,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:924",
+      "gold_answer_extracted": "12",
+      "question_sha256": "dd6cf24849d2716eb4ea7348e13e02909f84bba9dfe3a025c811a0858b6c2630"
+    },
+    {
+      "problem_id": 137,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:928",
+      "gold_answer_extracted": "60",
+      "question_sha256": "3e11aadb9fd29250884a6faa43394f040fffb0004f2f419e4294c3bb2d7ab4a9"
+    },
+    {
+      "problem_id": 138,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:929",
+      "gold_answer_extracted": "60",
+      "question_sha256": "457b371bcc4edec608a51ee1d85a07fde5c83724a1a82d551f8b365cfd93e395"
+    },
+    {
+      "problem_id": 139,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:939",
+      "gold_answer_extracted": "650",
+      "question_sha256": "209a34dca12a7b5a9b987ddd965839b7ccbf006607fb5b8320177706ea0e5f2a"
+    },
+    {
+      "problem_id": 140,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:940",
+      "gold_answer_extracted": "280",
+      "question_sha256": "a8011976d7ce0e0e2f99c3808d7391408c72adf63956afafef9a2f0fc0af4d34"
+    },
+    {
+      "problem_id": 141,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:946",
+      "gold_answer_extracted": "450",
+      "question_sha256": "c0eefac05d0cb3d1daab792d2f68a9bb549560e5509f2385951d07ebdb1deeb5"
+    },
+    {
+      "problem_id": 142,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:958",
+      "gold_answer_extracted": "40",
+      "question_sha256": "35521bc9f0441298cdf118206a651847f26fac4996864885fef62b0b1519e5b1"
+    },
+    {
+      "problem_id": 143,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:973",
+      "gold_answer_extracted": "79",
+      "question_sha256": "317924694f86c19c6d222cd54678355c12bc69dd766bb672de534c16b511bda4"
+    },
+    {
+      "problem_id": 144,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:994",
+      "gold_answer_extracted": "2",
+      "question_sha256": "101b0e9aa8d1f2a4736b4f8440d2f26ca391e6eb5f42fa86bda7a9bb9fd0b9e4"
+    },
+    {
+      "problem_id": 145,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:995",
+      "gold_answer_extracted": "12",
+      "question_sha256": "35a2af8941708ae6b10badc5eccbf14bc6aa28640165112aad72cf69b7a08987"
+    },
+    {
+      "problem_id": 146,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1000",
+      "gold_answer_extracted": "1",
+      "question_sha256": "14e162fcd6496bfd99317c9b585d34e257134169ef918214cd1a8f33eea7e0cc"
+    },
+    {
+      "problem_id": 147,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1010",
+      "gold_answer_extracted": "5",
+      "question_sha256": "3ffaf0e0f72baad2a6f149f48c180b91aefe24f618fe0eeca03d674a407d914e"
+    },
+    {
+      "problem_id": 148,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1022",
+      "gold_answer_extracted": "12",
+      "question_sha256": "db634e32d2d438d72ebfef31654f065cfaf20ea40cfa592d83707175749d4653"
+    },
+    {
+      "problem_id": 149,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1025",
+      "gold_answer_extracted": "30",
+      "question_sha256": "39c345ce18ad6003380d61638c0c9c25b0e47f26fcaf761799fc124b71b49aed"
+    },
+    {
+      "problem_id": 150,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1034",
+      "gold_answer_extracted": "66",
+      "question_sha256": "53509ad959de2fa673d51b9e3978c95375b058e9ab2bb4694eaca530c6b73286"
+    },
+    {
+      "problem_id": 151,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1039",
+      "gold_answer_extracted": "160",
+      "question_sha256": "e2c13e9df3f316d46bebaf6afd92d2b4f81a99427fa4bc949929c838646d46da"
+    },
+    {
+      "problem_id": 152,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1043",
+      "gold_answer_extracted": "130000",
+      "question_sha256": "92303715c78aff5231d63f86db905092a9dc7b3423b70b07f20688f75564f11b"
+    },
+    {
+      "problem_id": 153,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1052",
+      "gold_answer_extracted": "110",
+      "question_sha256": "67bae36b728c27e3a7506764e99e4c95e15cc3ac4b1d91af0402ec4b17a46404"
+    },
+    {
+      "problem_id": 154,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1059",
+      "gold_answer_extracted": "2",
+      "question_sha256": "f27f43ea5ccf0771471ad982eeb25a0732ad1720aab62811de3be1ec419316ec"
+    },
+    {
+      "problem_id": 155,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1080",
+      "gold_answer_extracted": "72000",
+      "question_sha256": "63d42fb78ace96aaeebfc07bdbedb241eec135092c53b601b82edc7b173652fe"
+    },
+    {
+      "problem_id": 156,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1083",
+      "gold_answer_extracted": "2",
+      "question_sha256": "9ead973a55e536e5ab7e9f205d8a21d6e32a0aa8d0c48d0ff6c3beeca66a5dad"
+    },
+    {
+      "problem_id": 157,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1086",
+      "gold_answer_extracted": "131250",
+      "question_sha256": "0fd5beca3ad36df10907617d0ae85d7e9857e29010070a97c95beefdb8484243"
+    },
+    {
+      "problem_id": 158,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1090",
+      "gold_answer_extracted": "72",
+      "question_sha256": "3101f57b15af1b33d94eed7fc263c1d722c7481a6f078b18b82005859b9444f5"
+    },
+    {
+      "problem_id": 159,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1093",
+      "gold_answer_extracted": "144",
+      "question_sha256": "952fe1fef538ba98ca878ece228231b0fa00bd3d384a98d9d0c5a71ead467ac0"
+    },
+    {
+      "problem_id": 160,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1098",
+      "gold_answer_extracted": "30",
+      "question_sha256": "f1c05dc76fa3a34e0aca9001c27a84371f2f5abe53a9509f88e58bc39b8c48e1"
+    },
+    {
+      "problem_id": 161,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1099",
+      "gold_answer_extracted": "2",
+      "question_sha256": "8e2d1abb04b8d7358f126ced8c9300a34997fe46997653af66e3318f813a12a1"
+    },
+    {
+      "problem_id": 162,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1103",
+      "gold_answer_extracted": "90",
+      "question_sha256": "d454e529748bf7928c6c00e33ecce1de8d9e299185d3f30a6e544cb17472d6b4"
+    },
+    {
+      "problem_id": 163,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1104",
+      "gold_answer_extracted": "24",
+      "question_sha256": "5c8651de0181f3255096a9e67b5a5d51817e2cb5e2f4335039ae8da064c36330"
+    },
+    {
+      "problem_id": 164,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1116",
+      "gold_answer_extracted": "60",
+      "question_sha256": "bca059699200fc8148bca3b76881f8e2e97ca421e2d061ece31fca839423ba6e"
+    },
+    {
+      "problem_id": 165,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1125",
+      "gold_answer_extracted": "90",
+      "question_sha256": "b895dd7ba0c594122705497f7dffc05ebe2fbbcb2996a0222f52165eede15b12"
+    },
+    {
+      "problem_id": 166,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1130",
+      "gold_answer_extracted": "25",
+      "question_sha256": "75be5ef273bb4e665c69c799639ac9c6b66a079310b6294f1909590c79b8bbee"
+    },
+    {
+      "problem_id": 167,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1133",
+      "gold_answer_extracted": "50",
+      "question_sha256": "c26bef6514ff77603e39a2ffd1aa8cf31bde9b361ba6eb27b76d9a82396c525d"
+    },
+    {
+      "problem_id": 168,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1134",
+      "gold_answer_extracted": "7",
+      "question_sha256": "a83fa13269fd97129c0a1b4e0d6167ec6414f953789f9ce0b8945a5d266f9003"
+    },
+    {
+      "problem_id": 169,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1140",
+      "gold_answer_extracted": "27",
+      "question_sha256": "15e53aebc2660282f07a3ddde327c9c899a743602a4a0b68f55be97b8f0c2a38"
+    },
+    {
+      "problem_id": 170,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1149",
+      "gold_answer_extracted": "93",
+      "question_sha256": "a841a33b8d90bdb0e0eea86e5ffe41ae9cc4bba08c80992b6a60564631506d84"
+    },
+    {
+      "problem_id": 171,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1161",
+      "gold_answer_extracted": "170",
+      "question_sha256": "c53c536c2b1f33fcabaa23d513d748d38bc452cc5f2b69384597e9d59fcac34c"
+    },
+    {
+      "problem_id": 172,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1169",
+      "gold_answer_extracted": "2",
+      "question_sha256": "4459d95c1ca8a6eb82ab683c929ad13f3e2695381923726001c1f6dfb7eb90a1"
+    },
+    {
+      "problem_id": 173,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1180",
+      "gold_answer_extracted": "5600",
+      "question_sha256": "5c273a4296dab569a9227675d3415098976f9b9726e03ddf75856b179512a2b6"
+    },
+    {
+      "problem_id": 174,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1182",
+      "gold_answer_extracted": "1800",
+      "question_sha256": "cc0ffee694a5bc09e07d3ad2fd64b3912db6888ddb6a1e68f3205865221c8635"
+    },
+    {
+      "problem_id": 175,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1195",
+      "gold_answer_extracted": "320",
+      "question_sha256": "1b204b20ed9ceb1eab09c6bafe39bebadd4c8be944d511c4960dc8fb0502aac6"
+    },
+    {
+      "problem_id": 176,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1197",
+      "gold_answer_extracted": "2400",
+      "question_sha256": "ff0da3f89a7fc9f75b37943216028bb5d19e2e3f318fb96ff8d35e9e6bbb784b"
+    },
+    {
+      "problem_id": 177,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1204",
+      "gold_answer_extracted": "168",
+      "question_sha256": "8340c7f0c10ef4f77a4284ed8087b43ba75df281f51977db562bc247a61001bd"
+    },
+    {
+      "problem_id": 178,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1205",
+      "gold_answer_extracted": "4",
+      "question_sha256": "a0b9c4b917b45afdc30ff1d4ada14379c79e62cbd84b9e70426c0b673671ba69"
+    },
+    {
+      "problem_id": 179,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1206",
+      "gold_answer_extracted": "40000",
+      "question_sha256": "ad6628c18313d944a7fa7626937245bf4d6a515f1c7c070f973a7d4a6c5d6bcd"
+    },
+    {
+      "problem_id": 180,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1209",
+      "gold_answer_extracted": "29",
+      "question_sha256": "a7f615dad911a47af2d48a0c225f9e437f79d3043ad2969e3d981c31fcda8886"
+    },
+    {
+      "problem_id": 181,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1220",
+      "gold_answer_extracted": "32",
+      "question_sha256": "23adfa57ee7e97fd304d85b137ee80a40610c665645c8816bea291e6fe358b12"
+    },
+    {
+      "problem_id": 182,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1221",
+      "gold_answer_extracted": "10",
+      "question_sha256": "1d3773160865dabd96a1f3e11f2421329523d39e72b161a79a09314c29013fdd"
+    },
+    {
+      "problem_id": 183,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1226",
+      "gold_answer_extracted": "90",
+      "question_sha256": "dde46487272fd041e5941aececdb7c932a4d3663f4e28ada3057e9169dbc4e6f"
+    },
+    {
+      "problem_id": 184,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1232",
+      "gold_answer_extracted": "15",
+      "question_sha256": "471ad40860e85b178e52d4f920bb855a862fe11864eceb266e43e41e674d8667"
+    },
+    {
+      "problem_id": 185,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1236",
+      "gold_answer_extracted": "84",
+      "question_sha256": "dc39201f45aae7fff793e754cefae1007a6d5b2916ecf1aa6781c227695219c1"
+    },
+    {
+      "problem_id": 186,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1242",
+      "gold_answer_extracted": "20",
+      "question_sha256": "738f3e641810ffc112e0739f8745909f663999a6d7f1a03d99273bfa872b67cd"
+    },
+    {
+      "problem_id": 187,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1247",
+      "gold_answer_extracted": "7",
+      "question_sha256": "5b64f57167758237b3a6a643faab2e68ce062af04ec7efa8f8826c74a01a093e"
+    },
+    {
+      "problem_id": 188,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1266",
+      "gold_answer_extracted": "147",
+      "question_sha256": "d9a86b5ea40a1522d3832b248094a7f30d4ef8d9f5dee414e9f997be566d5595"
+    },
+    {
+      "problem_id": 189,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1280",
+      "gold_answer_extracted": "7",
+      "question_sha256": "23d18a9f9ba3f8dadd085d067fd20178ea57427411123aefd48b662320db1554"
+    },
+    {
+      "problem_id": 190,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1285",
+      "gold_answer_extracted": "1218",
+      "question_sha256": "191ddec16cd4791adb2a2a2e00dd02d379169c4695fe3cfc8ade075958d7aeb4"
+    },
+    {
+      "problem_id": 191,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1287",
+      "gold_answer_extracted": "84",
+      "question_sha256": "d3419c8269cdb946881d4e8e2e2b8b96e5aa081d75bc4c1cdd2ac5722af95119"
+    },
+    {
+      "problem_id": 192,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1292",
+      "gold_answer_extracted": "67",
+      "question_sha256": "dbffd01c046059b8278d9e0517a86a71dfa8fa465253d3cd55889970584a28b3"
+    },
+    {
+      "problem_id": 193,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1300",
+      "gold_answer_extracted": "120",
+      "question_sha256": "0e15d21591acf91047c42bb7c8157aba2ff3743e5f08e228f4f850ee51848dbc"
+    },
+    {
+      "problem_id": 194,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1301",
+      "gold_answer_extracted": "23",
+      "question_sha256": "f77641995f648ef82bb77237d89d8546568f39184a5b9fe5a05a616ac31bb1be"
+    },
+    {
+      "problem_id": 195,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1308",
+      "gold_answer_extracted": "30",
+      "question_sha256": "d235b82a3a28a094f70f471f336055f7f656ce55ad0037fe440c3e39de1a4be1"
+    },
+    {
+      "problem_id": 196,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1309",
+      "gold_answer_extracted": "2280",
+      "question_sha256": "5dc76d774bd01a74954bc2acab35f65f9f600d1b6f58bff0a7ba4af83adec48c"
+    },
+    {
+      "problem_id": 197,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1310",
+      "gold_answer_extracted": "64",
+      "question_sha256": "055e011172b610fae76c080090cb1551109c2c66429e0a7537b05eee7781ebcb"
+    },
+    {
+      "problem_id": 198,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1312",
+      "gold_answer_extracted": "180",
+      "question_sha256": "b614c3bc0bfe681ccb27a1b6a2513b23fc2384624759c0ac22b2423d6807ba4c"
+    },
+    {
+      "problem_id": 199,
+      "dataset": "gsm8k",
+      "dataset_unique_id": "test:1316",
+      "gold_answer_extracted": "230",
+      "question_sha256": "c0676c5d9ca2b510f43acd1e73715754d4e303616d84c859e9725d365ce47da3"
+    },
+    {
+      "problem_id": 200,
+      "dataset": "aime26",
+      "dataset_unique_id": "1",
+      "gold_answer_extracted": "277",
+      "question_sha256": "4d866680f9238c0ae6b14d41fc7250d041d6c5073ed167b043ff1d059a7f7252"
+    },
+    {
+      "problem_id": 201,
+      "dataset": "aime26",
+      "dataset_unique_id": "2",
+      "gold_answer_extracted": "62",
+      "question_sha256": "2822569975bbb1eca16464b01ebb61ac8d516951613263501e4ea3c72d6fc24b"
+    },
+    {
+      "problem_id": 202,
+      "dataset": "aime26",
+      "dataset_unique_id": "3",
+      "gold_answer_extracted": "79",
+      "question_sha256": "0e674f51e84de55e0a402f23a5868dc118bd759b384f88327adabedd30359771"
+    },
+    {
+      "problem_id": 203,
+      "dataset": "aime26",
+      "dataset_unique_id": "4",
+      "gold_answer_extracted": "70",
+      "question_sha256": "cba4eb5fe5dc6660eb2b921df9b91f8ca2bf981690eb13cf24b8ca0328026544"
+    },
+    {
+      "problem_id": 204,
+      "dataset": "aime26",
+      "dataset_unique_id": "5",
+      "gold_answer_extracted": "65",
+      "question_sha256": "f3d797442d90f75da78d4de8adc1dde8b1c6c5d2f062cbea2ab1724b799ea1c5"
+    },
+    {
+      "problem_id": 205,
+      "dataset": "aime26",
+      "dataset_unique_id": "6",
+      "gold_answer_extracted": "441",
+      "question_sha256": "7968ea2f49d404309e79bbbd485d0c4c5f2dc1413bec889119a4cc6251f7d04b"
+    },
+    {
+      "problem_id": 206,
+      "dataset": "aime26",
+      "dataset_unique_id": "7",
+      "gold_answer_extracted": "396",
+      "question_sha256": "b80bbab3f94de75f4cbc76a84dc900950d3eb6a073a6f5919be8e4a4f2493ec4"
+    },
+    {
+      "problem_id": 207,
+      "dataset": "aime26",
+      "dataset_unique_id": "8",
+      "gold_answer_extracted": "244",
+      "question_sha256": "e6ea64827cab6b0e5ea58a6cfd651f5cd9f67898ef4deba8dc00694112ddfdc0"
+    },
+    {
+      "problem_id": 208,
+      "dataset": "aime26",
+      "dataset_unique_id": "9",
+      "gold_answer_extracted": "29",
+      "question_sha256": "5e99c1f8e33f1b510b11d7fc16b0bae4b7e0490025846f054c47a56b4d807196"
+    },
+    {
+      "problem_id": 209,
+      "dataset": "aime26",
+      "dataset_unique_id": "10",
+      "gold_answer_extracted": "156",
+      "question_sha256": "6a666186a52a223a807dca774d8600ddd754317a65c040fca538f139b291e6df"
+    },
+    {
+      "problem_id": 210,
+      "dataset": "aime26",
+      "dataset_unique_id": "11",
+      "gold_answer_extracted": "896",
+      "question_sha256": "f2f2d976fb29b00497dea783e22226e3e022a414cf90835c48a6288c4b69b8dc"
+    },
+    {
+      "problem_id": 211,
+      "dataset": "aime26",
+      "dataset_unique_id": "12",
+      "gold_answer_extracted": "161",
+      "question_sha256": "1eaadd490abe9a9c07dc10eb4fac5e05b97c24d65c2e02a14ccc3e4f0b50c457"
+    },
+    {
+      "problem_id": 212,
+      "dataset": "aime26",
+      "dataset_unique_id": "13",
+      "gold_answer_extracted": "39",
+      "question_sha256": "f98aacf1abda30569f77e7dcc1e8d936c8e784a36a5620f23b853634b3cb41b4"
+    },
+    {
+      "problem_id": 213,
+      "dataset": "aime26",
+      "dataset_unique_id": "14",
+      "gold_answer_extracted": "681",
+      "question_sha256": "c6d3cf210a1369fe78a590f41f1a9af4c031eb6fbd7d35f207fc2a1d75c96174"
+    },
+    {
+      "problem_id": 214,
+      "dataset": "aime26",
+      "dataset_unique_id": "15",
+      "gold_answer_extracted": "83",
+      "question_sha256": "5cc894a0e8a6612ba07b7e6fe563daf51272ff819a870986e670e24988996a76"
+    },
+    {
+      "problem_id": 215,
+      "dataset": "aime26",
+      "dataset_unique_id": "16",
+      "gold_answer_extracted": "178",
+      "question_sha256": "77bffe9f7e54fd6d480fe3f354595843f5001e7299e4678702be06d0fad2dd9e"
+    },
+    {
+      "problem_id": 216,
+      "dataset": "aime26",
+      "dataset_unique_id": "17",
+      "gold_answer_extracted": "243",
+      "question_sha256": "8742f9e6848458bd91c32c5f61373f3015eb0d57c008ce4cfa82ef3f14de3f50"
+    },
+    {
+      "problem_id": 217,
+      "dataset": "aime26",
+      "dataset_unique_id": "18",
+      "gold_answer_extracted": "503",
+      "question_sha256": "bce9ef2f43a9f59bfbeb6d3e67e282575e4ebd7161a4af81c2f9ad00c47621fd"
+    },
+    {
+      "problem_id": 218,
+      "dataset": "aime26",
+      "dataset_unique_id": "19",
+      "gold_answer_extracted": "279",
+      "question_sha256": "7a1a552fa3c096a71865d62acc6577acf5af49fe3cc1be5eccbd345de4af233d"
+    },
+    {
+      "problem_id": 219,
+      "dataset": "aime26",
+      "dataset_unique_id": "20",
+      "gold_answer_extracted": "190",
+      "question_sha256": "652b177c71e8a583a04222f1e1f23f913224e1baea41ffb0a6a6d6b539cfe77d"
+    },
+    {
+      "problem_id": 220,
+      "dataset": "aime26",
+      "dataset_unique_id": "21",
+      "gold_answer_extracted": "50",
+      "question_sha256": "f3d7b78d243a1a500bf8f0ef91a3ecfff3ebc894a9f7c2c0ff45a6151704de96"
+    },
+    {
+      "problem_id": 221,
+      "dataset": "aime26",
+      "dataset_unique_id": "22",
+      "gold_answer_extracted": "754",
+      "question_sha256": "ac19f76765b0b6b88561c352a15c7ce8fda91067b243a418b37ac6852d051ae8"
+    },
+    {
+      "problem_id": 222,
+      "dataset": "aime26",
+      "dataset_unique_id": "23",
+      "gold_answer_extracted": "245",
+      "question_sha256": "d47975ec2ba3a7dd24ecf47f98f9937eb10943b94448b27957fe2cb60fdc7a7f"
+    },
+    {
+      "problem_id": 223,
+      "dataset": "aime26",
+      "dataset_unique_id": "24",
+      "gold_answer_extracted": "669",
+      "question_sha256": "7443669f7e9038ecbaa20040585b634dda36623e0129c5fb18d9e5cf895db73e"
+    },
+    {
+      "problem_id": 224,
+      "dataset": "aime26",
+      "dataset_unique_id": "25",
+      "gold_answer_extracted": "850",
+      "question_sha256": "f7b4a98af9dd00a521396033749a2180021a97407016472fc87eb707029e05ec"
+    },
+    {
+      "problem_id": 225,
+      "dataset": "aime26",
+      "dataset_unique_id": "26",
+      "gold_answer_extracted": "132",
+      "question_sha256": "d5d04c315dcc2b451b820c59ee09cbbf2f8f0e03b89d9bae9c47b8acff903823"
+    },
+    {
+      "problem_id": 226,
+      "dataset": "aime26",
+      "dataset_unique_id": "27",
+      "gold_answer_extracted": "223",
+      "question_sha256": "51697b0daa5c5889c487c06dadb3f5279afe64889481e0a7f1380610894980fc"
+    },
+    {
+      "problem_id": 227,
+      "dataset": "aime26",
+      "dataset_unique_id": "28",
+      "gold_answer_extracted": "107",
+      "question_sha256": "f969f616feb3991ffa601424596bb0b7924fa9d62c3f58c6ba9d8552361294ea"
+    },
+    {
+      "problem_id": 228,
+      "dataset": "aime26",
+      "dataset_unique_id": "29",
+      "gold_answer_extracted": "157",
+      "question_sha256": "cda72262349e722276e8339a5c7cbef06aae7d30da94a83221cb7b84e6a223cf"
+    },
+    {
+      "problem_id": 229,
+      "dataset": "aime26",
+      "dataset_unique_id": "30",
+      "gold_answer_extracted": "393",
+      "question_sha256": "8ff9e9f62f235d5f18f547a5165fc6ace0d2c516ade3d3c9b39b919dfb71128e"
+    }
+  ]
+}
