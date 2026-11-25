@@ -145,6 +145,8 @@ def summarize(root, output, source=None):
     summary.update({
         "paired_online": contrast(pairs, "fixed", "early"),
         "paired_fixed_pool": contrast(pairs, "fixed", "early_on_fixed_pool"),
+        "paired_aggregation_on_fixed_pool": contrast(pairs, "original", "fixed"),
+        "paired_combined_vs_original": contrast(pairs, "original", "early"),
         "original_selector_on_fixed_pool_correct": sum(row["original"]["is_correct"] for row in pairs),
         "shadow_early_correct": sum(row["early_on_fixed_pool"]["is_correct"] for row in pairs),
         "shadow_early_stops": sum(row["shadow_stopped_early"] for row in pairs),
