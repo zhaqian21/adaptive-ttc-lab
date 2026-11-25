@@ -25,7 +25,7 @@ def costs(candidates, prm_requests):
     return {**result, "tokens": result["input_tokens"] + result["output_tokens"], "prm_requests": prm_requests}
 
 
-def replay_row(pool, ref):
+def verified_baseline(pool, ref):
     candidates = pool["candidates"]
     index = ref["problem_id"]
     if ((pool["problem_id"], pool["dataset_unique_id"]) != (index, ref["dataset_unique_id"])
@@ -42,20 +42,27 @@ def replay_row(pool, ref):
     if (pool["selected_iteration"], historical["answer"], historical["correct"],
             base_cost["output_tokens"], base_cost["generation_calls"]) != (
             ref["selected_iteration"], ref["predicted_answer"], ref["is_correct"], ref["output_tokens"], ref["llm_calls"]):
-        raise ValueError(f"Could not reproduce historical E4 on question {index}")
+        raise ValueError(f"Could not reproduce the historical selection on question {index}")
+    return {"selected_iteration": selected + 1, "answer": historical["answer"],
+            "correct": historical["correct"], **base_cost}
 
+
+def replay_row(pool, ref):
+    baseline = verified_baseline(pool, ref)
+    candidates = pool["candidates"]
     early = agree(candidates)
-    chosen = candidates[0] if early else historical
-    replay_cost = costs(candidates[:3], 0) if early else base_cost
+    replay = baseline
+    if early:
+        first = candidates[0]
+        replay = {"selected_iteration": 1, "answer": first["answer"], "correct": first["correct"],
+                  **costs(candidates[:3], 0)}
     return {
-        "problem_id": index,
+        "problem_id": ref["problem_id"],
         "dataset_unique_id": pool["dataset_unique_id"],
         "first_three_answers": [candidate["answer"] for candidate in candidates[:3]],
         "stop_reason": "three_answer_agreement" if early else "original_e4",
-        "baseline": {"selected_iteration": selected + 1, "answer": historical["answer"],
-                     "correct": historical["correct"], **base_cost},
-        "replay": {"selected_iteration": 1 if early else selected + 1, "answer": chosen["answer"],
-                   "correct": chosen["correct"], **replay_cost},
+        "baseline": baseline,
+        "replay": replay,
     }
 
 
