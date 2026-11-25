@@ -17,7 +17,7 @@ SOURCES = {
         "scripts/audit_results.py", "scripts/fetch_assets.py", "scripts/paper_protocol.py", "scripts/run_smoke.py",
         "scripts/validate_models.py", "scripts/run_published_code.py",
     ),
-    "llama-table1-825": ("assets.json", "prepare_assets.py", "llama_table1.py"),
+    "llama-table1-825": ("assets.json", "prepare_assets.py", "llama_table1.py", "answer_fields.py"),
     "aime24-amo-bench-published-code-2026-11-24": ("scripts/serve_prm.py", "scripts/run_published_extensions.py"),
     "amc23-adaptive-revision": ("run_amc23.py",),
     "math500-adaptive-revision": ("run_math500.py", "revision_policy.py", "audit_math500.py"),

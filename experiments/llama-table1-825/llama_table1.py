@@ -221,6 +221,7 @@ def main():
     args = parser.parse_args()
     if args.serve_prm:
         import serve_prm
+        serve_prm.HTTPServer.request_queue_size = 128
         serve_prm.ADDRESS = ("127.0.0.1", args.prm_port)
         serve_prm.serve()
         return 0

@@ -13,6 +13,7 @@ import sys
 import time
 from types import SimpleNamespace
 
+from answer_fields import install as install_answer_fallback
 import compare
 import llama_table1 as services
 import matched
@@ -178,6 +179,7 @@ def start_models(stack, args, ports):
 
 def coordinate(args):
     check_devices()
+    install_answer_fallback()
     revision.runner.ASSETS = (revision.runner.ASSETS[0], services.MODEL, revision.runner.ASSETS[2])
     if subprocess.check_output([args.engine_python, "-c", "from importlib.metadata import version; print(version('vllm'))"],
                                text=True).strip() != "0.33.0":

@@ -17,3 +17,7 @@ bash "$UPLOADED_LAUNCHER" "$RUN_DIRECTORY"
 ~~~
 
 申请 1 张 H20、16 核 CPU、96 GiB 内存、24 小时时限。运行目录中的 preparation.status 记录准备阶段，results/status.json 记录当前评测阶段。results 下的逐题 JSONL 与 summary.json 包含答案、候选覆盖、token、PRM 请求、准确率和文件 SHA-256。
+
+## 24 到 825 的内网资产准备
+
+825 用纯 CPU 作业接收 24 已固定的权重、数据、Python 评测环境和上游代码包，并校验文件摘要。将 TTC_LOCAL_ASSET_STAGE 设为已完成校验的目录，即可启动单卡评测。825 继续使用已安装的 vLLM 0.33.0。答案字段回退采用与 24 修复相同的等价匹配，避免截断生成阻塞 worker。

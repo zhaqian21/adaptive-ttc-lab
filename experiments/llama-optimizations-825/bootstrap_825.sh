@@ -24,6 +24,7 @@ phase preparing
 cp -- "$base/scripts/"* "$source/scripts/"
 cp -- "$base/environment.lock.txt" "$source/environment.lock.txt"
 
+prepare_online() {
 "$python" - "$assets/assets.json" "$bundle/asset-manifest.json" "$source" <<'PY'
 import json
 from pathlib import Path
@@ -76,6 +77,27 @@ if ! "$engine" -c 'from importlib.metadata import version; assert version("vllm"
     "$uv_bin" pip install --python "$engine" 'vllm==0.33.0' >> "$root/logs/vllm-environment.log" 2>&1
 fi
 wait "$download_pid"
+
+}
+
+engine="$existing/venv/bin/python"
+if [[ -n "${TTC_LOCAL_ASSET_STAGE:-}" ]]; then
+    staged="$(realpath -- "$TTC_LOCAL_ASSET_STAGE")"
+    [[ -s "$staged/transfer.ready" ]]
+    for item in upstream assets datasets .venv; do
+        [[ -d "$staged/source/$item" ]]
+        if [[ -e "$source/$item" ]]; then
+            [[ "$(realpath -- "$source/$item")" == "$(realpath -- "$staged/source/$item")" ]]
+        else
+            ln -s "$staged/source/$item" "$source/$item"
+        fi
+    done
+    [[ "$(git -C "$source/upstream" rev-parse HEAD)" == d9ca5f71f5c7d155153e8f7decd8b1c524968775 ]]
+    "$engine" -c 'from importlib.metadata import version; assert version("vllm") == "0.33.0"'
+    "$staged/uv" pip check --python "$source/.venv/bin/python" >> "$root/logs/evaluation-environment.log" 2>&1
+else
+    prepare_online
+fi
 
 phase evaluating
 export HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
