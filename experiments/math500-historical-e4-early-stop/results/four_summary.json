@@ -1,0 +1,104 @@
+{
+  "samples": 500,
+  "five_answer_replay_commit": "dcc0b0fefa255a1fe298841f398917a97fbd5cc4",
+  "candidate_pool_sha256": "c1ece04f0e8d727a00bba995ab1320a849af25a7368608c0e3a64befca517373",
+  "prior_comparison_sha256": "328cb3679d83f7ccfee7e4f6f9a5a68fc1c46e5986eb798933aee66b62f3405f",
+  "comparison_predictions_sha256": "36f1fd532b1c18ef6938edb71c62c89b1d1682a52473f2123b3179ece547c47b",
+  "early_stops": {
+    "three": 298,
+    "four": 281,
+    "five": 268
+  },
+  "metrics": {
+    "baseline": {
+      "correct": 397,
+      "accuracy": 0.794,
+      "generation_calls": 108845,
+      "input_tokens": 64495666,
+      "output_tokens": 8366154,
+      "tokens": 72861820,
+      "prm_requests": 5000
+    },
+    "three": {
+      "correct": 395,
+      "accuracy": 0.79,
+      "generation_calls": 69687,
+      "input_tokens": 42971322,
+      "output_tokens": 5910251,
+      "tokens": 48881573,
+      "prm_requests": 2020
+    },
+    "four": {
+      "correct": 395,
+      "accuracy": 0.79,
+      "generation_calls": 78077,
+      "input_tokens": 48018840,
+      "output_tokens": 6592651,
+      "tokens": 54611491,
+      "prm_requests": 2190
+    },
+    "five": {
+      "correct": 397,
+      "accuracy": 0.794,
+      "generation_calls": 84869,
+      "input_tokens": 51873544,
+      "output_tokens": 7060410,
+      "tokens": 58933954,
+      "prm_requests": 2320
+    }
+  },
+  "four_savings_vs_baseline": {
+    "saved": {
+      "generation_calls": 30768,
+      "input_tokens": 16476826,
+      "output_tokens": 1773503,
+      "tokens": 18250329,
+      "prm_requests": 2810
+    },
+    "rate": {
+      "generation_calls": 0.2826772015251045,
+      "input_tokens": 0.2554718327895087,
+      "output_tokens": 0.21198545950743913,
+      "tokens": 0.25047863201879944,
+      "prm_requests": 0.562
+    }
+  },
+  "four_minus_three": {
+    "generation_calls": 8390,
+    "input_tokens": 5047518,
+    "output_tokens": 682400,
+    "tokens": 5729918,
+    "prm_requests": 170
+  },
+  "four_minus_five": {
+    "generation_calls": -6792,
+    "input_tokens": -3854704,
+    "output_tokens": -467759,
+    "tokens": -4322463,
+    "prm_requests": -130
+  },
+  "four_vs_baseline_paired": {
+    "gained": 0,
+    "lost": 2,
+    "gained_problem_ids": [],
+    "lost_problem_ids": [
+      91,
+      177
+    ]
+  },
+  "four_vs_three_paired": {
+    "gained": 0,
+    "lost": 0,
+    "gained_problem_ids": [],
+    "lost_problem_ids": []
+  },
+  "four_vs_five_paired": {
+    "gained": 0,
+    "lost": 2,
+    "gained_problem_ids": [],
+    "lost_problem_ids": [
+      91,
+      177
+    ]
+  }
+}
