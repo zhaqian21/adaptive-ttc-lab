@@ -15,11 +15,13 @@ AMC23 = {
     "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
     "samples": 40,
 }
+AMC23_PLAN = {
+    "samples": 40, "smoke_samples": 8, "plan": "llama_amc23_plan.json",
+    "history_sha256": "de1d0b05a7fc29f8b437468a257f684300a034643baeca7ccd302bbd26f5a1e5",
+}
 FOLLOWUPS = {
-    "llama-amc23": {
-        "model": LLAMA, "samples": 40, "smoke_samples": 8,
-        "plan": "llama_amc23_plan.json", "history_sha256": "de1d0b05a7fc29f8b437468a257f684300a034643baeca7ccd302bbd26f5a1e5",
-    },
+    "llama-amc23": {"model": LLAMA, **AMC23_PLAN},
+    "qwen-amc23": {"model": QWEN, **AMC23_PLAN},
     "qwen-math500": {
         "model": QWEN, "samples": 500, "smoke_samples": 20,
         "plan": "qwen_math500_plan.json", "history_sha256": "328cb3679d83f7ccfee7e4f6f9a5a68fc1c46e5986eb798933aee66b62f3405f",
@@ -30,7 +32,7 @@ FOLLOWUPS = {
 def load_followup_benchmark(study, released):
     if study == "qwen-math500":
         return released.load_benchmark(SimpleNamespace(dataset="math"))
-    if study != "llama-amc23":
+    if study not in ("llama-amc23", "qwen-amc23"):
         raise ValueError(f"Unsupported E4 transfer study: {study}")
 
     from datasets import Dataset
