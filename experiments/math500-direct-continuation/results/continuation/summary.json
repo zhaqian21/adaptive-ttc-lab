@@ -1,0 +1,82 @@
+{
+  "qwen": {
+    "outputs_sha256": "fd54d8a02c0a7664df58b9b89bc95660134d9af018b870b3769d88fd463c0668",
+    "paired_sha256": "a9b2564753d67fc38ed9aaaabf37dcf78d3de7168315caf71319472e837c98fe",
+    "generation_without_usage": 0,
+    "datasets": {
+      "math": {
+        "samples": 500,
+        "prior_direct_correct": 337,
+        "prior_direct_same_completion": 170,
+        "methods": {
+          "fixed1024": {
+            "correct": 338,
+            "accuracy": 0.676,
+            "tokens": 366683,
+            "prm_requests": 0,
+            "wrong_to_right": 0,
+            "right_to_wrong": 0
+          },
+          "fixed2048": {
+            "correct": 350,
+            "accuracy": 0.7,
+            "tokens": 381217,
+            "prm_requests": 0,
+            "wrong_to_right": 12,
+            "right_to_wrong": 0
+          },
+          "on_demand": {
+            "correct": 350,
+            "accuracy": 0.7,
+            "tokens": 381217,
+            "prm_requests": 0,
+            "wrong_to_right": 12,
+            "right_to_wrong": 0
+          }
+        },
+        "at_1024_without_answer": 48,
+        "extended": 48
+      }
+    }
+  },
+  "llama": {
+    "outputs_sha256": "903ac28bbbff1d908ee984b00c147393b27fe6009d26089740a4c0a416bc8e10",
+    "paired_sha256": "dc141802c48adb6e220e317c40426603a91f2184a1dbd1c3529d3904da9aa6b7",
+    "generation_without_usage": 0,
+    "datasets": {
+      "math": {
+        "samples": 500,
+        "prior_direct_correct": 228,
+        "prior_direct_same_completion": 141,
+        "methods": {
+          "fixed1024": {
+            "correct": 241,
+            "accuracy": 0.482,
+            "tokens": 351413,
+            "prm_requests": 0,
+            "wrong_to_right": 0,
+            "right_to_wrong": 0
+          },
+          "fixed2048": {
+            "correct": 246,
+            "accuracy": 0.492,
+            "tokens": 417477,
+            "prm_requests": 0,
+            "wrong_to_right": 5,
+            "right_to_wrong": 0
+          },
+          "on_demand": {
+            "correct": 246,
+            "accuracy": 0.492,
+            "tokens": 417461,
+            "prm_requests": 0,
+            "wrong_to_right": 5,
+            "right_to_wrong": 0
+          }
+        },
+        "at_1024_without_answer": 95,
+        "extended": 95
+      }
+    }
+  }
+}
