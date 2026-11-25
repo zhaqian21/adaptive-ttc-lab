@@ -1,0 +1,19 @@
+{
+  "case": "E4",
+  "input_sha256": "73c3f95e4ad26e7703c6068de73547dc4fe9b1bca23332254dd7e357c408ec3d",
+  "prm_revision": "0610740060112df12585d00a1c5f4624d2f59051",
+  "system_prompt": "Please reason step by step, and put your final answer within \\boxed{}.",
+  "marker": "<extra_0>",
+  "batch_size": 32,
+  "batch_tokens": 12288,
+  "torch": "2.6.0+cu124",
+  "transformers": "4.48.3",
+  "dtype": "torch.bfloat16",
+  "device": "NVIDIA H20",
+  "attention": "sdpa",
+  "max_prm_context": 4096,
+  "source_sha256": {
+    "prepare_pool.py": "c1ef12e04cf744f80ab100f4bf7d2eedf6500c65fb3728f7a611e9925b21feed",
+    "score_steps.py": "62106fba1e21fe266bf65676cfba2d3e7b87ccd52eb1eb8a5ee943260331f03c"
+  }
+}
