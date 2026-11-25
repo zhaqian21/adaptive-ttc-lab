@@ -16,16 +16,16 @@ from routing import METHODS
 from sampling import TOKEN_LIMIT
 
 
-def audit(root, wall_seconds):
+def audit(root, wall_seconds, *, shards=2):
     configs, executions, rows, retries = [], [], [], []
     evaluator = base.runner.upstream.get_evaluator("MATH")
-    for shard in (0, 1):
+    for shard in range(shards):
         directory = root / f"shard-{shard}"
-        config, execution, files = shard_files(directory, shard)
+        config, execution, files = shard_files(directory, shard, shards)
         method = config["extension"]["method"]
         if method not in METHODS or execution["failures"] or config["dataset_sha256"] != base.baseline.DATASET_SHA256:
             raise ValueError(f"Unexpected setup or incomplete shard {shard}")
-        args = SimpleNamespace(shard=shard, shards=2, sample=config["sample"], case="E4", priority_file=None)
+        args = SimpleNamespace(shard=shard, shards=shards, sample=config["sample"], case="E4", priority_file=None)
         questions = {q["problem_id"]: q for q in base.baseline.dataset_for_run(args)}
         if set(questions) != set(files):
             raise ValueError(f"Wrong coverage on shard {shard}")
@@ -54,9 +54,10 @@ def audit(root, wall_seconds):
             retries.append({"shard": shard, "failed_rows": sorted(map(int, failure["failures"])),
                             "first_attempt_seconds": failure["seconds"]})
 
-    if {k: v for k, v in configs[0].items() if k not in ("shard", "question_ids")} != {
-        k: v for k, v in configs[1].items() if k not in ("shard", "question_ids")
-    }:
+    def comparable(config):
+        return {k: v for k, v in config.items() if k not in ("shard", "question_ids")}
+
+    if any(comparable(config) != comparable(configs[0]) for config in configs[1:]):
         raise ValueError("The two shards share different setups")
     rows.sort(key=lambda row: row["problem_id"])
     sample = configs[0]["sample"]

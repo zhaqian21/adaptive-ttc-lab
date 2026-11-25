@@ -27,7 +27,10 @@ def load_run(root, selector):
             or [row["problem_id"] for row in rows] != sorted({row["problem_id"] for row in rows})
             or (summary["formal"] and [row["problem_id"] for row in rows] != list(range(500)))):
         raise ValueError(f"Invalid audited run for {selector}")
-    if (len(summary["configs"]) != 2 or len(summary["executions"]) != 2
+    shards = len(summary["configs"])
+    if (shards not in (1, 2) or len(summary["executions"]) != shards
+            or any(cfg["shards"] != shards or cfg["shard"] != lane
+                   for lane, cfg in enumerate(summary["configs"]))
             or any(config["selector"] != selector for config in summary["configs"])
             or any(e["failures"] for e in summary["executions"])):
         raise ValueError(f"Invalid shard configuration for {selector}")
@@ -67,7 +70,7 @@ def compare(root):
     single, grouped = SELECTORS
     runs = {name: load_run(root, name) for name in SELECTORS}
     first, second = runs[single][1], runs[grouped][1]
-    for a, b in zip(first["configs"], second["configs"]):
+    for a, b in zip(first["configs"], second["configs"], strict=True):
         if {k: v for k, v in a.items() if k != "selector"} != {k: v for k, v in b.items() if k != "selector"}:
             raise ValueError("Independent runs have differing settings besides the selector")
     if first["formal"] != second["formal"] or first["samples"] != second["samples"]:
