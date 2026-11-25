@@ -10,7 +10,7 @@ import sys
 import time
 from types import SimpleNamespace
 
-from protocol import DRAWS, LONG, SHORT, STUDIES
+from protocol import DEFAULT_STUDIES, DRAWS, LONG, SHORT, STUDIES
 
 
 HERE = Path(__file__).resolve().parent
@@ -24,6 +24,10 @@ from sample import load as load_gsm8k, plan as gsm8k_plan
 
 
 def load(data, study):
+    if study == "remaining":
+        from followup import frozen
+
+        return [{**q, "seed": q["problem_id"]} for q in frozen(data) if q["dataset"] != "math"]
     runner = released.runner
     cmd = ["git", "-C", str(runner.ROOT / "upstream")]
     if (subprocess.check_output([*cmd, "rev-parse", "HEAD"], text=True).strip() != runner.UPSTREAM_COMMIT
@@ -186,7 +190,7 @@ def coordinate(args):
             servers.append((child, port))
         for child, port in servers:
             wait_ready(child, port)
-        for study in STUDIES:
+        for study in (args.study,) if args.study else DEFAULT_STUDIES:
             target = args.output / study
             target.mkdir(exist_ok=True)
             released.write(args.output / "status.json", {"phase": study})
@@ -212,7 +216,7 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--engine-python")
     parser.add_argument("--lane", type=int, choices=tuple(LANES))
-    parser.add_argument("--study", choices=STUDIES)
+    parser.add_argument("--study", choices=STUDIES, default=os.environ.get("TTC_DIRECT_STUDY"))
     args = parser.parse_args()
     signal.signal(signal.SIGTERM, lambda *_: sys.exit(143))
     worker(args) if args.lane is not None else coordinate(args)

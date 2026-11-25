@@ -5,7 +5,8 @@ from collections import Counter
 SHORT = 1024
 LONG = 2048
 DRAWS = 5
-STUDIES = ("continuation", "voting")
+DEFAULT_STUDIES = ("continuation", "voting")
+STUDIES = (*DEFAULT_STUDIES, "remaining")
 
 
 def key(answer):
