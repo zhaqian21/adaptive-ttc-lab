@@ -31,16 +31,20 @@ def records(path, sha, samples):
     return rows
 
 
-def scoring_choices(candidates):
-    published, groups = selectors(candidates)
-    top2 = published["original"]
+def top2_choice(candidates, groups, original):
     if any(g["sum_prm"] > 0 for g in groups):
         def rank(group):
             scores = sorted((candidates[i - 1]["mean_reward"] for i in group["members"]), reverse=True)
             return math.fsum(scores[:2]), group["best_reward"], -group["representative"]
 
-        top2 = max(groups, key=rank)["representative"]
-    return {"original": published["original"], "sum_prm": published["sum_prm"], "top2_sum": top2}
+        return max(groups, key=rank)["representative"]
+    return original
+
+
+def scoring_choices(candidates):
+    published, groups = selectors(candidates)
+    return {"original": published["original"], "sum_prm": published["sum_prm"],
+            "top2_sum": top2_choice(candidates, groups, published["original"])}
 
 
 def replay(candidates, stop, indices):
