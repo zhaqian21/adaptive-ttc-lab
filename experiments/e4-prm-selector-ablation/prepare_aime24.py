@@ -1,4 +1,4 @@
-"""Export score-and-answer-only AIME24 E4 pools from the original run directories."""
+"""Export score-and-answer-only E4 pools from the original run directories."""
 
 import argparse
 import hashlib
@@ -10,15 +10,22 @@ REFERENCE_SHA = {
     "llama": "6d031242d56049e2c9b3b73cf58e25b58406b071220dcb41e1428b7921c605ec",
     "qwen": "fe0851e67e7fafb1baae73e7c17681b312c8ba19f7b1e5b4cefa34413ca806e0",
 }
+AMO_REFERENCE_SHA = {
+    "llama": "1ab363043b3729d572945b14db3d89210f876e74beb063a705d6d8f1218689e5",
+    "qwen": "eb6ca5772cbebe43789d8c50bcbad092c592a2f8ecec07ba69745cb0aa4aca33",
+}
+DATASETS = {"aime24": (30, REFERENCE_SHA), "amo": (50, AMO_REFERENCE_SHA)}
 
 
-def export(raw, reference, model):
+def export(raw, reference, model, *, dataset="aime24"):
+    sample_count, hashes = DATASETS[dataset]
     reference_bytes = reference.read_bytes()
-    if hashlib.sha256(reference_bytes).hexdigest() != REFERENCE_SHA[model]:
-        raise ValueError("The reference must be the archived AIME24 E4 predictions")
+    if hashlib.sha256(reference_bytes).hexdigest() != hashes[model]:
+        raise ValueError(f"The reference must be the archived {dataset} E4 predictions")
     refs = [json.loads(line) for line in reference_bytes.splitlines()]
-    if [r["problem_id"] for r in refs] != list(range(30)) or len({r["dataset_unique_id"] for r in refs}) != 30:
-        raise ValueError("Expected the full ordered AIME24 reference")
+    if ([r["problem_id"] for r in refs] != list(range(sample_count))
+            or len({r["dataset_unique_id"] for r in refs}) != sample_count):
+        raise ValueError(f"Expected the full ordered {dataset} reference")
 
     records = {}
     for path in raw.glob("gpu-*/E4/problems/*/result.json"):
@@ -70,7 +77,7 @@ def export(raw, reference, model):
         }
 
     if sorted(records) != list(range(len(refs))):
-        raise ValueError("Both original shards must contain all 30 AIME24 questions")
+        raise ValueError(f"Both original shards must contain all {sample_count} {dataset} questions")
     return b"".join(
         (json.dumps(records[i], ensure_ascii=False, separators=(",", ":"), allow_nan=False) + "\n").encode("utf-8")
         for i in range(len(refs))
@@ -80,11 +87,12 @@ def export(raw, reference, model):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", choices=REFERENCE_SHA, required=True)
+    parser.add_argument("--dataset", choices=DATASETS, default="aime24")
     parser.add_argument("--raw", type=Path, required=True, help="Directory containing the formal GPU shards")
     parser.add_argument("--reference", type=Path, required=True, help="Published E4 predictions.jsonl")
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
-    payload = export(args.raw, args.reference, args.model)
+    payload = export(args.raw, args.reference, args.model, dataset=args.dataset)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.output.write_bytes(payload)
     print(hashlib.sha256(payload).hexdigest())
