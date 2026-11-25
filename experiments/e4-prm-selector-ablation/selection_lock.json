@@ -1,0 +1,13 @@
+{
+  "early_stop_candidates": 5,
+  "candidate_limit": 10,
+  "locked_selector": "top2_sum",
+  "selector_comparisons": ["original", "sum_prm", "top2_sum"],
+  "calibration_sets": ["llama_math500", "qwen_math500"],
+  "lock_rule": "Among the two alternatives to sum_prm, require a nonnegative gain on both MATH-500 A-pool early-stop replays and select the alternative with the greatest minimum gain.",
+  "calibration_correct": {
+    "llama_math500": {"original": 313, "sum_prm": 320, "top2_sum": 322},
+    "qwen_math500": {"original": 400, "sum_prm": 396, "top2_sum": 399}
+  },
+  "heldout_sets": ["llama_aime24", "qwen_aime24"]
+}

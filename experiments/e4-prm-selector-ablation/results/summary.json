@@ -1,0 +1,774 @@
+{
+  "lock_sha256": "21a06ecc85b8e348b164bebd077e2849a8374ecb2929956fb5a559af9b198026",
+  "locked_selector": "top2_sum",
+  "sources": {
+    "online": {
+      "llama_math500": {
+        "samples": 500,
+        "fixed_sha256": "796830f034e24fb33b7af3ef7a2865b4d02ddacde86721e1a6892c0b2e412c3f",
+        "early_sha256": "932456859687f24c5c75f1f48e2367994afbd57196e5e44cd7c19e4b59a91ca8"
+      },
+      "llama_amc23": {
+        "samples": 40,
+        "fixed_sha256": "336cff4005a075baefbb805a726443e43c7d000bf3ee6b15bc6da327a61c7298",
+        "early_sha256": "7fdd0760088247a776be861f4622d60b9392fecb886fc004b75d80e00e76ec61"
+      },
+      "qwen_math500": {
+        "samples": 500,
+        "fixed_sha256": "e90a9bfacc07c20965047b83a4b9ac99e849b4ee118d9ffed870cf277996544c",
+        "early_sha256": "7331aa6fbb1f1e060878258e391c0cdbc6aa2bf9c5ad4f9874305a0d19eb0f32"
+      },
+      "qwen_amc23": {
+        "samples": 40,
+        "fixed_sha256": "5e3536ba8042fc45ca50fcbebc878806a73b1e08a35eee431508296e57cf420c",
+        "early_sha256": "87c08c5dd2b7b926503273c2375780b0e724b0e453966cf61525b28bd5980f93"
+      }
+    },
+    "heldout": {
+      "llama_aime24": {
+        "input": "inputs/llama_aime24.jsonl",
+        "input_sha256": "cdb3fd3c25fa338d909fa0e945c7e7e684422351934e50f46402a6a3623b9b05",
+        "reference": "llama-table1-24-2026-11-25/results/aime24/E4/predictions.jsonl"
+      },
+      "qwen_aime24": {
+        "input": "inputs/qwen_aime24.jsonl",
+        "input_sha256": "f6d9bbe5a61a36d8a82291ef1d761e929827b56b8ba735b260bcefb3d4907b2e",
+        "reference": "aime24-amo-bench-published-code-2026-11-24/results/aime24/E4/predictions.jsonl"
+      }
+    }
+  },
+  "studies": {
+    "llama_math500": {
+      "samples": 500,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 5000,
+          "logical_prm_requests": 5000,
+          "candidate_oracle_correct": 371,
+          "methods": {
+            "original": {
+              "correct": 314,
+              "outcomes": {
+                "correct": 314,
+                "no_correct_candidate": 129,
+                "selector_missed": 57
+              }
+            },
+            "sum_prm": {
+              "correct": 320,
+              "outcomes": {
+                "correct": 320,
+                "no_correct_candidate": 129,
+                "selector_missed": 51
+              }
+            },
+            "top2_sum": {
+              "correct": 323,
+              "outcomes": {
+                "correct": 323,
+                "no_correct_candidate": 129,
+                "selector_missed": 48
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 97,
+          "candidates": 4515,
+          "logical_prm_requests": 4030,
+          "candidate_oracle_correct": 368,
+          "methods": {
+            "original": {
+              "correct": 313,
+              "outcomes": {
+                "correct": 313,
+                "no_correct_candidate": 124,
+                "selector_missed": 55,
+                "unanimous_wrong": 8
+              }
+            },
+            "sum_prm": {
+              "correct": 320,
+              "outcomes": {
+                "correct": 320,
+                "no_correct_candidate": 124,
+                "selector_missed": 48,
+                "unanimous_wrong": 8
+              }
+            },
+            "top2_sum": {
+              "correct": 322,
+              "outcomes": {
+                "correct": 322,
+                "no_correct_candidate": 124,
+                "selector_missed": 46,
+                "unanimous_wrong": 8
+              }
+            }
+          }
+        },
+        "online_b_pool": {
+          "early_stops": 95,
+          "candidates": 4525,
+          "logical_prm_requests": 4050,
+          "candidate_oracle_correct": 375,
+          "methods": {
+            "original": {
+              "correct": 308,
+              "outcomes": {
+                "correct": 308,
+                "no_correct_candidate": 120,
+                "selector_missed": 67,
+                "unanimous_wrong": 5
+              }
+            },
+            "sum_prm": {
+              "correct": 325,
+              "outcomes": {
+                "correct": 325,
+                "no_correct_candidate": 120,
+                "selector_missed": 50,
+                "unanimous_wrong": 5
+              }
+            },
+            "top2_sum": {
+              "correct": 325,
+              "outcomes": {
+                "correct": 325,
+                "no_correct_candidate": 120,
+                "selector_missed": 50,
+                "unanimous_wrong": 5
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            90
+          ]
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            90
+          ]
+        }
+      },
+      "online_b_losses_against_a_sum": {
+        "no_correct_candidate": 9,
+        "selector_missed": 17
+      },
+      "predictions_sha256": "8b0719d0b00827fd1fecdf8b068084fbe4b15c722988141ffc2afebd9e24e4a8"
+    },
+    "llama_amc23": {
+      "samples": 40,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 400,
+          "logical_prm_requests": 400,
+          "candidate_oracle_correct": 25,
+          "methods": {
+            "original": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            },
+            "sum_prm": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            },
+            "top2_sum": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 3,
+          "candidates": 385,
+          "logical_prm_requests": 370,
+          "candidate_oracle_correct": 25,
+          "methods": {
+            "original": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            },
+            "sum_prm": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            },
+            "top2_sum": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            }
+          }
+        },
+        "online_b_pool": {
+          "early_stops": 4,
+          "candidates": 380,
+          "logical_prm_requests": 360,
+          "candidate_oracle_correct": 25,
+          "methods": {
+            "original": {
+              "correct": 15,
+              "outcomes": {
+                "correct": 15,
+                "no_correct_candidate": 15,
+                "selector_missed": 10
+              }
+            },
+            "sum_prm": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            },
+            "top2_sum": {
+              "correct": 17,
+              "outcomes": {
+                "correct": 17,
+                "no_correct_candidate": 15,
+                "selector_missed": 8
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        }
+      },
+      "online_b_losses_against_a_sum": {
+        "no_correct_candidate": 1,
+        "selector_missed": 3
+      },
+      "predictions_sha256": "da0369acf9997ce54d0d41a600dfa7675bdc86ae3b69ae5220b7752cfc671fed"
+    },
+    "qwen_math500": {
+      "samples": 500,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 5000,
+          "logical_prm_requests": 5000,
+          "candidate_oracle_correct": 425,
+          "methods": {
+            "original": {
+              "correct": 401,
+              "outcomes": {
+                "correct": 401,
+                "no_correct_candidate": 75,
+                "selector_missed": 24
+              }
+            },
+            "sum_prm": {
+              "correct": 396,
+              "outcomes": {
+                "correct": 396,
+                "no_correct_candidate": 75,
+                "selector_missed": 29
+              }
+            },
+            "top2_sum": {
+              "correct": 400,
+              "outcomes": {
+                "correct": 400,
+                "no_correct_candidate": 75,
+                "selector_missed": 25
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 273,
+          "candidates": 3635,
+          "logical_prm_requests": 2270,
+          "candidate_oracle_correct": 423,
+          "methods": {
+            "original": {
+              "correct": 400,
+              "outcomes": {
+                "correct": 400,
+                "no_correct_candidate": 60,
+                "selector_missed": 23,
+                "unanimous_wrong": 17
+              }
+            },
+            "sum_prm": {
+              "correct": 396,
+              "outcomes": {
+                "correct": 396,
+                "no_correct_candidate": 60,
+                "selector_missed": 27,
+                "unanimous_wrong": 17
+              }
+            },
+            "top2_sum": {
+              "correct": 399,
+              "outcomes": {
+                "correct": 399,
+                "no_correct_candidate": 60,
+                "selector_missed": 24,
+                "unanimous_wrong": 17
+              }
+            }
+          }
+        },
+        "online_b_pool": {
+          "early_stops": 273,
+          "candidates": 3635,
+          "logical_prm_requests": 2270,
+          "candidate_oracle_correct": 425,
+          "methods": {
+            "original": {
+              "correct": 394,
+              "outcomes": {
+                "correct": 394,
+                "no_correct_candidate": 59,
+                "selector_missed": 31,
+                "unanimous_wrong": 16
+              }
+            },
+            "sum_prm": {
+              "correct": 387,
+              "outcomes": {
+                "correct": 387,
+                "no_correct_candidate": 59,
+                "selector_missed": 38,
+                "unanimous_wrong": 16
+              }
+            },
+            "top2_sum": {
+              "correct": 390,
+              "outcomes": {
+                "correct": 390,
+                "no_correct_candidate": 59,
+                "selector_missed": 35,
+                "unanimous_wrong": 16
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            115
+          ]
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            115
+          ]
+        }
+      },
+      "online_b_losses_against_a_sum": {
+        "no_correct_candidate": 5,
+        "selector_missed": 10,
+        "unanimous_wrong": 1
+      },
+      "predictions_sha256": "19fd58768b4316975afd06c2b3a638ee8dc662d2f05db729185e88447bb85482"
+    },
+    "qwen_amc23": {
+      "samples": 40,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 400,
+          "logical_prm_requests": 400,
+          "candidate_oracle_correct": 30,
+          "methods": {
+            "original": {
+              "correct": 23,
+              "outcomes": {
+                "correct": 23,
+                "no_correct_candidate": 10,
+                "selector_missed": 7
+              }
+            },
+            "sum_prm": {
+              "correct": 23,
+              "outcomes": {
+                "correct": 23,
+                "no_correct_candidate": 10,
+                "selector_missed": 7
+              }
+            },
+            "top2_sum": {
+              "correct": 24,
+              "outcomes": {
+                "correct": 24,
+                "no_correct_candidate": 10,
+                "selector_missed": 6
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 11,
+          "candidates": 345,
+          "logical_prm_requests": 290,
+          "candidate_oracle_correct": 29,
+          "methods": {
+            "original": {
+              "correct": 22,
+              "outcomes": {
+                "correct": 22,
+                "no_correct_candidate": 10,
+                "selector_missed": 7,
+                "unanimous_wrong": 1
+              }
+            },
+            "sum_prm": {
+              "correct": 22,
+              "outcomes": {
+                "correct": 22,
+                "no_correct_candidate": 10,
+                "selector_missed": 7,
+                "unanimous_wrong": 1
+              }
+            },
+            "top2_sum": {
+              "correct": 23,
+              "outcomes": {
+                "correct": 23,
+                "no_correct_candidate": 10,
+                "selector_missed": 6,
+                "unanimous_wrong": 1
+              }
+            }
+          }
+        },
+        "online_b_pool": {
+          "early_stops": 10,
+          "candidates": 350,
+          "logical_prm_requests": 300,
+          "candidate_oracle_correct": 34,
+          "methods": {
+            "original": {
+              "correct": 23,
+              "outcomes": {
+                "correct": 23,
+                "no_correct_candidate": 6,
+                "selector_missed": 11
+              }
+            },
+            "sum_prm": {
+              "correct": 25,
+              "outcomes": {
+                "correct": 25,
+                "no_correct_candidate": 6,
+                "selector_missed": 9
+              }
+            },
+            "top2_sum": {
+              "correct": 24,
+              "outcomes": {
+                "correct": 24,
+                "no_correct_candidate": 6,
+                "selector_missed": 10
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            25
+          ]
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            25
+          ]
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 1,
+          "net": -1,
+          "gained_problem_ids": [],
+          "lost_problem_ids": [
+            25
+          ]
+        }
+      },
+      "online_b_losses_against_a_sum": {
+        "no_correct_candidate": 1,
+        "selector_missed": 2
+      },
+      "predictions_sha256": "e364f429663bb13c3024afc5d6aefd980267864185c56f637a89937f3043d016"
+    },
+    "llama_aime24": {
+      "samples": 30,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 300,
+          "logical_prm_requests": 300,
+          "candidate_oracle_correct": 7,
+          "methods": {
+            "original": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 23,
+                "selector_missed": 3
+              }
+            },
+            "sum_prm": {
+              "correct": 5,
+              "outcomes": {
+                "correct": 5,
+                "no_correct_candidate": 23,
+                "selector_missed": 2
+              }
+            },
+            "top2_sum": {
+              "correct": 5,
+              "outcomes": {
+                "correct": 5,
+                "no_correct_candidate": 23,
+                "selector_missed": 2
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 0,
+          "candidates": 300,
+          "logical_prm_requests": 300,
+          "candidate_oracle_correct": 7,
+          "methods": {
+            "original": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 23,
+                "selector_missed": 3
+              }
+            },
+            "sum_prm": {
+              "correct": 5,
+              "outcomes": {
+                "correct": 5,
+                "no_correct_candidate": 23,
+                "selector_missed": 2
+              }
+            },
+            "top2_sum": {
+              "correct": 5,
+              "outcomes": {
+                "correct": 5,
+                "no_correct_candidate": 23,
+                "selector_missed": 2
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        }
+      },
+      "predictions_sha256": "beba0fe33c336fd6d489939e4497ba0fda1b9047097c6e3ba44a3390ec6fdc45"
+    },
+    "qwen_aime24": {
+      "samples": 30,
+      "modes": {
+        "fixed_pool": {
+          "early_stops": 0,
+          "candidates": 300,
+          "logical_prm_requests": 300,
+          "candidate_oracle_correct": 6,
+          "methods": {
+            "original": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            },
+            "sum_prm": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            },
+            "top2_sum": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            }
+          }
+        },
+        "five_on_fixed_pool": {
+          "early_stops": 1,
+          "candidates": 295,
+          "logical_prm_requests": 290,
+          "candidate_oracle_correct": 6,
+          "methods": {
+            "original": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            },
+            "sum_prm": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            },
+            "top2_sum": {
+              "correct": 4,
+              "outcomes": {
+                "correct": 4,
+                "no_correct_candidate": 24,
+                "selector_missed": 2
+              }
+            }
+          }
+        }
+      },
+      "early_stop_changes_on_fixed_pool": {
+        "original": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "sum_prm": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        },
+        "top2_sum": {
+          "wrong_to_correct": 0,
+          "correct_to_wrong": 0,
+          "net": 0,
+          "gained_problem_ids": [],
+          "lost_problem_ids": []
+        }
+      },
+      "predictions_sha256": "0e533292a237601aec7af5f346f8810095bd41ed872481058fc4ad15c808441b"
+    }
+  }
+}
