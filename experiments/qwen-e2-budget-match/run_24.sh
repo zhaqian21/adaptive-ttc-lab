@@ -46,6 +46,7 @@ restore() {
     exit "$rc"
 }
 trap restore EXIT
+trap 'printf "Experiment launcher failed on line %s\n" "$LINENO" >&2' ERR
 trap 'exit 143' TERM INT
 
 phase preflight
@@ -63,9 +64,11 @@ curl -fsS --max-time 3 "http://127.0.0.1:$old_port/health" >/dev/null
 has_session "$old"
 old_command="$(tmux display-message -p -t "$old:" '#{pane_start_command}')"
 old_dir="$(tmux display-message -p -t "$old:" '#{pane_current_path}')"
-old_pid="$(tmux display-message -p -t "$old:" '#{pane_pid}')"
+old_pane_pid="$(tmux display-message -p -t "$old:" '#{pane_pid}')"
+old_pid="$(ss -ltnpH "sport = :$old_port" | grep -o 'pid=[0-9]*' | cut -d= -f2 | sort -u)"
 [[ -n "$old_command" && -d "$old_dir" && "$old_pid" =~ ^[1-9][0-9]*$ ]]
-ss -ltnp "sport = :$old_port" | awk -v pid="$old_pid" 'index($0,"pid="pid","){seen=1} END{exit !seen}'
+old_parent="$(ps -o ppid= -p "$old_pid" | tr -d ' ')"
+[[ "$old_pid" == "$old_pane_pid" || "$old_parent" == "$old_pane_pid" ]]
 phase switching-prm
 restore_prm=1
 tmux send-keys -t "$old:" C-c
@@ -73,8 +76,10 @@ for ((i=0;i<40;i++)); do
     if ! has_session "$old" && [[ ! -d "/proc/$old_pid" ]]; then break; fi
     sleep 1
 done
-! has_session "$old"
-[[ ! -d "/proc/$old_pid" ]]
+if has_session "$old" || [[ -d "/proc/$old_pid" ]]; then
+    echo "The previous GPU 0 PRM has not stopped" >&2
+    exit 1
+fi
 
 phase running
 "$python" -B "$here/compare.py" --data "$root/data" --output "$root/results"
