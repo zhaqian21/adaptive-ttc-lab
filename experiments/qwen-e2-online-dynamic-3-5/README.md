@@ -17,3 +17,5 @@ bash experiments/qwen-e2-online-dynamic-3-5/queue_24.sh "$RUN_DIRECTORY" "$VLLM_
 ~~~
 
 The queue runs the four-question smoke and then all 500 questions per arm. Each question has an atomic checkpoint. The completed export contains a summary, matched results, and compressed candidate traces. The three arms share sampling parameters, but the Direct prompt and voting rule follow the Direct baseline.
+
+The result audit runs after generation completes, even if a resident service needs later restoration. The queue records the restoration status. If GPU 7 has a different active job, leave it running and defer the original service restart.

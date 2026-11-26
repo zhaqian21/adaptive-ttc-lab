@@ -15,11 +15,18 @@ trap 'exit 143' TERM INT
 
 rm -f -- "$run/queue.exit" "$run/run.exit"
 echo running > "$run/queue.status"
-bash "$launcher" "$run" "$2" "$here/online_e2.py" --replace-gpu7
-[[ "$(cat "$run/service-restoration")" == restored ]]
+launch_rc=0
+bash "$launcher" "$run" "$2" "$here/online_e2.py" --replace-gpu7 || launch_rc=$?
+if (( launch_rc != 0 )) && [[ "$(cat "$run/status")" != generation-complete ]]; then
+    exit "$launch_rc"
+fi
 echo auditing > "$run/queue.status"
 "$python" -B "$here/archive.py" --data "$run/data" --results "$run/results" --output "$run/export"
 tar -cf "$run/online-review.tar.tmp" -C "$run/export" .
 mv -- "$run/online-review.tar.tmp" "$run/online-review.tar"
 touch "$run/audit.ok"
-echo complete > "$run/queue.status"
+if [[ "$(cat "$run/service-restoration")" == restored ]]; then
+    echo complete > "$run/queue.status"
+else
+    echo results-complete-restoration-pending > "$run/queue.status"
+fi

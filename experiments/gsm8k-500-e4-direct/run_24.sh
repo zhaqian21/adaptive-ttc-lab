@@ -45,21 +45,29 @@ wait_port() {
 }
 
 restore() {
-    local rc=$? restored=1
+    local rc=$? restored=1 gpu7_deferred=0
     trap - EXIT
     if (( need_restore )); then
         for lane in "${!services[@]}"; do
             if ! session_exists "${services[lane]}"; then
+                if [[ "${services[lane]}" == ttc-e4-gpu7 &&
+                    -n "$(nvidia-smi -i 7 --query-compute-apps=pid --format=csv,noheader,nounits)" ]]; then
+                    gpu7_deferred=1
+                    continue
+                fi
                 tmux new-session -d -s "${services[lane]}" "${commands[lane]}" || restored=0
             fi
             wait_port "${ports[lane]}" || restored=0
         done
-        if (( replace_gpu7 )); then wait_port 18437 || restored=0; fi
-        if (( restored )); then
-            echo restored > "$root/service-restoration"
-        else
+        if (( replace_gpu7 && !gpu7_deferred )); then wait_port 18437 || restored=0; fi
+        if (( !restored )); then
             echo failed > "$root/service-restoration"
             (( rc != 0 )) || rc=1
+        elif (( gpu7_deferred )); then
+            echo deferred-gpu7 > "$root/service-restoration"
+            (( rc != 0 )) || rc=1
+        else
+            echo restored > "$root/service-restoration"
         fi
     fi
     printf '%s\n' "$rc" > "$root/run.exit"
