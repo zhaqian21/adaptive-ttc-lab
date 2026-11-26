@@ -36,3 +36,20 @@ The result archive contains the engine checks, effective decoding and model
 configuration, all 1,500 predictions, candidate traces, and a paired summary
 using fixed K=4 as the reference. Generation token totals include input and
 output tokens. PRM requests are reported separately.
+
+## AMC23 and GSM8K transfer
+
+The same runner accepts the full frozen 40-question AMC23 set and the existing
+500-question GSM8K sample from the 2,048-token study. GSM8K uses the previous
+sampling seed of 42 and the exact saved IDs. Both use the same MATH answer
+extractor and grader as the previous Qwen pools. Within each dataset, all three
+arms share zero-based question seeds and the pinned generation and PRM settings.
+AMC23 runs first, followed by GSM8K. The three arms run in parallel per dataset.
+The temporary PRM services are reused between datasets.
+
+~~~bash
+bash experiments/qwen-e2-budget-match/run_24.sh "$RUN_DIRECTORY" "$VLLM_PYTHON" amc23 gsm8k
+~~~
+
+Each dataset has independent formal timings and a subdirectory in the export.
+The matched results use fixed K=4 as the reference within each dataset.

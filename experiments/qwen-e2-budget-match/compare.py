@@ -13,7 +13,8 @@ from urllib.request import ProxyHandler, build_opener
 HERE = Path(__file__).resolve().parent
 PREVIOUS = HERE.parent / "qwen-e2-online-dynamic-3-5"
 sys.path.insert(0, str(PREVIOUS))
-from online_e2 import CONTEXT, ENGINE, QWEN, questions, released, start_service, wait_ready, worker
+from online_e2 import CONTEXT, ENGINE, MANIFEST, QWEN, questions, released, start_service, wait_ready, worker
+from run_pools import PLAN as SUITE_MANIFEST, questions as suite_questions
 from archive import archive
 
 
@@ -21,6 +22,24 @@ LANES = {0: ("e2_fixed5", 18420, 22502), 1: ("e2_fixed4", 18421, 22503), 7: ("e2
 LIMITS = {"e2_fixed5": 5, "e2_fixed4": 4, "e2_dynamic3_to_5": 5}
 SERVED_NAMES = {0: "published-qwen25", 1: "published-qwen25", 7: QWEN[1]}
 OPENER = build_opener(ProxyHandler({}))
+COUNTS = {"math": 500, "amc23": 40, "gsm8k": 500}
+
+
+def load_cohort(data, dataset):
+    if dataset == "math":
+        cohort, manifest = questions(data)["math"], MANIFEST
+    else:
+        rows = [q for q in suite_questions(data) if q["dataset"] == dataset]
+        cohort = [{**q, "problem_id": i} for i, q in enumerate(rows)]
+        manifest = SUITE_MANIFEST
+    if (len(cohort) != COUNTS[dataset]
+            or len({q["dataset_unique_id"] for q in cohort}) != COUNTS[dataset]):
+        raise ValueError(f"Unexpected frozen cohort for {dataset}")
+    return cohort, manifest
+
+
+def cohort_directory(root, dataset):
+    return root if dataset == "math" else root / dataset
 
 
 def read_endpoint(port, route):
@@ -29,8 +48,9 @@ def read_endpoint(port, route):
 
 
 def preflight(args):
-    if len(questions(args.data)["math"]) != 500:
-        raise ValueError("Expected 500 frozen MATH questions")
+    for dataset in args.datasets:
+        cohort, _ = load_cohort(args.data, dataset)
+        print(f"{dataset}: {len(cohort)} frozen questions", flush=True)
     version = subprocess.check_output([args.engine_python, "-c",
         "from importlib.metadata import version; print(version('vllm'))"], text=True).strip()
     if version != "0.33.0":
@@ -82,22 +102,23 @@ def coordinate(args):
             model, = json.loads(read_endpoint(port, "v1/models"))["data"]
             if model["id"] != "Qwen2.5-Math-PRM-7B":
                 raise ValueError("Unexpected PRM model")
-        for phase in ("smoke", "formal"):
-            released.write(args.output / "status.json", {"phase": phase})
-            with ExitStack() as workers:
-                children = {}
-                for (lane, (method, _, _)), gpu in zip(LANES.items(), devices, strict=True):
-                    output = args.output / phase / method
-                    output.mkdir(parents=True, exist_ok=True)
-                    command = [sys.executable, "-B", str(Path(__file__)), "--lane", str(lane),
-                               "--data", str(args.data), "--output", str(output)]
-                    if phase == "smoke":
-                        command.append("--smoke")
-                    children[method] = start_service(workers, command, {**os.environ, "CUDA_VISIBLE_DEVICES": gpu},
-                                                     output / "worker.log")
-                codes = {method: proc.wait() for method, proc in children.items()}
-                if any(codes.values()):
-                    raise RuntimeError(f"{phase}: {codes}")
+        for dataset in args.datasets:
+            for phase in ("smoke", "formal"):
+                released.write(args.output / "status.json", {"phase": phase, "dataset": dataset})
+                with ExitStack() as workers:
+                    children = {}
+                    for (lane, (method, _, _)), gpu in zip(LANES.items(), devices, strict=True):
+                        output = cohort_directory(args.output, dataset) / phase / method
+                        output.mkdir(parents=True, exist_ok=True)
+                        command = [sys.executable, "-B", str(Path(__file__)), "--lane", str(lane),
+                                   "--data", str(args.data), "--output", str(output), "--datasets", dataset]
+                        if phase == "smoke":
+                            command.append("--smoke")
+                        children[method] = start_service(workers, command, {**os.environ, "CUDA_VISIBLE_DEVICES": gpu},
+                                                         output / "worker.log")
+                    codes = {method: proc.wait() for method, proc in children.items()}
+                    if any(codes.values()):
+                        raise RuntimeError(f"{dataset}/{phase}: {codes}")
     released.write(args.output / "status.json", {"phase": "generation-complete"})
 
 
@@ -107,16 +128,23 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--engine-python")
     parser.add_argument("--results", type=Path)
+    parser.add_argument("--datasets", nargs="+", choices=COUNTS, default=["math"])
     parser.add_argument("--lane", type=int, choices=LANES)
     parser.add_argument("--smoke", action="store_true")
     parser.add_argument("--preflight", action="store_true")
     args = parser.parse_args()
+    if len(set(args.datasets)) != len(args.datasets) or (args.lane is not None and len(args.datasets) != 1):
+        parser.error("Specify distinct datasets, exactly one in worker mode")
     signal.signal(signal.SIGTERM, lambda *_: sys.exit(143))
     if args.preflight:
         preflight(args)
     elif args.results is not None:
-        archive(args.data, args.results, args.output, lanes=LANES, limits=LIMITS, reference="e2_fixed4")
+        for dataset in args.datasets:
+            cohort, manifest = load_cohort(args.data, dataset)
+            archive(args.data, cohort_directory(args.results, dataset), cohort_directory(args.output, dataset),
+                    lanes=LANES, limits=LIMITS, reference="e2_fixed4", cohort=cohort, manifest=manifest)
     elif args.lane is not None:
-        worker(args, lanes=LANES, limits=LIMITS, served_name=SERVED_NAMES[args.lane])
+        cohort, manifest = load_cohort(args.data, args.datasets[0])
+        worker(args, lanes=LANES, limits=LIMITS, served_name=SERVED_NAMES[args.lane], cohort=cohort, manifest=manifest)
     else:
         coordinate(args)

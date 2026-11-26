@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[[ $# == 2 ]] || { echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON" >&2; exit 2; }
+[[ $# -ge 2 ]] || { echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON [DATASET ...]" >&2; exit 2; }
 here="$(cd -- "$(dirname -- "$0")" && pwd)"
 root="$(realpath -- "$1")"
 engine="$(realpath -s -- "$2")"
+shift 2
+datasets=()
+if (( $# )); then datasets=(--datasets "$@"); fi
 python="$root/source/.venv/bin/python"
 old=ttc-published-prm-gpu0
 old_port=18422
@@ -57,7 +60,7 @@ export CUDA_VISIBLE_DEVICES="$(nvidia-smi -i 0,1,7 --query-gpu=uuid --format=csv
 export CUDA_DEVICE_ORDER=PCI_BUS_ID HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1
 export PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false OMP_NUM_THREADS=2 MKL_NUM_THREADS=2 PYTHONHASHSEED=0
 export PYTHONPATH="$here/../aime24-amo-bench-published-code-2026-11-24/scripts:$root/source/scripts"
-"$python" -B "$here/compare.py" --data "$root/data" --output "$root/results" --engine-python "$engine" --preflight
+"$python" -B "$here/compare.py" --data "$root/data" --output "$root/results" --engine-python "$engine" --preflight "${datasets[@]}"
 [[ -z "$(ss -ltnH '( sport = :22502 or sport = :22503 )')" ]]
 curl -fsS --max-time 3 http://127.0.0.1:18438/health >/dev/null
 curl -fsS --max-time 3 "http://127.0.0.1:$old_port/health" >/dev/null
@@ -82,9 +85,9 @@ if has_session "$old" || [[ -d "/proc/$old_pid" ]]; then
 fi
 
 phase running
-"$python" -B "$here/compare.py" --data "$root/data" --output "$root/results"
+"$python" -B "$here/compare.py" --data "$root/data" --output "$root/results" "${datasets[@]}"
 phase auditing
-"$python" -B "$here/compare.py" --data "$root/data" --results "$root/results" --output "$root/export"
+"$python" -B "$here/compare.py" --data "$root/data" --results "$root/results" --output "$root/export" "${datasets[@]}"
 cp -- "$root/results/generation_backends.json" "$root/export/generation_backends.json"
 tar -cf "$root/budget-match-review.tar.tmp" -C "$root/export" .
 mv -- "$root/budget-match-review.tar.tmp" "$root/budget-match-review.tar"
