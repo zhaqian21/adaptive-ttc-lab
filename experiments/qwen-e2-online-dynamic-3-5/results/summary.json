@@ -1,0 +1,143 @@
+{
+  "methods": {
+    "e2_fixed10": {
+      "correct": 409,
+      "candidates": 5000,
+      "early_stops": 0,
+      "input_tokens": 4321580,
+      "output_tokens": 3115964,
+      "prm_requests": 5000,
+      "generation_requests": 10000,
+      "retries": 0,
+      "accuracy": 0.818,
+      "samples": 500,
+      "mean_candidates": 10.0,
+      "tokens": 7437544,
+      "latency_median_seconds": 64.35225170757622,
+      "wall_seconds": 1529.1691656408366,
+      "timing_last_attempt": {
+        "wall_seconds": 1529.1691656408366,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_fixed10_000.jsonl.gz": "59aceb7c1ef5876d817ab475c34309071ef4d6240b6cf8a9b632945310a0d059",
+        "e2_fixed10_001.jsonl.gz": "9aed00f769599e3068949cee0bfafee04e8662f96bc8905fa660526a306c509a",
+        "e2_fixed10_002.jsonl.gz": "a5d890793b4098871ca72c49524c7947970a9ad3fea71bd5c1f70eccbccb4f20",
+        "e2_fixed10_003.jsonl.gz": "32acf084ac068e068379dae587abd26b6db632e095d69db8002abe5df325fb53",
+        "e2_fixed10_004.jsonl.gz": "4ac7f675eabeca2f79fc0ad1aac22e582268eba446b47beb4f389dc7042a9be8",
+        "e2_fixed10_005.jsonl.gz": "154a44f5a0ca774f905e4f4d73a5c96751cc27663ec659e493dab64b0aca7edc",
+        "e2_fixed10_006.jsonl.gz": "aedf2260d38ede04d1e452831d2923548aacb357e5b115e033c86ea55c52b12c",
+        "e2_fixed10_007.jsonl.gz": "6dd0c26244d4b6f2b5a3826fa9f7c1d6ddca4c0c51a441f9e1a78aa34d066ba9",
+        "e2_fixed10_008.jsonl.gz": "f481b769c4c3b2a6b87ceffcbe0c09c6e4b67480bc5ca6ceba7293d4c594562f",
+        "e2_fixed10_009.jsonl.gz": "0a6a7a01d60c1770a003eb5aa62d1630d28dc47f99199f75f59e27d82c1dfc2f",
+        "e2_fixed10_010.jsonl.gz": "b5f83978e073f22738e1cae8787039803202beb847f178af15cd0de54cdb3f01",
+        "e2_fixed10_011.jsonl.gz": "eeb60997c7fd6b0dd1360180f32d3c1fc267ddf2dce7cc671b36c69d71cf7940",
+        "e2_fixed10_012.jsonl.gz": "e0b45498ce1c784bc318481761138330715f17d1d38768f297f8f51e38edda80",
+        "e2_fixed10_013.jsonl.gz": "4fe84f05eeb7fff93109e70904e9eab77811e84cc48d19d1f872219c7bd13f06",
+        "e2_fixed10_014.jsonl.gz": "be19c451260f22ad441bdbba7e771cb86e56d3f65636493393269a55942f0641",
+        "e2_fixed10_015.jsonl.gz": "cc5fb1137dcc39c93927ccbd1d2151e0e1a501b239da43db6e2030661517204e",
+        "e2_fixed10_016.jsonl.gz": "e8a17fb187f75c136dcc3fa6bcbb36a16bfa056042e9ad3ef8120dcdf18aea0b",
+        "e2_fixed10_017.jsonl.gz": "17fc76d652b62acf09a13a9a8f8d32f494e7b1f05eb1e4ffa58f2109cc694fdd",
+        "e2_fixed10_018.jsonl.gz": "00d42faff3a3b6e2997759929e576722c7c344346e40b8dbc43c60a9c20131da",
+        "e2_fixed10_019.jsonl.gz": "6c90434ec9124cd986ef5f04335e5ce6b3d3ed7a280cf87670ebf35849f7d065"
+      },
+      "paired_vs_e2_fixed10": {
+        "lost": 0,
+        "gained": 0
+      }
+    },
+    "e2_dynamic3_to_5": {
+      "correct": 397,
+      "candidates": 1860,
+      "early_stops": 320,
+      "input_tokens": 1634430,
+      "output_tokens": 1232570,
+      "prm_requests": 900,
+      "generation_requests": 3720,
+      "retries": 0,
+      "accuracy": 0.794,
+      "samples": 500,
+      "mean_candidates": 3.72,
+      "tokens": 2867000,
+      "latency_median_seconds": 17.60395652987063,
+      "wall_seconds": 518.0589148178697,
+      "timing_last_attempt": {
+        "wall_seconds": 518.0589148178697,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_dynamic3_to_5_000.jsonl.gz": "5743af47445b8638534864308e0868eeb275b7d6c4946d54d936f212f08107e5",
+        "e2_dynamic3_to_5_001.jsonl.gz": "1828cdca4f005ee03cc467df05cf80c7ed8a206ebec0d2bc9952a81a9d20521d",
+        "e2_dynamic3_to_5_002.jsonl.gz": "bad581b06243913b7ff8f81be55dce4661dff104cb669319ab130d9829eecb8d",
+        "e2_dynamic3_to_5_003.jsonl.gz": "1ae9558cd0b271c5d95c5385388924aa07ac3ed7ba92c4501ed3881501b65584",
+        "e2_dynamic3_to_5_004.jsonl.gz": "76d780e2cb1a24e5c12007d564aeecd10f0541504ba08ecbeaa0dff35d9cbc47",
+        "e2_dynamic3_to_5_005.jsonl.gz": "096ff8a67a18583837609350c847ad9df73365cf508f49bb412051a5941deec2",
+        "e2_dynamic3_to_5_006.jsonl.gz": "e05fa1c9661d0f57e2c8ae25ebc17f391a3fafcebc5b594052897e60b25c9995",
+        "e2_dynamic3_to_5_007.jsonl.gz": "a2c1528587076718f1a102073b079ec0910e7579d77b418efab872d20b5c0b9b",
+        "e2_dynamic3_to_5_008.jsonl.gz": "566b06829ace2af84bac0246078b9930409ea0eb276e0d168805041cb93c8288",
+        "e2_dynamic3_to_5_009.jsonl.gz": "be5e6c1e9f5954310e47d4cd6b6c3aa2a829268d0e0bef755b713f2261479be3",
+        "e2_dynamic3_to_5_010.jsonl.gz": "0fc63fa9981416c3ee02122853cf51db59fe281d2a398a2f317ab3f254fd92b9",
+        "e2_dynamic3_to_5_011.jsonl.gz": "c9fa7eb99c7f3062ec73746107f043b764979ab15232017878dd87878f9615ad",
+        "e2_dynamic3_to_5_012.jsonl.gz": "faf6803e2b42cdcbc4d2c42532c377be3c4444fda8cdd2bd835979bc63cab089",
+        "e2_dynamic3_to_5_013.jsonl.gz": "a5d38bcd634ec2c9cb48fd9b922ee1d81d1f0fef256e0fe961991dd8fc1ee6df",
+        "e2_dynamic3_to_5_014.jsonl.gz": "97053b216ca192e4dc0b9d98eb969463e6c1b4342c1671511b8c4ebb925cf158",
+        "e2_dynamic3_to_5_015.jsonl.gz": "9344029ea5f9147fe35561c5417ca4dc1efa268642c76fabf9b59298336a2515",
+        "e2_dynamic3_to_5_016.jsonl.gz": "392924db6cca97d125d0025750593ff1688c9dec85bff87af4d4011a4d03cb33",
+        "e2_dynamic3_to_5_017.jsonl.gz": "a8fa9974a74e13f748e60fc3f2faec5c5cd2e2b716adca1a01c4c758b3659900",
+        "e2_dynamic3_to_5_018.jsonl.gz": "024e9cae63af8c0b522f3ef0d7415ec374658347d83e6d896ed1c1fb1b5a62fb",
+        "e2_dynamic3_to_5_019.jsonl.gz": "7107c0a300747ae7f5f11e42defe5ab45f9126fe633b7c0503758d7996865c88"
+      },
+      "paired_vs_e2_fixed10": {
+        "lost": 21,
+        "gained": 9
+      }
+    },
+    "direct_vote5": {
+      "correct": 381,
+      "candidates": 2500,
+      "early_stops": 0,
+      "input_tokens": 365395,
+      "output_tokens": 1526771,
+      "prm_requests": 0,
+      "generation_requests": 2500,
+      "retries": 0,
+      "accuracy": 0.762,
+      "samples": 500,
+      "mean_candidates": 5.0,
+      "tokens": 1892166,
+      "latency_median_seconds": 17.6820747643942,
+      "wall_seconds": 433.313482014928,
+      "timing_last_attempt": {
+        "wall_seconds": 433.313482014928,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "direct_vote5_000.jsonl.gz": "6a9f3a6b1d60c9092ba983f5db334f315b69dbb3264fd92afcdbee5a1e22952c",
+        "direct_vote5_001.jsonl.gz": "a03bdb2afa89b5da5c0e5a7b7984fe0e835967cdb515eeaedd602a17efc61296",
+        "direct_vote5_002.jsonl.gz": "45080e8b197ee3abad04768643192d95b369a659b4ab66bd769eedfb53513d38",
+        "direct_vote5_003.jsonl.gz": "98f3ede0195647dc9f2e264a8a81be7b00aa81c6ed7b1d9222778e5fd21eb836",
+        "direct_vote5_004.jsonl.gz": "d69684304456640888e33c8bff52d2db095c55156d00d8db38509c79acc6c49b",
+        "direct_vote5_005.jsonl.gz": "ddb91cdfee5fd83ccaec10d2335bac4514eda590ac3c7914b7d75c64508d1c86",
+        "direct_vote5_006.jsonl.gz": "d2dd8b17322eda5401584588a2f61ee2ead85eda71825c714e012a40de30fa49",
+        "direct_vote5_007.jsonl.gz": "6fe778de61beecb3b979d9863bb5606e5a674f534866873920319467b13c1dea",
+        "direct_vote5_008.jsonl.gz": "366b9920d8bc7ce200c31e59be4ab4e84a0cfbfcf570413c39086b82871187bc",
+        "direct_vote5_009.jsonl.gz": "1d41bfa4c2749f6f6fa1e8c528c5f60411d849eccec76002c6f1d668391af6ca",
+        "direct_vote5_010.jsonl.gz": "5b6c3a4c7bd16a73b8b88449e7ba0cfc3445ff1b0c058781a7381572530d7272",
+        "direct_vote5_011.jsonl.gz": "edda5b66562dd07f33f30dff3301d1e2938460e05b257a4d2dc39c44b12040a8",
+        "direct_vote5_012.jsonl.gz": "0bfc12dfe5fd856963b0805262407349d795280321222ef33d37e227fc10bcae",
+        "direct_vote5_013.jsonl.gz": "9f87b8797f842555de16aed40b16aabd60173c5ed43c1823ff5d05b1bc7bd615",
+        "direct_vote5_014.jsonl.gz": "f20f7b4f89973879208457671156c1b49260185e54071b72297bb8c9693ce86c",
+        "direct_vote5_015.jsonl.gz": "65903381fec5cc5f08345d7220ce9a0b85043dd176de94aa48cd5a3ebe0962f9",
+        "direct_vote5_016.jsonl.gz": "4eb5ddd17bbd467a6434a453422da5eec0bc8ba79c7cc13950c8e9f98e8b5dc4",
+        "direct_vote5_017.jsonl.gz": "f2e209a7b3ba8bbbab662b438435ab7dbaeb97c3c71b1ce07639a0278455255c",
+        "direct_vote5_018.jsonl.gz": "e6fc99861c1886ee51e66d234517b38e1e09e6f7ad9e3f17417d32e056d90d8e",
+        "direct_vote5_019.jsonl.gz": "51d67a71db9b89e89237de2c5d72a339b726c5d09794089633d8e83fc8df8815"
+      },
+      "paired_vs_e2_fixed10": {
+        "lost": 36,
+        "gained": 8
+      }
+    }
+  },
+  "paired_sha256": "17b7bb4c1b45ad6c3cbb65dc0aba6e21e8bee302003ff36074e18bf3a879c573"
+}

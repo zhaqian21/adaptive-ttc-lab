@@ -79,7 +79,8 @@ class MeasuredSession(requests.Session):
         return response
 
 
-def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, model=None, retain_traces=False):
+def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, model=None, retain_traces=False,
+          candidate_limit=K, agreement_at=5, agreement_rule=prefix_agrees, original_prm_only=False):
     runner = released.runner
     model = MODEL if model is None else model
     start = time.monotonic()
@@ -103,7 +104,7 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
             candidates = []
             stopped = False
             try:
-                for i in range(1, K + 1):
+                for i in range(1, candidate_limit + 1):
                     session.stage(i)
                     core.reset()
                     result = core.solve(question["problem"])
@@ -119,7 +120,7 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
                         "compute_configs_used": result.metadata.get("compute_configs_used", []),
                         "mean_reward": None,
                     })
-                    if PHASES[args.worker] and i == 5 and prefix_agrees(candidates):
+                    if PHASES[args.worker] and i == agreement_at and agreement_rule(candidates):
                         stopped = True
                         break
 
@@ -135,11 +136,15 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
                         if retain_traces:
                             row["prm_input"] = selector.combine_fields(row)
                             row["prm_score"] = value
-                    selections, _ = selectors(candidates)
-                    if old_index + 1 != selections["original"]:
-                        raise ValueError("Original PRM choice disagrees with the archived selector")
+                    if original_prm_only:
+                        selected = old_index + 1
+                        selections = {"sum_prm": selected, "original": selected}
+                    else:
+                        selections, _ = selectors(candidates)
+                        if old_index + 1 != selections["original"]:
+                            raise ValueError("Original PRM choice disagrees with the archived selector")
                 successful = session.stages[prior:]
-                valid_stages(successful, stopped)
+                valid_stages(successful, stopped, candidate_limit, agreement_at)
                 outcomes.append({"seed": seed, "error": None, "stages": successful})
                 return {
                     "problem_id": index, "dataset_unique_id": question["dataset_unique_id"], "level": question["level"],
@@ -158,10 +163,12 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
     raise RuntimeError(f"{args.worker}/{index} failed after 3 attempts: {outcomes[-1]['error']}")
 
 
-def valid_stages(stages, stopped):
-    expected = list(range(1, 6)) if stopped else [*range(1, 11), "prm"]
+def valid_stages(stages, stopped, candidate_limit=K, agreement_at=5):
+    expected = list(range(1, (agreement_at if stopped else candidate_limit) + 1))
+    if not stopped:
+        expected.append("prm")
     if ([stage["stage"] for stage in stages] != expected
-            or sum(stage["prm_requests"] for stage in stages) != (0 if stopped else K)
+            or sum(stage["prm_requests"] for stage in stages) != (0 if stopped else candidate_limit)
             or any(stage["generation_requests"] < 1 for stage in stages if stage["stage"] != "prm")
             or any(stage["generation_requests"] for stage in stages if stage["stage"] == "prm")):
         raise ValueError("The successful attempt made unexpected requests")
