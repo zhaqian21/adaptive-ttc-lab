@@ -1,0 +1,330 @@
+[
+  {
+    "pr": 1,
+    "title": "归档 MATH-500 E1–E4 复现实验配置和记录",
+    "head": "d6096722b82de5ade3ee68334fd417f5f79f5b51",
+    "branch": "codex/publish-math500-reproduction",
+    "base": "main",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/1"
+  },
+  {
+    "pr": 2,
+    "title": "归档 MATH-500 作者公开代码复现",
+    "head": "9d51d691be6d58c0eb78fef0082d039a24182d97",
+    "branch": "codex/publish-math500-published-code",
+    "base": "main",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/2"
+  },
+  {
+    "pr": 3,
+    "title": "归档 AIME24 和 AMO-Bench 公开代码复现",
+    "head": "0858e7436f2ea84bdaa92c03b9b0781d9817ecbe",
+    "branch": "codex/publish-aime24-amo-reproduction",
+    "base": "main",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/3"
+  },
+  {
+    "pr": 4,
+    "title": "在 MATH-500 上对照自适应修正与重采样",
+    "head": "fc8a98c2d5c7230b81145d42765d0d5b1c611b31",
+    "branch": "codex/math500-adaptive-revision",
+    "base": "codex/publish-math500-published-code",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/4"
+  },
+  {
+    "pr": 5,
+    "title": "准备 825 双 H20 的 Llama 表 1 复现",
+    "head": "0f65a08559123bc9f5b1cf389470b8660c67c95d",
+    "branch": "codex/llama-table1-825",
+    "base": "codex/publish-aime24-amo-reproduction",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/5"
+  },
+  {
+    "pr": 6,
+    "title": "Extend the paired adaptive revision comparison to AMC23",
+    "head": "ff3b1ccdd36f27492087a27ab5d75e170c704694",
+    "branch": "codex/amc23-adaptive-revision",
+    "base": "codex/math500-adaptive-revision",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/6"
+  },
+  {
+    "pr": 7,
+    "title": "Evaluate adaptive candidate counts on MATH-500",
+    "head": "135d4acc8379ad5f3f1e2a4cab47aec7bdbd982f",
+    "branch": "codex/math500-adaptive-k",
+    "base": "codex/math500-adaptive-revision",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/7"
+  },
+  {
+    "pr": 8,
+    "title": "Replay answer-level PRM aggregation for adaptive MATH-500",
+    "head": "620d625671e3de83c458c3605bdc7cc853747ee8",
+    "branch": "codex/math500-prm-answer-aggregation",
+    "base": "codex/math500-adaptive-k",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/8"
+  },
+  {
+    "pr": 9,
+    "title": "Benchmark answer-level PRM aggregation in online adaptive inference",
+    "head": "2be474ae527b63a67250a9d88bfa8d0df12ae25c",
+    "branch": "codex/math500-online-prm-aggregation",
+    "base": "codex/math500-prm-answer-aggregation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/9"
+  },
+  {
+    "pr": 10,
+    "title": "Evaluate selective PRM scoring and budget routing on MATH-500",
+    "head": "a10ea568abbbafe926cfad3744c32279bcf29f2f",
+    "branch": "codex/math500-prm-routing-modules",
+    "base": "codex/math500-online-prm-aggregation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/10"
+  },
+  {
+    "pr": 11,
+    "title": "Run the conditional two-H20 Llama reproduction on server 24",
+    "head": "3813100e0776f05f7e2869320e6b1226d57e7f1c",
+    "branch": "codex/llama-table1-24",
+    "base": "codex/llama-table1-825",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/11"
+  },
+  {
+    "pr": 12,
+    "title": "Run Llama optimization comparisons on one H20",
+    "head": "f131108eef062e7421d47cd7c79b355521889a58",
+    "branch": "codex/llama-optimizations-825",
+    "base": "codex/math500-prm-routing-modules",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/12"
+  },
+  {
+    "pr": 13,
+    "title": "Dispatch Llama MATH-500 E4 from a shared two-ended queue",
+    "head": "08d980c6c117f243db0fe391ffbd5fa266f2466f",
+    "branch": "codex/llama-math-e4-shared-queue",
+    "base": "codex/llama-table1-24",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/13"
+  },
+  {
+    "pr": 14,
+    "title": "Replay three-answer early stopping on historical E4",
+    "head": "8a9407db2de37709390ebdd6edff0d1fbef8a497",
+    "branch": "codex/math500-historical-e4-early-stop",
+    "base": "codex/publish-math500-published-code",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/14"
+  },
+  {
+    "pr": 15,
+    "title": "Confirm five matching answers on the historical E4 candidate pool",
+    "head": "dcc0b0fefa255a1fe298841f398917a97fbd5cc4",
+    "branch": "codex/math500-historical-e4-five-agreement",
+    "base": "codex/math500-historical-e4-early-stop",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/15"
+  },
+  {
+    "pr": 16,
+    "title": "Replay four-answer agreement on the historical E4 pool",
+    "head": "a8c40339fefbd72ad127f9f54f64cf27543c5cd7",
+    "branch": "codex/math500-historical-e4-four-agreement",
+    "base": "codex/math500-historical-e4-five-agreement",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/16"
+  },
+  {
+    "pr": 17,
+    "title": "Replay two-answer agreement on the historical E4 pool",
+    "head": "d978a946c874e5402ebead5e412153e0f568e0cd",
+    "branch": "codex/math500-historical-e4-two-agreement",
+    "base": "codex/math500-historical-e4-four-agreement",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/17"
+  },
+  {
+    "pr": 18,
+    "title": "Complete the historical E4 agreement sweep through nine",
+    "head": "184ce6a24ee621300c9d5dbe5261614cf6ed624a",
+    "branch": "codex/math500-historical-e4-agreement-6-to-9",
+    "base": "codex/math500-historical-e4-two-agreement",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/18"
+  },
+  {
+    "pr": 19,
+    "title": "Compare historical E2 and E4 agreement early stopping on MATH-500",
+    "head": "5a7d2294bac11042b6a8be77d80335d433c9c128",
+    "branch": "codex/math500-historical-e2-agreement",
+    "base": "codex/math500-historical-e4-agreement-6-to-9",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/19"
+  },
+  {
+    "pr": 20,
+    "title": "Archive the two-H20 Llama Table 1 reproduction",
+    "head": "d2f52b7c581384572f0a4237612ee0e0cdec868e",
+    "branch": "codex/llama-table1-24-results",
+    "base": "codex/llama-table1-24",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/20"
+  },
+  {
+    "pr": 21,
+    "title": "Replay step-level PRM selection on Llama MATH-500 E2 and E4",
+    "head": "74bb7290bebb589465fdf95fd02219530b47d063",
+    "branch": "codex/llama-math500-step-prm-replay",
+    "base": "codex/llama-table1-24-results",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/21"
+  },
+  {
+    "pr": 22,
+    "title": "Compare PRM separator placement on identical Llama MATH-500 text",
+    "head": "253d256a99f236332f43a93cb2979a55b228c861",
+    "branch": "codex/llama-math500-same-text-prm",
+    "base": "codex/llama-math500-step-prm-replay",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/22"
+  },
+  {
+    "pr": 23,
+    "title": "Compare Transformers and vLLM generation for Llama E2",
+    "head": "37d07cf81acdaf3bb524a83968261409c898ac54",
+    "branch": "codex/llama-e2-generation-backends",
+    "base": "codex/llama-math500-same-text-prm",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/23"
+  },
+  {
+    "pr": 24,
+    "title": "Replay answer-level PRM selection on Llama MATH-500",
+    "head": "9ff2b385613782ed7eb204f3c5eb23e00148c869",
+    "branch": "codex/llama-e4-answer-prm-aggregation",
+    "base": "codex/llama-e2-generation-backends",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/24"
+  },
+  {
+    "pr": 25,
+    "title": "Replay five-answer early stopping with Llama E4 answer aggregation",
+    "head": "763c6ebdf0c01c686d6e0d962c3e8361f76ae9ee",
+    "branch": "codex/llama-e4-five-answer-stop",
+    "base": "codex/llama-e4-answer-prm-aggregation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/25"
+  },
+  {
+    "pr": 26,
+    "title": "Llama E4 在线对照 | 答案级 PRM 聚合与五条一致早停",
+    "head": "b47f82e35af0a247a7732711f89e810e1af73fe2",
+    "branch": "codex/llama-e4-online-earlystop-aggregation",
+    "base": "codex/llama-e4-five-answer-stop",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/26"
+  },
+  {
+    "pr": 27,
+    "title": "Llama 与 Qwen 的 AMC23、MATH-500 E4 在线迁移对照",
+    "head": "3985f29fa7a63db2d889d088e0bdee99cb9ead01",
+    "branch": "codex/e4-online-transfer",
+    "base": "codex/llama-e4-online-earlystop-aggregation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/27"
+  },
+  {
+    "pr": 28,
+    "title": "E4 PRM 选优消融与 AIME24 留出验证",
+    "head": "f5e1cbad14df799dcaab0e09fc5c3e208bb2e32e",
+    "branch": "codex/e4-prm-selector-ablation",
+    "base": "codex/e4-online-transfer",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/28"
+  },
+  {
+    "pr": 29,
+    "title": "Llama E4 共享前缀与后续候选规划消融",
+    "head": "46634c341efb1527ca637e27f6703e7e07ee5973",
+    "branch": "codex/e4-diverse-continuations",
+    "base": "codex/e4-prm-selector-ablation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/29"
+  },
+  {
+    "pr": 30,
+    "title": "AMO-Bench 五条一致早停与 PRM 聚合回放",
+    "head": "2c96962238902c4b534feeeac9067fa1c9b68bb8",
+    "branch": "codex/amo-bench-early-stop-replay",
+    "base": "codex/e4-prm-selector-ablation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/30"
+  },
+  {
+    "pr": 31,
+    "title": "三条一致早停、最多五条的动态 K 回放",
+    "head": "e27261668bdd2e58af403cfaddffb69474fdeafc",
+    "branch": "codex/e4-small-dynamic-k",
+    "base": "codex/amo-bench-early-stop-replay",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/31"
+  },
+  {
+    "pr": 32,
+    "title": "GSM8K 和 AIME 2026 的五种 E4 候选预算对照",
+    "head": "ca0d95036a073ba22a2eb5c53d0a14bf464b2fb0",
+    "branch": "codex/e4-gsm8k-aime26",
+    "base": "codex/e4-small-dynamic-k",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/32"
+  },
+  {
+    "pr": 33,
+    "title": "GSM8K 500 题的三卡 E4 和单次直接作答",
+    "head": "004bf8e1fa1dc3f13ec10f500c5ad3a880c4f0a8",
+    "branch": "codex/gsm8k-500-e4-direct",
+    "base": "codex/e4-gsm8k-aime26",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/33"
+  },
+  {
+    "pr": 34,
+    "title": "MATH-500 按需续写与低成本 Direct 多采样",
+    "head": "de55c6382553fb85db88cf1fad6c627c097ba3d9",
+    "branch": "codex/math500-direct-continuation",
+    "base": "codex/gsm8k-500-e4-direct",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/34"
+  },
+  {
+    "pr": 35,
+    "title": "补齐六个数据集的低成本 Direct 投票基线",
+    "head": "aa41f175b9e7f8caf65e875616a9326eaabad65a",
+    "branch": "codex/direct-voting-remaining",
+    "base": "codex/math500-direct-continuation",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/35"
+  },
+  {
+    "pr": 36,
+    "title": "六数据集的 2,048 token Direct 和 E4 候选池",
+    "head": "a84356630c69c194820896a2ca196ffd0bdc3d80",
+    "branch": "codex/direct-e4-pools-2048",
+    "base": "codex/direct-voting-remaining",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/36"
+  },
+  {
+    "pr": 37,
+    "title": "服务器托管 2,048 token E2 接续队列",
+    "head": "e00d41d3f7e05bb0694718627fa33e6033b3414f",
+    "branch": "codex/e2-pool-2048-followup",
+    "base": "codex/direct-e4-pools-2048",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/37"
+  },
+  {
+    "pr": 38,
+    "title": "Qwen E2 动态 K=3/5 的 MATH-500 三卡在线对照",
+    "head": "878d4d2b61fb3d611523e89eaad46c4dfd08808f",
+    "branch": "codex/qwen-e2-online-dynamic-3-5",
+    "base": "codex/e2-pool-2048-followup",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/38"
+  },
+  {
+    "pr": 39,
+    "title": "Qwen E2 动态 K=3/5 与固定 K=4、5 的三卡在线对照",
+    "head": "a9361da41de449b4796bc671961e2ed1c5f67155",
+    "branch": "codex/qwen-e2-budget-match",
+    "base": "codex/qwen-e2-online-dynamic-3-5",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/39"
+  },
+  {
+    "pr": 40,
+    "title": "Qwen E2 动态 K 在 AMC23 和 GSM8K 上的三卡在线对照",
+    "head": "7deffb4fe8f876b47807b808a719e4cc7d8251ea",
+    "branch": "codex/qwen-e2-budget-transfer",
+    "base": "codex/qwen-e2-budget-match",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/40"
+  },
+  {
+    "pr": 41,
+    "title": "Llama E2 三数据集固定与动态 K 在线对照及 Qwen 比较",
+    "head": "939cfb6622b5cc4a3ef05e7791d251dd5035e12a",
+    "branch": "codex/llama-e2-budget-transfer",
+    "base": "codex/qwen-e2-budget-transfer",
+    "url": "https://github.com/zhaqian21/adaptive-ttc-lab/pull/41"
+  }
+]

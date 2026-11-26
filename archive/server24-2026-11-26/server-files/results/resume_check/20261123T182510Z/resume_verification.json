@@ -1,0 +1,7 @@
+{
+  "source": "results/smoke_test/20261123T181529Z/direct/problems",
+  "replay_directory": "/srv/adaptive-ttc-lab/results/resume_check/20261123T182510Z",
+  "retained_problem_0_sha256": "6dfb6b9353b5547f2670593d8345b225f61bddf1809d3daa977cab07dc745542",
+  "new_problem": 1,
+  "matches_original_completion_and_grade": true
+}

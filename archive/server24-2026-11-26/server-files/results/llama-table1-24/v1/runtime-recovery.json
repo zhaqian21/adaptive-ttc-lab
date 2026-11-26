@@ -1,0 +1,48 @@
+{
+  "time": "2026-11-25T10:09:57.477579+08:00",
+  "dataset": "math",
+  "case": "E2",
+  "reason": "Released JSON answer fallback stalled both workers in a regex search",
+  "fingerprints": {
+    "llama_table1.py": "98b51edacaabf9cc632deaa863a18a028c16b41e7aba226a337a1bbd8d46ba58",
+    "llama_table1.py.recovery": "0f149a7b0dcbf3f86a3a903bb0c2a1eae44d43bfac8b334e521bc3d942dfeba0",
+    "answer_fields.py.recovery": "7f85b659a448921623804d58e564eb9b3665b94f53bc46a4c6406c00b06e356c"
+  },
+  "saved_rows_before_restart": {
+    "0": {
+      "000": "454b5e7925d1907bf608a6e1c6e89ad9545bf811261eb68cb57f945cf98ccf80",
+      "004": "d9459ebc2dad77d85afacb6907aac590980a5d82a0e5bd58ea75ff5edbfa9937",
+      "008": "48382026dcf253180f515ac43ba71e0c923667ec4716b7bcbe19acd2e1e10ef3",
+      "014": "b625eb8eaeffea6c3c77c22554cdd06ed1ec701e0f18ab56d4b9960ecb7c0234",
+      "016": "e4dc3459a70782e88d375d6da0054100e6dd6df5213183d72304b516aacc0f23",
+      "020": "e5683370e456eed97dd027ed4a8392e8190bcf3072d2201838fb24686149fdeb",
+      "028": "86a5a8072466ef3de297045018abf22ccc3998776848a33ebc2170768651134d",
+      "030": "57c01b7dca468dd21f103a0f919ae46fc2ab0c4625445e927bfb07aa75ba855f",
+      "032": "cd996a18abff177c860cc54f0307ba0f780d570a9150f967354c6c40f415ee8e",
+      "038": "6e0d09053942623eb48237df485d4433ab46f01e5f66f94d8dd1f83fa917033a",
+      "040": "a280dcac8d3d15a8fa8cd8be49a824c8ee710419df5d2b91d28277ecc636579c",
+      "042": "a54d071633c842c2e366761d0dece0baf1abbeabcc929894e484827f7a27ed58",
+      "044": "e7f746f9727ececa66c16b2f99631fd37994e67635c4e4174aa388e4562fb935",
+      "048": "104feee0ddeeab25307754441ef42b079669657c3c90d5c0cbefba2e8181113b",
+      "052": "48d7fe178da3d1d63b3b3465f071ffc5a68847934ec85b5c3ec6deff9f7a9b5c",
+      "054": "7343394f4a4e7e4547ebfb32b022d442cd38f3dea7fc1a534d6767d022ac2681",
+      "056": "e4c25b4730af47bfab81a27079330cb66d3a09400769ba840c0523bf9902dc05",
+      "058": "c2ae09c6830bd89a19fad5b2519906a90d502b0036544d2f24361f04ac5634be",
+      "066": "1902406b9b4c0fcdeda9db034bfc2522d4401860795e17c12de341900badc062",
+      "070": "637a8ab56b76fe3fe81b77bcbf195377bf88a8be1b89e4ef902b784688678604",
+      "072": "14a72c290d6ed86e86bee27026f3f36d1952d65cb914a62a552c02674acb8a29",
+      "084": "33d94ed411ecf74dfb79d64aaa47b9b6280b5551a0b47c46a94dced6af58911b",
+      "086": "458a215fa4b70b113cd49b48ee217248791d5259f917940d9dd842294ede5d97",
+      "090": "e6a0d590e7773f8263574d894e34f22b3df1badeab57b5accc64abb8aebc717a",
+      "098": "6655cde272d33a495ff1d2cbbb85b639fc9df83b173da4a5b1d6848725f50ad5",
+      "102": "4af4e7c84d13ef39e74f4459023fe70bb34371bcb418b93b5823ae3a42a58492"
+    },
+    "1": {}
+  },
+  "lane1_manual_retry": {
+    "time": "2026-11-25T10:11:21.612870+08:00",
+    "worker_sha256": "fbdcb682733147379a3cd4ad2615f789575fd1af966bc5cfe3dccba20acf128d",
+    "reason": "The coordinator waits for lane 0 before starting the second retry",
+    "serialization": "worker output-directory advisory lock"
+  }
+}

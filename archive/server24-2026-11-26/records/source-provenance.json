@@ -1,0 +1,218 @@
+[
+  {
+    "file": "server-files/scripts/audit_results.py",
+    "source_path": "scripts/audit_results.py",
+    "source_sha256": "2b8ea4642ec915e60b0c7d315dc5d3310f3bbf881f4ba46e9acc7c9ff151846d",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/scripts/run_smoke.py",
+    "source_path": "scripts/run_smoke.py",
+    "source_sha256": "bcf0fa5a1c7fdd51c9cbd410cc7f0ae909b2e0cf3e5c328508bc7e0f703df061",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/scripts/run_smoke.sh",
+    "source_path": "scripts/run_smoke.sh",
+    "source_sha256": "7b523fb3c2beb498451f434d704a0a1fa29faa516f28ece3e9dfccc1b7bdf88d",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/scripts/validate_dataset.py",
+    "source_path": "scripts/validate_dataset.py",
+    "source_sha256": "25009b2ac995a48147369f391d840e1d3e91d7d4b2c3c0f9e92f42bbf3b28586",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/scripts/constraints.txt",
+    "source_path": "scripts/constraints.txt",
+    "source_sha256": "3e5fba423fb3ff0710ef577e79d3049d32e136042ca294e2463503fbf86e5e40",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/services/e4-gpu7/serve.py",
+    "source_path": "services/e4-gpu7/serve.py",
+    "source_sha256": "06b5146d334a58150545aa8c02ce35b92d4c4632ae558ee23e12c004dc270237",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/services/e4-gpu7/serve.sh",
+    "source_path": "services/e4-gpu7/serve.sh",
+    "source_sha256": "0d1c5a9a866355578389f669277ade9c965aa70a5dd40ab77c2e67a8fba091f9",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/services/published-vllm/serve.sh",
+    "source_path": "services/published-vllm/serve.sh",
+    "source_sha256": "5ee610ee5f90482c9b8af725ee11fddf69a993715cd34061f686869bc16b959e",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/services/published-vllm/start_prm.sh",
+    "source_path": "services/published-vllm/start_prm.sh",
+    "source_sha256": "87a3f3c8c65e00ece18431629edf015f23e22f6cf2eecc8a1ec7d16877760c7c",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/llama-table1-24/v1/retry-assets.sh",
+    "source_path": "results/llama-table1-24/v1/retry-assets.sh",
+    "source_sha256": "bbd730458854a4a9e9d40b6483069326a2c29f23bba59063538b8cf8441ec208",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/llama-table1-24/v1/runtime-recovery.json",
+    "source_path": "results/llama-table1-24/v1/runtime-recovery.json",
+    "source_sha256": "9b73deb39ed66d87fecfed3f562a4a4188fd9884e7902a03e78bc0165581a368",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/llama-e2-backends.6QypV078/launch_generation.sh",
+    "source_path": "results/llama-e2-backends.6QypV078/launch_generation.sh",
+    "source_sha256": "b03426a46611316eb4e90d9d08a5756e804e797241601383e50d542b573a42c6",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/llama-e2-backends.6QypV078/launch_native_resume.sh",
+    "source_path": "results/llama-e2-backends.6QypV078/launch_native_resume.sh",
+    "source_sha256": "9982d0136c25d0d5a419b5b5b6d1a6bde0529cc08d8a4fb4877115908b0fb076",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/e4-diverse-continuations.h0DswDXr/resume_smoke.sh",
+    "source_path": "results/e4-diverse-continuations.h0DswDXr/resume_smoke.sh",
+    "source_sha256": "6a0e46d68e83bddd577bf00f0de17e18bb4763c66612146bb88e72b0c8f72eb0",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/math500-prm-routing/v1/recover-prm-queue.sh",
+    "source_path": "results/math500-prm-routing/v1/recover-prm-queue.sh",
+    "source_sha256": "06e9bff0f5998f867797d4bd78f771c07038f913039369c1a7d68f8994c0e88d",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/math500-prm-routing/v1/resume-llama-24.sh",
+    "source_path": "results/math500-prm-routing/v1/resume-llama-24.sh",
+    "source_sha256": "926d763bb949fcec058528058a5d80f8f890bdb44b617c4fda85f741c7626d21",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/experiments/math500-adaptive-revision-v1/audit_math500.py",
+    "source_path": "experiments/math500-adaptive-revision-v1/audit_math500.py",
+    "source_sha256": "3efa9608395472f790815adb7cebf648659639cc8779e6747b0c92700f1fbb05",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/experiments/math500-adaptive-revision-v1/run_math500.py",
+    "source_path": "experiments/math500-adaptive-revision-v1/run_math500.py",
+    "source_sha256": "cc15c5a6576661a1cda484bce7d1d469ce63da51a3f08541fc4971c9778800e1",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/experiments/math500-adaptive-k-v1/experiments/math500-adaptive-k/run_adaptive_k.py",
+    "source_path": "experiments/math500-adaptive-k-v1/experiments/math500-adaptive-k/run_adaptive_k.py",
+    "source_sha256": "4bcf3e6e6ea8e6029b378739b04426cc2b5727696ea0c435c5f1cfdc8201696d",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/run_all.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/run_all.sh",
+    "source_sha256": "fff30c416e20177996cdaae98270e4b1e9f35a89d45b64fb1bd75001cde0cb8e",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/E1-vllm/run.py",
+    "source_path": "results/paper_description/20261124T100045+0800/E1-vllm/run.py",
+    "source_sha256": "d7217c88a491e5fa2c9c942922e3a167a5ed31789859b1997e255eb969a17d53",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/E1-vllm/run.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/E1-vllm/run.sh",
+    "source_sha256": "11c32cf2fda5ed5cfedd80136a165912857475fea73f7fa1ec6d41f0ac9c3686",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/start-e3-gpu0.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/start-e3-gpu0.sh",
+    "source_sha256": "c496b1df07ec017180dcbaced6dad49801e7da18ba9353be134a151b67577a4f",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/start-e4-tuned.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/start-e4-tuned.sh",
+    "source_sha256": "83f302da31c17a60895804ec78d40125d88e8e364d70be57677e650897d6d917",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run.sh",
+    "source_sha256": "0119201e34d12a1d00bcc2d0233102a11b7b0114aba9d0216e09e4392880700d",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_e3_gpu0.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_e3_gpu0.sh",
+    "source_sha256": "74611cb6521eb2d3624c3faff1434342574ba8734e6240d7ee1d3edab483efa5",
+    "paths_normalized": true
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_e4_parallel.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_e4_parallel.py",
+    "source_sha256": "e473b5300daa41611aa4d201cc90f2fdf15458972f65abbb6d34bb3f966585eb",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_e4_parallel_tuned.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_e4_parallel_tuned.py",
+    "source_sha256": "d71485bae708b0a86f161a51d2a219e687bd8a4392c528fd505afb319d35802d",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases.py",
+    "source_sha256": "f4cdc944b4e13a8688af3014dfcb32ac6dd47536009541df1a37d08aca0c1098",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_impl.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_impl.py",
+    "source_sha256": "7b1ec518b0f2ef74d87930a96444a15d64c6958edcdd13ec075ca3a3b4d02cd8",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_parallel_base.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_parallel_base.py",
+    "source_sha256": "28751052bc91f22a9775ab88e8ee09662939a7a9f75cf9ed2580b2811265b913",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_pre_final_fallback.py",
+    "source_path": "results/paper_description/20261124T100045+0800/vllm-remaining/run_vllm_cases_pre_final_fallback.py",
+    "source_sha256": "8df7bdb5997d099e84d2fcb881ee54f76e12dc944286dc1385488b6cc5678692",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/E4-parallel/tuning/collect_e4_speed.py",
+    "source_path": "results/paper_description/20261124T100045+0800/E4-parallel/tuning/collect_e4_speed.py",
+    "source_sha256": "99ce30cb7c681fdc3a616d297cdb13b78f940388fd66bc7cd15b3e86ac72bcbb",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/E4-parallel/tuning/evaluate_c64.py",
+    "source_path": "results/paper_description/20261124T100045+0800/E4-parallel/tuning/evaluate_c64.py",
+    "source_sha256": "ba3da16ccc7bb2d9314dc91183d56a7bdc11d40d82c828615a1bd11a4ab4a2d0",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/paper_description/20261124T100045+0800/E4-parallel/tuning/measure_then_promote.sh",
+    "source_path": "results/paper_description/20261124T100045+0800/E4-parallel/tuning/measure_then_promote.sh",
+    "source_sha256": "989a39cdf821c64bb57ced2175f1471b33c2c0e2c284e5ab0046eeb46d2c372a",
+    "paths_normalized": false
+  },
+  {
+    "file": "server-files/results/resume_check/20261123T182510Z/resume_verification.json",
+    "source_path": "results/resume_check/20261123T182510Z/resume_verification.json",
+    "source_sha256": "5ecabddf0f1b6f17cfbf802fee5888aca43ca032f92e8176ded24d947eb12d3a",
+    "paths_normalized": true
+  }
+]
