@@ -1,0 +1,143 @@
+{
+  "methods": {
+    "e2_fixed5": {
+      "correct": 401,
+      "candidates": 2500,
+      "early_stops": 0,
+      "input_tokens": 2160790,
+      "output_tokens": 1554813,
+      "prm_requests": 2500,
+      "generation_requests": 5000,
+      "retries": 0,
+      "accuracy": 0.802,
+      "samples": 500,
+      "mean_candidates": 5.0,
+      "tokens": 3715603,
+      "latency_median_seconds": 31.094089983031154,
+      "wall_seconds": 773.8116895600688,
+      "timing_last_attempt": {
+        "wall_seconds": 773.8116895600688,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_fixed5_000.jsonl.gz": "6cc35027d358d7a358e16b8e0b36c98cfbaa45270f1eeb82200b00bf95294452",
+        "e2_fixed5_001.jsonl.gz": "bc7fa8833ee3a012a29c7b2c5921dd122989499e130e8aa878fe878c6953794c",
+        "e2_fixed5_002.jsonl.gz": "c385fc8c7b649e1778ad738a125c49fd7ba9cce75ebf8f14aa5f72534ea75b54",
+        "e2_fixed5_003.jsonl.gz": "7c760ed15490890b37c4dac538bd134a0460707c352f327de72f312c11ec774b",
+        "e2_fixed5_004.jsonl.gz": "32f71cadb255b7e15af8b1840dda0cf2ddac11ebff66dcacd6789162cca08a85",
+        "e2_fixed5_005.jsonl.gz": "6a53f6762c942cfb8894240ebccc147d9a4ab2cf43eb775f707acbbc0f12bbcf",
+        "e2_fixed5_006.jsonl.gz": "985e4f8478b542daca2fdfc7b68ea53e4bd8b609f981d1554b425231debb72bc",
+        "e2_fixed5_007.jsonl.gz": "aa1401e140c3b7bd572c18085a16355061bb9cccab7fc6eff9260b46cd677a27",
+        "e2_fixed5_008.jsonl.gz": "94231846ae02352165420ac8d4197027f68df250d375abc3011e9c53c9f4a510",
+        "e2_fixed5_009.jsonl.gz": "42b3e41dcc6eb973abf994c22d1559f00eaecec3634602743a4479d2979e7ad8",
+        "e2_fixed5_010.jsonl.gz": "7b8e1167ee08c62fe606e6ea3f60c14cedc2583bf139865084317238f0e9eb73",
+        "e2_fixed5_011.jsonl.gz": "7fe0c037297d54290565ebae5f8f301bd2092aaa4a53bacafb3f8cd5e89214af",
+        "e2_fixed5_012.jsonl.gz": "12ce05c7c448af614b2b7bd3da2130465733befa4aae3d7fb23f5f3c2ac33d6f",
+        "e2_fixed5_013.jsonl.gz": "873cb1534b6ec3bde0ce7e5d733662bce38c5649fbd2468f761d27d02fbb3ee9",
+        "e2_fixed5_014.jsonl.gz": "67f9f671e495a28167119cd7678f209cdd4fdf082529983e6a492df11bc12202",
+        "e2_fixed5_015.jsonl.gz": "bf5155466c535fa5ab4df42eef4786738640b4c44b35fd4606ec661146ac2289",
+        "e2_fixed5_016.jsonl.gz": "d68805c9ac55ca7fe516436e3f2397fc2b606f83eab8a244cdbb1c02b7339436",
+        "e2_fixed5_017.jsonl.gz": "e25031d72688dc34a4722eb4b343e308c3efd1e7181b0176b2286ac8dc357b7d",
+        "e2_fixed5_018.jsonl.gz": "ff6e686541df7aa65176632273261b83b5abd5fe23d0255c9140b079c14dcd9e",
+        "e2_fixed5_019.jsonl.gz": "b100f1314b9c34af016c484cdf23575f81450aaa1e0c5068eb23d3c479049e03"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 10,
+        "gained": 13
+      }
+    },
+    "e2_fixed4": {
+      "correct": 398,
+      "candidates": 2000,
+      "early_stops": 0,
+      "input_tokens": 1728632,
+      "output_tokens": 1248518,
+      "prm_requests": 2000,
+      "generation_requests": 4000,
+      "retries": 0,
+      "accuracy": 0.796,
+      "samples": 500,
+      "mean_candidates": 4.0,
+      "tokens": 2977150,
+      "latency_median_seconds": 25.684735032962635,
+      "wall_seconds": 626.4973370779771,
+      "timing_last_attempt": {
+        "wall_seconds": 626.4973370779771,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_fixed4_000.jsonl.gz": "277514322dd1629ac99a203336a669d05dcf81f6ce3fd08112ebb5dd58f3230f",
+        "e2_fixed4_001.jsonl.gz": "4c014628153526bfd826261eb621e6c32aaf05b2b2ad435f0bf422096c9140a2",
+        "e2_fixed4_002.jsonl.gz": "1fb4a23b1cd76583ab928686ce37b1ccc6581a4f254654306238e3c2eda18581",
+        "e2_fixed4_003.jsonl.gz": "457b908f43ae7fb16b1d84d0e53cdfaa8ee84b7cbf20eb46b10127e0b5d56eaf",
+        "e2_fixed4_004.jsonl.gz": "c8ead205ebf0c0e53a3522e43b871898e639bd5dcc77b42cc778eef97c9b48f1",
+        "e2_fixed4_005.jsonl.gz": "b8676d56534a9f38804dfe3bdf2eac205c7b7601fc1b312430c8a70139840173",
+        "e2_fixed4_006.jsonl.gz": "b007202011e83b509820d525ae8f3a71d2d875e87a15aab20192739bf3805e8f",
+        "e2_fixed4_007.jsonl.gz": "c9af8b86de1ab5a3683d17bf40189f78a7a3b902fa5d49374756818930e65fee",
+        "e2_fixed4_008.jsonl.gz": "cbe5790d8f297014cb051fbc7f73eca2b02e7259f0fef91f13ce47aabd67723f",
+        "e2_fixed4_009.jsonl.gz": "52dbba7d0b631a303c3d6de6576851b4fb0fe9192614f3b40f87166763de054b",
+        "e2_fixed4_010.jsonl.gz": "2688c7f3a698cdacc782e2fc9ccad1468bd208ed9ac7e3c178b89d4d8607e6f9",
+        "e2_fixed4_011.jsonl.gz": "1fe8a46b143ec0e21568e592b9cfa3992b142e4a3e65b6119f176793fed539fc",
+        "e2_fixed4_012.jsonl.gz": "5b0ea07d5ca680dc325c4956c7e6e99d7dc487565bad1fa7860c7dc471f92de2",
+        "e2_fixed4_013.jsonl.gz": "57151352bda17592529dc71eeb55bb02001f68dc02a97bca7f18010a4f4b1b37",
+        "e2_fixed4_014.jsonl.gz": "acacc65899e7d7cdec08062d9e8d033a17caf601462f26f508baef56545ac725",
+        "e2_fixed4_015.jsonl.gz": "cfd744e1d1ed1ba908cc086a189606528fc36bb5e5742e5f89f62307cf9f802f",
+        "e2_fixed4_016.jsonl.gz": "d1ae85ebdabcaecfddb30f1292486b6146a70658424f4df2d209d67991f02c19",
+        "e2_fixed4_017.jsonl.gz": "79c22dc01b3162b7d2d3a4a9f224d9028d6ab23417571d094ef8f6cc729107bf",
+        "e2_fixed4_018.jsonl.gz": "e09580b96680d67d57b42f8bbb614ee66a1479e20a569799626cc7ccc28e1878",
+        "e2_fixed4_019.jsonl.gz": "0dace73fe2c9e6080775d47f8e4e843cbe4114adbf00def4fc78da510204433b"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 0,
+        "gained": 0
+      }
+    },
+    "e2_dynamic3_to_5": {
+      "correct": 398,
+      "candidates": 1862,
+      "early_stops": 319,
+      "input_tokens": 1633102,
+      "output_tokens": 1235368,
+      "prm_requests": 905,
+      "generation_requests": 3724,
+      "retries": 0,
+      "accuracy": 0.796,
+      "samples": 500,
+      "mean_candidates": 3.724,
+      "tokens": 2868470,
+      "latency_median_seconds": 17.235755142988637,
+      "wall_seconds": 515.3189486539923,
+      "timing_last_attempt": {
+        "wall_seconds": 515.3189486539923,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_dynamic3_to_5_000.jsonl.gz": "da671586ba447d6d59f865e92937ea4e79bcd7126c9cb46d7f59162d81f669f4",
+        "e2_dynamic3_to_5_001.jsonl.gz": "5e93f8c15634b6d363447ddb203c2fe80196de5bcb4e09358b04a402d52d7419",
+        "e2_dynamic3_to_5_002.jsonl.gz": "dcc5dc81e11d8f5a4bb33a9e585ff172cf19b89463ba37b3c5b85f6635b2a41a",
+        "e2_dynamic3_to_5_003.jsonl.gz": "4971b7dce96566504195eecbc2b6067efd9a155ce20713a0eb29b5b1bd52e9cd",
+        "e2_dynamic3_to_5_004.jsonl.gz": "c2d2a3fe41df8139b26297b1aeb259c18ec6ea13679a31fd8e85dd545f840725",
+        "e2_dynamic3_to_5_005.jsonl.gz": "b9c8965b152880ac4bfc495716586ba83950c060a5c722e69c951e7c164c5f68",
+        "e2_dynamic3_to_5_006.jsonl.gz": "b27263ae3c57f2d14f685e5d882c9936aa8607e520a8e7e3f81cecb14210fbfd",
+        "e2_dynamic3_to_5_007.jsonl.gz": "69c6ec3bde63aa8f9d062b3c0e66a1dfbc38b7d4e83eb939700ffa55611fbd52",
+        "e2_dynamic3_to_5_008.jsonl.gz": "88b3c770ccd2fdd1f2ee71965cbcf00d0988450863abff761c2a1c44775e3e65",
+        "e2_dynamic3_to_5_009.jsonl.gz": "67c806ec51b55bd4e768b6f3e0ccc295b3066a3c55ee3cd24aa95ed8f34c1e4f",
+        "e2_dynamic3_to_5_010.jsonl.gz": "a0e3830c437ecd8f311c93e025f1ad0a5592159ee8eb3dee10500d804357cdbf",
+        "e2_dynamic3_to_5_011.jsonl.gz": "f77f0e56bc9d80535a1f755c0990c0d6331f8fbc6ea776ed9456aef542782f18",
+        "e2_dynamic3_to_5_012.jsonl.gz": "c7c7e7eeb1a90d2dc8f0d4ffcbccb546727248240714d062ad43b3d2085c33e9",
+        "e2_dynamic3_to_5_013.jsonl.gz": "dec92aff78309a21d15672dcf06e331c194ba9021b3d5b9f7571595a2089caee",
+        "e2_dynamic3_to_5_014.jsonl.gz": "c54d23343b8d617f27cb21f6d3016f0ef6358d583313beaa669ee4b69cd3b60c",
+        "e2_dynamic3_to_5_015.jsonl.gz": "5c60ea8a2620be2427308e9fa6dc020bbbda385b0643a68e4db23cc32addcfe8",
+        "e2_dynamic3_to_5_016.jsonl.gz": "04d72ad4da8c98c0cdbb6ebcba0d0999e2fbd984d133ecffabd469380a980ed1",
+        "e2_dynamic3_to_5_017.jsonl.gz": "932d8fd92e60e17c37eabb20e2dd91672329c0f363653ebf1dc5cd55d6f6ca4b",
+        "e2_dynamic3_to_5_018.jsonl.gz": "29301cf91cd1500c4d2313ec09fabae245dea099d52a6d4560fa11cf2acfd518",
+        "e2_dynamic3_to_5_019.jsonl.gz": "33247988934d8bb754cb4d8e4b377bbfe66246ab4e213d459d24e51cad86a171"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 16,
+        "gained": 16
+      }
+    }
+  },
+  "paired_sha256": "1ba1742b84b2e00eb6dd912c94a89e581c90f38182c775209fa3046babc491fa"
+}
