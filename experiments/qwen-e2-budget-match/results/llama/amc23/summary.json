@@ -1,0 +1,89 @@
+{
+  "methods": {
+    "e2_fixed5": {
+      "correct": 14,
+      "candidates": 200,
+      "early_stops": 0,
+      "input_tokens": 185045,
+      "output_tokens": 179706,
+      "prm_requests": 200,
+      "generation_requests": 400,
+      "retries": 0,
+      "accuracy": 0.35,
+      "samples": 40,
+      "mean_candidates": 5.0,
+      "tokens": 364751,
+      "latency_median_seconds": 46.017254229052924,
+      "wall_seconds": 122.05892258905806,
+      "timing_last_attempt": {
+        "wall_seconds": 122.05892258905806,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_fixed5_000.jsonl.gz": "9ad22e10bc9c37bf13be9d60759464967e1b3c66db206b5f9c948d72377d4996",
+        "e2_fixed5_001.jsonl.gz": "bea7bba84db67a574bd4c6f800af61c6db4b3df6321640e1b177fbeb629d76b7"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 1,
+        "gained": 4
+      }
+    },
+    "e2_fixed4": {
+      "correct": 11,
+      "candidates": 160,
+      "early_stops": 0,
+      "input_tokens": 148036,
+      "output_tokens": 153621,
+      "prm_requests": 160,
+      "generation_requests": 320,
+      "retries": 0,
+      "accuracy": 0.275,
+      "samples": 40,
+      "mean_candidates": 4.0,
+      "tokens": 301657,
+      "latency_median_seconds": 38.058809179463424,
+      "wall_seconds": 108.06790220295079,
+      "timing_last_attempt": {
+        "wall_seconds": 108.06790220295079,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_fixed4_000.jsonl.gz": "b381bd15dadb0befa4bbe61bc3811b068eda6ba60f6a8ff99acee2dc4066d7cc",
+        "e2_fixed4_001.jsonl.gz": "f62faa56bbf5882a8d5e3915774ec4c08dfad50fd7b9fd74cce5f69e76bbfe2b"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 0,
+        "gained": 0
+      }
+    },
+    "e2_dynamic3_to_5": {
+      "correct": 11,
+      "candidates": 192,
+      "early_stops": 4,
+      "input_tokens": 177367,
+      "output_tokens": 186879,
+      "prm_requests": 180,
+      "generation_requests": 384,
+      "retries": 0,
+      "accuracy": 0.275,
+      "samples": 40,
+      "mean_candidates": 4.8,
+      "tokens": 364246,
+      "latency_median_seconds": 44.32132161851041,
+      "wall_seconds": 128.9802540920209,
+      "timing_last_attempt": {
+        "wall_seconds": 128.9802540920209,
+        "resumed_questions": 0
+      },
+      "pools_sha256": {
+        "e2_dynamic3_to_5_000.jsonl.gz": "56f2764d4f706f798735e24bc879bc7fd45dfc2d6ffe97ace4127c0b297c0c4f",
+        "e2_dynamic3_to_5_001.jsonl.gz": "21e72782ab3677a20fb06e94abf9b213a242d01f14b3ca7d0b087bd511e7d435"
+      },
+      "paired_vs_e2_fixed4": {
+        "lost": 3,
+        "gained": 3
+      }
+    }
+  },
+  "paired_sha256": "b6a5015538de081bcf68221f72c962cf00e69d7389f8453f50b94fca9d6dea5f"
+}
