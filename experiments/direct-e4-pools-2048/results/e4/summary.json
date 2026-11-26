@@ -1,0 +1,558 @@
+{
+  "phase": "e4",
+  "datasets": {
+    "gsm8k": {
+      "qwen": {
+        "samples": 500,
+        "methods": {
+          "fixed3": {
+            "correct": 478,
+            "tokens": 11646684,
+            "prm_requests": 1500,
+            "candidates": 1500
+          },
+          "fixed5": {
+            "correct": 479,
+            "tokens": 19497676,
+            "prm_requests": 2500,
+            "candidates": 2500
+          },
+          "fixed10": {
+            "correct": 480,
+            "tokens": 38901563,
+            "prm_requests": 5000,
+            "candidates": 5000
+          },
+          "early5_to_10": {
+            "correct": 479,
+            "tokens": 23881066,
+            "prm_requests": 1010,
+            "candidates": 3005
+          },
+          "dynamic3_to_5": {
+            "correct": 479,
+            "tokens": 13095903,
+            "prm_requests": 410,
+            "candidates": 1664
+          }
+        },
+        "pools_sha256": {
+          "qwen_gsm8k_000.jsonl.gz": "ff9fbef61a957766ae232def1316fd5d2d410b7a87af1a035943772059b0346d",
+          "qwen_gsm8k_001.jsonl.gz": "7942a2137fbc2853503c5706fb2e6ce34430e6cbbdea950f7b2f77eb890f5acb",
+          "qwen_gsm8k_002.jsonl.gz": "49ab3c9ecdc65c5c8c009f0575568181d5bfe8eefe29d9b9b52c7e4880e763f2",
+          "qwen_gsm8k_003.jsonl.gz": "36d2190caf0316d8357c66c70c727b9ba7835c2c054768fe0e07779590d58e4c",
+          "qwen_gsm8k_004.jsonl.gz": "ffed565aa5c9f8a94fe752173cf134722b118f26670bdf36baed82a7a7685600",
+          "qwen_gsm8k_005.jsonl.gz": "fee91336b9620208573e0639972d0c29b4a727368b6a072d3ea0d5037f00c44c",
+          "qwen_gsm8k_006.jsonl.gz": "01334dce1987c8133ef277b7dcb532f4e16e82f225ac965830ed45a6542457c7",
+          "qwen_gsm8k_007.jsonl.gz": "664e8946777f0b76b10e942e2e85d317507e208266a37c91bc21dbe4cbc2281b",
+          "qwen_gsm8k_008.jsonl.gz": "292683d5d41129ee08777f3dba53eb3883e4e6ea5e3a9b3536d1075fb4c76b0c",
+          "qwen_gsm8k_009.jsonl.gz": "af2a6860d24bf01d7cc39def3d2fd2bdf1fd201574d1768dbb17689e311e6367",
+          "qwen_gsm8k_010.jsonl.gz": "e81cfe1d9f979ecd88f1927b6dfe93d71c247ae0e0981265af29e422901a9f21",
+          "qwen_gsm8k_011.jsonl.gz": "8588085b4bc365a132d47255fcdf0b596f87fe7984e15c358505f7b428781dcb",
+          "qwen_gsm8k_012.jsonl.gz": "368a9649448854ebcbb218f3788a7bf741327e78d8dbc4d2f91f65e2bc5a8b60",
+          "qwen_gsm8k_013.jsonl.gz": "6ef3a9a0753037c6127aef4109318b6c48375b0b471748a3ffc1eafdf5fdebb8",
+          "qwen_gsm8k_014.jsonl.gz": "766cbd4fe7da22a048e9d2bf2f96a9a4df177d1477adf2a9f27662d239ea97d7",
+          "qwen_gsm8k_015.jsonl.gz": "42d4bcc647bb192bb88032f87f2ef22fd4e8e434f426765eb4668183fc4816a1",
+          "qwen_gsm8k_016.jsonl.gz": "9f0ba887d2e9ba2264615f450b741640779c539a4686849d741a2da25164fa1a",
+          "qwen_gsm8k_017.jsonl.gz": "75c1b33539a16e7323ff33af11b8daf42b57920a1fcfc0fd568a0743abb795f1",
+          "qwen_gsm8k_018.jsonl.gz": "e1ce66783d602efdb02f39dd34501401a116de37f16da3ea3a7054def5894a65",
+          "qwen_gsm8k_019.jsonl.gz": "b461ddd4e5cd2ad9b303d961a3eed0e631414c1a26cbebf2a87dc06a0173d03a"
+        }
+      },
+      "llama": {
+        "samples": 500,
+        "methods": {
+          "fixed3": {
+            "correct": 458,
+            "tokens": 13379263,
+            "prm_requests": 1500,
+            "candidates": 1500
+          },
+          "fixed5": {
+            "correct": 465,
+            "tokens": 22289405,
+            "prm_requests": 2500,
+            "candidates": 2500
+          },
+          "fixed10": {
+            "correct": 468,
+            "tokens": 44508603,
+            "prm_requests": 5000,
+            "candidates": 5000
+          },
+          "early5_to_10": {
+            "correct": 469,
+            "tokens": 35484828,
+            "prm_requests": 2870,
+            "candidates": 3935
+          },
+          "dynamic3_to_5": {
+            "correct": 465,
+            "tokens": 17762467,
+            "prm_requests": 1170,
+            "candidates": 1968
+          }
+        },
+        "pools_sha256": {
+          "llama_gsm8k_000.jsonl.gz": "b7467e5386b9b66e5bd8fdb349092eeaf728042b98bffdff9c1062ef0b88dd76",
+          "llama_gsm8k_001.jsonl.gz": "d1c5726c5c4244105878fa8b9e77872e20f1773931469dc3d2298fa11e9dd28f",
+          "llama_gsm8k_002.jsonl.gz": "116333e88a3cd145b0e3f31b5f1ddbff32f97dc0ee35260921182dbce68e3639",
+          "llama_gsm8k_003.jsonl.gz": "9a61efe8a7fac40ae4c1f8ef4884b7f4e190512340cd622b939637860f7cdb89",
+          "llama_gsm8k_004.jsonl.gz": "ab40c318e070c3ac6202f5217c9c31ff4c66241c3139d2dba441d3a4e805d6c3",
+          "llama_gsm8k_005.jsonl.gz": "f26aa6d9d34f788609dd607d0b8344bc208fcaa839fb6b3b8fc8d9900271a114",
+          "llama_gsm8k_006.jsonl.gz": "e9800fae1aa278a0903e0e3eb360e49b968f4e4283aeea9df8eb07eda2469d8f",
+          "llama_gsm8k_007.jsonl.gz": "818d637798b2fd8fe1ea47987203d53161f341485a2b661e537b6633169465f0",
+          "llama_gsm8k_008.jsonl.gz": "e511702b11098041819845d92ba042585237add59d1c18660d47820106c16fff",
+          "llama_gsm8k_009.jsonl.gz": "39bd3288d28b516edbab50fef5c6c1365843f75b3e21b4b3b16e35d07ab79828",
+          "llama_gsm8k_010.jsonl.gz": "7c857d5f5493583454589d51aecd8a96903554fbf378d3404c93b406ee62d791",
+          "llama_gsm8k_011.jsonl.gz": "354bb66abe5943cda2b70a46b0a7c585449b17ac6d0c84c53fed3ed78aaf3bfd",
+          "llama_gsm8k_012.jsonl.gz": "8a1eb9ae29dfa610427cdac7252ac7cb42bf72288333abc977c71958a64b75e6",
+          "llama_gsm8k_013.jsonl.gz": "7277b4bda8270190d04ea95387616f60b79755c3101382b7687c2954a2bfece6",
+          "llama_gsm8k_014.jsonl.gz": "53d223a5f5ef4005ed6aad4c0cb6fd454a91bc2139a21265115ee53af2586e96",
+          "llama_gsm8k_015.jsonl.gz": "674db5b1c9d10b8bf3e2c4a6ff71e16a16fec527962cd0b4e32a12f507e15867",
+          "llama_gsm8k_016.jsonl.gz": "05ba105a0f4605d2bec5330eafb3c4afc2b8e6db88028e35a25d38d50ce559c1",
+          "llama_gsm8k_017.jsonl.gz": "1c45cb97b610d76944d069de76224bcd37b27bbcc535b3ae0c108e623169c9ac",
+          "llama_gsm8k_018.jsonl.gz": "902e0f24f385fafc09c2c40d6e7079011cd704420bd8a206cb6e9b9019df66fc",
+          "llama_gsm8k_019.jsonl.gz": "676a165068da3097ff01ec72333d7b1dd0566d5399e9ddfacfaed45ef67b5f7e"
+        }
+      }
+    },
+    "math": {
+      "qwen": {
+        "samples": 500,
+        "methods": {
+          "fixed3": {
+            "correct": 371,
+            "tokens": 22109945,
+            "prm_requests": 1500,
+            "candidates": 1500
+          },
+          "fixed5": {
+            "correct": 382,
+            "tokens": 36395790,
+            "prm_requests": 2500,
+            "candidates": 2500
+          },
+          "fixed10": {
+            "correct": 392,
+            "tokens": 72417901,
+            "prm_requests": 5000,
+            "candidates": 5000
+          },
+          "early5_to_10": {
+            "correct": 391,
+            "tokens": 57145419,
+            "prm_requests": 2200,
+            "candidates": 3600
+          },
+          "dynamic3_to_5": {
+            "correct": 380,
+            "tokens": 29567877,
+            "prm_requests": 950,
+            "candidates": 1880
+          }
+        },
+        "pools_sha256": {
+          "qwen_math_000.jsonl.gz": "e1e14959e71c79830bad7497e0ebbdda9926cd0b0bd7cc4560ca5f16ec7b2411",
+          "qwen_math_001.jsonl.gz": "6f6cf14514921740332c9a6d3a2a0152efaedb77328775b8830aa48e17815464",
+          "qwen_math_002.jsonl.gz": "fbcdab7ec0662ab454295cddabad8b8d4c9a7f1c77aad7b814cd4dcc67c462f2",
+          "qwen_math_003.jsonl.gz": "603b5406711e33bde29c78ef17ed1bcdc4b8850bf68279cef4ad7828b9146104",
+          "qwen_math_004.jsonl.gz": "2905ba46eafb7c7c353236fbaac4eb6d76dcdca0106ebab48d1c4d8ddc9b0115",
+          "qwen_math_005.jsonl.gz": "c05381b96014d70443ddbbf03320562c8b8dbcdceb8f1ca51f4fef90ba168de4",
+          "qwen_math_006.jsonl.gz": "257e9428d4dbc2704960d162ccd2048c70e33cb6620435499bb4439b795cd579",
+          "qwen_math_007.jsonl.gz": "665bb3f937fb2efbe1178f7ad4e703fead13f2841c016021068453f34865e01c",
+          "qwen_math_008.jsonl.gz": "37876a18a3a8f8db39fc39dc489f929b5f07cd3fd1a8e163a3265da3ffa32cef",
+          "qwen_math_009.jsonl.gz": "f8c39660b80f2c45fe456080665817b8b1dcc80d5c28094f87d322cd23b14e7f",
+          "qwen_math_010.jsonl.gz": "a1904b4175cc7abeff1614d9ce0f32d2c754438df545af608df195509962f90a",
+          "qwen_math_011.jsonl.gz": "749b10160d5ba0b34bad4f877a57f20492634ca8ee0bdd0eee460c6729aec540",
+          "qwen_math_012.jsonl.gz": "e6b5dd8df1b074a638d108b30b3a3a337d748ee8e9c427155c177676bf5b6485",
+          "qwen_math_013.jsonl.gz": "3a11ed83587efcff2d3c1f34870d8b0bc67463627d4e0abcce46fabe63ed7a2e",
+          "qwen_math_014.jsonl.gz": "b7f9a1227b1eb44c9f4ec3b828b0365395593a59de385c06bfb41833c0080457",
+          "qwen_math_015.jsonl.gz": "cd76a997d9f73304fb9ff559ffafe1825d802ba4602ae3bd48de764d2ecfd40c",
+          "qwen_math_016.jsonl.gz": "93ae30dd83f9a8edc1af7159e1413ae40c6a8583875f128160a015eb9436b8d0",
+          "qwen_math_017.jsonl.gz": "0a85aa3d8695a8be047f4c1157d5cf7ad3110d8be01f04617359899b2ba87f61",
+          "qwen_math_018.jsonl.gz": "b6c981fb1e4d69cdcdaa3afd282f392e508ec000358a7c08d22b23ee4877df49",
+          "qwen_math_019.jsonl.gz": "c914fc516c4b0412785d43e354f12bb407c9e612b9ef05fde7d570e732f1c645"
+        }
+      },
+      "llama": {
+        "samples": 500,
+        "methods": {
+          "fixed3": {
+            "correct": 282,
+            "tokens": 18848242,
+            "prm_requests": 1500,
+            "candidates": 1500
+          },
+          "fixed5": {
+            "correct": 291,
+            "tokens": 31390375,
+            "prm_requests": 2500,
+            "candidates": 2500
+          },
+          "fixed10": {
+            "correct": 307,
+            "tokens": 62431317,
+            "prm_requests": 5000,
+            "candidates": 5000
+          },
+          "early5_to_10": {
+            "correct": 305,
+            "tokens": 57778096,
+            "prm_requests": 3990,
+            "candidates": 4495
+          },
+          "dynamic3_to_5": {
+            "correct": 292,
+            "tokens": 28849259,
+            "prm_requests": 1830,
+            "candidates": 2232
+          }
+        },
+        "pools_sha256": {
+          "llama_math_000.jsonl.gz": "ab87f91c4c147a0e17f858cbcc9bb8acdf779711ea6cde0ba8a0c4fc5822b8d6",
+          "llama_math_001.jsonl.gz": "f703bb33bece31d911fe3675889d4cf1c97f5371fa21e937fb0e5e6468bb58f5",
+          "llama_math_002.jsonl.gz": "a8f6cf02c4448b62c3cad6dcde90eaff5f38f31f10ba6aaa8ff09944f5eb0518",
+          "llama_math_003.jsonl.gz": "a9326712ef0a64d841cf672561b6f455e607ede0afa47b62988ef2099618940c",
+          "llama_math_004.jsonl.gz": "559a5ff9cea3ffc1f24933f69b7839425f2450ff4b9c118b067c21147251a69a",
+          "llama_math_005.jsonl.gz": "ab2aa3d146d6b95377e3b1f207d2fbf1362cf2cc554f9265a07212b6e97f82ee",
+          "llama_math_006.jsonl.gz": "a592d80d2288a4bf1041905d7405ac9cd050d9ee0521eb93912320c1cc8de6fd",
+          "llama_math_007.jsonl.gz": "411add568f66e515360d471f6ec885994b003157165a174462b48cb8112c9486",
+          "llama_math_008.jsonl.gz": "14c13af3c9bb4663a8211ca5291d64d7102ca7985d14737d9e80fb8ac3d9ed44",
+          "llama_math_009.jsonl.gz": "d18c0b0cc76bd7a767eb059482f2acf2cf298c3dff0ef11b44e6acaa49f63ae1",
+          "llama_math_010.jsonl.gz": "64701d33f0869f4ab4c63e6b6cb0e239bf813e35828d2779405f9b4ba24004ad",
+          "llama_math_011.jsonl.gz": "4aac749dec5822bd81261d68901d7e818848fd9abfcfe1d7228e4c8c036d8030",
+          "llama_math_012.jsonl.gz": "e9060c0c3de736fc950935baf084d6295a5871e56d4c5721762199dbcc504f3a",
+          "llama_math_013.jsonl.gz": "123540a625d04441e51ccfbb59864076e2dd389c6ecf78473543572ff4d34895",
+          "llama_math_014.jsonl.gz": "3e6280bb0368b42bbd5b5657dcffa0ae9705546445fb4a63400473c8c4620b94",
+          "llama_math_015.jsonl.gz": "506e46bf4b5dbdd9d68a14553fcd49d23607299c0fe4c2bc5cee041b603dbb74",
+          "llama_math_016.jsonl.gz": "17dd25e87ccb0d820a2f457f849db6bd9648bdd4b09f5902f4fde3c1c75a9ff9",
+          "llama_math_017.jsonl.gz": "dca9094da6fa4f4f353cd0f4ab36bf25f4ec576d84533a3d27d5ded292466118",
+          "llama_math_018.jsonl.gz": "ccc77398a5081149a3c06a77218faabb141d2eb5bf2d1f4d141f79cfdff850d4",
+          "llama_math_019.jsonl.gz": "cb196cea76eb767579b24ff33cec73da7efa4eab5d1ffe2d3f429f9b27a9e1c8"
+        }
+      }
+    },
+    "amc23": {
+      "qwen": {
+        "samples": 40,
+        "methods": {
+          "fixed3": {
+            "correct": 23,
+            "tokens": 2320372,
+            "prm_requests": 120,
+            "candidates": 120
+          },
+          "fixed5": {
+            "correct": 24,
+            "tokens": 3961964,
+            "prm_requests": 200,
+            "candidates": 200
+          },
+          "fixed10": {
+            "correct": 25,
+            "tokens": 8310244,
+            "prm_requests": 400,
+            "candidates": 400
+          },
+          "early5_to_10": {
+            "correct": 25,
+            "tokens": 7440321,
+            "prm_requests": 290,
+            "candidates": 345
+          },
+          "dynamic3_to_5": {
+            "correct": 24,
+            "tokens": 3626909,
+            "prm_requests": 135,
+            "candidates": 174
+          }
+        },
+        "pools_sha256": {
+          "qwen_amc23_000.jsonl.gz": "2ef5ce43bf72ae28706d2f131b12876d42b6be4d6f1fdb8f6b8ccc62c5ee5d70",
+          "qwen_amc23_001.jsonl.gz": "cfded9fba34efc66586cbdcd1ab2363a85ca076e49788ccedde0d2661412647b"
+        }
+      },
+      "llama": {
+        "samples": 40,
+        "methods": {
+          "fixed3": {
+            "correct": 12,
+            "tokens": 1781926,
+            "prm_requests": 120,
+            "candidates": 120
+          },
+          "fixed5": {
+            "correct": 15,
+            "tokens": 3042441,
+            "prm_requests": 200,
+            "candidates": 200
+          },
+          "fixed10": {
+            "correct": 16,
+            "tokens": 6143645,
+            "prm_requests": 400,
+            "candidates": 400
+          },
+          "early5_to_10": {
+            "correct": 16,
+            "tokens": 6056948,
+            "prm_requests": 380,
+            "candidates": 390
+          },
+          "dynamic3_to_5": {
+            "correct": 15,
+            "tokens": 2916162,
+            "prm_requests": 180,
+            "candidates": 192
+          }
+        },
+        "pools_sha256": {
+          "llama_amc23_000.jsonl.gz": "bb9ce97c6de7d4ba1fa58cb41f2195039ba7e6d047a1493b4620b56657315077",
+          "llama_amc23_001.jsonl.gz": "74bd02a33dc9473fc31e25b07be9d042c7cbad692b69709249ea5ac29f6712d6"
+        }
+      }
+    },
+    "aime24": {
+      "qwen": {
+        "samples": 30,
+        "methods": {
+          "fixed3": {
+            "correct": 4,
+            "tokens": 2250095,
+            "prm_requests": 90,
+            "candidates": 90
+          },
+          "fixed5": {
+            "correct": 5,
+            "tokens": 3758423,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed10": {
+            "correct": 5,
+            "tokens": 7263394,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "early5_to_10": {
+            "correct": 5,
+            "tokens": 7164559,
+            "prm_requests": 290,
+            "candidates": 295
+          },
+          "dynamic3_to_5": {
+            "correct": 5,
+            "tokens": 3692528,
+            "prm_requests": 140,
+            "candidates": 146
+          }
+        },
+        "pools_sha256": {
+          "qwen_aime24_000.jsonl.gz": "106dd723acb86da63e225b7a30e3c26fb093b5881cc79d241bc9689bb19a7f59",
+          "qwen_aime24_001.jsonl.gz": "c5676f5539b4b7b717717f8212cc4918c067f76ac3b0c337c6b64a5df347b252"
+        }
+      },
+      "llama": {
+        "samples": 30,
+        "methods": {
+          "fixed3": {
+            "correct": 2,
+            "tokens": 1677390,
+            "prm_requests": 90,
+            "candidates": 90
+          },
+          "fixed5": {
+            "correct": 3,
+            "tokens": 2765498,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed10": {
+            "correct": 4,
+            "tokens": 5527283,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "early5_to_10": {
+            "correct": 4,
+            "tokens": 5527283,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "dynamic3_to_5": {
+            "correct": 3,
+            "tokens": 2765498,
+            "prm_requests": 150,
+            "candidates": 150
+          }
+        },
+        "pools_sha256": {
+          "llama_aime24_000.jsonl.gz": "79a9ed329a022271e02a1c7c45c7abc5628f37098c5813a7be4eeeb8278dab8f",
+          "llama_aime24_001.jsonl.gz": "3becebdd2660a0ac3ebca63876002e3ad011af783bf1513fd24cb6c57ef03852"
+        }
+      }
+    },
+    "aime26": {
+      "qwen": {
+        "samples": 30,
+        "methods": {
+          "fixed3": {
+            "correct": 3,
+            "tokens": 2957109,
+            "prm_requests": 90,
+            "candidates": 90
+          },
+          "fixed5": {
+            "correct": 4,
+            "tokens": 4719737,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed10": {
+            "correct": 4,
+            "tokens": 9549574,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "early5_to_10": {
+            "correct": 4,
+            "tokens": 9549574,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "dynamic3_to_5": {
+            "correct": 4,
+            "tokens": 4657984,
+            "prm_requests": 140,
+            "candidates": 146
+          }
+        },
+        "pools_sha256": {
+          "qwen_aime26_000.jsonl.gz": "b3e3595b5242caef71580574686f80bde379be3cac788e1a41c2a2c6610c61a9",
+          "qwen_aime26_001.jsonl.gz": "0653a6507909ef55f3d31eb839f346b58edd40428fb03bd8f7716b7908fb8ff8"
+        }
+      },
+      "llama": {
+        "samples": 30,
+        "methods": {
+          "fixed3": {
+            "correct": 1,
+            "tokens": 1984094,
+            "prm_requests": 90,
+            "candidates": 90
+          },
+          "fixed5": {
+            "correct": 2,
+            "tokens": 3179649,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed10": {
+            "correct": 2,
+            "tokens": 6158712,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "early5_to_10": {
+            "correct": 2,
+            "tokens": 6158712,
+            "prm_requests": 300,
+            "candidates": 300
+          },
+          "dynamic3_to_5": {
+            "correct": 2,
+            "tokens": 3179649,
+            "prm_requests": 150,
+            "candidates": 150
+          }
+        },
+        "pools_sha256": {
+          "llama_aime26_000.jsonl.gz": "5177195605eafec233c8d54673b62d9c6d8c82e6c6bb596d6303cc707f503ed4",
+          "llama_aime26_001.jsonl.gz": "61fd61ea2fc2c542b567b867ee6fb5974ea0f459834371581cdb8a906561bf07"
+        }
+      }
+    },
+    "amo": {
+      "qwen": {
+        "samples": 50,
+        "methods": {
+          "fixed3": {
+            "correct": 1,
+            "tokens": 7151463,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed5": {
+            "correct": 1,
+            "tokens": 11581182,
+            "prm_requests": 250,
+            "candidates": 250
+          },
+          "fixed10": {
+            "correct": 3,
+            "tokens": 23210913,
+            "prm_requests": 500,
+            "candidates": 500
+          },
+          "early5_to_10": {
+            "correct": 3,
+            "tokens": 22250891,
+            "prm_requests": 450,
+            "candidates": 475
+          },
+          "dynamic3_to_5": {
+            "correct": 1,
+            "tokens": 10589718,
+            "prm_requests": 195,
+            "candidates": 228
+          }
+        },
+        "pools_sha256": {
+          "qwen_amo_000.jsonl.gz": "998603f0cc810d230fb37b9873fd19b84c302c568b986f249fba5dde9a8c36c8",
+          "qwen_amo_001.jsonl.gz": "f858120300f2ef6af0d29b29ba77d1b90e398c10275ed3d7d710cb783b992319"
+        }
+      },
+      "llama": {
+        "samples": 50,
+        "methods": {
+          "fixed3": {
+            "correct": 0,
+            "tokens": 5749303,
+            "prm_requests": 150,
+            "candidates": 150
+          },
+          "fixed5": {
+            "correct": 0,
+            "tokens": 9245866,
+            "prm_requests": 250,
+            "candidates": 250
+          },
+          "fixed10": {
+            "correct": 0,
+            "tokens": 18534130,
+            "prm_requests": 500,
+            "candidates": 500
+          },
+          "early5_to_10": {
+            "correct": 0,
+            "tokens": 18534130,
+            "prm_requests": 500,
+            "candidates": 500
+          },
+          "dynamic3_to_5": {
+            "correct": 0,
+            "tokens": 9245866,
+            "prm_requests": 250,
+            "candidates": 250
+          }
+        },
+        "pools_sha256": {
+          "llama_amo_000.jsonl.gz": "bb394946ecd6449294fca9b3a6de0f4e860514cf5a9a83444acffe9d6d3eeaf2",
+          "llama_amo_001.jsonl.gz": "e63a9515389f24a57d3fc0d6f426a983d29bdfc974e6dc93a24fa32ea7e2d2e6"
+        }
+      }
+    }
+  },
+  "paired_sha256": "8db2dc560b87a7a0f5c0c10ce6b0c384b71e66e65469815dc37bd0c206dbb2b6"
+}
