@@ -1,0 +1,50 @@
+{
+  "0": {
+    "port": 18420,
+    "model_id": "published-qwen25",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  },
+  "1": {
+    "port": 18421,
+    "model_id": "published-qwen25",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  },
+  "7": {
+    "port": 18428,
+    "model_id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  }
+}

@@ -5,20 +5,21 @@ import gzip
 from pathlib import Path
 from statistics import median
 
-from online_e2 import LANES, MANIFEST, WORKERS, questions, released, sha, validate
+from online_e2 import LANES, LIMITS, MANIFEST, WORKERS, questions, released, sha, validate
 from archive_pools import encode, save
 
 
-def archive(data, results, output):
+def archive(data, results, output, *, lanes=LANES, limits=LIMITS, reference="e2_fixed10"):
+    pair_key = f"paired_vs_{reference}"
     cohort = questions(data)["math"]
-    methods = [method for method, _, _ in LANES.values()]
+    methods = [method for method, _, _ in lanes.values()]
     output.mkdir(parents=True, exist_ok=True)
     pools = output / "pools"
     pools.mkdir(exist_ok=True)
     settings = {}
     outcomes = {}
     totals = {}
-    for lane, (method, _, _) in LANES.items():
+    for lane, (method, _, _) in lanes.items():
         root = results / "formal" / method
         config = released.read(root / "config.json")
         expected_ids = [q["problem_id"] for q in cohort]
@@ -38,7 +39,7 @@ def archive(data, results, output):
         outcomes[method] = []
         for q in cohort:
             row = released.read(root / "problems" / f"{q['problem_id']:03d}.json")
-            validate(row, q, lane)
+            validate(row, q, lane, lanes=lanes, limits=limits)
             answer = row["answer"]
             correct = answer.get("is_correct", answer.get("correct")) is True
             count = len(row["candidates"] if "candidates" in row else row["outputs"])
@@ -70,16 +71,18 @@ def archive(data, results, output):
     for field in ("model", "workers", "decode", "engine", "upstream_commit", "question_manifest_sha256"):
         if any(settings[method][field] != settings[methods[0]][field] for method in methods[1:]):
             raise ValueError(f"Arms differ on shared configuration {field}")
-    if settings[methods[0]]["agent"] != settings[methods[1]]["agent"] or settings[methods[0]]["prm"] != settings[methods[1]]["prm"]:
-        raise ValueError("The two E2 arms have different agent or PRM settings")
+    e2_configs = [settings[method] for method, _, prm in lanes.values() if prm is not None]
+    for field in ("agent", "prm"):
+        if any(config[field] != e2_configs[0][field] for config in e2_configs[1:]):
+            raise ValueError(f"E2 arms have different {field} settings")
     for method, config in settings.items():
         save(output / f"{method}_config.json", config)
-        pairs = zip(outcomes[methods[0]], outcomes[method], strict=True)
+        pairs = zip(outcomes[reference], outcomes[method], strict=True)
         changes = Counter()
         for baseline, other in pairs:
             changes.update(lost=baseline["correct"] and not other["correct"],
                            gained=other["correct"] and not baseline["correct"])
-        totals[method]["paired_vs_e2_fixed10"] = changes
+        totals[method][pair_key] = changes
     paired = b"".join(encode({
         "problem_id": q["problem_id"], "dataset_unique_id": q["dataset_unique_id"], "gold": q["gold_answer_extracted"],
         **{method: outcomes[method][i] for method in methods},
@@ -93,7 +96,7 @@ def archive(data, results, output):
     for method in methods:
         m = totals[method]
         wall = "resumed" if m["wall_seconds"] is None else f"{m['wall_seconds']:.1f}"
-        delta = m["paired_vs_e2_fixed10"]
+        delta = m[pair_key]
         table.append(f"| {method} | {m['correct']}/{m['samples']} ({m['accuracy']:.1%}) | {m['mean_candidates']:.2f} | "
                      f"{m['tokens']:,} | {m['prm_requests']:,} | {wall} | {delta['lost']} / {delta['gained']} |")
     (output / "table.md").write_bytes(("\n".join(table) + "\n").encode("utf-8"))
