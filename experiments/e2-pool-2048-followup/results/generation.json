@@ -1,0 +1,35 @@
+{
+  "target": "2026-11-26T10:30:00+08:00",
+  "cohorts": {
+    "math": {
+      "decision_time": "2026-11-26T07:03:55.325927+08:00",
+      "status": "complete",
+      "worker_exit_codes": {
+        "0": 0,
+        "1": 0,
+        "7": 0
+      },
+      "wall_seconds": 1544.3919564490207
+    },
+    "aime24": {
+      "decision_time": "2026-11-26T07:29:39.718845+08:00",
+      "status": "complete",
+      "worker_exit_codes": {
+        "0": 0,
+        "1": 0,
+        "7": 0
+      },
+      "wall_seconds": 208.03719165595248
+    },
+    "amo": {
+      "decision_time": "2026-11-26T07:33:07.756961+08:00",
+      "status": "complete",
+      "worker_exit_codes": {
+        "0": 0,
+        "1": 0,
+        "7": 0
+      },
+      "wall_seconds": 290.1307279248722
+    }
+  }
+}
