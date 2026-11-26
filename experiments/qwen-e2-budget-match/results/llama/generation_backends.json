@@ -1,0 +1,50 @@
+{
+  "0": {
+    "port": 22500,
+    "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "359efdbb8af05b788a4ad4185215c6b8caa9052c",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  },
+  "1": {
+    "port": 22501,
+    "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "359efdbb8af05b788a4ad4185215c6b8caa9052c",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  },
+  "7": {
+    "port": 22504,
+    "model_id": "meta-llama/Llama-3.1-8B-Instruct",
+    "revision": "359efdbb8af05b788a4ad4185215c6b8caa9052c",
+    "settings": {
+      "dtype": "bfloat16",
+      "tensor-parallel-size": 1,
+      "generation-config": "vllm",
+      "gpu-memory-utilization": 0.6,
+      "max-model-len": 32768,
+      "max-num-seqs": 112,
+      "max-num-batched-tokens": 8192,
+      "enable-prefix-caching": true,
+      "vllm": "0.33.0"
+    }
+  }
+}

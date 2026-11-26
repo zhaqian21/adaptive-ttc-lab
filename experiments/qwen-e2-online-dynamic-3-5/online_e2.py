@@ -69,22 +69,25 @@ def validate(row, question, lane, *, lanes=LANES, limits=LIMITS):
         raise ValueError("Unexpected original PRM choice")
 
 
-def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None, cohort=None, manifest=MANIFEST):
+def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None, cohort=None, manifest=MANIFEST,
+           model=QWEN, decode_overrides=None):
     from answer_fields import install
 
     install()
     method, gen, prm = lanes[args.lane]
     runner = released.runner
     assets, _, reward = runner.ASSETS
-    runner.ASSETS = (assets, QWEN, reward)
+    runner.ASSETS = (assets, model, reward)
     cfg = released.configuration("E2")
     cfg["client"]["generate_kwargs"]["max_tokens"] = CAP
     raw = released.AutoTokenizer.from_pretrained(cfg["client"]["model_id"], local_files_only=True)
     tokenizer = released.LockedTokenizer(raw)
     decode = released.effective_decode(cfg, raw)
+    if decode_overrides is not None:
+        decode.update(decode_overrides)
     prompts = runner.upstream.get_prompts()
     evaluator = runner.upstream.get_evaluator("MATH")
-    serving_model = QWEN if served_name is None else (QWEN[0], served_name, QWEN[2])
+    serving_model = model if served_name is None else (model[0], served_name, model[2])
     proxy = SimpleNamespace(port=gen, model=serving_model[1], context=CONTEXT)
     dynamic = method == "e2_dynamic3_to_5"
     solve_args = SimpleNamespace(worker="early" if dynamic else "fixed", lane=args.lane, gen_port=gen, prm_port=prm)
@@ -96,7 +99,7 @@ def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None, cohort=None, m
     paths = args.output / "problems"
     paths.mkdir(parents=True, exist_ok=True)
     config = {
-        "method": method, "lane": args.lane, "model": list(QWEN), "prm": list(reward) if prm is not None else None,
+        "method": method, "lane": args.lane, "model": list(model), "prm": list(reward) if prm is not None else None,
         "workers": WORKERS, "decode": decode, "agent": cfg["agent"], "prm_prompt": PRM_PROMPT,
         "engine": {**ENGINE, "enable-prefix-caching": True, "vllm": "0.33.0"},
         "upstream_commit": runner.UPSTREAM_COMMIT, "question_manifest_sha256": sha(manifest.read_bytes()),

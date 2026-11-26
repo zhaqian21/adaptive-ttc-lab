@@ -53,3 +53,21 @@ bash experiments/qwen-e2-budget-match/run_24.sh "$RUN_DIRECTORY" "$VLLM_PYTHON" 
 
 Each dataset has independent formal timings and a subdirectory in the export.
 The matched results use fixed K=4 as the reference within each dataset.
+
+## Llama transfer
+
+Use the same questions and seeds as the three Qwen comparisons. GPU 0 runs
+fixed K=5, GPU 1 runs fixed K=4, and GPU 7 runs dynamic K=3/5. This mode loads
+the pinned Llama-3.1-8B-Instruct snapshot with the same vLLM flags. It explicitly
+matches Qwen's temperature 0.7, top-p 0.9, top-k 20, and repetition penalty 1.05,
+with Llama's tokenizer, chat template, and end-of-turn token. The same Math PRM
+snapshot serves all three arms. Output cap is 2,048 tokens at 24 concurrent
+questions per card.
+
+~~~bash
+bash experiments/qwen-e2-budget-match/run_24.sh --llama "$RUN_DIRECTORY" "$VLLM_PYTHON" math amc23 gsm8k
+~~~
+
+The launcher swaps idle Qwen generation services for the Llama replicas and
+restores the original services after the run. The GPU 7 PRM is reused. Each
+dataset's formal time excludes service startup and the smoke test.
