@@ -15,7 +15,7 @@ trap 'exit 143' TERM INT
 
 rm -f -- "$run/queue.exit" "$run/run.exit"
 echo running > "$run/queue.status"
-bash "$launcher" "$run" "$2" "$here/run.py" --replace-gpu7
+bash "$launcher" "$run" "$2" "$here/online_e2.py" --replace-gpu7
 [[ "$(cat "$run/service-restoration")" == restored ]]
 echo auditing > "$run/queue.status"
 "$python" -B "$here/archive.py" --data "$run/data" --results "$run/results" --output "$run/export"

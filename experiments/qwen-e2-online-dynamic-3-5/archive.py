@@ -5,7 +5,7 @@ import gzip
 from pathlib import Path
 from statistics import median
 
-from run import LANES, MANIFEST, WORKERS, questions, released, sha, validate
+from online_e2 import LANES, MANIFEST, WORKERS, questions, released, sha, validate
 from archive_pools import encode, save
 
 
