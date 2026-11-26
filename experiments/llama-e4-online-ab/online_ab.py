@@ -79,7 +79,7 @@ class MeasuredSession(requests.Session):
         return response
 
 
-def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, model=None):
+def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, model=None, retain_traces=False):
     runner = released.runner
     model = MODEL if model is None else model
     start = time.monotonic()
@@ -132,6 +132,9 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
                         selection_metric="mean_reward", system_prompt=PRM_PROMPT)
                     for row, value in zip(candidates, scores):
                         row["mean_reward"] = value["mean_reward"]
+                        if retain_traces:
+                            row["prm_input"] = selector.combine_fields(row)
+                            row["prm_score"] = value
                     selections, _ = selectors(candidates)
                     if old_index + 1 != selections["original"]:
                         raise ValueError("Original PRM choice disagrees with the archived selector")
@@ -141,7 +144,7 @@ def solve(question, args, config, tokenizer, decode, evaluator, prompts, *, mode
                 return {
                     "problem_id": index, "dataset_unique_id": question["dataset_unique_id"], "level": question["level"],
                     "lane": args.lane, "policy": args.worker, "seed": seed, "stopped_early": stopped,
-                    "candidates": [{key: row[key] for key in (
+                    "candidates": candidates if retain_traces else [{key: row[key] for key in (
                         "iteration", "predicted_answer", "is_correct", "mean_reward", "completion_sha256")}
                         for row in candidates],
                     "answer": chosen(candidates, selections["sum_prm"]),
