@@ -15,8 +15,8 @@ services=(ttc-published-prm-gpu0)
 ports=(18422)
 new_ports=(22502 22503)
 if [[ "$model" == llama ]]; then
-    services+=(ttc-published-service-0 ttc-published-service-1 ttc-qwen-gpu7)
-    ports+=(18420 18421 18428)
+    services=(ttc-published-service-0 ttc-published-service-1 ttc-qwen-gpu7 "$services")
+    ports=(18420 18421 18428 "$ports")
     new_ports+=(22500 22501 22504)
 fi
 commands=()
@@ -43,11 +43,15 @@ restore() {
     trap - EXIT
     if (( restore_services )); then
         for i in "${!services[@]}"; do
+            if [[ "${ports[i]}" == 18422 ]]; then continue; fi
             if ! has_session "${services[i]}"; then
                 tmux new-session -d -s "${services[i]}" -c "${directories[i]}" "${commands[i]}" || restored=0
             fi
         done
         for i in "${!services[@]}"; do
+            if [[ "${ports[i]}" == 18422 ]] && ! has_session "${services[i]}"; then
+                tmux new-session -d -s "${services[i]}" -c "${directories[i]}" "${commands[i]}" || restored=0
+            fi
             ready=0
             for ((attempt=0;attempt<150;attempt++)); do
                 if healthy "${ports[i]}"; then ready=1; break; fi
@@ -75,7 +79,7 @@ trap 'printf "Experiment launcher failed on line %s\n" "$LINENO" >&2' ERR
 trap 'exit 143' TERM INT
 
 phase preflight
-rm -f -- "$root/run.exit"
+rm -f -- "$root/run.exit" "$root/service-restoration"
 mkdir -p -- "$root/results"
 export CUDA_VISIBLE_DEVICES="$(nvidia-smi -i 0,1,7 --query-gpu=uuid --format=csv,noheader | paste -sd, -)"
 [[ "$CUDA_VISIBLE_DEVICES" =~ ^GPU-[^,]+,GPU-[^,]+,GPU-[^,]+$ ]]
