@@ -24,6 +24,7 @@ from protocol import DRAWS, key, majority
 
 
 LANES = {0: ("e2_fixed10", 22500, 22502), 1: ("e2_dynamic3_to_5", 22501, 22503), 7: ("direct_vote5", 22504, None)}
+LIMITS = {"e2_fixed10": 10, "e2_dynamic3_to_5": 5}
 QWEN = MODELS["qwen"]
 SMOKE_IDS = (0, 1, 2, 3)
 
@@ -33,8 +34,8 @@ def agree(candidates):
     return len(answers) == 3 and bool(answers[0]) and all(x == answers[0] for x in answers)
 
 
-def validate(row, question, lane):
-    method, _, prm = LANES[lane]
+def validate(row, question, lane, *, lanes=LANES, limits=LIMITS):
+    method, _, prm = lanes[lane]
     if (row["problem_id"], row["dataset_unique_id"], row["gold"], row["lane"], row["method"]) != (
             question["problem_id"], question["dataset_unique_id"], question["gold_answer_extracted"], lane, method):
         raise ValueError("Unexpected question identity or method")
@@ -51,7 +52,7 @@ def validate(row, question, lane):
     candidates = row["candidates"]
     dynamic = method == "e2_dynamic3_to_5"
     stopped = dynamic and agree(candidates[:3])
-    limit = 5 if dynamic else 10
+    limit = limits[method]
     if row["stopped_early"] != stopped or [c["iteration"] for c in candidates] != list(range(1, (3 if stopped else limit) + 1)):
         raise ValueError("Unexpected adaptive path")
     valid_stages(row["attempts"][-1]["stages"], stopped, limit, 3)
@@ -68,11 +69,11 @@ def validate(row, question, lane):
         raise ValueError("Unexpected original PRM choice")
 
 
-def worker(args):
+def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
     from answer_fields import install
 
     install()
-    method, gen, prm = LANES[args.lane]
+    method, gen, prm = lanes[args.lane]
     runner = released.runner
     assets, _, reward = runner.ASSETS
     runner.ASSETS = (assets, QWEN, reward)
@@ -83,7 +84,8 @@ def worker(args):
     decode = released.effective_decode(cfg, raw)
     prompts = runner.upstream.get_prompts()
     evaluator = runner.upstream.get_evaluator("MATH")
-    proxy = SimpleNamespace(port=gen, model=QWEN[1], context=CONTEXT)
+    serving_model = QWEN if served_name is None else (QWEN[0], served_name, QWEN[2])
+    proxy = SimpleNamespace(port=gen, model=serving_model[1], context=CONTEXT)
     dynamic = method == "e2_dynamic3_to_5"
     solve_args = SimpleNamespace(worker="early" if dynamic else "fixed", lane=args.lane, gen_port=gen, prm_port=prm)
     cohort = questions(args.data)["math"]
@@ -101,6 +103,10 @@ def worker(args):
         "ids": [q["problem_id"] for q in cohort],
         "direct_prompts": {k: prompts[k] for k in DIRECT["DIRECT_KEYS"]} if prm is None else None,
     }
+    if served_name is not None:
+        config.update(candidate_limit=limits[method], early_stop_after=3 if dynamic else None,
+                      served_model_name=served_name, generation_port=gen, prm_port=prm,
+                      seed_rule="problem_id + 1000000 * retry")
     config_path = args.output / "config.json"
     if config_path.exists() and released.read(config_path) != config:
         raise ValueError("Cannot resume the experiment with different settings")
@@ -110,7 +116,7 @@ def worker(args):
     def run_one(q):
         path = paths / f"{q['problem_id']:03d}.json"
         if path.exists():
-            validate(released.read(path), q, args.lane)
+            validate(released.read(path), q, args.lane, lanes=lanes, limits=limits)
             return
         if prm is None:
             started = time.monotonic()
@@ -122,11 +128,11 @@ def worker(args):
                 "seconds": time.monotonic() - started, **{cost: sum(d[cost] for d in draws) for cost in COST},
             }
         else:
-            result = solve(q, solve_args, cfg, tokenizer, decode, evaluator, prompts, model=QWEN,
-                           retain_traces=True, candidate_limit=5 if dynamic else 10, agreement_at=3,
+            result = solve(q, solve_args, cfg, tokenizer, decode, evaluator, prompts, model=serving_model,
+                           retain_traces=True, candidate_limit=limits[method], agreement_at=3,
                            agreement_rule=agree, original_prm_only=True)
         result.update(method=method, gold=q["gold_answer_extracted"])
-        validate(result, q, args.lane)
+        validate(result, q, args.lane, lanes=lanes, limits=limits)
         released.write(path, result)
 
     started = time.monotonic()
