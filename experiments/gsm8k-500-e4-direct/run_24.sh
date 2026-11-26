@@ -1,7 +1,15 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-[[ $# == 2 || $# == 3 ]] || { echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON [EVALUATOR]" >&2; exit 2; }
+[[ $# -ge 2 && $# -le 4 ]] || {
+    echo "usage: $0 RUN_DIRECTORY VLLM_PYTHON [EVALUATOR [--replace-gpu7]]" >&2
+    exit 2
+}
+replace_gpu7=0
+if [[ $# == 4 ]]; then
+    [[ "$4" == --replace-gpu7 ]]
+    replace_gpu7=1
+fi
 here="$(cd -- "$(dirname -- "$0")" && pwd)"
 root="$(realpath -- "$1")"
 engine="$(realpath -s -- "$2")"
@@ -9,6 +17,14 @@ evaluator="$(realpath -- "${3:-$here/evaluate.py}")"
 [[ -f "$evaluator" ]]
 services=(ttc-published-service-0 ttc-published-service-1 ttc-published-prm-gpu0)
 ports=(18420 18421 18422)
+devices=0,1
+reserved_ports=(22500 22501 22502 22503)
+if (( replace_gpu7 )); then
+    services+=(ttc-e4-gpu7)
+    ports+=(18427)
+    devices=0,1,7
+    reserved_ports+=(22504)
+fi
 commands=()
 need_restore=0
 
@@ -32,12 +48,13 @@ restore() {
     local rc=$? restored=1
     trap - EXIT
     if (( need_restore )); then
-        for lane in 0 1 2; do
+        for lane in "${!services[@]}"; do
             if ! session_exists "${services[lane]}"; then
                 tmux new-session -d -s "${services[lane]}" "${commands[lane]}" || restored=0
             fi
             wait_port "${ports[lane]}" || restored=0
         done
+        if (( replace_gpu7 )); then wait_port 18437 || restored=0; fi
         if (( restored )); then
             echo restored > "$root/service-restoration"
         else
@@ -52,7 +69,7 @@ trap restore EXIT
 trap 'exit 143' TERM INT
 
 echo preflight > "$root/status"
-for port in 22500 22501 22502 22503; do [[ -z "$(ss -ltnH "sport = :$port")" ]]; done
+for port in "${reserved_ports[@]}"; do [[ -z "$(ss -ltnH "sport = :$port")" ]]; done
 for name in "${services[@]}"; do
     session_exists "$name"
     command="$(tmux display-message -p -t "$name:" '#{pane_start_command}')"
@@ -74,9 +91,9 @@ export PYTHONPATH="$here/../aime24-amo-bench-published-code-2026-11-24/scripts:$
 
 need_restore=1
 echo switching-models > "$root/status"
-for lane in 2 1 0; do tmux send-keys -t "${services[lane]}:" C-c; done
+for ((lane=${#services[@]}-1;lane>=0;lane--)); do tmux send-keys -t "${services[lane]}:" C-c; done
 for ((attempt=0;attempt<60;attempt++)); do
-    occupied="$(nvidia-smi -i 0,1 --query-compute-apps=pid --format=csv,noheader,nounits)"
+    occupied="$(nvidia-smi -i "$devices" --query-compute-apps=pid --format=csv,noheader,nounits)"
     if [[ -z "$occupied" ]]; then break; fi
     sleep 2
 done
