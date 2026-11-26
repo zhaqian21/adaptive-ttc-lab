@@ -94,9 +94,10 @@ def verify_engines(args):
             raise ValueError(f"Cannot identify GPU {lane} generation server")
         pid = next(iter(pids))
         cmd = (Path("/proc") / pid / "cmdline").read_bytes().decode().rstrip("\0").split("\0")
-        if any(f"--{key}" not in cmd or cmd[cmd.index(f"--{key}") + 1] != expected
-               for key, expected in ((k, f"{v:.2f}" if k == "gpu-memory-utilization" else str(v))
-                                     for k, v in ENGINE.items())) or "--enable-prefix-caching" not in cmd:
+        valid_flag_values = {key: {str(value)} for key, value in ENGINE.items()}
+        valid_flag_values["gpu-memory-utilization"].add(f'{ENGINE["gpu-memory-utilization"]:.2f}')
+        if any(f"--{key}" not in cmd or cmd[cmd.index(f"--{key}") + 1] not in values
+               for key, values in valid_flag_values.items()) or "--enable-prefix-caching" not in cmd:
             raise ValueError(f"GPU {lane} generation server does not match the experiment engine settings")
         backends[str(lane)] = {"port": gen, "model_id": model["id"], "revision": model_spec[2],
                                "settings": {**ENGINE, "enable-prefix-caching": True, "vllm": "0.33.0"}}
