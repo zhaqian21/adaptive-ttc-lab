@@ -9,9 +9,12 @@ from online_e2 import LANES, LIMITS, MANIFEST, WORKERS, questions, released, sha
 from archive_pools import encode, save
 
 
-def archive(data, results, output, *, lanes=LANES, limits=LIMITS, reference="e2_fixed10"):
+def archive(data, results, output, *, lanes=LANES, limits=LIMITS, reference="e2_fixed10",
+            cohort=None, manifest=MANIFEST):
     pair_key = f"paired_vs_{reference}"
-    cohort = questions(data)["math"]
+    if cohort is None:
+        cohort = questions(data)["math"]
+    dataset = cohort[0]["dataset"]
     methods = [method for method, _, _ in lanes.values()]
     output.mkdir(parents=True, exist_ok=True)
     pools = output / "pools"
@@ -25,7 +28,8 @@ def archive(data, results, output, *, lanes=LANES, limits=LIMITS, reference="e2_
         expected_ids = [q["problem_id"] for q in cohort]
         if (config["ids"] != expected_ids or config["method"] != method or config["lane"] != lane
                 or config["workers"] != WORKERS or config["decode"]["max_tokens"] != 2048
-                or config["question_manifest_sha256"] != sha(MANIFEST.read_bytes())):
+                or config.get("dataset", "math") != dataset
+                or config["question_manifest_sha256"] != sha(manifest.read_bytes())):
             raise ValueError(f"{method}: configuration or cohort mismatch")
         settings[method] = config
         timing = released.read(root / "timing.json")
@@ -39,6 +43,8 @@ def archive(data, results, output, *, lanes=LANES, limits=LIMITS, reference="e2_
         outcomes[method] = []
         for q in cohort:
             row = released.read(root / "problems" / f"{q['problem_id']:03d}.json")
+            if row.get("dataset", "math") != dataset:
+                raise ValueError(f"{method}: mismatched question dataset")
             validate(row, q, lane, lanes=lanes, limits=limits)
             answer = row["answer"]
             correct = answer.get("is_correct", answer.get("correct")) is True

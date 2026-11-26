@@ -69,7 +69,7 @@ def validate(row, question, lane, *, lanes=LANES, limits=LIMITS):
         raise ValueError("Unexpected original PRM choice")
 
 
-def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
+def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None, cohort=None, manifest=MANIFEST):
     from answer_fields import install
 
     install()
@@ -88,7 +88,9 @@ def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
     proxy = SimpleNamespace(port=gen, model=serving_model[1], context=CONTEXT)
     dynamic = method == "e2_dynamic3_to_5"
     solve_args = SimpleNamespace(worker="early" if dynamic else "fixed", lane=args.lane, gen_port=gen, prm_port=prm)
-    cohort = questions(args.data)["math"]
+    if cohort is None:
+        cohort = questions(args.data)["math"]
+    dataset = cohort[0]["dataset"]
     if args.smoke:
         cohort = [q for q in cohort if q["problem_id"] in SMOKE_IDS]
     paths = args.output / "problems"
@@ -97,7 +99,7 @@ def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
         "method": method, "lane": args.lane, "model": list(QWEN), "prm": list(reward) if prm is not None else None,
         "workers": WORKERS, "decode": decode, "agent": cfg["agent"], "prm_prompt": PRM_PROMPT,
         "engine": {**ENGINE, "enable-prefix-caching": True, "vllm": "0.33.0"},
-        "upstream_commit": runner.UPSTREAM_COMMIT, "question_manifest_sha256": sha(MANIFEST.read_bytes()),
+        "upstream_commit": runner.UPSTREAM_COMMIT, "question_manifest_sha256": sha(manifest.read_bytes()),
         "runner_sha256": sha(Path(__file__).read_bytes()),
         "solve_sha256": sha((EXPERIMENTS / "llama-e4-online-ab/online_ab.py").read_bytes()),
         "ids": [q["problem_id"] for q in cohort],
@@ -107,6 +109,8 @@ def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
         config.update(candidate_limit=limits[method], early_stop_after=3 if dynamic else None,
                       served_model_name=served_name, generation_port=gen, prm_port=prm,
                       seed_rule="problem_id + 1000000 * retry")
+    if dataset != "math":
+        config["dataset"] = dataset
     config_path = args.output / "config.json"
     if config_path.exists() and released.read(config_path) != config:
         raise ValueError("Cannot resume the experiment with different settings")
@@ -132,6 +136,8 @@ def worker(args, *, lanes=LANES, limits=LIMITS, served_name=None):
                            retain_traces=True, candidate_limit=limits[method], agreement_at=3,
                            agreement_rule=agree, original_prm_only=True)
         result.update(method=method, gold=q["gold_answer_extracted"])
+        if dataset != "math":
+            result["dataset"] = dataset
         validate(result, q, args.lane, lanes=lanes, limits=limits)
         released.write(path, result)
 
