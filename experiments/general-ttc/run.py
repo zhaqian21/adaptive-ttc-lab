@@ -2,9 +2,12 @@
 import argparse
 import hashlib
 import json
+import os
+from concurrent.futures import ThreadPoolExecutor, as_completed
+from contextlib import contextmanager
 from pathlib import Path
 from statistics import fmean
-from time import perf_counter
+from time import perf_counter, time
 from urllib.error import HTTPError
 from urllib.request import ProxyHandler, Request, build_opener
 
@@ -43,6 +46,19 @@ def summarize(rows):
     }
 
 
+@contextmanager
+def lock_run(output):
+    with (output / ".run.lock").open("a+b") as handle:
+        if os.name == "nt":
+            import msvcrt
+            handle.seek(0)
+            msvcrt.locking(handle.fileno(), msvcrt.LK_NBLCK, 1)
+        else:
+            import fcntl
+            fcntl.flock(handle, fcntl.LOCK_EX | fcntl.LOCK_NB)
+        yield
+
+
 def run(args):
     data = args.manifest.read_bytes()
     manifest = json.loads(data)
@@ -76,7 +92,6 @@ def run(args):
         response = request(prm_url + "/score", {"question": question, "steps": steps})
         return response["step_scores"], response["input_tokens"]
 
-    args.output.mkdir(parents=True, exist_ok=False)
     config = {
         "method": args.method, "outer_k": args.k if args.method in {"E2", "E4"} else 1,
         "seed": args.seed, "max_tokens": args.max_tokens, "search_steps": args.search_steps,
@@ -84,11 +99,56 @@ def run(args):
         "manifest_sha256": hashlib.sha256(data).hexdigest(),
         "source_url": manifest["source_url"], "source_sha256": manifest["source_sha256"],
         "questions": [row["id"] for row in questions], "code_revision": args.code_revision,
+        "workers": args.workers,
     }
-    write_json(args.output / "config.json", config)
-    rows = []
-    started = perf_counter()
+    if not args.resume:
+        args.output.mkdir(parents=True, exist_ok=False)
+    with lock_run(args.output):
+        run_questions(args, config, questions, generate, score)
+
+
+def run_questions(args, config, questions, generate, score):
+    config_file = args.output / "config.json"
+    if args.resume:
+        previous = json.loads(config_file.read_text(encoding="utf-8"))
+        for key, value in config.items():
+            if key not in {"workers", "code_revision"} and previous.get(key) != value:
+                raise ValueError(f"Cannot resume with different {key}")
+    else:
+        previous = config
+        write_json(config_file, config)
+
+    def path_for(task_id):
+        name = hashlib.sha256(task_id.encode()).hexdigest()[:20] + ".json"
+        return args.output / "questions" / name
+
+    completed = {}
+    pending = []
     for item in questions:
+        path = path_for(item["id"])
+        if args.resume and path.is_file():
+            row = json.loads(path.read_text(encoding="utf-8"))
+            if (row["task_id"], row["category"], row["gold"]) != (item["id"], item["category"], item["answer"]):
+                raise ValueError(f"Invalid checkpoint for {item['id']}")
+            completed[item["id"]] = row
+        else:
+            pending.append(item)
+
+    segments_file = args.output / "runtime-segments.json"
+    if segments_file.is_file():
+        segments = json.loads(segments_file.read_text(encoding="utf-8"))
+    elif args.resume:
+        segments = [{"workers": previous.get("workers", 1), "code_revision": previous["code_revision"]}]
+    else:
+        segments = []
+    segments.append({
+        "workers": args.workers, "code_revision": args.code_revision,
+        "already_complete": len(completed), "started_at_unix": time(),
+    })
+    write_json(segments_file, segments)
+    started = perf_counter()
+
+    def evaluate(item):
         task = Task(item["id"], item["category"], item["question"], tuple(item["options"]),
                     tuple(item.get("evidence", ())))
         began = perf_counter()
@@ -103,13 +163,37 @@ def run(args):
             "output_tokens": sum(c["completion_tokens"] for c in calls),
             "prm_calls": len(scores), "prm_input_tokens": sum(e["input_tokens"] for e in scores),
         })
-        filename = hashlib.sha256(task.id.encode()).hexdigest()[:20] + ".json"
-        write_json(args.output / "questions" / filename, row)
-        rows.append(row)
-        print(f"{args.method} {task.id} {row['prediction']} {row['correct']} {row['seconds']:.1f}s", flush=True)
+        return row
+
+    failures = {}
+    with ThreadPoolExecutor(max_workers=args.workers) as pool:
+        tasks = {pool.submit(evaluate, item): item["id"] for item in pending}
+        for future in as_completed(tasks):
+            task_id = tasks[future]
+            try:
+                row = future.result()
+            except Exception as error:
+                failures[task_id] = str(error)
+                print(f"{args.method} {task_id} failed: {error}", flush=True)
+                continue
+            write_json(path_for(task_id), row)
+            completed[task_id] = row
+            print(f"{args.method} {task_id} {row['prediction']} {row['correct']} {row['seconds']:.1f}s", flush=True)
+
+    segment_seconds = perf_counter() - started
+    segments[-1]["seconds"] = segment_seconds
+    segments[-1]["further_completed"] = len(pending) - len(failures)
+    write_json(segments_file, segments)
+    if failures:
+        write_json(args.output / "errors.json", failures)
+        raise RuntimeError(f"{len(failures)} questions failed; use --resume to continue")
+    (args.output / "errors.json").unlink(missing_ok=True)
+    rows = [completed[item["id"]] for item in questions]
     write_json(args.output / "summary.json", {
-        **summarize(rows), "elapsed_seconds": perf_counter() - started, "method": args.method,
-        "outer_k": config["outer_k"], "manifest_sha256": config["manifest_sha256"],
+        **summarize(rows), "method": args.method, "outer_k": config["outer_k"],
+        "manifest_sha256": config["manifest_sha256"],
+        "elapsed_seconds": time() - config_file.stat().st_mtime if args.resume else segment_seconds,
+        "timing_basis": "wall clock since initial run config" if args.resume else "evaluation wall clock",
     })
 
 
@@ -126,11 +210,13 @@ def main():
     parser.add_argument("--max-tokens", type=int, default=1024)
     parser.add_argument("--search-steps", type=int, default=2)
     parser.add_argument("--limit", type=int)
+    parser.add_argument("--workers", type=int, default=1, help="Concurrent questions")
+    parser.add_argument("--resume", action="store_true", help="Reuse completed questions in the output directory")
     parser.add_argument("--category", action="append")
     parser.add_argument("--fixed-strategy", choices=STRATEGIES)
     parser.add_argument("--code-revision", help="Record the Git commit of this run")
     args = parser.parse_args()
-    if min(args.k, args.max_tokens, args.search_steps, args.limit or 1) < 1 or args.limit == 0:
+    if min(args.k, args.max_tokens, args.search_steps, args.workers, args.limit or 1) < 1 or args.limit == 0:
         parser.error("Budgets and question limits must be positive")
     if args.fixed_strategy and args.method not in {"E3", "E4"}:
         parser.error("--fixed-strategy requires E3 or E4")
