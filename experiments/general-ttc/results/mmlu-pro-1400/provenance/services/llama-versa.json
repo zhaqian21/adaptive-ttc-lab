@@ -1,0 +1,25 @@
+{
+  "generator": [
+    {
+      "id": "published-llama31",
+      "root": "/root/autodl-tmp/adaptive-ttc-lab/general-ttc/models-next/Llama-3.1-8B-Instruct/359efdbb8af05b788a4ad4185215c6b8caa9052c",
+      "max_model_len": 32768
+    }
+  ],
+  "scorer": {
+    "status": "ready",
+    "assets": {
+      "prm_base": {
+        "id": "UW-Madison-Lee-Lab/Llama-PRM800K",
+        "revision": "1973a85d64b7a00e50a278b31a6558804bf952eb"
+      },
+      "prm_adapter": {
+        "id": "UW-Madison-Lee-Lab/VersaPRM",
+        "revision": "cd537f770b8077e31b10c7dc6cfd27f582e5de51"
+      }
+    },
+    "dtype": "bfloat16",
+    "max_context": 4096
+  },
+  "gpu": "NVIDIA GeForce RTX 4090, 47884 MiB, 49140 MiB"
+}

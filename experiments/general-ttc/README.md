@@ -38,3 +38,4 @@ done
 输出包括配置、每题选中的答案和候选、控制器决定、PRM 步分、生成和评分 token、调用次数及实测耗时。搜索对照可以用 `--fixed-strategy beam` 或 `--fixed-strategy lookahead`。生成组可以用 `--workers` 并行提交题目。用同一配置和 `--resume` 继续运行时，已落盘的题目会被复用，允许调整并发。正式实验使用完整题单和默认轮数，并按学科汇总。
 
 [数学版方法与实验配置](https://arxiv.org/html/2602.01070v5#S2) · [VersaPRM 的参考评分实现](https://github.com/UW-Madison-Lee-Lab/VersaPRM/blob/81a3c993eb80c38ee3900405bee67405dd79f610/evaluation/prm_models/prm_llama.py)
+[在同一份 MMLU-Pro 1,400 题上实测的四种组合及逐题归档](results/mmlu-pro-1400/README.md)

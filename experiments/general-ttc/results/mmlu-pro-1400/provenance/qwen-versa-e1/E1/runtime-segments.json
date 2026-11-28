@@ -1,0 +1,14 @@
+[
+  {
+    "workers": 1,
+    "code_revision": "dd834c0220d36e741744b04ac829e939e66b3288"
+  },
+  {
+    "workers": 96,
+    "code_revision": "ed6674002eec1b74e61d688cf7550d75d878cb88",
+    "already_complete": 110,
+    "started_at_unix": 1795839675.3361063,
+    "seconds": 39.32722586765885,
+    "further_completed": 390
+  }
+]

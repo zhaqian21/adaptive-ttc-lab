@@ -1,0 +1,390 @@
+E1 10058_mmlu_physics J True 5.0s
+E1 9120_mmlu_physics D True 5.2s
+E1 9828_mmlu_physics B True 5.4s
+E1 9737_mmlu_physics A True 5.4s
+E1 9452_mmlu_physics A True 5.9s
+E1 9049_mmlu_physics F True 6.1s
+E1 10335_mmlu_physics H True 6.0s
+E1 9878_mmlu_physics A True 6.3s
+E1 10578_mmlu_computer science H False 6.5s
+E1 10650_mmlu_computer science D True 6.6s
+E1 10332_mmlu_physics E True 6.7s
+E1 10169_mmlu_physics I False 6.8s
+E1 10100_mmlu_physics J True 6.9s
+E1 9217_mmlu_physics G False 6.9s
+E1 10372_mmlu_computer science E False 7.1s
+E1 10122_mmlu_physics D True 7.2s
+E1 9936_mmlu_physics A True 7.4s
+E1 9418_mmlu_physics F True 7.4s
+E1 10152_mmlu_physics E True 7.5s
+E1 9819_mmlu_physics I True 7.6s
+E1 9503_mmlu_physics D True 8.1s
+E1 10554_mmlu_computer science H False 2.4s
+E1 10426_mmlu_computer science None False 8.5s
+E1 9516_mmlu_physics G True 8.6s
+E1 10556_mmlu_computer science D False 2.1s
+E1 9090_mmlu_physics E True 8.6s
+E1 9307_mmlu_physics A True 8.7s
+E1 10373_mmlu_computer science B False 3.8s
+E1 9532_mmlu_physics E True 8.8s
+E1 10404_mmlu_computer science E True 2.9s
+E1 10370_mmlu_computer science B True 3.2s
+E1 9290_mmlu_physics I True 9.5s
+E1 9411_mmlu_physics H True 9.5s
+E1 10293_mmlu_physics C False 9.6s
+E1 10712_mmlu_computer science E True 4.2s
+E1 9939_mmlu_physics G False 9.8s
+E1 10649_mmlu_computer science E False 2.2s
+E1 10635_mmlu_computer science J False 2.5s
+E1 9799_mmlu_physics F False 10.1s
+E1 9821_mmlu_physics H True 10.1s
+E1 10233_mmlu_physics G True 10.1s
+E1 9911_mmlu_physics G True 10.1s
+E1 9955_mmlu_physics F True 10.1s
+E1 9142_mmlu_physics J False 10.7s
+E1 9187_mmlu_physics F False 10.7s
+E1 10068_mmlu_physics G True 10.7s
+E1 9455_mmlu_physics B True 10.7s
+E1 10648_mmlu_computer science J True 10.8s
+E1 10759_mmlu_computer science D True 2.4s
+E1 10451_mmlu_computer science C False 1.7s
+E1 10139_mmlu_physics A False 11.3s
+E1 10016_mmlu_physics C True 11.4s
+E1 10395_mmlu_computer science H True 1.6s
+E1 10643_mmlu_computer science F True 4.4s
+E1 9692_mmlu_physics F True 11.7s
+E1 10760_mmlu_computer science D True 4.4s
+E1 10551_mmlu_computer science F False 2.0s
+E1 10627_mmlu_computer science C True 5.0s
+E1 10668_mmlu_computer science D False 2.5s
+E1 10128_mmlu_physics I False 12.3s
+E1 9331_mmlu_physics E True 12.6s
+E1 9527_mmlu_physics D True 12.6s
+E1 10618_mmlu_computer science D True 4.0s
+E1 10090_mmlu_physics D False 12.8s
+E1 10133_mmlu_physics I False 12.8s
+E1 10339_mmlu_physics J True 12.8s
+E1 10504_mmlu_computer science F True 2.8s
+E1 9224_mmlu_physics H False 13.1s
+E1 9863_mmlu_physics G False 13.2s
+E1 10518_mmlu_computer science D False 1.1s
+E1 10024_mmlu_physics F False 13.5s
+E1 10613_mmlu_computer science H True 3.7s
+E1 10479_mmlu_computer science B False 2.3s
+E1 10694_mmlu_computer science I True 4.8s
+E1 10188_mmlu_physics B False 13.7s
+E1 10496_mmlu_computer science H False 4.0s
+E1 9456_mmlu_physics I True 13.8s
+E1 9156_mmlu_physics A True 13.8s
+E1 10441_mmlu_computer science B True 6.7s
+E1 10676_mmlu_computer science B False 5.8s
+E1 9205_mmlu_physics C False 14.2s
+E1 10603_mmlu_computer science A True 3.0s
+E1 9649_mmlu_physics A True 14.3s
+E1 10423_mmlu_computer science F True 7.6s
+E1 10670_mmlu_computer science B False 9.3s
+E1 10143_mmlu_physics F False 14.5s
+E1 10616_mmlu_computer science C True 9.2s
+E1 10730_mmlu_computer science G False 2.7s
+E1 9091_mmlu_physics J False 14.5s
+E1 10366_mmlu_computer science B False 1.7s
+E1 10427_mmlu_computer science A True 3.2s
+E1 10718_mmlu_computer science B True 4.0s
+E1 9580_mmlu_physics E True 14.8s
+E1 10741_mmlu_computer science F True 6.0s
+E1 10448_mmlu_computer science J True 6.2s
+E1 9495_mmlu_physics J True 15.2s
+E1 9237_mmlu_physics D False 15.2s
+E1 10763_mmlu_computer science H False 8.6s
+E1 9805_mmlu_physics J True 15.4s
+E1 9668_mmlu_physics F True 15.4s
+E1 10430_mmlu_computer science J True 9.2s
+E1 10749_mmlu_computer science H False 4.1s
+E1 10605_mmlu_computer science J False 4.9s
+E1 10753_mmlu_computer science D False 6.5s
+E1 10530_mmlu_computer science C True 2.1s
+E1 10368_mmlu_computer science G False 7.5s
+E1 10574_mmlu_computer science D True 7.3s
+E1 10505_mmlu_computer science D False 7.7s
+E1 10671_mmlu_computer science A True 2.9s
+E1 10563_mmlu_computer science D True 2.1s
+E1 9507_mmlu_physics C False 16.3s
+E1 10772_mmlu_computer science D False 2.6s
+E1 10758_mmlu_computer science J True 7.6s
+E1 10450_mmlu_computer science G True 3.8s
+E1 10703_mmlu_computer science E True 4.6s
+E1 9393_mmlu_physics C True 16.5s
+E1 10087_mmlu_physics D False 16.7s
+E1 10439_mmlu_computer science F False 9.7s
+E1 9925_mmlu_physics C False 16.7s
+E1 10543_mmlu_computer science C True 3.9s
+E1 10532_mmlu_computer science H False 5.1s
+E1 9643_mmlu_physics H True 16.9s
+E1 9443_mmlu_physics None False 17.1s
+E1 10460_mmlu_computer science C True 3.5s
+E1 10387_mmlu_computer science G True 5.9s
+E1 10308_mmlu_physics E True 17.9s
+E1 10606_mmlu_computer science F False 3.7s
+E1 9852_mmlu_physics G True 18.1s
+E1 10419_mmlu_computer science D True 4.6s
+E1 9903_mmlu_physics F False 18.2s
+E1 10678_mmlu_computer science B False 4.6s
+E1 10724_mmlu_computer science C False 8.2s
+E1 9252_mmlu_physics D True 18.4s
+E1 9461_mmlu_physics A False 18.5s
+E1 9614_mmlu_physics E True 18.5s
+E1 10477_mmlu_computer science B True 4.3s
+E1 10725_mmlu_computer science A True 8.2s
+E1 1025_mmlu_law H False 3.6s
+E1 10390_mmlu_computer science F False 5.8s
+E1 9699_mmlu_physics G True 19.2s
+E1 10431_mmlu_computer science I True 8.6s
+E1 10474_mmlu_computer science I True 9.8s
+E1 10614_mmlu_computer science B True 5.6s
+E1 10438_mmlu_computer science G False 5.0s
+E1 10118_mmlu_physics F True 19.7s
+E1 10686_mmlu_computer science B False 5.3s
+E1 10628_mmlu_computer science F True 5.0s
+E1 10542_mmlu_computer science I True 6.3s
+E1 10754_mmlu_computer science D True 5.0s
+E1 10536_mmlu_computer science B False 6.0s
+E1 886_mmlu_law A True 3.3s
+E1 10406_mmlu_computer science E True 5.9s
+E1 1777_mmlu_law H False 5.2s
+E1 9179_mmlu_physics C False 20.5s
+E1 9790_mmlu_physics D True 20.7s
+E1 9517_mmlu_physics A True 20.8s
+E1 9206_mmlu_physics D False 20.9s
+E1 910_mmlu_law C False 5.9s
+E1 10698_mmlu_computer science D True 10.2s
+E1 9772_mmlu_physics G False 21.3s
+E1 1962_mmlu_law D True 3.0s
+E1 10693_mmlu_computer science H True 7.9s
+E1 943_mmlu_law H False 5.6s
+E1 1495_mmlu_law H False 2.7s
+E1 10442_mmlu_computer science C True 11.5s
+E1 10561_mmlu_computer science B False 7.1s
+E1 10401_mmlu_computer science E True 7.1s
+E1 1535_mmlu_law D True 6.4s
+E1 1373_mmlu_law H False 5.2s
+E1 9086_mmlu_physics G True 21.8s
+E1 1094_mmlu_law J False 6.4s
+E1 9676_mmlu_physics B False 22.2s
+E1 10437_mmlu_computer science E False 9.0s
+E1 9611_mmlu_physics None False 22.2s
+E1 10769_mmlu_computer science B False 12.1s
+E1 10770_mmlu_computer science G False 15.8s
+E1 10367_mmlu_computer science F True 9.9s
+E1 1637_mmlu_law D False 6.9s
+E1 10567_mmlu_computer science J False 9.9s
+E1 10766_mmlu_computer science E False 10.2s
+E1 880_mmlu_law D True 6.3s
+E1 1223_mmlu_law B False 4.5s
+E1 1295_mmlu_law E True 4.8s
+E1 1782_mmlu_law E False 6.6s
+E1 1727_mmlu_law A False 5.4s
+E1 1565_mmlu_law A True 7.8s
+E1 10544_mmlu_computer science B False 23.4s
+E1 1651_mmlu_law A False 6.8s
+E1 10716_mmlu_computer science H False 9.2s
+E1 1349_mmlu_law E True 7.3s
+E1 1847_mmlu_law G False 5.2s
+E1 1238_mmlu_law J True 8.3s
+E1 1507_mmlu_law C False 7.8s
+E1 9885_mmlu_physics A False 23.7s
+E1 957_mmlu_law G True 7.6s
+E1 9098_mmlu_physics A True 24.1s
+E1 1272_mmlu_law H False 8.1s
+E1 1806_mmlu_law F False 7.9s
+E1 1762_mmlu_law C False 4.7s
+E1 10761_mmlu_computer science B False 9.7s
+E1 1309_mmlu_law D False 7.9s
+E1 1433_mmlu_law D True 6.9s
+E1 1899_mmlu_law H False 8.2s
+E1 887_mmlu_law None False 6.6s
+E1 1363_mmlu_law F True 7.7s
+E1 1300_mmlu_law J False 5.6s
+E1 10501_mmlu_computer science J False 12.8s
+E1 9700_mmlu_physics B False 25.0s
+E1 1501_mmlu_law E False 9.8s
+E1 1214_mmlu_law F False 8.2s
+E1 1634_mmlu_law B True 9.8s
+E1 1746_mmlu_law B False 7.4s
+E1 1778_mmlu_law D False 5.4s
+E1 9454_mmlu_physics I True 25.4s
+E1 1653_mmlu_law I False 7.1s
+E1 10744_mmlu_computer science D True 14.2s
+E1 1251_mmlu_law G True 8.2s
+E1 975_mmlu_law F False 7.6s
+E1 1970_mmlu_law B False 9.3s
+E1 1164_mmlu_law A False 6.2s
+E1 1073_mmlu_law E False 10.1s
+E1 1683_mmlu_law B False 7.7s
+E1 10405_mmlu_computer science B True 12.7s
+E1 1611_mmlu_law C True 6.6s
+E1 1261_mmlu_law A False 7.0s
+E1 1581_mmlu_law D False 8.4s
+E1 1610_mmlu_law B True 7.0s
+E1 1170_mmlu_law H False 4.8s
+E1 1244_mmlu_law G True 7.5s
+E1 10500_mmlu_computer science C True 16.2s
+E1 1391_mmlu_law E False 11.1s
+E1 9328_mmlu_physics E False 27.1s
+E1 1418_mmlu_law C False 7.3s
+E1 983_mmlu_law I False 7.1s
+E1 941_mmlu_law D False 6.5s
+E1 978_mmlu_law D False 6.0s
+E1 1649_mmlu_law A False 4.3s
+E1 1688_mmlu_law H False 5.1s
+E1 1718_mmlu_law C True 7.6s
+E1 1690_mmlu_law B False 10.6s
+E1 1446_mmlu_law F False 4.3s
+E1 4966_mmlu_history B False 3.7s
+E1 1100_mmlu_law D True 6.2s
+E1 1837_mmlu_law D False 8.2s
+E1 905_mmlu_law J False 4.8s
+E1 1858_mmlu_law D False 7.3s
+E1 4930_mmlu_history C True 3.1s
+E1 10338_mmlu_physics I True 28.3s
+E1 1744_mmlu_law B False 6.6s
+E1 1175_mmlu_law C False 4.7s
+E1 964_mmlu_law A False 9.6s
+E1 1968_mmlu_law H False 7.0s
+E1 1504_mmlu_law C False 7.9s
+E1 1598_mmlu_law F False 6.8s
+E1 5058_mmlu_history D False 4.5s
+E1 1910_mmlu_law H False 7.2s
+E1 924_mmlu_law J True 8.7s
+E1 1217_mmlu_law E True 8.5s
+E1 4971_mmlu_history E True 3.7s
+E1 1960_mmlu_law B True 6.5s
+E1 4843_mmlu_history J True 5.0s
+E1 1726_mmlu_law E False 10.1s
+E1 1975_mmlu_law C False 5.7s
+E1 1736_mmlu_law C False 8.0s
+E1 1844_mmlu_law H False 6.3s
+E1 1871_mmlu_law C False 8.5s
+E1 1479_mmlu_law H False 7.4s
+E1 1680_mmlu_law D False 8.4s
+E1 4932_mmlu_history F False 4.9s
+E1 1709_mmlu_law H False 8.7s
+E1 4979_mmlu_history D True 5.9s
+E1 10573_mmlu_computer science D False 20.1s
+E1 1006_mmlu_law H True 7.0s
+E1 4909_mmlu_history A True 5.7s
+E1 989_mmlu_law I False 6.7s
+E1 1312_mmlu_law B False 6.6s
+E1 1879_mmlu_law I True 8.6s
+E1 4950_mmlu_history F False 3.6s
+E1 4864_mmlu_history F True 4.3s
+E1 5009_mmlu_history A True 6.6s
+E1 4958_mmlu_history None False 4.7s
+E1 10435_mmlu_computer science I False 15.9s
+E1 10447_mmlu_computer science H True 23.4s
+E1 4686_mmlu_history J True 4.8s
+E1 9500_mmlu_physics C False 31.1s
+E1 1125_mmlu_law C True 9.7s
+E1 5056_mmlu_history C False 6.1s
+E1 1092_mmlu_law G True 8.9s
+E1 4973_mmlu_history I False 4.6s
+E1 1768_mmlu_law D False 9.0s
+E1 1655_mmlu_law F True 8.1s
+E1 4848_mmlu_history C True 4.0s
+E1 1302_mmlu_law G True 9.3s
+E1 9222_mmlu_physics A False 31.8s
+E1 4773_mmlu_history D True 3.7s
+E1 4775_mmlu_history E True 7.6s
+E1 4746_mmlu_history D False 6.2s
+E1 1197_mmlu_law D False 12.1s
+E1 5027_mmlu_history H False 7.9s
+E1 4748_mmlu_history G False 7.1s
+E1 4713_mmlu_history H True 5.7s
+E1 4727_mmlu_history G True 4.6s
+E1 872_mmlu_law C False 10.4s
+E1 4808_mmlu_history F False 6.7s
+E1 4953_mmlu_history C False 3.8s
+E1 4842_mmlu_history C False 4.8s
+E1 1533_mmlu_law D False 9.3s
+E1 4999_mmlu_history E True 2.1s
+E1 1810_mmlu_law D False 8.6s
+E1 1096_mmlu_law J False 8.9s
+E1 4799_mmlu_history G False 7.8s
+E1 10710_mmlu_computer science D False 19.6s
+E1 4980_mmlu_history F False 4.6s
+E1 4956_mmlu_history C True 6.4s
+E1 4761_mmlu_history B True 3.9s
+E1 4780_mmlu_history G True 2.7s
+E1 4725_mmlu_history H True 2.6s
+E1 5005_mmlu_history A False 7.7s
+E1 1918_mmlu_law J False 10.5s
+E1 4931_mmlu_history E True 5.6s
+E1 4702_mmlu_history B True 5.3s
+E1 4756_mmlu_history E True 3.7s
+E1 1036_mmlu_law J False 10.0s
+E1 4678_mmlu_history F False 3.5s
+E1 4810_mmlu_history C False 4.4s
+E1 4957_mmlu_history A True 6.1s
+E1 5040_mmlu_history E False 5.5s
+E1 4669_mmlu_history C False 6.7s
+E1 5013_mmlu_history A False 7.8s
+E1 4717_mmlu_history A True 6.7s
+E1 5044_mmlu_history A False 3.1s
+E1 4707_mmlu_history C False 5.2s
+E1 4827_mmlu_history G False 3.9s
+E1 4933_mmlu_history A False 4.6s
+E1 4765_mmlu_history J True 3.3s
+E1 4823_mmlu_history D False 5.9s
+E1 4968_mmlu_history G True 6.9s
+E1 4689_mmlu_history G False 7.6s
+E1 1248_mmlu_law F False 10.8s
+E1 4875_mmlu_history J True 7.1s
+E1 5012_mmlu_history J True 2.7s
+E1 4921_mmlu_history D True 8.8s
+E1 5047_mmlu_history E False 4.7s
+E1 4897_mmlu_history B False 4.5s
+E1 4771_mmlu_history H False 4.3s
+E1 4675_mmlu_history A True 2.8s
+E1 4816_mmlu_history H True 1.7s
+E1 4754_mmlu_history B True 5.0s
+E1 4946_mmlu_history J False 6.5s
+E1 5049_mmlu_history J False 1.9s
+E1 4812_mmlu_history C False 2.6s
+E1 5016_mmlu_history J False 2.5s
+E1 4877_mmlu_history C True 2.9s
+E1 4989_mmlu_history E False 8.2s
+E1 4900_mmlu_history C False 3.6s
+E1 4836_mmlu_history B False 2.4s
+E1 5043_mmlu_history B True 5.9s
+E1 4777_mmlu_history D True 2.9s
+E1 4716_mmlu_history None False 6.7s
+E1 4876_mmlu_history E False 9.2s
+E1 4881_mmlu_history D False 4.4s
+E1 4922_mmlu_history C False 4.4s
+E1 1432_mmlu_law D False 10.5s
+E1 5050_mmlu_history G True 3.7s
+E1 4806_mmlu_history D False 4.0s
+E1 4706_mmlu_history F False 7.2s
+E1 4742_mmlu_history D False 6.9s
+E1 4885_mmlu_history J True 3.9s
+E1 4696_mmlu_history A False 6.1s
+E1 4692_mmlu_history H False 9.5s
+E1 4828_mmlu_history F True 3.9s
+E1 4975_mmlu_history C True 6.9s
+E1 4891_mmlu_history C False 5.2s
+E1 4965_mmlu_history B False 6.4s
+E1 4822_mmlu_history F False 5.8s
+E1 4845_mmlu_history D True 4.5s
+E1 4813_mmlu_history G False 7.6s
+E1 5055_mmlu_history A True 5.1s
+E1 4749_mmlu_history J False 6.6s
+E1 10285_mmlu_physics None False 35.9s
+E1 4693_mmlu_history I False 6.6s
+E1 4729_mmlu_history G True 11.2s
+E1 4740_mmlu_history C True 5.0s
+E1 4872_mmlu_history None False 5.7s
+E1 4685_mmlu_history B False 7.6s
+E1 4985_mmlu_history A False 6.1s
+E1 10739_mmlu_computer science F True 23.2s
+E1 4783_mmlu_history E True 9.0s
+E1 4681_mmlu_history J False 6.6s
+E1 5014_mmlu_history D True 8.9s

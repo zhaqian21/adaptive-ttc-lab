@@ -1,0 +1,22 @@
+[
+  {
+    "workers": 48,
+    "code_revision": "d19e605b76899bdc3791bec3a2b48234534166de",
+    "already_complete": 0,
+    "started_at_unix": 1795841185.4068031
+  },
+  {
+    "workers": 96,
+    "code_revision": "d19e605b76899bdc3791bec3a2b48234534166de",
+    "already_complete": 420,
+    "started_at_unix": 1795842030.5661602
+  },
+  {
+    "workers": 96,
+    "code_revision": "2046e098ed83869a4d71fe772cc18b62336ac3de",
+    "already_complete": 456,
+    "started_at_unix": 1795842187.9530702,
+    "seconds": 1317.0393851138651,
+    "further_completed": 944
+  }
+]

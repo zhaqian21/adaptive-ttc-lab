@@ -1,0 +1,30 @@
+{
+  "questions": 3,
+  "correct": 2,
+  "accuracy": 0.6666666666666666,
+  "invalid_answers": 0,
+  "generator_calls": 30,
+  "input_tokens": 5710,
+  "output_tokens": 12028,
+  "prm_calls": 30,
+  "prm_input_tokens": 18367,
+  "by_category": {
+    "math": {
+      "questions": 3,
+      "correct": 2,
+      "accuracy": 0.6666666666666666,
+      "invalid_answers": 0,
+      "generator_calls": 30,
+      "input_tokens": 5710,
+      "output_tokens": 12028,
+      "prm_calls": 30,
+      "prm_input_tokens": 18367
+    }
+  },
+  "macro_accuracy": 0.6666666666666666,
+  "method": "E2",
+  "outer_k": 10,
+  "manifest_sha256": "9246bdbb6f285f89babb74cbefa6cd3f8e443f79bf798130c867ab2d4b509dd0",
+  "elapsed_seconds": 125.92678652703762,
+  "timing_basis": "evaluation wall clock"
+}

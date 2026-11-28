@@ -1,0 +1,173 @@
+{
+  "questions": 1400,
+  "correct": 867,
+  "accuracy": 0.6192857142857143,
+  "invalid_answers": 2,
+  "generator_calls": 14000,
+  "input_tokens": 3437270,
+  "output_tokens": 3355328,
+  "prm_calls": 14000,
+  "prm_input_tokens": 6139325,
+  "by_category": {
+    "math": {
+      "questions": 100,
+      "correct": 79,
+      "accuracy": 0.79,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 193160,
+      "output_tokens": 337458,
+      "prm_calls": 1000,
+      "prm_input_tokens": 468955
+    },
+    "physics": {
+      "questions": 100,
+      "correct": 75,
+      "accuracy": 0.75,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 234550,
+      "output_tokens": 354371,
+      "prm_calls": 1000,
+      "prm_input_tokens": 524906
+    },
+    "computer science": {
+      "questions": 100,
+      "correct": 61,
+      "accuracy": 0.61,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 255070,
+      "output_tokens": 206500,
+      "prm_calls": 1000,
+      "prm_input_tokens": 423441
+    },
+    "law": {
+      "questions": 100,
+      "correct": 40,
+      "accuracy": 0.4,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 397360,
+      "output_tokens": 182466,
+      "prm_calls": 1000,
+      "prm_input_tokens": 559964
+    },
+    "history": {
+      "questions": 100,
+      "correct": 53,
+      "accuracy": 0.53,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 343250,
+      "output_tokens": 166442,
+      "prm_calls": 1000,
+      "prm_input_tokens": 477881
+    },
+    "chemistry": {
+      "questions": 100,
+      "correct": 61,
+      "accuracy": 0.61,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 249870,
+      "output_tokens": 416792,
+      "prm_calls": 1000,
+      "prm_input_tokens": 585784
+    },
+    "engineering": {
+      "questions": 100,
+      "correct": 56,
+      "accuracy": 0.56,
+      "invalid_answers": 1,
+      "generator_calls": 1000,
+      "input_tokens": 356780,
+      "output_tokens": 514357,
+      "prm_calls": 1000,
+      "prm_input_tokens": 783130
+    },
+    "economics": {
+      "questions": 100,
+      "correct": 71,
+      "accuracy": 0.71,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 201780,
+      "output_tokens": 139093,
+      "prm_calls": 1000,
+      "prm_input_tokens": 308164
+    },
+    "psychology": {
+      "questions": 100,
+      "correct": 65,
+      "accuracy": 0.65,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 199570,
+      "output_tokens": 146287,
+      "prm_calls": 1000,
+      "prm_input_tokens": 319650
+    },
+    "business": {
+      "questions": 100,
+      "correct": 65,
+      "accuracy": 0.65,
+      "invalid_answers": 1,
+      "generator_calls": 1000,
+      "input_tokens": 222490,
+      "output_tokens": 283281,
+      "prm_calls": 1000,
+      "prm_input_tokens": 421415
+    },
+    "biology": {
+      "questions": 100,
+      "correct": 79,
+      "accuracy": 0.79,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 247010,
+      "output_tokens": 159047,
+      "prm_calls": 1000,
+      "prm_input_tokens": 384509
+    },
+    "philosophy": {
+      "questions": 100,
+      "correct": 48,
+      "accuracy": 0.48,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 168290,
+      "output_tokens": 163252,
+      "prm_calls": 1000,
+      "prm_input_tokens": 300777
+    },
+    "health": {
+      "questions": 100,
+      "correct": 56,
+      "accuracy": 0.56,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 194450,
+      "output_tokens": 138895,
+      "prm_calls": 1000,
+      "prm_input_tokens": 301014
+    },
+    "other": {
+      "questions": 100,
+      "correct": 58,
+      "accuracy": 0.58,
+      "invalid_answers": 0,
+      "generator_calls": 1000,
+      "input_tokens": 173640,
+      "output_tokens": 147087,
+      "prm_calls": 1000,
+      "prm_input_tokens": 279735
+    }
+  },
+  "macro_accuracy": 0.6192857142857143,
+  "method": "E2",
+  "outer_k": 10,
+  "manifest_sha256": "9246bdbb6f285f89babb74cbefa6cd3f8e443f79bf798130c867ab2d4b509dd0",
+  "elapsed_seconds": 2319.5988132953644,
+  "timing_basis": "wall clock since initial run config"
+}

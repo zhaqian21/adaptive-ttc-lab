@@ -1,0 +1,63 @@
+2026-11-28T14:19:04+08:00 Preparing llama-versa
+2026-11-28T14:19:04+08:00 Smoke llama-versa E1
+2026-11-28T14:19:04+08:00 llama-versa E1 smoke c3
+2026-11-28T14:19:10+08:00 Running llama-versa E1 c96
+2026-11-28T14:19:10+08:00 llama-versa E1 full c96
+2026-11-28T14:22:35+08:00 llama-versa E1: 630/1400, PRM 0
+2026-11-28T14:22:35+08:00 Smoke llama-versa E2
+2026-11-28T14:22:35+08:00 llama-versa E2 smoke c3
+2026-11-28T14:24:14+08:00 Running llama-versa E2 c96
+2026-11-28T14:24:14+08:00 llama-versa E2 full c96
+2026-11-28T15:14:45+08:00 llama-versa E2: 863/1400, PRM 14000
+2026-11-28T15:14:45+08:00 Running llama-versa E3 c112
+2026-11-28T15:14:45+08:00 llama-versa E3 full c112
+2026-11-28T15:18:42+08:00 llama-versa E3: 651/1400, PRM 6
+2026-11-28T15:18:42+08:00 Running llama-versa E4 c96
+2026-11-28T15:18:42+08:00 llama-versa E4 full c96
+2026-11-28T15:27:44+08:00 Preparing llama-versa
+2026-11-28T15:27:44+08:00 llama-versa E1: 630/1400, PRM 0
+2026-11-28T15:27:45+08:00 llama-versa E2: 863/1400, PRM 14000
+2026-11-28T15:27:45+08:00 llama-versa E3: 651/1400, PRM 6
+2026-11-28T15:27:45+08:00 Running llama-versa E4 c112
+2026-11-28T15:27:45+08:00 llama-versa E4 full c112
+2026-11-28T16:16:20+08:00 llama-versa E4: 847/1400, PRM 14033
+2026-11-28T16:16:20+08:00 Preparing qwen-dprm
+2026-11-28T16:16:20+08:00 Stopping project service 8024 on port 18420
+2026-11-28T16:16:53+08:00 Checking verified dPRM weights and isolated dependencies
+2026-11-28T16:16:53+08:00 Stopping project service 4861 on port 18423
+2026-11-28T16:17:02+08:00 dprm scorer passed /score smoke
+2026-11-28T16:17:02+08:00 Smoke qwen-dprm E1
+2026-11-28T16:17:02+08:00 qwen-dprm E1 smoke c3
+2026-11-28T16:17:09+08:00 Running qwen-dprm E1 c96
+2026-11-28T16:17:09+08:00 qwen-dprm E1 full c96
+2026-11-28T16:19:07+08:00 qwen-dprm E1: 726/1400, PRM 0
+2026-11-28T16:19:07+08:00 Smoke qwen-dprm E2
+2026-11-28T16:19:07+08:00 qwen-dprm E2 smoke c3
+2026-11-28T16:20:28+08:00 Running qwen-dprm E2 c96
+2026-11-28T16:20:28+08:00 qwen-dprm E2 full c96
+2026-11-28T16:58:00+08:00 qwen-dprm E2: 883/1400, PRM 14000
+2026-11-28T16:58:00+08:00 Running qwen-dprm E3 c112
+2026-11-28T16:58:00+08:00 qwen-dprm E3 full c112
+2026-11-28T17:00:47+08:00 qwen-dprm E3: 750/1400, PRM 0
+2026-11-28T17:00:47+08:00 Running qwen-dprm E4 c96
+2026-11-28T17:00:47+08:00 qwen-dprm E4 full c96
+2026-11-28T17:44:04+08:00 qwen-dprm E4: 885/1400, PRM 14000
+2026-11-28T17:44:04+08:00 Preparing llama-dprm
+2026-11-28T17:44:04+08:00 Stopping project service 11946 on port 18420
+2026-11-28T17:44:40+08:00 Smoke llama-dprm E1
+2026-11-28T17:44:40+08:00 llama-dprm E1 smoke c3
+2026-11-28T17:44:44+08:00 Running llama-dprm E1 c96
+2026-11-28T17:44:44+08:00 llama-dprm E1 full c96
+2026-11-28T17:48:07+08:00 llama-dprm E1: 642/1400, PRM 0
+2026-11-28T17:48:07+08:00 Smoke llama-dprm E2
+2026-11-28T17:48:07+08:00 llama-dprm E2 smoke c3
+2026-11-28T17:50:13+08:00 Running llama-dprm E2 c96
+2026-11-28T17:50:13+08:00 llama-dprm E2 full c96
+2026-11-28T18:43:49+08:00 llama-dprm E2: 884/1400, PRM 14000
+2026-11-28T18:43:49+08:00 Running llama-dprm E3 c112
+2026-11-28T18:43:49+08:00 llama-dprm E3 full c112
+2026-11-28T18:47:46+08:00 llama-dprm E3: 615/1400, PRM 6
+2026-11-28T18:47:46+08:00 Running llama-dprm E4 c96
+2026-11-28T18:47:46+08:00 llama-dprm E4 full c96
+2026-11-28T19:46:17+08:00 llama-dprm E4: 881/1400, PRM 14031
+2026-11-28T19:46:17+08:00 Complete: all three model/scorer pairs E1–E4 verified

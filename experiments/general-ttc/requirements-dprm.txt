@@ -1,0 +1,9 @@
+# Reproduce the dPRM scoring environment independently of VersaPRM.
+# The experiment used the PyTorch 2.6.0 CUDA 12.4 build on Python 3.12.3.
+torch==2.6.0
+transformers==4.57.6
+accelerate==1.4.0
+huggingface-hub==0.36.0
+peft==0.17.1
+tokenizers==0.22.2
+safetensors==0.8.0
