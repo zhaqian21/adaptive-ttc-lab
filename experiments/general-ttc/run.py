@@ -101,6 +101,8 @@ def run(args):
         "questions": [row["id"] for row in questions], "code_revision": args.code_revision,
         "workers": args.workers,
     }
+    if args.method == "E2":
+        config.update(prm_aggregation=args.prm_aggregation, agreement_stop=args.agreement_stop)
     if not args.resume:
         args.output.mkdir(parents=True, exist_ok=False)
     with lock_run(args.output):
@@ -111,6 +113,9 @@ def run_questions(args, config, questions, generate, score):
     config_file = args.output / "config.json"
     if args.resume:
         previous = json.loads(config_file.read_text(encoding="utf-8"))
+        if args.method == "E2":
+            previous.setdefault("prm_aggregation", "mean")
+            previous.setdefault("agreement_stop", None)
         for key, value in config.items():
             if key not in {"workers", "code_revision"} and previous.get(key) != value:
                 raise ValueError(f"Cannot resume with different {key}")
@@ -153,7 +158,8 @@ def run_questions(args, config, questions, generate, score):
                     tuple(item.get("evidence", ())))
         began = perf_counter()
         row = solve(task, args.method, args.k, args.seed, args.max_tokens, args.search_steps,
-                    generate, score, args.fixed_strategy)
+                    generate, score, args.fixed_strategy,
+                    prm_aggregation=args.prm_aggregation, agreement_stop=args.agreement_stop)
         calls = [event["usage"] for event in row["events"] if event["kind"] == "generation"]
         scores = [event for event in row["events"] if event["kind"] == "prm"]
         row.update({
@@ -189,7 +195,15 @@ def run_questions(args, config, questions, generate, score):
         raise RuntimeError(f"{len(failures)} questions failed; use --resume to continue")
     (args.output / "errors.json").unlink(missing_ok=True)
     rows = [completed[item["id"]] for item in questions]
+    e2_summary = {}
+    if args.method == "E2":
+        e2_summary = {
+            "prm_aggregation": config["prm_aggregation"],
+            "agreement_stop": config["agreement_stop"],
+            "early_stopped": sum(row.get("early_stopped", False) for row in rows),
+        }
     write_json(args.output / "summary.json", {
+        **e2_summary,
         **summarize(rows), "method": args.method, "outer_k": config["outer_k"],
         "manifest_sha256": config["manifest_sha256"],
         "elapsed_seconds": time() - config_file.stat().st_mtime if args.resume else segment_seconds,
@@ -214,12 +228,20 @@ def main():
     parser.add_argument("--resume", action="store_true", help="Reuse completed questions in the output directory")
     parser.add_argument("--category", action="append")
     parser.add_argument("--fixed-strategy", choices=STRATEGIES)
+    parser.add_argument("--prm-aggregation", choices=("mean", "min"), default="mean",
+                        help="E2 final trajectory scoring rule")
+    parser.add_argument("--agreement-stop", type=int,
+                        help="E2 first-round candidate count for unanimous valid-answer early stopping")
     parser.add_argument("--code-revision", help="Record the Git commit of this run")
     args = parser.parse_args()
     if min(args.k, args.max_tokens, args.search_steps, args.workers, args.limit or 1) < 1 or args.limit == 0:
         parser.error("Budgets and question limits must be positive")
     if args.fixed_strategy and args.method not in {"E3", "E4"}:
         parser.error("--fixed-strategy requires E3 or E4")
+    if args.method != "E2" and (args.prm_aggregation != "mean" or args.agreement_stop is not None):
+        parser.error("--prm-aggregation min and --agreement-stop require E2")
+    if args.agreement_stop is not None and not 2 <= args.agreement_stop < args.k:
+        parser.error("--agreement-stop must be at least 2 and smaller than --k")
     run(args)
 
 

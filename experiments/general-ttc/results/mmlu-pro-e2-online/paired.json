@@ -1,0 +1,32 @@
+[
+  {
+    "baseline": "k10-mean",
+    "variant": "k10-min",
+    "incorrect_to_correct": 61,
+    "correct_to_incorrect": 49
+  },
+  {
+    "baseline": "k10-mean",
+    "variant": "stop5-mean",
+    "incorrect_to_correct": 54,
+    "correct_to_incorrect": 51
+  },
+  {
+    "baseline": "k10-mean",
+    "variant": "stop5-min",
+    "incorrect_to_correct": 57,
+    "correct_to_incorrect": 54
+  },
+  {
+    "baseline": "stop5-mean",
+    "variant": "stop5-min",
+    "incorrect_to_correct": 55,
+    "correct_to_incorrect": 55
+  },
+  {
+    "baseline": "k10-min",
+    "variant": "stop5-min",
+    "incorrect_to_correct": 53,
+    "correct_to_incorrect": 62
+  }
+]

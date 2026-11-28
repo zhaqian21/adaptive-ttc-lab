@@ -1,0 +1,8 @@
+E2 8793_mmlu_math G True 24.7s
+E2 8143_mmlu_math G True 30.0s
+E2 8216_mmlu_math E False 33.6s
+E2 8492_mmlu_math F True 34.7s
+E2 7733_mmlu_math F True 36.7s
+E2 8179_mmlu_math I True 62.3s
+E2 8080_mmlu_math B False 76.8s
+E2 8533_mmlu_math A False 161.1s

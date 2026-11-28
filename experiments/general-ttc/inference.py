@@ -39,7 +39,12 @@ class Trajectory:
 
     @property
     def score(self):
-        return fmean(self.step_scores) if self.step_scores else None
+        return self.aggregate()
+
+    def aggregate(self, rule="mean"):
+        if not self.step_scores:
+            return None
+        return min(self.step_scores) if rule == "min" else fmean(self.step_scores)
 
 
 def parse(text, option_count):
@@ -150,9 +155,12 @@ class Iteration:
         return replace(trajectory, step_scores=tuple(rewards))
 
     @staticmethod
-    def rank(trajectories, prefer_answers=False):
-        return sorted(trajectories, reverse=True, key=lambda t: (
-            bool(t.answer) if prefer_answers else False, t.score if t.score is not None else -1.0))
+    def rank(trajectories, prefer_answers=False, aggregation="mean"):
+        def rank_key(trajectory):
+            score = trajectory.aggregate(aggregation)
+            return bool(trajectory.answer) if prefer_answers else False, score if score is not None else -1.0
+
+        return sorted(trajectories, reverse=True, key=rank_key)
 
     def search(self, route):
         if route.strategy == "direct":
@@ -194,26 +202,58 @@ class Iteration:
         return selected if selected.answer else self.finish(route, selected)
 
 
-def solve(task, method, k, seed, max_tokens, search_steps, generator, prm, fixed_strategy=None):
+def solve(task, method, k, seed, max_tokens, search_steps, generator, prm, fixed_strategy=None,
+          *, prm_aggregation="mean", agreement_stop=None):
+    if prm_aggregation not in {"mean", "min"}:
+        raise ValueError("Unknown PRM aggregation rule")
+    if method != "E2" and (prm_aggregation != "mean" or agreement_stop is not None):
+        raise ValueError("Custom PRM aggregation and agreement stopping require E2")
+    if agreement_stop is not None and not 2 <= agreement_stop < k:
+        raise ValueError("Agreement stopping requires at least two candidates and fewer than k")
+
     dynamic = method in {"E3", "E4"}
     rerank = method in {"E2", "E4"}
     candidates = []
     routes = []
     events = []
+    deferred = []
+    early_stopped = False
     for index in range(k if rerank else 1):
         raw_seed = f"{seed}:{task.id}:{'dynamic' if dynamic else 'direct'}:{index}".encode()
         turn_seed = int.from_bytes(hashlib.sha256(raw_seed).digest()[:4], "big") % (2**31)
         iteration = Iteration(task, generator, prm, turn_seed, max_tokens, search_steps, fixed_strategy)
         route = iteration.route() if dynamic else None
         result = iteration.search(route) if route else iteration.finish()
-        if rerank:
+        if rerank and agreement_stop is None:
             result = iteration.score(result, "final")
+        elif agreement_stop is not None:
+            deferred.append(iteration)
         candidates.append(result)
         routes.append(asdict(route) if route else None)
         events.extend({"iteration": index, **event} for event in iteration.events)
-    selected = Iteration.rank(candidates, prefer_answers=True)[0] if rerank else candidates[0]
-    return {
+        if len(candidates) == agreement_stop:
+            answer = candidates[0].answer
+            if answer and all(candidate.answer == answer for candidate in candidates):
+                early_stopped = True
+                break
+
+    if not early_stopped:
+        for index, iteration in enumerate(deferred):
+            before = len(iteration.events)
+            candidates[index] = iteration.score(candidates[index], "final")
+            events.extend({"iteration": index, **event} for event in iteration.events[before:])
+
+    selected = candidates[0]
+    if rerank and not early_stopped:
+        selected = Iteration.rank(candidates, prefer_answers=True, aggregation=prm_aggregation)[0]
+    result = {
         "prediction": selected.answer, "selected": candidates.index(selected),
-        "candidates": [{**asdict(candidate), "score": candidate.score, "route": routes[index]}
-                       for index, candidate in enumerate(candidates)], "events": events,
+        "candidates": [
+            {**asdict(candidate), "score": candidate.aggregate(prm_aggregation), "route": routes[index]}
+            for index, candidate in enumerate(candidates)
+        ],
+        "events": events,
     }
+    if method == "E2":
+        result["early_stopped"] = early_stopped
+    return result
