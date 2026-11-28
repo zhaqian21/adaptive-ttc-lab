@@ -1,0 +1,6 @@
+# Validated with the AutoDL torch 2.6.0+cu124 build.
+torch==2.6.0
+transformers==4.48.3
+accelerate==1.4.0
+huggingface-hub==0.29.3
+peft==0.14.0
