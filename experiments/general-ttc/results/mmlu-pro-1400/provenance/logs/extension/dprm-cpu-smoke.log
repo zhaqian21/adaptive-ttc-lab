@@ -1,0 +1,4 @@
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:00<00:00, 228.64it/s]
+dPRM marker logits verified against full logits. Scores [0.9985895752906799, 0.9998089671134949]
+{'step_scores': [0.8670357465744019, 0.665410578250885], 'input_tokens': 49}

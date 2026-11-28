@@ -101,7 +101,7 @@ def serve(prm, port):
             self.reply(200, result)
 
     with ScoringHTTPServer(("127.0.0.1", port), Handler) as server:
-        print(f"VersaPRM ready on 127.0.0.1:{port}", flush=True)
+        print(f"{type(prm).__name__} ready on 127.0.0.1:{port}", flush=True)
         server.serve_forever()
 
 

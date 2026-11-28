@@ -1,0 +1,118 @@
+{
+  "questions": 900,
+  "correct": 468,
+  "accuracy": 0.52,
+  "invalid_answers": 37,
+  "generator_calls": 900,
+  "input_tokens": 201388,
+  "output_tokens": 210408,
+  "prm_calls": 0,
+  "prm_input_tokens": 0,
+  "by_category": {
+    "chemistry": {
+      "questions": 100,
+      "correct": 51,
+      "accuracy": 0.51,
+      "invalid_answers": 5,
+      "generator_calls": 100,
+      "input_tokens": 24987,
+      "output_tokens": 39737,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "engineering": {
+      "questions": 100,
+      "correct": 34,
+      "accuracy": 0.34,
+      "invalid_answers": 8,
+      "generator_calls": 100,
+      "input_tokens": 35678,
+      "output_tokens": 52418,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "economics": {
+      "questions": 100,
+      "correct": 58,
+      "accuracy": 0.58,
+      "invalid_answers": 3,
+      "generator_calls": 100,
+      "input_tokens": 20178,
+      "output_tokens": 13605,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "psychology": {
+      "questions": 100,
+      "correct": 57,
+      "accuracy": 0.57,
+      "invalid_answers": 0,
+      "generator_calls": 100,
+      "input_tokens": 19957,
+      "output_tokens": 14575,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "business": {
+      "questions": 100,
+      "correct": 58,
+      "accuracy": 0.58,
+      "invalid_answers": 7,
+      "generator_calls": 100,
+      "input_tokens": 22249,
+      "output_tokens": 27933,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "biology": {
+      "questions": 100,
+      "correct": 71,
+      "accuracy": 0.71,
+      "invalid_answers": 1,
+      "generator_calls": 100,
+      "input_tokens": 24701,
+      "output_tokens": 15314,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "philosophy": {
+      "questions": 100,
+      "correct": 40,
+      "accuracy": 0.4,
+      "invalid_answers": 3,
+      "generator_calls": 100,
+      "input_tokens": 16829,
+      "output_tokens": 17954,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "health": {
+      "questions": 100,
+      "correct": 54,
+      "accuracy": 0.54,
+      "invalid_answers": 2,
+      "generator_calls": 100,
+      "input_tokens": 19445,
+      "output_tokens": 14152,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "other": {
+      "questions": 100,
+      "correct": 45,
+      "accuracy": 0.45,
+      "invalid_answers": 8,
+      "generator_calls": 100,
+      "input_tokens": 17364,
+      "output_tokens": 14720,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    }
+  },
+  "macro_accuracy": 0.52,
+  "method": "E1",
+  "outer_k": 1,
+  "manifest_sha256": "67472a18b8adecffbd9ca61adbd74b6161d19d9e9c5d28b8f9d7b02567f01ecf",
+  "elapsed_seconds": 76.06003427132964,
+  "timing_basis": "evaluation wall clock"
+}

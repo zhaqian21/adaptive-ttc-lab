@@ -1,0 +1,74 @@
+{
+  "questions": 500,
+  "correct": 249,
+  "accuracy": 0.498,
+  "invalid_answers": 12,
+  "generator_calls": 500,
+  "input_tokens": 142339,
+  "output_tokens": 123323,
+  "prm_calls": 0,
+  "prm_input_tokens": 0,
+  "by_category": {
+    "math": {
+      "questions": 100,
+      "correct": 66,
+      "accuracy": 0.66,
+      "invalid_answers": 4,
+      "generator_calls": 100,
+      "input_tokens": 19316,
+      "output_tokens": 33099,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "physics": {
+      "questions": 100,
+      "correct": 59,
+      "accuracy": 0.59,
+      "invalid_answers": 3,
+      "generator_calls": 100,
+      "input_tokens": 23455,
+      "output_tokens": 34748,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "computer science": {
+      "questions": 100,
+      "correct": 53,
+      "accuracy": 0.53,
+      "invalid_answers": 1,
+      "generator_calls": 100,
+      "input_tokens": 25507,
+      "output_tokens": 19976,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "law": {
+      "questions": 100,
+      "correct": 27,
+      "accuracy": 0.27,
+      "invalid_answers": 1,
+      "generator_calls": 100,
+      "input_tokens": 39736,
+      "output_tokens": 18224,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "history": {
+      "questions": 100,
+      "correct": 44,
+      "accuracy": 0.44,
+      "invalid_answers": 3,
+      "generator_calls": 100,
+      "input_tokens": 34325,
+      "output_tokens": 17276,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    }
+  },
+  "macro_accuracy": 0.49800000000000005,
+  "method": "E1",
+  "outer_k": 1,
+  "manifest_sha256": "f9784abffc5583a546244ac2a735206932fa063284e475ac602343930535bf2e",
+  "elapsed_seconds": 630.4751002788544,
+  "timing_basis": "wall clock since initial run config"
+}

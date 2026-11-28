@@ -1,0 +1,33 @@
+2026-11-28T12:40:03+08:00 Preparing frozen E3 stress test
+2026-11-28T12:40:03+08:00 Benchmark E3 c24 (140 paired questions)
+2026-11-28T12:40:53+08:00 c24 completed
+2026-11-28T12:40:53+08:00 Benchmark E3 c48 (140 paired questions)
+2026-11-28T12:41:24+08:00 c48 completed
+2026-11-28T12:41:24+08:00 Benchmark E3 c72 (140 paired questions)
+2026-11-28T12:41:52+08:00 c72 completed
+2026-11-28T12:41:52+08:00 Benchmark E3 c96 (140 paired questions)
+2026-11-28T12:42:14+08:00 c96 completed
+2026-11-28T12:42:14+08:00 Benchmark E3 c112 (140 paired questions)
+2026-11-28T12:42:37+08:00 c112 completed
+2026-11-28T12:42:37+08:00 Confirm E3 c96 (same 140 questions)
+2026-11-28T12:43:02+08:00 Running E3 (1400 questions, c112)
+usage: audit.py [-h] [--method {E2,E3,E4}] {prepare,choose,compare}
+audit.py: error: unrecognized arguments: E3
+E3 746/1400 vs E1 717/1400; paired report saved
+2026-11-28T12:46:25+08:00 Running E2 (1400 questions, c48)
+bash: line 1:  4103 Killed                  bash queue-e3-e2-e4/run.sh --resume
+E3 746/1400 vs E1 717/1400; paired report saved
+2026-11-28T13:00:30+08:00 Running E2 (1400 questions, c96)
+bash: line 1:  4611 Killed                  bash queue-e3-e2-e4/run.sh --resume
+Starting VersaPRM with a larger connection queue
+{"step_scores": [0.9914886951446533], "input_tokens": 18}
+E3 746/1400 vs E1 717/1400; paired report saved
+2026-11-28T13:03:07+08:00 Running E2 (1400 questions, c96)
+E2 867/1400 vs E1 717/1400; paired report saved
+2026-11-28T13:25:05+08:00 Running E4 (1400 questions, c48)
+bash: line 1:  4858 Killed                  bash queue-e3-e2-e4/restart-prm-and-resume.sh
+E3 746/1400 vs E1 717/1400; paired report saved
+E2 867/1400 vs E1 717/1400; paired report saved
+2026-11-28T13:26:12+08:00 Running E4 (1400 questions, c96)
+E4 869/1400 vs E1 717/1400; paired report saved
+2026-11-28T14:06:34+08:00 Complete: E3, E2 and E4; paired reports saved

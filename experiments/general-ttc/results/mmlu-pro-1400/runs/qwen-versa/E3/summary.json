@@ -1,0 +1,173 @@
+{
+  "questions": 1400,
+  "correct": 746,
+  "accuracy": 0.5328571428571428,
+  "invalid_answers": 38,
+  "generator_calls": 2800,
+  "input_tokens": 846750,
+  "output_tokens": 454228,
+  "prm_calls": 0,
+  "prm_input_tokens": 0,
+  "by_category": {
+    "math": {
+      "questions": 100,
+      "correct": 69,
+      "accuracy": 0.69,
+      "invalid_answers": 7,
+      "generator_calls": 200,
+      "input_tokens": 49768,
+      "output_tokens": 40474,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "physics": {
+      "questions": 100,
+      "correct": 60,
+      "accuracy": 0.6,
+      "invalid_answers": 2,
+      "generator_calls": 200,
+      "input_tokens": 58947,
+      "output_tokens": 44331,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "computer science": {
+      "questions": 100,
+      "correct": 55,
+      "accuracy": 0.55,
+      "invalid_answers": 2,
+      "generator_calls": 200,
+      "input_tokens": 62098,
+      "output_tokens": 28396,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "law": {
+      "questions": 100,
+      "correct": 28,
+      "accuracy": 0.28,
+      "invalid_answers": 0,
+      "generator_calls": 200,
+      "input_tokens": 91350,
+      "output_tokens": 26659,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "history": {
+      "questions": 100,
+      "correct": 45,
+      "accuracy": 0.45,
+      "invalid_answers": 1,
+      "generator_calls": 200,
+      "input_tokens": 80084,
+      "output_tokens": 26203,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "chemistry": {
+      "questions": 100,
+      "correct": 52,
+      "accuracy": 0.52,
+      "invalid_answers": 6,
+      "generator_calls": 200,
+      "input_tokens": 62135,
+      "output_tokens": 50489,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "engineering": {
+      "questions": 100,
+      "correct": 43,
+      "accuracy": 0.43,
+      "invalid_answers": 10,
+      "generator_calls": 200,
+      "input_tokens": 83790,
+      "output_tokens": 62186,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "economics": {
+      "questions": 100,
+      "correct": 65,
+      "accuracy": 0.65,
+      "invalid_answers": 0,
+      "generator_calls": 200,
+      "input_tokens": 51135,
+      "output_tokens": 21562,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "psychology": {
+      "questions": 100,
+      "correct": 57,
+      "accuracy": 0.57,
+      "invalid_answers": 0,
+      "generator_calls": 200,
+      "input_tokens": 50740,
+      "output_tokens": 24828,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "business": {
+      "questions": 100,
+      "correct": 59,
+      "accuracy": 0.59,
+      "invalid_answers": 2,
+      "generator_calls": 200,
+      "input_tokens": 55916,
+      "output_tokens": 30937,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "biology": {
+      "questions": 100,
+      "correct": 66,
+      "accuracy": 0.66,
+      "invalid_answers": 1,
+      "generator_calls": 200,
+      "input_tokens": 60430,
+      "output_tokens": 25614,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "philosophy": {
+      "questions": 100,
+      "correct": 41,
+      "accuracy": 0.41,
+      "invalid_answers": 2,
+      "generator_calls": 200,
+      "input_tokens": 44854,
+      "output_tokens": 26869,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "health": {
+      "questions": 100,
+      "correct": 53,
+      "accuracy": 0.53,
+      "invalid_answers": 3,
+      "generator_calls": 200,
+      "input_tokens": 49683,
+      "output_tokens": 23285,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    },
+    "other": {
+      "questions": 100,
+      "correct": 53,
+      "accuracy": 0.53,
+      "invalid_answers": 2,
+      "generator_calls": 200,
+      "input_tokens": 45820,
+      "output_tokens": 22395,
+      "prm_calls": 0,
+      "prm_input_tokens": 0
+    }
+  },
+  "macro_accuracy": 0.5328571428571428,
+  "method": "E3",
+  "outer_k": 1,
+  "manifest_sha256": "9246bdbb6f285f89babb74cbefa6cd3f8e443f79bf798130c867ab2d4b509dd0",
+  "elapsed_seconds": 164.12598069012165,
+  "timing_basis": "evaluation wall clock"
+}
