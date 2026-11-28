@@ -1,0 +1,18 @@
+{
+  "mmlu_pro": {
+    "revision": "81a3c993eb80c38ee3900405bee67405dd79f610",
+    "path": "synth_cot_generation/data/mmlu_eval_questions.json"
+  },
+  "qwen": {
+    "id": "Qwen/Qwen2.5-7B-Instruct",
+    "revision": "a09a35458c702b33eeacc393d103063234e8bc28"
+  },
+  "prm_base": {
+    "id": "UW-Madison-Lee-Lab/Llama-PRM800K",
+    "revision": "1973a85d64b7a00e50a278b31a6558804bf952eb"
+  },
+  "prm_adapter": {
+    "id": "UW-Madison-Lee-Lab/VersaPRM",
+    "revision": "cd537f770b8077e31b10c7dc6cfd27f582e5de51"
+  }
+}
