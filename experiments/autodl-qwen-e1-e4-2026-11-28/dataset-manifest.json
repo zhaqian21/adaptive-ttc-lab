@@ -1,0 +1,67 @@
+{
+  "amo": {
+    "revision": "2f422616c25d862984408fbbfaed63a961e8e025",
+    "split": "test",
+    "source_file": "data/test-00000-of-00001.parquet",
+    "repo": "meituan-longcat/AMO-Bench",
+    "sha256": "eb08f5239c0cc092e13552c31e505a7fdb8e8140aa8e227beedd62fc442cde58",
+    "samples": 50,
+    "filename": "amo.parquet",
+    "bytes": 100150
+  },
+  "aime24": {
+    "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+    "split": "train",
+    "source_file": "aime_2024_problems.parquet",
+    "repo": "Maxwell-Jia/AIME_2024",
+    "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+    "samples": 30,
+    "filename": "aime24.parquet",
+    "bytes": 37189
+  },
+  "amc23": {
+    "repo": "math-ai/amc23",
+    "revision": "80815d37005feb82cd7f8fbc6901d5d3eff43057",
+    "source_file": "test-00000-of-00001.parquet",
+    "split": "test",
+    "samples": 40,
+    "sha256": "b696e87ba47be4e879a60fd4ef1d4aa522ba78c5ae013c6aff5cc9788a397c5e",
+    "filename": "amc23.parquet",
+    "bytes": 11935
+  },
+  "gsm8k": {
+    "repo": "openai/gsm8k",
+    "revision": "740312add88f781978c0658806c59bc2815b9866",
+    "source_file": "main/test-00000-of-00001.parquet",
+    "split": "test",
+    "samples": 1319,
+    "sha256": "ee7b8da9e381df27b9e3f7758a159ab2bdaa4dbaa910546cbbc47e0cb44e4f59",
+    "filename": "gsm8k.parquet",
+    "bytes": 419088,
+    "historical_sample": {
+      "filename": "gsm8k-500-questions.json",
+      "samples": 500,
+      "seed": 42,
+      "sha256": "c041774ed06c19c1aa423c512efbb80eff349c045834581647f935ef94b71ce2"
+    }
+  },
+  "aime26": {
+    "repo": "MathArena/aime_2026",
+    "revision": "d61f486805306e6e6b5913504c07763a99e1b112",
+    "source_file": "data/train-00000-of-00001.parquet",
+    "split": "train",
+    "samples": 30,
+    "sha256": "ae72853349a46c5f08666feb42db2d09fb4ac4fd4768c726b29702df21c7768e",
+    "filename": "aime26.parquet",
+    "bytes": 10062
+  },
+  "math500": {
+    "repo": "HuggingFaceH4/MATH-500",
+    "revision": "6e4ed1a2a79af7d8630a6b768ec859cb5af4d3be",
+    "source_file": "test.jsonl",
+    "split": "test",
+    "samples": 500,
+    "sha256": "35dc41080a3680858b27fa7e0533d2d547825316fc5dafe5d316f4ccc5a06132",
+    "filename": "math500.jsonl"
+  }
+}

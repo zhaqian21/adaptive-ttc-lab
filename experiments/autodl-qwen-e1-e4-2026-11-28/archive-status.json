@@ -1,0 +1,33 @@
+{
+  "status": "paused_after_amo_bench",
+  "completed_runs": [
+    "E1/aime24",
+    "E1/aime26",
+    "E1/amc23",
+    "E1/amo",
+    "E1/gsm8k",
+    "E1/math500",
+    "E2/aime24",
+    "E2/aime26",
+    "E2/amc23",
+    "E2/amo",
+    "E2/gsm8k",
+    "E2/math500",
+    "E3/aime24",
+    "E3/aime26",
+    "E3/amc23",
+    "E3/amo",
+    "E3/gsm8k",
+    "E3/math500",
+    "E4/aime24",
+    "E4/amo",
+    "E4/math500"
+  ],
+  "pending_runs": [
+    "E4/aime26",
+    "E4/amc23",
+    "E4/gsm8k"
+  ],
+  "completed_questions": 6487,
+  "paused_at": "2026-11-28T11:41:13+08:00"
+}

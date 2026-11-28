@@ -1,0 +1,163 @@
+{
+  "math500": {
+    "questions": 500,
+    "e1": {
+      "correct": 353,
+      "elapsed_seconds": 135.6126897521317,
+      "elapsed_is_estimated": false,
+      "output_tokens": 295539,
+      "generation_calls": 1000
+    },
+    "e3": {
+      "correct": 346,
+      "elapsed_seconds": 1003.5175791606307,
+      "output_tokens": 918049,
+      "generation_calls": 11003
+    },
+    "accuracy_delta_percentage_points": -1.4,
+    "paired": {
+      "both_correct": 314,
+      "e3_only": 32,
+      "e1_only": 39,
+      "both_incorrect": 115
+    },
+    "wall_time_ratio": 7.399879620372004,
+    "output_token_ratio": 3.106354829650232,
+    "generation_call_ratio": 11.003
+  },
+  "aime24": {
+    "questions": 30,
+    "e1": {
+      "correct": 4,
+      "elapsed_seconds": 36.134367767721415,
+      "elapsed_is_estimated": false,
+      "output_tokens": 26826,
+      "generation_calls": 60
+    },
+    "e3": {
+      "correct": 5,
+      "elapsed_seconds": 371.2306215763092,
+      "output_tokens": 103345,
+      "generation_calls": 835
+    },
+    "accuracy_delta_percentage_points": 3.3333333333333335,
+    "paired": {
+      "both_correct": 2,
+      "e3_only": 3,
+      "e1_only": 2,
+      "both_incorrect": 23
+    },
+    "wall_time_ratio": 10.273616075494948,
+    "output_token_ratio": 3.852419294714083,
+    "generation_call_ratio": 13.916666666666666
+  },
+  "amo": {
+    "questions": 50,
+    "e1": {
+      "correct": 2,
+      "elapsed_seconds": 68.62196732000395,
+      "elapsed_is_estimated": true,
+      "output_tokens": 41851,
+      "generation_calls": 100
+    },
+    "e3": {
+      "correct": 2,
+      "elapsed_seconds": 802.127293471247,
+      "output_tokens": 446027,
+      "generation_calls": 1903
+    },
+    "accuracy_delta_percentage_points": 0.0,
+    "paired": {
+      "both_correct": 0,
+      "e3_only": 2,
+      "e1_only": 2,
+      "both_incorrect": 46
+    },
+    "wall_time_ratio": 11.68907457477424,
+    "output_token_ratio": 10.657499223435522,
+    "generation_call_ratio": 19.03
+  },
+  "amc23": {
+    "questions": 40,
+    "e1": {
+      "correct": 14,
+      "elapsed_seconds": 20.83704373613,
+      "elapsed_is_estimated": false,
+      "output_tokens": 33630,
+      "generation_calls": 80
+    },
+    "e3": {
+      "correct": 16,
+      "elapsed_seconds": 387.2386557459831,
+      "output_tokens": 97051,
+      "generation_calls": 934
+    },
+    "accuracy_delta_percentage_points": 5.0,
+    "paired": {
+      "both_correct": 10,
+      "e3_only": 6,
+      "e1_only": 4,
+      "both_incorrect": 20
+    },
+    "wall_time_ratio": 18.58414565183918,
+    "output_token_ratio": 2.885845970859352,
+    "generation_call_ratio": 11.675
+  },
+  "aime26": {
+    "questions": 30,
+    "e1": {
+      "correct": 0,
+      "elapsed_seconds": 20.647798743098974,
+      "elapsed_is_estimated": false,
+      "output_tokens": 27929,
+      "generation_calls": 60
+    },
+    "e3": {
+      "correct": 4,
+      "elapsed_seconds": 592.883896689862,
+      "output_tokens": 181048,
+      "generation_calls": 1091
+    },
+    "accuracy_delta_percentage_points": 13.333333333333334,
+    "paired": {
+      "both_correct": 0,
+      "e3_only": 4,
+      "e1_only": 0,
+      "both_incorrect": 26
+    },
+    "wall_time_ratio": 28.714145467347656,
+    "output_token_ratio": 6.482437609653049,
+    "generation_call_ratio": 18.183333333333334
+  },
+  "gsm8k": {
+    "questions": 1319,
+    "e1": {
+      "correct": 1199,
+      "elapsed_seconds": 185.13869190588593,
+      "elapsed_is_estimated": false,
+      "output_tokens": 419328,
+      "generation_calls": 2638
+    },
+    "e3": {
+      "correct": 1185,
+      "elapsed_seconds": 706.5060013607144,
+      "output_tokens": 744525,
+      "generation_calls": 16938
+    },
+    "accuracy_delta_percentage_points": -1.061410159211524,
+    "paired": {
+      "both_correct": 1135,
+      "e3_only": 50,
+      "e1_only": 64,
+      "both_incorrect": 70
+    },
+    "wall_time_ratio": 3.8160904891769585,
+    "output_token_ratio": 1.7755194024725274,
+    "generation_call_ratio": 6.420773313115997,
+    "historical_500_subset": {
+      "questions": 500,
+      "e1_correct": 462,
+      "e3_correct": 458
+    }
+  }
+}

@@ -1,0 +1,211 @@
+{
+  "concurrency": 30,
+  "attempts": [
+    [
+      1795811098.9385545,
+      1795811340.5961106,
+      0
+    ]
+  ],
+  "timing_basis": "evaluator elapsed",
+  "config": {
+    "case": "E2",
+    "backend": "vllm",
+    "concurrency": 30,
+    "runtime": {
+      "torch": "2.6.0+cu124",
+      "cuda_runtime": "12.4",
+      "transformers": "4.48.3",
+      "cuda_visible_devices": "0",
+      "device_name": "NVIDIA GeForce RTX 4090",
+      "compute_capability": [
+        8,
+        9
+      ],
+      "bf16_supported": true,
+      "backend_torch": "2.14.0+cu130",
+      "backend_cuda_runtime": "13.0",
+      "vllm": "0.33.0"
+    },
+    "package_version": "0.33.0",
+    "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+    "dataset_sha256": "ae72853349a46c5f08666feb42db2d09fb4ac4fd4768c726b29702df21c7768e",
+    "dataset": "aime26",
+    "dataset_spec": {
+      "repo": "MathArena/aime_2026",
+      "revision": "d61f486805306e6e6b5913504c07763a99e1b112",
+      "source_file": "data/train-00000-of-00001.parquet",
+      "split": "train",
+      "samples": 30,
+      "sha256": "ae72853349a46c5f08666feb42db2d09fb4ac4fd4768c726b29702df21c7768e",
+      "filename": "aime26.parquet",
+      "bytes": 10062
+    },
+    "prm_score_port": null,
+    "source_sha256": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf",
+    "decode": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 1024,
+      "repetition_penalty": 1.05,
+      "stop_token_ids": [
+        151645
+      ],
+      "ignore_eos": true,
+      "skip_special_tokens": true
+    },
+    "seed": 0,
+    "strict_errors": false,
+    "sample_ids": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "submission_order": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "endpoint_port": 18420,
+    "agent": {
+      "mode": "direct",
+      "use_planner": false,
+      "use_tool_selector": false,
+      "use_compute_selector": false,
+      "remember_cot": true,
+      "max_text_history": 16,
+      "max_image_history": 0,
+      "fixed_tool": null,
+      "fixed_compute": null,
+      "planning_frequency": null,
+      "domain": "math"
+    },
+    "client": {
+      "client_name": "transformer",
+      "base_url": null,
+      "model_id": "/root/autodl-tmp/adaptive-ttc-lab/vgpu48/e1-h20/assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+      "generate_kwargs": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "max_tokens": 1024
+      },
+      "timeout": 60,
+      "max_retries": 5,
+      "delay": 2,
+      "alternate_roles": false,
+      "device_map": "cuda:0",
+      "torch_dtype": "bfloat16",
+      "trust_remote_code": false
+    },
+    "eval": {
+      "num_workers": 16,
+      "output_dir": null,
+      "max_problems": 30,
+      "num_iterations": 10,
+      "use_prm_selection": true,
+      "prm_selection_metric": "mean_reward",
+      "split": "train",
+      "problem_types": null,
+      "difficulty_levels": null
+    },
+    "datasets_and_models": [
+      [
+        "model",
+        "Qwen/Qwen2.5-7B-Instruct",
+        "a09a35458c702b33eeacc393d103063234e8bc28"
+      ],
+      [
+        "model",
+        "Qwen/Qwen2.5-Math-PRM-7B",
+        "0610740060112df12585d00a1c5f4624d2f59051"
+      ]
+    ]
+  },
+  "summary": {
+    "case": "E2",
+    "classification": "published_code",
+    "backend": "vllm",
+    "dataset": "aime26",
+    "prm_timing_includes_http": false,
+    "workers": 30,
+    "samples": 30,
+    "requested": 30,
+    "correct": 3,
+    "accuracy": 0.1,
+    "failed": {},
+    "answer_verdicts": {
+      "True": 3,
+      "None": 10,
+      "False": 17
+    },
+    "seconds": 232.7653520964086,
+    "setup_seconds": 3.940508145838976,
+    "questions_per_minute": 7.733109690889311,
+    "output_tokens_per_second": 1174.908540025015,
+    "output_tokens": 273478,
+    "generation_calls": 600,
+    "prm_calls": 300,
+    "prm_compute_seconds": 64.959591537714,
+    "prm_queue_seconds": 137.7536432594061,
+    "question_retries": 0,
+    "prm_all_zero_questions": 0,
+    "cuda_peak_reserved_bytes": 14984151040,
+    "native_files_verified_at_commit": true,
+    "pinned_dataset_checked": true
+  }
+}

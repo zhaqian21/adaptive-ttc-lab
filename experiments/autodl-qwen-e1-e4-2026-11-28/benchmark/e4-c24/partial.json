@@ -1,0 +1,292 @@
+{
+  "status": "interrupted_by_request",
+  "stopped_at": "2026-11-28T02:06:28.398617+08:00",
+  "requested": 48,
+  "completed": 39,
+  "pending_ids": [
+    19,
+    78,
+    103,
+    109,
+    118,
+    295,
+    316,
+    428,
+    470
+  ],
+  "predictions": [
+    {
+      "problem_id": 3,
+      "dataset_unique_id": "test/number_theory/572.json",
+      "answer": "9",
+      "is_correct": true,
+      "question_seconds": 159.49372053146362
+    },
+    {
+      "problem_id": 36,
+      "dataset_unique_id": "test/intermediate_algebra/428.json",
+      "answer": "3, 5, 7",
+      "is_correct": true,
+      "question_seconds": 380.41785883903503
+    },
+    {
+      "problem_id": 41,
+      "dataset_unique_id": "test/geometry/627.json",
+      "answer": "17",
+      "is_correct": true,
+      "question_seconds": 416.2149324417114
+    },
+    {
+      "problem_id": 44,
+      "dataset_unique_id": "test/prealgebra/1558.json",
+      "answer": "1.25",
+      "is_correct": true,
+      "question_seconds": 227.70377945899963
+    },
+    {
+      "problem_id": 54,
+      "dataset_unique_id": "test/prealgebra/572.json",
+      "answer": "0.15",
+      "is_correct": true,
+      "question_seconds": 86.1976420879364
+    },
+    {
+      "problem_id": 85,
+      "dataset_unique_id": "test/geometry/353.json",
+      "answer": "\\sqrt{5}",
+      "is_correct": true,
+      "question_seconds": 255.57352495193481
+    },
+    {
+      "problem_id": 93,
+      "dataset_unique_id": "test/algebra/873.json",
+      "answer": "33",
+      "is_correct": true,
+      "question_seconds": 336.20431184768677
+    },
+    {
+      "problem_id": 100,
+      "dataset_unique_id": "test/geometry/183.json",
+      "answer": "75",
+      "is_correct": false,
+      "question_seconds": 447.56594824790955
+    },
+    {
+      "problem_id": 111,
+      "dataset_unique_id": "test/counting_and_probability/23957.json",
+      "answer": "210",
+      "is_correct": true,
+      "question_seconds": 175.72689747810364
+    },
+    {
+      "problem_id": 114,
+      "dataset_unique_id": "test/intermediate_algebra/1898.json",
+      "answer": "-5",
+      "is_correct": true,
+      "question_seconds": 401.66456723213196
+    },
+    {
+      "problem_id": 115,
+      "dataset_unique_id": "test/counting_and_probability/1060.json",
+      "answer": "2520",
+      "is_correct": false,
+      "question_seconds": 149.51038312911987
+    },
+    {
+      "problem_id": 159,
+      "dataset_unique_id": "test/algebra/621.json",
+      "answer": "3.21",
+      "is_correct": true,
+      "question_seconds": 299.36343932151794
+    },
+    {
+      "problem_id": 169,
+      "dataset_unique_id": "test/geometry/802.json",
+      "answer": "12",
+      "is_correct": true,
+      "question_seconds": 165.24737739562988
+    },
+    {
+      "problem_id": 210,
+      "dataset_unique_id": "test/prealgebra/378.json",
+      "answer": "6",
+      "is_correct": false,
+      "question_seconds": 232.69468808174133
+    },
+    {
+      "problem_id": 219,
+      "dataset_unique_id": "test/counting_and_probability/282.json",
+      "answer": "\\frac{1}{2}",
+      "is_correct": true,
+      "question_seconds": 362.0633707046509
+    },
+    {
+      "problem_id": 222,
+      "dataset_unique_id": "test/geometry/547.json",
+      "answer": "\\frac{6}{25}",
+      "is_correct": false,
+      "question_seconds": 349.0546429157257
+    },
+    {
+      "problem_id": 223,
+      "dataset_unique_id": "test/number_theory/183.json",
+      "answer": "14",
+      "is_correct": true,
+      "question_seconds": 311.25051379203796
+    },
+    {
+      "problem_id": 228,
+      "dataset_unique_id": "test/precalculus/1056.json",
+      "answer": "288\\pi",
+      "is_correct": true,
+      "question_seconds": 521.1676383018494
+    },
+    {
+      "problem_id": 243,
+      "dataset_unique_id": "test/geometry/254.json",
+      "answer": "3",
+      "is_correct": true,
+      "question_seconds": 336.75036549568176
+    },
+    {
+      "problem_id": 255,
+      "dataset_unique_id": "test/precalculus/452.json",
+      "answer": "E",
+      "is_correct": true,
+      "question_seconds": 383.2518882751465
+    },
+    {
+      "problem_id": 267,
+      "dataset_unique_id": "test/geometry/226.json",
+      "answer": "180",
+      "is_correct": true,
+      "question_seconds": 429.7289264202118
+    },
+    {
+      "problem_id": 274,
+      "dataset_unique_id": "test/geometry/686.json",
+      "answer": "18 + \\frac{9\\pi}{2}",
+      "is_correct": false,
+      "question_seconds": 388.5817573070526
+    },
+    {
+      "problem_id": 276,
+      "dataset_unique_id": "test/algebra/1282.json",
+      "answer": "11",
+      "is_correct": true,
+      "question_seconds": 506.13091826438904
+    },
+    {
+      "problem_id": 297,
+      "dataset_unique_id": "test/number_theory/1172.json",
+      "answer": "103",
+      "is_correct": true,
+      "question_seconds": 429.23994493484497
+    },
+    {
+      "problem_id": 308,
+      "dataset_unique_id": "test/geometry/711.json",
+      "answer": "\\frac{2\\sqrt{6}}{3} + \\frac{3\\sqrt{3}}{2}",
+      "is_correct": false,
+      "question_seconds": 462.67933416366577
+    },
+    {
+      "problem_id": 310,
+      "dataset_unique_id": "test/algebra/1842.json",
+      "answer": "49",
+      "is_correct": true,
+      "question_seconds": 168.87272024154663
+    },
+    {
+      "problem_id": 318,
+      "dataset_unique_id": "test/algebra/2735.json",
+      "answer": "\\frac{11 + 9a}{20}",
+      "is_correct": true,
+      "question_seconds": 263.9388952255249
+    },
+    {
+      "problem_id": 321,
+      "dataset_unique_id": "test/prealgebra/954.json",
+      "answer": "10",
+      "is_correct": true,
+      "question_seconds": 200.8707926273346
+    },
+    {
+      "problem_id": 333,
+      "dataset_unique_id": "test/intermediate_algebra/776.json",
+      "answer": "3",
+      "is_correct": true,
+      "question_seconds": 414.91960740089417
+    },
+    {
+      "problem_id": 349,
+      "dataset_unique_id": "test/counting_and_probability/238.json",
+      "answer": "10080",
+      "is_correct": true,
+      "question_seconds": 341.9131247997284
+    },
+    {
+      "problem_id": 411,
+      "dataset_unique_id": "test/prealgebra/1227.json",
+      "answer": "60",
+      "is_correct": true,
+      "question_seconds": 124.87584018707275
+    },
+    {
+      "problem_id": 419,
+      "dataset_unique_id": "test/precalculus/145.json",
+      "answer": "\\begin{pmatrix} 0 \\\\ 30 \\\\ -30 \\end{pmatrix}",
+      "is_correct": false,
+      "question_seconds": 400.16902136802673
+    },
+    {
+      "problem_id": 441,
+      "dataset_unique_id": "test/prealgebra/2037.json",
+      "answer": "550",
+      "is_correct": true,
+      "question_seconds": 171.17111110687256
+    },
+    {
+      "problem_id": 451,
+      "dataset_unique_id": "test/number_theory/459.json",
+      "answer": "\\frac{639}{40}",
+      "is_correct": true,
+      "question_seconds": 186.9287338256836
+    },
+    {
+      "problem_id": 452,
+      "dataset_unique_id": "test/algebra/1814.json",
+      "answer": "143",
+      "is_correct": true,
+      "question_seconds": 247.72192120552063
+    },
+    {
+      "problem_id": 455,
+      "dataset_unique_id": "test/counting_and_probability/190.json",
+      "answer": "6",
+      "is_correct": true,
+      "question_seconds": 139.8330376148224
+    },
+    {
+      "problem_id": 463,
+      "dataset_unique_id": "test/algebra/1425.json",
+      "answer": "2",
+      "is_correct": true,
+      "question_seconds": 220.45497798919678
+    },
+    {
+      "problem_id": 474,
+      "dataset_unique_id": "test/intermediate_algebra/752.json",
+      "answer": "3",
+      "is_correct": true,
+      "question_seconds": 251.42669701576233
+    },
+    {
+      "problem_id": 492,
+      "dataset_unique_id": "test/precalculus/356.json",
+      "answer": "y = -2x",
+      "is_correct": true,
+      "question_seconds": 440.25135564804077
+    }
+  ]
+}
