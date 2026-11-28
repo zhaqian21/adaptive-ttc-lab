@@ -63,6 +63,11 @@ class VersaPRM:
         }
 
 
+class ScoringHTTPServer(HTTPServer):
+    # Accept bursts from continuous batching while keeping GPU scoring serial.
+    request_queue_size = 256
+
+
 def serve(prm, port):
     class Handler(BaseHTTPRequestHandler):
         def reply(self, status, data):
@@ -95,7 +100,7 @@ def serve(prm, port):
                 return
             self.reply(200, result)
 
-    with HTTPServer(("127.0.0.1", port), Handler) as server:
+    with ScoringHTTPServer(("127.0.0.1", port), Handler) as server:
         print(f"VersaPRM ready on 127.0.0.1:{port}", flush=True)
         server.serve_forever()
 
