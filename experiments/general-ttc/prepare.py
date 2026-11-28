@@ -18,7 +18,9 @@ def write_json(path, value):
     temp.replace(path)
 
 
-def prepare_questions(output, per_category, seed, source=None):
+def prepare_questions(output, per_category, seed, source=None, categories=CATEGORIES):
+    if not categories or len(set(categories)) != len(categories):
+        raise ValueError('Choose distinct categories from the source dataset')
     spec = ASSETS["mmlu_pro"]
     url = f"https://raw.githubusercontent.com/UW-Madison-Lee-Lab/VersaPRM/{spec['revision']}/{spec['path']}"
     if source:
@@ -28,31 +30,38 @@ def prepare_questions(output, per_category, seed, source=None):
             raw = response.read()
     rows = json.loads(raw)
     selected = []
-    for category in CATEGORIES:
-        candidates = [row for row in rows if row["category"] == category]
+    excluded = []
+    for category in categories:
+        candidates = []
+        for row in rows:
+            if row["category"] != category:
+                continue
+            options, answer, index = row["options"], row["answer"], row["answer_index"]
+            if not 2 <= len(options) <= 26 or index not in range(len(options)) or answer != ascii_uppercase[index]:
+                excluded.append(str(row["id"]))
+                continue
+            candidates.append(row)
 
         def order(row):
             return hashlib.sha256(f"{seed}:{row['id']}".encode()).digest()
 
         if len(candidates) < per_category:
-            raise ValueError(f"{category}: only {len(candidates)} questions available")
+            raise ValueError(f"{category}: only {len(candidates)} valid questions available")
         for row in sorted(candidates, key=order)[:per_category]:
-            options = row["options"]
-            answer = row["answer"]
-            index = row["answer_index"]
-            if not 2 <= len(options) <= 26 or index not in range(len(options)) or answer != ascii_uppercase[index]:
-                raise ValueError(f"Invalid options or answer for {row['id']}")
             selected.append({
                 "id": str(row["id"]), "category": category, "question": row["question"],
-                "options": options, "answer": answer,
+                "options": row["options"], "answer": row["answer"],
             })
     if len({row["id"] for row in selected}) != len(selected):
         raise ValueError("Duplicate question IDs")
-    write_json(output, {
+    manifest = {
         "source_url": url if source is None else str(source),
         "source_sha256": hashlib.sha256(raw).hexdigest(), "seed": seed,
         "per_category": per_category, "questions": selected,
-    })
+    }
+    if excluded:
+        manifest["invalid_source_ids"] = sorted(excluded)
+    write_json(output, manifest)
 
 
 def prepare_models(directory):
@@ -75,13 +84,15 @@ def main():
     dataset.add_argument("--source-json", type=Path)
     dataset.add_argument("--per-category", type=int, default=100)
     dataset.add_argument("--seed", type=int, default=0)
+    dataset.add_argument("--category", action="append", help="Select a category; repeat for multiple categories")
     models = subcommands.add_parser("models")
     models.add_argument("--directory", type=Path, required=True)
     args = parser.parse_args()
     if args.operation == "mmlu":
         if args.per_category < 1:
             parser.error("--per-category must be positive")
-        prepare_questions(args.output, args.per_category, args.seed, args.source_json)
+        prepare_questions(args.output, args.per_category, args.seed, args.source_json,
+                          args.category or CATEGORIES)
     else:
         prepare_models(args.directory)
 
