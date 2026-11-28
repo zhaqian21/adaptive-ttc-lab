@@ -1,0 +1,185 @@
+{
+  "h20": {
+    "questions": 30,
+    "correct": 3,
+    "accuracy": 0.1,
+    "elapsed_seconds": 204.9256219752133,
+    "per_part_seconds": [
+      23.816380106145516,
+      181.10924186906777
+    ],
+    "output_tokens": 100571,
+    "output_tokens_per_gpu_second": 490.76830427853736,
+    "generation_calls": 873,
+    "question_retries": 0,
+    "timing_basis": "sum of the archived H20 shard times"
+  },
+  "config": {
+    "case": "E3",
+    "backend": "vllm",
+    "concurrency": 15,
+    "runtime": {
+      "torch": "2.6.0+cu124",
+      "cuda_runtime": "12.4",
+      "transformers": "4.48.3",
+      "cuda_visible_devices": "0",
+      "device_name": "NVIDIA GeForce RTX 4090",
+      "compute_capability": [
+        8,
+        9
+      ],
+      "bf16_supported": true,
+      "backend_torch": "2.14.0+cu130",
+      "backend_cuda_runtime": "13.0",
+      "vllm": "0.33.0"
+    },
+    "package_version": "0.33.0",
+    "upstream_commit": "d9ca5f71f5c7d155153e8f7decd8b1c524968775",
+    "dataset_sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+    "dataset": "aime24",
+    "dataset_spec": {
+      "revision": "8d88b2876a82a080e2f172cc9b25d0d9d2cb4792",
+      "split": "train",
+      "source_file": "aime_2024_problems.parquet",
+      "repo": "Maxwell-Jia/AIME_2024",
+      "sha256": "3cb34696a75837f848ea16f15a42f4130be655d5995e8cd24efcc54f4e6e1524",
+      "samples": 30,
+      "filename": "aime24.parquet",
+      "bytes": 37189
+    },
+    "prm_score_port": null,
+    "source_sha256": "ef1a73afb98fc0bb59e14c7be1cc84c76461b649ed5821596ffed3de5e7c68bf",
+    "decode": {
+      "temperature": 0.7,
+      "top_p": 0.9,
+      "top_k": 20,
+      "max_tokens": 1024,
+      "repetition_penalty": 1.05,
+      "stop_token_ids": [
+        151645
+      ],
+      "ignore_eos": true,
+      "skip_special_tokens": true
+    },
+    "seed": 0,
+    "strict_errors": false,
+    "sample_ids": [
+      15,
+      7,
+      9,
+      27,
+      22,
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29
+    ],
+    "submission_order": [
+      15,
+      7,
+      9,
+      27,
+      22,
+      5,
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      8,
+      10,
+      11,
+      12,
+      13,
+      14,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      23,
+      24,
+      25,
+      26,
+      28,
+      29
+    ],
+    "endpoint_port": 18420,
+    "agent": {
+      "mode": "dynamic",
+      "use_planner": true,
+      "use_tool_selector": true,
+      "use_compute_selector": true,
+      "remember_cot": true,
+      "max_text_history": 16,
+      "max_image_history": 0,
+      "fixed_tool": null,
+      "fixed_compute": null,
+      "planning_frequency": null,
+      "domain": "math"
+    },
+    "client": {
+      "client_name": "transformer",
+      "base_url": null,
+      "model_id": "/root/autodl-tmp/adaptive-ttc-lab/vgpu48/e1-h20/assets/model/Qwen--Qwen2.5-7B-Instruct--a09a35458c702b33eeacc393d103063234e8bc28",
+      "generate_kwargs": {
+        "temperature": 0.7,
+        "top_p": 0.9,
+        "max_tokens": 1024
+      },
+      "timeout": 60,
+      "max_retries": 5,
+      "delay": 2,
+      "alternate_roles": false,
+      "device_map": "cuda:0",
+      "torch_dtype": "bfloat16",
+      "trust_remote_code": false
+    },
+    "eval": {
+      "num_workers": 16,
+      "output_dir": null,
+      "max_problems": 30,
+      "num_iterations": 1,
+      "use_prm_selection": false,
+      "prm_selection_metric": "mean_reward",
+      "split": "train",
+      "problem_types": null,
+      "difficulty_levels": null
+    },
+    "datasets_and_models": [
+      [
+        "model",
+        "Qwen/Qwen2.5-7B-Instruct",
+        "a09a35458c702b33eeacc393d103063234e8bc28"
+      ],
+      [
+        "model",
+        "Qwen/Qwen2.5-Math-PRM-7B",
+        "0610740060112df12585d00a1c5f4624d2f59051"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "case": "E1",
+  "classification": "published_code",
+  "backend": "vllm",
+  "workers": 64,
+  "samples": 96,
+  "requested": 96,
+  "correct": 65,
+  "accuracy": 0.6770833333333334,
+  "failed": {},
+  "answer_verdicts": {
+    "True": 65,
+    "False": 25,
+    "None": 6
+  },
+  "seconds": 29.938052650541067,
+  "setup_seconds": 0.20306134968996048,
+  "questions_per_minute": 192.39728339164037,
+  "output_tokens_per_second": 1969.7673956403514,
+  "output_tokens": 58971,
+  "generation_calls": 192,
+  "prm_calls": 0,
+  "prm_compute_seconds": 0,
+  "prm_queue_seconds": 0.0,
+  "question_retries": 0,
+  "prm_all_zero_questions": 0,
+  "cuda_peak_reserved_bytes": 0,
+  "native_files_verified_at_commit": true,
+  "pinned_dataset_checked": true
+}
