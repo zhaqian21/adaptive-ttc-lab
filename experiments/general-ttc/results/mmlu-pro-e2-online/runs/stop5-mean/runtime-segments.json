@@ -1,0 +1,10 @@
+[
+  {
+    "workers": 96,
+    "code_revision": "fbb738c86c8f88406950195992cdb40df8a76621",
+    "already_complete": 0,
+    "started_at_unix": 1795874653.9937477,
+    "seconds": 1562.9773687720299,
+    "further_completed": 1400
+  }
+]

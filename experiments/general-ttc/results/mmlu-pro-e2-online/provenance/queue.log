@@ -1,0 +1,21 @@
+2026-11-28T20:39:51+08:00 Preparing k10-mean
+2026-11-28T20:39:51+08:00 Stopping project service 19770 on port 18420
+2026-11-28T20:40:24+08:00 Warmup k10-mean
+2026-11-28T20:42:57+08:00 Running k10-mean c96
+2026-11-28T21:20:28+08:00 k10-mean 901/1400, 0 early, 2250.9s
+2026-11-28T21:20:28+08:00 Preparing k10-min
+2026-11-28T21:20:28+08:00 Stopping project service 19977 on port 18420
+2026-11-28T21:21:01+08:00 Warmup k10-min
+2026-11-28T21:23:36+08:00 Running k10-min c96
+2026-11-28T22:00:59+08:00 k10-min 913/1400, 0 early, 2242.8s
+2026-11-28T22:00:59+08:00 Preparing stop5-mean
+2026-11-28T22:00:59+08:00 Stopping project service 21247 on port 18420
+2026-11-28T22:01:32+08:00 Warmup stop5-mean
+2026-11-28T22:04:13+08:00 Running stop5-mean c96
+2026-11-28T22:30:17+08:00 stop5-mean 904/1400, 639 early, 1563.0s
+2026-11-28T22:30:17+08:00 Preparing stop5-min
+2026-11-28T22:30:17+08:00 Stopping project service 22485 on port 18420
+2026-11-28T22:30:50+08:00 Warmup stop5-min
+2026-11-28T22:33:26+08:00 Running stop5-min c96
+2026-11-28T22:59:27+08:00 stop5-min 904/1400, 647 early, 1560.6s
+2026-11-28T22:59:27+08:00 Complete: four online E2 conditions
